@@ -1,3 +1,11 @@
+#vscode
+.vscode
+
+#colcon
+build
+log
+install
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
