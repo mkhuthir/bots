@@ -18,6 +18,11 @@
   <test_depend>ament_lint_common</test_depend>
 
   <export>
+    
+    <gazebo_ros gazebo_plugin_path="${prefix}/lib" gazebo_model_path="${prefix}/.."/>
+
     <build_type>ament_cmake</build_type>
+
   </export>
+
 </package>
