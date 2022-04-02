@@ -3,11 +3,16 @@
 <package format="3">
   <name>robot_gazebo</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>robot_gazebo</description>
   <maintainer email="mkhuthir@gmail.com">mkhuthir</maintainer>
-  <license>TODO: License declaration</license>
+  <license>GNU GENERAL PUBLIC LICENSE</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
