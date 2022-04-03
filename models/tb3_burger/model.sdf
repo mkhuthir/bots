@@ -30,7 +30,7 @@
         <pose>-0.032 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/burger_base.dae</uri>
+            <uri>model://robot_gazebo/meshes/tb3/burger_base.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -85,7 +85,7 @@
         <pose>-0.032 0 0.171 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/lds.dae</uri>
+            <uri>model://robot_gazebo/meshes/tb3/lds.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -160,7 +160,7 @@
         <pose>0 0.08 0.023 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/tire.dae</uri>
+            <uri>model://robot_gazebo/meshes/tb3/left_tire.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -208,7 +208,7 @@
         <pose>0.0 -0.08 0.023 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/tire.dae</uri>
+            <uri>model://robot_gazebo/meshes/tb3/right_tire.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
