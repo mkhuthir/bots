@@ -223,7 +223,7 @@
         <pose>0.0 0.144 0.023 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/tire.stl</uri>
+            <uri>model://robot_gazebo/meshes/tb3/left_tire.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -270,7 +270,7 @@
         <pose>0.0 -0.144 0.023 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/tire.stl</uri>
+            <uri>model://robot_gazebo/meshes/tb3/right_tire.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
