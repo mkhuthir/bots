@@ -56,7 +56,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Blue</name>
+              <name>Gazebo/Gray</name>
             </script>
           </material>
         </visual>
@@ -293,7 +293,7 @@
           </geometry>
           <material>
             <script>
-              <name>Gazebo/Grey</name>
+              <name>Gazebo/Blue</name>
               <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
           </material>
