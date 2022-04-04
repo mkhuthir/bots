@@ -1,13 +1,17 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
+
   <model name="twr">  
+
   <static>false</static>
 
-  <!-- ****************** ROBOT BASE FOOTPRINT ***************************  -->
+<!-- ****************************************************** Base Footprint Link ****************************************************** -->
+
   <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
   <link name="base_footprint"/>
 
-  <!-- ********************** ROBOT BASE *********************************  -->
+<!-- ****************************************************** Base Link **************************************************************** -->
+
   <link name="base_link">
 
     <collision name="base_collision">
@@ -34,16 +38,22 @@
         <emissive>0.0 0.0 0.0 1.0</emissive>
       </material>
     </visual>
+
   </link>
 
-  <!-- *********************** IMU SENSOR SETUP **************************  -->
+<!-- ****************************************************** IMU Link ***************************************************************** -->
+
   <link name="imu_link">
+    
     <gravity>true</gravity>
+
     <sensor name="twr_imu" type="imu">
       <always_on>true</always_on>
       <update_rate>100</update_rate>
       <visualize>true</visualize>
+
       <imu>
+      
         <orientation>
           <x>
             <noise type="gaussian">
@@ -64,6 +74,7 @@
             </noise>
           </z>
         </orientation>
+      
         <angular_velocity>
           <x>
             <noise type="gaussian">
@@ -84,6 +95,7 @@
             </noise>
           </z>
         </angular_velocity>
+      
         <linear_acceleration>
           <x>
             <noise type="gaussian">
@@ -104,7 +116,11 @@
             </noise>
           </z>
         </linear_acceleration>
+
       </imu>
+
+<!-- ****************************************************** IMU Plugin ***************************************************************** -->
+      
       <plugin name="twr_imu" filename="libgazebo_ros_imu_sensor.so">
         <initial_orientation_as_reference>false</initial_orientation_as_reference>
         <frame_name>imu_link</frame_name>
@@ -113,10 +129,11 @@
           <remapping>~/out:=data</remapping>
         </ros>
       </plugin>
+
     </sensor>
   </link>
 
-  <!-- ****************************** LIDAR *****************************    -->
+<!-- ****************************************************** LIDAR Link *************************************************************** -->
   <link name="lidar_link">
 
     <inertial>
@@ -200,6 +217,8 @@
 
       </ray>
 
+<!-- ****************************************************** LIDAR Plugin *************************************************************** -->
+
       <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
         <ros>
           <remapping>~/out:=scan</remapping>
@@ -207,10 +226,12 @@
         <output_type>sensor_msgs/LaserScan</output_type>
         <frame_name>lidar_link</frame_name>
       </plugin>
+
     </sensor>
   </link>
   
-  <!-- *********************** DRIVE WHEELS ******************************  -->
+<!-- ****************************************************** Left Drive Wheel Link **************************************************** -->
+
   <link name="drivewhl_l_link">
     <pose>-0.221 0.23 -0.05 0 1.570796 1.570796</pose>
     
@@ -232,6 +253,8 @@
       </geometry>
     </visual>
   </link>
+
+<!-- ****************************************************** Right Drive Wheel Link ***************************************************** -->
 
   <link name="drivewhl_r_link">
     <pose>-0.221 -0.23 -0.05 0 1.570796 1.570796</pose>
@@ -255,7 +278,8 @@
     </visual>
   </link>
 
-  <!-- *********************** CASTER WHEEL ******************************  -->
+<!-- ****************************************************** Front Caster Link ******************************************************** -->
+
   <link name='front_caster'>
     
     <pose>0.217 0 -0.1 0 0 0</pose>
@@ -301,9 +325,56 @@
 
   </link>
 
-  <!-- ************************ JOINTS ***********************************  -->
-  <!-- Pose of the joint is the same as the child link frame -->
-  <!-- Axis is the axis of rotation relative to the child link frame -->
+ <!-- ***************************************************** Wheels Diff. Drive Plugin ************************************************ -->
+
+  <plugin name="twr_diff_drive" filename="libgazebo_ros_diff_drive.so">
+
+    <update_rate>30</update_rate>
+
+    <!-- wheels -->
+    <left_joint>drivewhl_l_joint</left_joint>
+    <right_joint>drivewhl_r_joint</right_joint>
+
+    <!-- kinematics -->
+    <wheel_separation>0.52</wheel_separation>
+    <wheel_diameter>0.28</wheel_diameter>
+
+    <!-- limits -->
+    <max_wheel_torque>20</max_wheel_torque>
+    <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+    <!-- Receive velocity commands on this ROS topic -->
+    <command_topic>cmd_vel</command_topic>
+
+    <!-- output -->
+    <!-- When false, publish no wheel odometry data to a ROS topic -->
+    <publish_odom>true</publish_odom>
+
+    <!-- When true, publish coordinate transform from odom to base_footprint -->
+    <!-- I usually use the robot_localization package to publish this transform -->   
+    <publish_odom_tf>false</publish_odom_tf>
+    
+    <!-- When true, publish coordinate transform from base_link to the wheels -->
+    <!-- The robot_state_publisher package is often used to publish this transform -->   
+    <publish_wheel_tf>false</publish_wheel_tf>
+
+    <odometry_topic>odom</odometry_topic>
+    <odometry_frame>odom</odometry_frame>
+    <robot_base_frame>base_footprint</robot_base_frame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometry_source>1</odometry_source>
+
+    <!-- Change the ROS topic we will publish the odometry data to -->
+    <ros>
+      <remapping>odom:=wheel/odometry</remapping>
+    </ros>
+
+  </plugin>
+
+<!-- ****************************************************** JOINTS ******************************************************************* -->
+<!-- Pose of the joint is the same as the child link frame -->
+<!-- Axis is the axis of rotation relative to the child link frame -->
   
   <joint name="base_joint" type="fixed">
     <parent>base_footprint</parent>
@@ -353,62 +424,23 @@
     <pose>0 0 0 0 0 0</pose>
   </joint>
 
- <!-- *********************** WHEEL ODOMETRY ***************************    -->
-  <plugin name="twr_diff_drive" filename="libgazebo_ros_diff_drive.so">
 
-    <update_rate>30</update_rate>
-
-    <!-- wheels -->
-    <left_joint>drivewhl_l_joint</left_joint>
-    <right_joint>drivewhl_r_joint</right_joint>
-
-    <!-- kinematics -->
-    <wheel_separation>0.52</wheel_separation>
-    <wheel_diameter>0.28</wheel_diameter>
-
-    <!-- limits -->
-    <max_wheel_torque>20</max_wheel_torque>
-    <max_wheel_acceleration>1.0</max_wheel_acceleration>
-
-    <!-- Receive velocity commands on this ROS topic -->
-    <command_topic>cmd_vel</command_topic>
-
-    <!-- output -->
-    <!-- When false, publish no wheel odometry data to a ROS topic -->
-    <publish_odom>true</publish_odom>
-
-    <!-- When true, publish coordinate transform from odom to base_footprint -->
-    <!-- I usually use the robot_localization package to publish this transform -->   
-    <publish_odom_tf>false</publish_odom_tf>
-    
-    <!-- When true, publish coordinate transform from base_link to the wheels -->
-    <!-- The robot_state_publisher package is often used to publish this transform -->   
-    <publish_wheel_tf>false</publish_wheel_tf>
-
-    <odometry_topic>odom</odometry_topic>
-    <odometry_frame>odom</odometry_frame>
-    <robot_base_frame>base_footprint</robot_base_frame>
-
-    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
-    <odometry_source>1</odometry_source>
-
-    <!-- Change the ROS topic we will publish the odometry data to -->
-    <ros>
-      <remapping>odom:=wheel/odometry</remapping>
-    </ros>
-
-  </plugin>
-
- <!-- *********************** JOINT STATE PUBLISHER *********************   -->
+<!-- ***************************************************** Joint State Publisher Plugin ********************************************** -->
   
   <plugin name="twr_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+
     <ros>
       <remapping>~/out:=joint_states</remapping>
     </ros>
+
     <update_rate>30</update_rate>
+
     <joint_name>drivewhl_l_joint</joint_name>
     <joint_name>drivewhl_r_joint</joint_name>
+
   </plugin>   
-  
+
+<!-- ***************************************************** End *********************************************************************** -->
+
   </model>
 </sdf>
