@@ -13,8 +13,8 @@ def generate_launch_description():
   # Constants for paths to different files and folders
   gazebo_models_path =  'models'
   package_name =        'robot_gazebo'
-  robot_name_in_model = '2wr'
-  sdf_model_path =      'models/2wr/model.sdf'
+  robot_name_in_model = 'twr'
+  sdf_model_path =      'models/twr/model.sdf'
   world_file_path =     'worlds/empty.world'
      
   # Pose where we want to spawn the robot
