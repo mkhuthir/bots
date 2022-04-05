@@ -1,0 +1,1062 @@
+<sdf version='1.7'>
+  <model name='pxm3'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.975599</mass>
+        <inertia>
+          <ixx>3.10818</ixx>
+          <ixy>-0.254602</ixy>
+          <ixz>2.03182</ixz>
+          <iyy>6.37878</iyy>
+          <iyz>0.164179</iyz>
+          <izz>5.33164</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__MP_BODY_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/body_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__MP_BODY_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/body.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_c1_LF' type='revolute'>
+      <pose relative_to='base_link'>0.1248 0.06164 0.001116 3.14159 -1.57071 -0.785398</pose>
+      <parent>base_link</parent>
+      <child>c1_LF</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_LF'>
+      <pose relative_to='j_c1_LF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.027 0 0 -0 0</pose>
+        <mass>0.0487154</mass>
+        <inertia>
+          <ixx>0.00627912</ixx>
+          <ixy>-0.000594507</ixy>
+          <ixz>-4.94596e-05</ixz>
+          <iyy>0.0163831</iyy>
+          <iyz>-0.000594526</iyz>
+          <izz>0.00627912</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_LF_collision'>
+        <pose>0 -0.02633 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='c1_LF_fixed_joint_lump__c2_LF_collision_1'>
+        <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_LF_visual'>
+        <pose>0 -0.0252 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='c1_LF_fixed_joint_lump__c2_LF_visual_1'>
+        <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_LF' type='revolute'>
+      <pose relative_to='c1_LF'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <parent>c1_LF</parent>
+      <child>thigh_LF</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_LF'>
+      <pose relative_to='j_thigh_LF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_LF_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_LF_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_LF' type='revolute'>
+      <pose relative_to='thigh_LF'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <parent>thigh_LF</parent>
+      <child>tibia_LF</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_LF'>
+      <pose relative_to='j_tibia_LF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_LF_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tibia_LF_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_c1_LM' type='revolute'>
+      <pose relative_to='base_link'>0 0.1034 0.001116 3.14159 -1.57071 -3e-06</pose>
+      <parent>base_link</parent>
+      <child>c1_LM</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_LM'>
+      <pose relative_to='j_c1_LM'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.027 0 0 -0 0</pose>
+        <mass>0.0487154</mass>
+        <inertia>
+          <ixx>0.00627912</ixx>
+          <ixy>-0.000594507</ixy>
+          <ixz>-4.94596e-05</ixz>
+          <iyy>0.0163831</iyy>
+          <iyz>-0.000594526</iyz>
+          <izz>0.00627912</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_LM_collision'>
+        <pose>0 -0.02633 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='c1_LM_fixed_joint_lump__c2_LM_collision_1'>
+        <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_LM_visual'>
+        <pose>0 -0.0252 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='c1_LM_fixed_joint_lump__c2_LM_visual_1'>
+        <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_LM' type='revolute'>
+      <pose relative_to='c1_LM'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <parent>c1_LM</parent>
+      <child>thigh_LM</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_LM'>
+      <pose relative_to='j_thigh_LM'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_LM_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_LM_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_LM' type='revolute'>
+      <pose relative_to='thigh_LM'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <parent>thigh_LM</parent>
+      <child>tibia_LM</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_LM'>
+      <pose relative_to='j_tibia_LM'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_LM_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tibia_LM_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_c1_LR' type='revolute'>
+      <pose relative_to='base_link'>-0.1248 0.06164 0.001116 -3.14159 -1.57071 0.785398</pose>
+      <parent>base_link</parent>
+      <child>c1_LR</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_LR'>
+      <pose relative_to='j_c1_LR'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.027 0 0 -0 0</pose>
+        <mass>0.0487154</mass>
+        <inertia>
+          <ixx>0.00627912</ixx>
+          <ixy>-0.000594507</ixy>
+          <ixz>-4.94596e-05</ixz>
+          <iyy>0.0163831</iyy>
+          <iyz>-0.000594526</iyz>
+          <izz>0.00627912</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_LR_collision'>
+        <pose>0 -0.02633 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='c1_LR_fixed_joint_lump__c2_LR_collision_1'>
+        <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_LR_visual'>
+        <pose>0 -0.0252 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='c1_LR_fixed_joint_lump__c2_LR_visual_1'>
+        <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_LR' type='revolute'>
+      <pose relative_to='c1_LR'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <parent>c1_LR</parent>
+      <child>thigh_LR</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_LR'>
+      <pose relative_to='j_thigh_LR'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_LR_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_LR_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_LR' type='revolute'>
+      <pose relative_to='thigh_LR'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <parent>thigh_LR</parent>
+      <child>tibia_LR</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_LR'>
+      <pose relative_to='j_tibia_LR'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_LR_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tibia_LR_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_c1_RF' type='revolute'>
+      <pose relative_to='base_link'>0.1248 -0.06164 0.001116 3.14159 -1.57071 -2.35619</pose>
+      <parent>base_link</parent>
+      <child>c1_RF</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_RF'>
+      <pose relative_to='j_c1_RF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.027 0 0 -0 0</pose>
+        <mass>0.0487154</mass>
+        <inertia>
+          <ixx>0.00627912</ixx>
+          <ixy>-0.000594507</ixy>
+          <ixz>-4.94596e-05</ixz>
+          <iyy>0.0163831</iyy>
+          <iyz>-0.000594526</iyz>
+          <izz>0.00627912</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_RF_collision'>
+        <pose>0 -0.02633 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='c1_RF_fixed_joint_lump__c2_RF_collision_1'>
+        <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_RF_visual'>
+        <pose>0 -0.0252 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='c1_RF_fixed_joint_lump__c2_RF_visual_1'>
+        <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_RF' type='revolute'>
+      <pose relative_to='c1_RF'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <parent>c1_RF</parent>
+      <child>thigh_RF</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_RF'>
+      <pose relative_to='j_thigh_RF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_RF_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_RF_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_RF' type='revolute'>
+      <pose relative_to='thigh_RF'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <parent>thigh_RF</parent>
+      <child>tibia_RF</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_RF'>
+      <pose relative_to='j_tibia_RF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_RF_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tibia_RF_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_c1_RM' type='revolute'>
+      <pose relative_to='base_link'>0 -0.1034 0.001116 3.14159 -1.57071 -3.14159</pose>
+      <parent>base_link</parent>
+      <child>c1_RM</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_RM'>
+      <pose relative_to='j_c1_RM'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.027 0 0 -0 0</pose>
+        <mass>0.0487154</mass>
+        <inertia>
+          <ixx>0.00627912</ixx>
+          <ixy>-0.000594507</ixy>
+          <ixz>-4.94596e-05</ixz>
+          <iyy>0.0163831</iyy>
+          <iyz>-0.000594526</iyz>
+          <izz>0.00627912</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_RM_collision'>
+        <pose>0 -0.02633 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='c1_RM_fixed_joint_lump__c2_RM_collision_1'>
+        <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_RM_visual'>
+        <pose>0 -0.0252 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='c1_RM_fixed_joint_lump__c2_RM_visual_1'>
+        <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_RM' type='revolute'>
+      <pose relative_to='c1_RM'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <parent>c1_RM</parent>
+      <child>thigh_RM</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_RM'>
+      <pose relative_to='j_thigh_RM'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_RM_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_RM_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_RM' type='revolute'>
+      <pose relative_to='thigh_RM'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <parent>thigh_RM</parent>
+      <child>tibia_RM</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_RM'>
+      <pose relative_to='j_tibia_RM'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_RM_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tibia_RM_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_c1_RR' type='revolute'>
+      <pose relative_to='base_link'>-0.1248 -0.06164 0.001116 3.14159 -1.57071 2.35619</pose>
+      <parent>base_link</parent>
+      <child>c1_RR</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='c1_RR'>
+      <pose relative_to='j_c1_RR'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.027 0 0 -0 0</pose>
+        <mass>0.0487154</mass>
+        <inertia>
+          <ixx>0.00627912</ixx>
+          <ixy>-0.000594507</ixy>
+          <ixz>-4.94596e-05</ixz>
+          <iyy>0.0163831</iyy>
+          <iyz>-0.000594526</iyz>
+          <izz>0.00627912</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_RR_collision'>
+        <pose>0 -0.02633 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='c1_RR_fixed_joint_lump__c2_RR_collision_1'>
+        <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='c1_RR_visual'>
+        <pose>0 -0.0252 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='c1_RR_fixed_joint_lump__c2_RR_visual_1'>
+        <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_thigh_RR' type='revolute'>
+      <pose relative_to='c1_RR'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <parent>c1_RR</parent>
+      <child>thigh_RR</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='thigh_RR'>
+      <pose relative_to='j_thigh_RR'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_RR_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_RR_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='j_tibia_RR' type='revolute'>
+      <pose relative_to='thigh_RR'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <parent>thigh_RR</parent>
+      <child>tibia_RR</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tibia_RR'>
+      <pose relative_to='j_tibia_RR'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_RR_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tibia_RR_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
