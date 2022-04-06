@@ -13,7 +13,7 @@ from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
 
 
-pkg_share   = FindPackageShare(package='robot_description').find('robot_description')
+pkg_share   = FindPackageShare(package='robot_gazebo').find('robot_gazebo')
 rviz_config = os.path.join(pkg_share,'rviz/golem.rviz')
 urdf        = os.path.join(pkg_share,'urdf/golem.xacro')
 

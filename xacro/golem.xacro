@@ -63,7 +63,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/body.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/body.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
@@ -71,7 +71,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/body.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/body.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </collision>
@@ -229,7 +229,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/coxa.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/coxa.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="green"/>
         </visual>
@@ -237,7 +237,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/coxa.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/coxa.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="green"/>
         </collision>
@@ -283,7 +283,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/femur.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/femur.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="red"/>
         </visual>
@@ -291,7 +291,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/femur.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/femur.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="read"/>
         </collision>
@@ -337,7 +337,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/tibia.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/tibia.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="green"/>
         </visual>
@@ -345,7 +345,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/tibia.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/tibia.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="green"/>
         </collision>
@@ -391,7 +391,7 @@
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/tarsus.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/tarsus.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="red"/>
         </visual>
@@ -399,7 +399,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="package://robot_description/meshes/golem/tarsus.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://robot_gazebo/meshes/golem/tarsus.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="red"/>
         </collision>

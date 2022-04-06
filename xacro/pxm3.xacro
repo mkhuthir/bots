@@ -62,7 +62,7 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
               <!--box size="0.102 0.109 0.106" /-->
-              <mesh filename="package://robot_description/meshes/pxm3/body.STL"  scale="1 1 1"/>
+              <mesh filename="package://robot_gazebo/meshes/pxm3/body.STL"  scale="1 1 1"/>
             </geometry>
             <material name="blue"/>
           </visual>
@@ -70,7 +70,7 @@
           <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-              <mesh filename="package://robot_description/meshes/pxm3/body_coll.STL"  scale="1 1 1"/>
+              <mesh filename="package://robot_gazebo/meshes/pxm3/body_coll.STL"  scale="1 1 1"/>
             </geometry>
           </collision>
           
@@ -107,7 +107,7 @@
         <origin xyz="0 -0.0252 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_description/meshes/pxm3/connect.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL"  scale="1 1 1"/>
         </geometry>
         <material name="red"/>
       </visual>
@@ -115,7 +115,7 @@
       <collision>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_description/meshes/pxm3/connect_coll.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/connect_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
@@ -135,7 +135,7 @@
         <origin xyz="0 -0.0252 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_description/meshes/pxm3/connect.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL"  scale="1 1 1"/>
         </geometry>
         <material name="green"/>
       </visual>
@@ -143,7 +143,7 @@
       <collision>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_description/meshes/pxm3/connect_coll.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/connect_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
@@ -162,7 +162,7 @@
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_description/meshes/pxm3/thigh_l.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL"  scale="1 1 1"/>
         </geometry>
         <material name="red"/>
       </visual>
@@ -170,7 +170,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_description/meshes/pxm3/thigh_l_coll.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
@@ -189,7 +189,7 @@
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_description/meshes/pxm3/tibia_l.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL"  scale="1 1 1"/>
         </geometry>
         <material name="green"/>
       </visual>
@@ -197,7 +197,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_description/meshes/pxm3/tibia_l_coll.STL"  scale="1 1 1"/>
+          <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
