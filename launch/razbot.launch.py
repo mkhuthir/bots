@@ -15,7 +15,7 @@ from launch_ros.actions import Node
 
 pkg_share   = FindPackageShare(package='robot_gazebo').find('robot_gazebo')
 rviz_config = os.path.join(pkg_share,'rviz/razbot.rviz')
-urdf        = os.path.join(pkg_share,'urdf/razbot.xacro')
+urdf        = os.path.join(pkg_share,'xacro/razbot.xacro')
 
 print("urdf_file : {}".format(urdf))
 

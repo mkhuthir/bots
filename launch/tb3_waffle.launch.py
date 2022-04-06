@@ -15,7 +15,7 @@ from launch_ros.actions import Node
 
 pkg_share   = FindPackageShare(package='robot_gazebo').find('robot_gazebo')
 rviz_config = os.path.join(pkg_share,'rviz/tb3_waffle.rviz')
-urdf        = os.path.join(pkg_share,'urdf/tb3_waffle.xacro')
+urdf        = os.path.join(pkg_share,'xacro/tb3_waffle.xacro')
 
 print("urdf_file : {}".format(urdf))
 

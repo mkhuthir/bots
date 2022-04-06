@@ -13,9 +13,9 @@ def generate_launch_description():
   pkg_share       = FindPackageShare(package='robot_gazebo').find('robot_gazebo')
  
   world_file_name = 'basic.world'
-  world_path      = os.path.join(pkg_share, 'worlds', world_file_name)
+  world_path      = os.path.join(pkg_share,'worlds', world_file_name)
   
-  gazebo_models_path = os.path.join(pkg_share, 'models')
+  gazebo_models_path = os.path.join(pkg_share,'models')
   os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
 
   headless      = LaunchConfiguration('headless')
