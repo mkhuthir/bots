@@ -12,7 +12,7 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(
-  DIRECTORY launch models worlds meshes rviz urdf xacro
+  DIRECTORY launch meshes models rviz urdf worlds xacro
   DESTINATION share/${PROJECT_NAME}
 )
 
