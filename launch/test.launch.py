@@ -14,9 +14,9 @@ def generate_launch_description():
   # Constants for paths to different files and folders
   gazebo_models_path = 'models'
   package_name = 'robot_gazebo'
-  robot_name_in_model = 'twr'
-  rviz_config_file_path = 'rviz/twr.rviz'
-  urdf_file_path = 'urdf/twr.urdf'
+  robot_name_in_model = 'pxm3'
+  rviz_config_file_path = 'rviz/pxm3.rviz'
+  urdf_file_path = 'xacro/pxm3.xacro'
   world_file_path = 'worlds/basic.world'
      
   # Pose where we want to spawn the robot
@@ -119,11 +119,11 @@ def generate_launch_description():
  
   # Launch RViz
   start_rviz_cmd = Node(
-    package='rviz2',
-    executable='rviz2',
-    name='rviz2',
-    output='screen',
-    arguments=['-d', rviz_config_file])
+    package=    'rviz2',
+    executable= 'rviz2',
+    name=       'rviz2',
+    output=     'screen',
+    arguments=  ['-d', rviz_config_file])
  
   # Start Gazebo server
   start_gazebo_server_cmd = IncludeLaunchDescription(
