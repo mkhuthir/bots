@@ -12,12 +12,12 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
  
   # Constants for paths to different files and folders
-  gazebo_models_path = 'models'
-  package_name = 'robot_gazebo'
-  robot_name_in_model = 'pxm3'
+  gazebo_models_path =    'models'
+  package_name =          'robot_gazebo'
+  robot_name_in_model =   'pxm3'
   rviz_config_file_path = 'rviz/pxm3.rviz'
-  urdf_file_path = 'xacro/pxm3.xacro'
-  world_file_path = 'worlds/basic.world'
+  urdf_file_path =        'xacro/pxm3.xacro'
+  world_file_path =       'worlds/basic.world'
      
   # Pose where we want to spawn the robot
   spawn_x_val =   '0.0'
@@ -27,12 +27,13 @@ def generate_launch_description():
  
    
   # Set the path to different files and folders.  
-  pkg_gazebo_ros = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
-  pkg_share = FindPackageShare(package=package_name).find(package_name)
-  default_urdf_model_path = os.path.join(pkg_share, urdf_file_path)
-  default_rviz_config_path = os.path.join(pkg_share, rviz_config_file_path)
-  world_path = os.path.join(pkg_share, world_file_path)
-  gazebo_models_path = os.path.join(pkg_share, gazebo_models_path)
+  pkg_gazebo_ros =            FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
+  pkg_share =                 FindPackageShare(package=package_name).find(package_name)
+  
+  default_urdf_model_path =   os.path.join(pkg_share, urdf_file_path)
+  default_rviz_config_path =  os.path.join(pkg_share, rviz_config_file_path)
+  world_path =                os.path.join(pkg_share, world_file_path)
+  gazebo_models_path =        os.path.join(pkg_share, gazebo_models_path)
   os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
    
   # Launch configuration variables specific to simulation
@@ -118,6 +119,7 @@ def generate_launch_description():
     condition=UnlessCondition(gui))
  
   # Launch RViz
+  
   start_rviz_cmd = Node(
     package=    'rviz2',
     executable= 'rviz2',
@@ -154,7 +156,7 @@ def generate_launch_description():
   # Declare the launch options
   ld.add_action(declare_use_joint_state_publisher_cmd)
   ld.add_action(declare_namespace_cmd)
-  ld.add_action(declare_use_namespace_cmd)
+  #ld.add_action(declare_use_namespace_cmd)
   ld.add_action(declare_rviz_config_file_cmd)
   ld.add_action(declare_simulator_cmd)
   ld.add_action(declare_urdf_model_path_cmd)
