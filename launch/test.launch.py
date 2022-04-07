@@ -13,19 +13,18 @@ def generate_launch_description():
  
   # Constants for paths to different files and folders
   gazebo_models_path = 'models'
-  package_name = 'two_wheeled_robot'
-  robot_name_in_model = 'two_wheeled_robot'
-  rviz_config_file_path = 'rviz/urdf_gazebo_config.rviz'
+  package_name = 'robot_gazebo'
+  robot_name_in_model = 'twr'
+  rviz_config_file_path = 'rviz/twr.rviz'
   urdf_file_path = 'urdf/twr.urdf'
-  world_file_path = 'worlds/neighborhood.world'
+  world_file_path = 'worlds/basic.world'
      
   # Pose where we want to spawn the robot
-  spawn_x_val = '0.0'
-  spawn_y_val = '0.0'
-  spawn_z_val = '0.0'
-  spawn_yaw_val = '0.00'
+  spawn_x_val =   '0.0'
+  spawn_y_val =   '0.0'
+  spawn_z_val =   '0.0'
+  spawn_yaw_val = '0.0'
  
-  ############ You do not need to change anything below this line #############
    
   # Set the path to different files and folders.  
   pkg_gazebo_ros = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
