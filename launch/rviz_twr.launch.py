@@ -5,36 +5,31 @@ import os
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions import Command
-
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
 
+pkg_name    = 'robot_gazebo'
+robot_name  = 'twr'
 
-pkg_share   = FindPackageShare(package='robot_gazebo').find('robot_gazebo')
-rviz_config = os.path.join(pkg_share,'rviz/twr.rviz')
-urdf        = os.path.join(pkg_share,'xacro/twr.xacro')
-
-print("urdf_file : {}".format(urdf))
+pkg_share   = FindPackageShare(package=pkg_name).find(pkg_name)
+rviz_config = os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
+urdf        = os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
 
 def generate_launch_description():
-  use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-  return LaunchDescription([
 
-        DeclareLaunchArgument(
-            'use_sim_time',
-            default_value='false',
-            description='Use simulation (Gazebo) clock if true'),
+    return LaunchDescription([
+
+        DeclareLaunchArgument('use_sim_time',default_value='false'),
 
         Node(
             package=    'robot_state_publisher',
             executable= 'robot_state_publisher',
             name=       'robot_state_publisher',
             output=     'screen',
-            parameters= [{'use_sim_time': use_sim_time,
-                         'robot_description': Command(['xacro ', urdf])
+            parameters= [{'use_sim_time': LaunchConfiguration('use_sim_time'),
+                        'robot_description': Command(['xacro ', urdf])
                         }],
             arguments=  [urdf]
         ),
@@ -51,8 +46,8 @@ def generate_launch_description():
             executable= 'rviz2',
             name=       'rviz2',
             output=     'screen',
-            parameters= [{'use_sim_time': use_sim_time}],
+            parameters= [{'use_sim_time':  LaunchConfiguration('use_sim_time')}],
             arguments=  ['-d', rviz_config]
         )
 
-  ])
+    ])
