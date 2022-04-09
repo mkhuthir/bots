@@ -20,7 +20,9 @@ urdf        = os.path.join(pkg_share,'xacro/pxm3.xacro')
 print("urdf_file : {}".format(urdf))
 
 def generate_launch_description():
+
   use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+  
   return LaunchDescription([
 
         DeclareLaunchArgument(
