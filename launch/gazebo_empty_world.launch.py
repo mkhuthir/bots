@@ -7,18 +7,18 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.substitutions import FindPackageShare
 
-pkg_name        = 'robot_gazebo' 
-world_file_name = 'empty.world'
+pkg_name   = 'robot_gazebo' 
+world_name = 'empty.world'
 
 pkg_gazebo_ros  = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
 pkg_share       = FindPackageShare(package=pkg_name).find(pkg_name)
 
-world_path      = os.path.join(pkg_share,'worlds', world_file_name)
+world_path      = os.path.join(pkg_share,'worlds', world_name)
 gzserver_path   = os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
 gzclient_path   = os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
+models_path = os.path.join(pkg_share,'models')
 
-gazebo_models_path = os.path.join(pkg_share,'models')
-os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
+os.environ["GAZEBO_MODEL_PATH"] = models_path
 
 def generate_launch_description():
 
