@@ -104,7 +104,7 @@
         <collision name='collision'>
           <geometry>
             <box>
-              <size>1 1 1</size>
+              <size>0.999999 0.999999 0.999999</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -124,7 +124,7 @@
         <visual name='visual'>
           <geometry>
             <box>
-              <size>1 1 1</size>
+              <size>0.999999 0.999999 0.999999</size>
             </box>
           </geometry>
           <material>
@@ -157,7 +157,7 @@
         <collision name='collision'>
           <geometry>
             <sphere>
-              <radius>0.5</radius>
+              <radius>0.499999</radius>
             </sphere>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -177,7 +177,7 @@
         <visual name='visual'>
           <geometry>
             <sphere>
-              <radius>0.5</radius>
+              <radius>0.499999</radius>
             </sphere>
           </geometry>
           <material>
@@ -193,10 +193,10 @@
       </link>
     </model>
     <state world_name='default'>
-      <sim_time>110 588000000</sim_time>
-      <real_time>111 43982401</real_time>
-      <wall_time>1649096374 962941406</wall_time>
-      <iterations>110588</iterations>
+      <sim_time>505 769000000</sim_time>
+      <real_time>399 9297317</real_time>
+      <wall_time>1649532569 912633702</wall_time>
+      <iterations>395181</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -208,30 +208,30 @@
         </link>
       </model>
       <model name='unit_box'>
-        <pose>3.80268 2.92868 0.499995 0 -1e-05 0</pose>
-        <scale>1 1 1</scale>
+        <pose>0.845416 0.402407 0.149045 0 -0 0</pose>
+        <scale>0.312134 0.437001 0.29809</scale>
         <link name='link'>
-          <pose>3.80268 2.92868 0.499995 0 -1e-05 0</pose>
+          <pose>0.845416 0.402407 0.149045 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.010615 0.006191 -9.78231 -0.012424 -0.021225 1.8e-05</acceleration>
-          <wrench>-0.010615 0.006191 -9.78231 0 -0 0</wrench>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_cylinder'>
-        <pose>-1.80711 3.37132 0.499997 3e-06 4e-06 -0</pose>
-        <scale>1 1 1</scale>
+        <pose>-0.641569 0.560384 0.195146 0 -0 0</pose>
+        <scale>0.431138 0.431138 0.390311</scale>
         <link name='link'>
-          <pose>-1.80711 3.37132 0.499997 3e-06 4e-06 -0</pose>
+          <pose>-0.641569 0.560384 0.195146 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_sphere'>
-        <pose>-3.50766 -1.32045 0.5 0 -0 0</pose>
-        <scale>1 1 1</scale>
+        <pose>-0.329617 -0.665251 0.191269 0 -0 0</pose>
+        <scale>0.382539 0.382539 0.382539</scale>
         <link name='link'>
-          <pose>-3.50766 -1.32045 0.5 0 -0 0</pose>
+          <pose>-0.329617 -0.665251 0.191269 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -243,7 +243,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>4.18899 -4.66924 6.85009 0 0.739643 2.19219</pose>
+        <pose>1.07011 -1.27234 0.943275 0 0.403643 2.22019</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -266,7 +266,7 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.5</radius>
+              <radius>0.499998</radius>
               <length>1</length>
             </cylinder>
           </geometry>
@@ -287,7 +287,7 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.5</radius>
+              <radius>0.499998</radius>
               <length>1</length>
             </cylinder>
           </geometry>

@@ -6,59 +6,51 @@ from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.substitutions import FindPackageShare
- 
+
+pkg_name        = 'robot_gazebo' 
+world_file_name = 'empty.world'
+
+pkg_gazebo_ros  = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
+pkg_share       = FindPackageShare(package=pkg_name).find(pkg_name)
+
+world_path      = os.path.join(pkg_share,'worlds', world_file_name)
+gzserver_path   = os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
+gzclient_path   = os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
+
+gazebo_models_path = os.path.join(pkg_share,'models')
+os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
+
 def generate_launch_description():
- 
-  pkg_gazebo_ros  = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
-  pkg_share       = FindPackageShare(package='robot_gazebo').find('robot_gazebo')
- 
-  world_file_name = 'empty.world'
-  world_path      = os.path.join(pkg_share,'worlds', world_file_name)
-  
-  gazebo_models_path = os.path.join(pkg_share,'models')
-  os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
 
   headless      = LaunchConfiguration('headless')
-  use_sim_time  = LaunchConfiguration('use_sim_time')
   use_simulator = LaunchConfiguration('use_simulator')
   world         = LaunchConfiguration('world')
- 
-  declare_simulator_cmd = DeclareLaunchArgument(
-    name='headless',
-    default_value='False',
-    description='Whether to execute gzclient')
-     
-  declare_use_sim_time_cmd = DeclareLaunchArgument(
-    name='use_sim_time',
-    default_value='true',
-    description='Use simulation (Gazebo) clock if true')
- 
-  declare_use_simulator_cmd = DeclareLaunchArgument(
-    name='use_simulator',
-    default_value='True',
-    description='Whether to start the simulator')
- 
-  declare_world_cmd = DeclareLaunchArgument(
-    name='world',
-    default_value=world_path,
-    description='Full path to the world model file to load')
+
+  return LaunchDescription([
+
+    DeclareLaunchArgument(
+      name='headless',
+      default_value='False',
+      description='Whether to execute gzclient'),
   
-  start_gazebo_server_cmd = IncludeLaunchDescription(
-    PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')),
-    condition=IfCondition(use_simulator),
-    launch_arguments={'world': world}.items())
-   
-  start_gazebo_client_cmd = IncludeLaunchDescription(
-    PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')),
-    condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless])))
+    DeclareLaunchArgument(
+      name='use_simulator',
+      default_value='True',
+      description='Whether to start the simulator'),
   
-  ld = LaunchDescription()
+    DeclareLaunchArgument(
+      name='world',
+      default_value=world_path,
+      description='Full path to the world model file to load'),
+    
+    IncludeLaunchDescription(
+      PythonLaunchDescriptionSource(gzserver_path),
+      condition=IfCondition(use_simulator),
+      launch_arguments={'world': world}.items()),
+    
+    IncludeLaunchDescription(
+      PythonLaunchDescriptionSource(gzclient_path),
+      condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless])))
   
-  ld.add_action(declare_simulator_cmd)
-  ld.add_action(declare_use_sim_time_cmd)
-  ld.add_action(declare_use_simulator_cmd)
-  ld.add_action(declare_world_cmd)
-  ld.add_action(start_gazebo_server_cmd)
-  ld.add_action(start_gazebo_client_cmd)
- 
-  return ld
+  
+ ])
