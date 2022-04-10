@@ -7,25 +7,24 @@
 <!-- *********************************************************************************************************************************  -->
 
 <!-- ****************************************************** Parameters ***************************************************************  -->
+
+  <xacro:property name="mesh_path"    value="package://robot_gazebo/meshes/twr/"/>
+
 <!-- Define the size of the robot's main chassis in meters                                                                              -->
-  <xacro:property name="base_width" value="0.39"/>
-  <xacro:property name="base_length" value="0.70"/>
-  <xacro:property name="base_height" value="0.20"/>
-	
-<!-- Define the shape of the robot's two back wheels in meters                                                                          -->
+  <xacro:property name="base_width"   value="0.39"/>
+  <xacro:property name="base_length"  value="0.70"/>
+  <xacro:property name="base_height"  value="0.20"/>
+  
   <xacro:property name="wheel_radius" value="0.14"/>
-  <xacro:property name="wheel_width" value="0.06"/>
+  <xacro:property name="wheel_width"  value="0.06"/>
 
 <!-- x-axis points forward, y-axis points to left, z-axis points upwards                                                                -->
 <!-- Define the gap between the wheel and chassis along y-axis in meters                                                                -->
   <xacro:property name="wheel_ygap" value="0.035"/>
-
 <!-- Position the wheels along the z-axis                                                                                               -->
   <xacro:property name="wheel_zoff" value="0.05"/>
-
 <!-- Position the wheels along the x-axis                                                                                               -->
   <xacro:property name="wheel_xoff" value="0.221"/>
-
 <!-- Position the caster wheel along the x-axis                                                                                         -->
   <xacro:property name="caster_xoff" value="0.217"/>
 
@@ -94,15 +93,13 @@
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
   <link name="base_link">
-  
     <visual>
       <origin xyz="0 0 -0.05" rpy="1.5707963267949 0 3.141592654"/>
       <geometry>
-        <mesh filename="package://robot_gazebo/meshes/twr/robot_base.stl" />
+        <mesh filename="${mesh_path}robot_base.stl" />
       </geometry>
       <material name="red"/>
     </visual>
-
     <collision>
       <geometry>
         <box size="${base_length} ${base_width} ${base_height}"/>
@@ -118,7 +115,6 @@
   <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
 
     <link name="${prefix}_link">
-
       <visual>
         <origin xyz="0 0 0" rpy="1.5707963267949 0 0"/>
         <geometry>
@@ -126,7 +122,6 @@
         </geometry>
         <material name="black"/>
       </visual>
-      
       <collision>
         <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
         <geometry>
@@ -215,22 +210,19 @@
 <!-- ****************************************************** LIDAR Link ***************************************************************  -->
 
   <link name="lidar_link">
-  
-    <collision>
-     <origin xyz="0 0 0" rpy="0 0 0"/>
-     <geometry>
-      <cylinder radius="0.0508" length="0.18"/>
-     </geometry>
-    </collision>
-    
+      <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0508" length="0.18"/>
+      </geometry>
+      </collision>
     <visual>
-     <origin xyz="0 0 0" rpy="0 0 0"/>
-     <geometry>
-      <cylinder radius="0.0508" length="0.18"/>
-     </geometry>
-     <material name="green"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0508" length="0.18"/>
+      </geometry>
+      <material name="green"/>
     </visual>
-    
     <inertial>
       <mass value="0.114" />
       <origin xyz="0 0 0" rpy="0 0 0"/>

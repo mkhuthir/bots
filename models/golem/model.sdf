@@ -1,6 +1,6 @@
 <sdf version='1.7'>
   <model name='Golem'>
-    <link name='base_link'>
+    <link name='base_footprint'>
       <inertial>
         <pose>0.03 0.0003 0.0742 0 -0 0</pose>
         <mass>0.0001</mass>
@@ -13,7 +13,7 @@
           <izz>10</izz>
         </inertia>
       </inertial>
-      <collision name='base_link_fixed_joint_lump__body_link_collision'>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
         <pose>0 0 0.064 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -30,7 +30,7 @@
           </friction>
         </surface>
       </collision>
-      <visual name='base_link_fixed_joint_lump__body_link_visual'>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
         <pose>0 0 0.064 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -47,8 +47,8 @@
       </visual>
     </link>
     <joint name='coxa_joint_LF' type='revolute'>
-      <pose relative_to='base_link'>0.1778 0.0825 0.064 0 -0 0.785398</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0.1778 0.0825 0.064 0 -0 0.785398</pose>
+      <parent>base_footprint</parent>
       <child>coxa_LF</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -307,8 +307,8 @@
       </visual>
     </link>
     <joint name='coxa_joint_LM' type='revolute'>
-      <pose relative_to='base_link'>0 0.13335 0.064 0 -0 1.5708</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0 0.13335 0.064 0 -0 1.5708</pose>
+      <parent>base_footprint</parent>
       <child>coxa_LM</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -567,8 +567,8 @@
       </visual>
     </link>
     <joint name='coxa_joint_LR' type='revolute'>
-      <pose relative_to='base_link'>-0.1778 0.0825 0.064 0 -0 2.35619</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>-0.1778 0.0825 0.064 0 -0 2.35619</pose>
+      <parent>base_footprint</parent>
       <child>coxa_LR</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -827,8 +827,8 @@
       </visual>
     </link>
     <joint name='coxa_joint_RF' type='revolute'>
-      <pose relative_to='base_link'>0.1778 -0.0825 0.064 0 0 -0.785398</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0.1778 -0.0825 0.064 0 0 -0.785398</pose>
+      <parent>base_footprint</parent>
       <child>coxa_RF</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -1087,8 +1087,8 @@
       </visual>
     </link>
     <joint name='coxa_joint_RM' type='revolute'>
-      <pose relative_to='base_link'>0 -0.13335 0.064 0 0 -1.5708</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0 -0.13335 0.064 0 0 -1.5708</pose>
+      <parent>base_footprint</parent>
       <child>coxa_RM</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -1347,8 +1347,8 @@
       </visual>
     </link>
     <joint name='coxa_joint_RR' type='revolute'>
-      <pose relative_to='base_link'>-0.1778 -0.0825 0.064 0 0 -2.35619</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>-0.1778 -0.0825 0.064 0 0 -2.35619</pose>
+      <parent>base_footprint</parent>
       <child>coxa_RR</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -1607,8 +1607,8 @@
       </visual>
     </link>
     <joint name='pan_joint' type='revolute'>
-      <pose relative_to='base_link'>0.1 0 0.098 0 -0 0</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0.1 0 0.098 0 -0 0</pose>
+      <parent>base_footprint</parent>
       <child>pan_link</child>
       <axis>
         <xyz>0 0 1</xyz>

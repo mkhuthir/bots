@@ -25,16 +25,16 @@
   <material name="white">
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
-  <!-- ****************************************************** Base Link ****************************************************************  -->
-  <link name="base_link"/>
+  <!-- ****************************************************** Base Footprint ***********************************************************  -->
+  <link name="base_footprint"/>
   <!-- ****************************************************** Base Joint ***************************************************************  -->
   <joint name="base_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="body_link"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.064"/>
   </joint>
-  <!-- ****************************************************** Body Link ****************************************************************  -->
-  <link name="body_link">
+  <!-- ****************************************************** Base Link ****************************************************************  -->
+  <link name="base_link">
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
@@ -57,7 +57,7 @@
   </link>
   <!-- ****************************************************** Camera RGB Joint *********************************************************  -->
   <joint name="camera_rgb_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="camera_rgb_optical_frame"/>
     <origin rpy="1.5707963267948966 3.141592653589793 1.5707963267948966" xyz="0.150 0.0255 0.034"/>
   </joint>
@@ -71,7 +71,7 @@
   </link>
   <!-- ****************************************************** Camera Depth Joint *******************************************************  -->
   <joint name="camera_depth_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="camera_depth_optical_frame"/>
     <origin rpy="1.5707963267948966 3.141592653589793 1.5707963267948966" xyz="0.150 -0.0225 0.034"/>
   </joint>
@@ -85,7 +85,7 @@
   </link>
   <!-- ****************************************************** IMU Joint ****************************************************************  -->
   <joint name="imu_joint" type="fixed">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="imu_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.034"/>
   </joint>
@@ -99,7 +99,7 @@
   </link>
   <!-- ****************************************************** Pan Joint ****************************************************************  -->
   <joint name="pan_joint" type="revolute">
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="pan_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.1 0.0 0.034"/>
     <axis xyz="0.0 0.0 1.0"/>
@@ -118,7 +118,7 @@
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_RR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="-0.1778 -0.0825 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_RR"/>
   </joint>
   <!-- ****************************************************** Leg Center Link **********************************************************  -->
@@ -308,7 +308,7 @@
     </inertial>
   </link>
   <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="body_link">
+  <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="coxa_RR">
@@ -327,7 +327,7 @@
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_RM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.13335 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_RM"/>
   </joint>
   <!-- ****************************************************** Leg Center Link **********************************************************  -->
@@ -517,7 +517,7 @@
     </inertial>
   </link>
   <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="body_link">
+  <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="coxa_RM">
@@ -536,7 +536,7 @@
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_RF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.1778 -0.0825 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_RF"/>
   </joint>
   <!-- ****************************************************** Leg Center Link **********************************************************  -->
@@ -726,7 +726,7 @@
     </inertial>
   </link>
   <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="body_link">
+  <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="coxa_RF">
@@ -745,7 +745,7 @@
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="-0.1778 0.0825 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_LR"/>
   </joint>
   <!-- ****************************************************** Leg Center Link **********************************************************  -->
@@ -935,7 +935,7 @@
     </inertial>
   </link>
   <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="body_link">
+  <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="coxa_LR">
@@ -954,7 +954,7 @@
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.13335 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_LM"/>
   </joint>
   <!-- ****************************************************** Leg Center Link **********************************************************  -->
@@ -1144,7 +1144,7 @@
     </inertial>
   </link>
   <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="body_link">
+  <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="coxa_LM">
@@ -1163,7 +1163,7 @@
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.1778 0.0825 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_LF"/>
   </joint>
   <!-- ****************************************************** Leg Center Link **********************************************************  -->
@@ -1353,7 +1353,7 @@
     </inertial>
   </link>
   <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="body_link">
+  <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="coxa_LF">
