@@ -23,19 +23,15 @@ def generate_launch_description():
 
   pkg_gazebo_ros =  FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
   pkg_share =       FindPackageShare(package=pkg_name).find(pkg_name)
-
-  rviz_config_path = 'rviz/pxm3.rviz'
-  urdf_file_path =        'xacro/pxm3.xacro'
+  
   world_path     =    os.path.join(pkg_share,'worlds',world_name)
   gzserver_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
   gzclient_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
-  models_path    =    os.path.join(pkg_share,'models')
-  urdf_model_path =   os.path.join(pkg_share, urdf_file_path)
-  rviz_config_path =  os.path.join(pkg_share, rviz_config_path)
+  urdf_model_path =   os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
+  rviz_config_path =  os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
 
-  os.environ["GAZEBO_MODEL_PATH"] = models_path
+  os.environ["GAZEBO_MODEL_PATH"] = urdf_model_path
 
-  # Launch configuration variables specific to simulation
   gui =           LaunchConfiguration('gui')
   headless =      LaunchConfiguration('headless')
   rviz_config =   LaunchConfiguration('rviz_config_file')
@@ -43,88 +39,75 @@ def generate_launch_description():
   use_simulator = LaunchConfiguration('use_simulator')
   world =         LaunchConfiguration('world')
 
-  return LaunchDescription() ([
-    # Declare the launch arguments  
+  return LaunchDescription([
+
     DeclareLaunchArgument(
       name='gui',
       default_value='True',
-      description='Flag to enable joint_state_publisher_gui'
-    ),
+      description='Flag to enable joint_state_publisher_gui'),
       
     DeclareLaunchArgument(
       name='namespace',
       default_value='',
-      description='Top-level namespace'
-    ),
+      description='Top-level namespace'),
   
     DeclareLaunchArgument(
       name='use_namespace',
       default_value='false',
-      description='Whether to apply a namespace to the navigation stack'
-    ),
+      description='Whether to apply a namespace to the navigation stack'),
               
     DeclareLaunchArgument(
       name='rviz_config_file',
       default_value=rviz_config_path,
-      description='Full path to the RVIZ config file to use'
-    ),
+      description='Full path to the RVIZ config file to use'),
   
     DeclareLaunchArgument(
       name='headless',
       default_value='False',
-      description='Whether to execute gzclient'
-    ),
+      description='Whether to execute gzclient'),
   
     DeclareLaunchArgument(
       name='urdf_model', 
       default_value=urdf_model_path, 
-      description='Absolute path to robot urdf file'
-    ),
+      description='Absolute path to robot urdf file'),
       
     DeclareLaunchArgument(
       name='use_robot_state_pub',
       default_value='True',
-      description='Whether to start the robot state publisher'
-    ),
+      description='Whether to start the robot state publisher'),
   
     DeclareLaunchArgument(
       name='use_rviz',
       default_value='True',
-      description='Whether to start RVIZ'
-    ),
+      description='Whether to start RVIZ'),
       
     DeclareLaunchArgument(
       name='use_sim_time',
       default_value='true',
-      description='Use simulation (Gazebo) clock if true'
-    ),
+      description='Use simulation (Gazebo) clock if true'),
   
     DeclareLaunchArgument(
       name='use_simulator',
       default_value='True',
-      description='Whether to start the simulator'
-    ),
+      description='Whether to start the simulator'),
   
     DeclareLaunchArgument(
       name='world',
       default_value=world_path,
-      description='Full path to the world model file to load'
-    ),
+      description='Full path to the world model file to load'),
     
     # Subscribe to the joint states of the robot, and publish the 3D pose of each link.    
     Node(
       package=      'robot_state_publisher',
       executable=   'robot_state_publisher',
-      parameters=[{ 'robot_description': Command(['xacro ', urdf_model])}]
-    ),
+      parameters=[{ 'robot_description': Command(['xacro ', urdf_model])}]),
   
     # Publish the joint states of the robot
     Node(
       package=    'joint_state_publisher',
       executable= 'joint_state_publisher',
       name=       'joint_state_publisher',
-      condition=UnlessCondition(gui)
-    ),
+      condition=UnlessCondition(gui)),
   
     # Launch RViz
     Node(
@@ -132,21 +115,18 @@ def generate_launch_description():
       executable= 'rviz2',
       name=       'rviz2',
       output=     'screen',
-      arguments=  ['-d', rviz_config]
-    ),
+      arguments=  ['-d', rviz_config]),
   
     # Start Gazebo server
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(gzserver_path),
       condition=IfCondition(use_simulator),
-      launch_arguments={'world': world}.items()
-    ),
+      launch_arguments={'world': world}.items()),
   
     # Start Gazebo client    
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(gzclient_path),
-      condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless]))
-    ),
+      condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless]))),
   
     # Launch the robot
     Node(
@@ -158,9 +138,7 @@ def generate_launch_description():
                   '-y'      ,spawn_y_val,
                   '-z'      ,spawn_z_val,
                   '-Y'      ,spawn_yaw_val],
-      output=     'screen'
-    )
-  
+      output=     'screen')
     
   ]) 
   
