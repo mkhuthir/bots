@@ -26,15 +26,13 @@ world_path =       os.path.join(pkg_share,'worlds',world_name)
 gzserver_path =    os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
 gzclient_path =    os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
 urdf_model_path =  os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
-rviz_config_path = os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
+rviz_config =      os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
 
 os.environ["GAZEBO_MODEL_PATH"] = urdf_model_path
 
 gui =           LaunchConfiguration('gui')
-rviz_config =   LaunchConfiguration('rviz_config_file')
 urdf_model =    LaunchConfiguration('urdf_model')
 world =         LaunchConfiguration('world')
-
  
 def generate_launch_description():
 
@@ -47,7 +45,7 @@ def generate_launch_description():
                   
     DeclareLaunchArgument(
       name='rviz_config_file',
-      default_value=rviz_config_path,
+      default_value=rviz_config,
       description='Full path to the RVIZ config file to use'),
   
     DeclareLaunchArgument(
@@ -90,6 +88,7 @@ def generate_launch_description():
       executable= 'rviz2',
       name=       'rviz2',
       output=     'screen',
+      parameters= [{'use_sim_time':  LaunchConfiguration('use_sim_time')}],
       arguments=  ['-d', rviz_config]),
   
     # Start Gazebo server
