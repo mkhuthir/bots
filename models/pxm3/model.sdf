@@ -1,6 +1,6 @@
 <sdf version='1.7'>
   <model name='pxm3'>
-    <link name='base_link'>
+    <link name='base_footprint'>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.975599</mass>
@@ -13,7 +13,7 @@
           <izz>5.33164</izz>
         </inertia>
       </inertial>
-      <collision name='base_link_fixed_joint_lump__MP_BODY_collision'>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -22,7 +22,7 @@
           </mesh>
         </geometry>
       </collision>
-      <visual name='base_link_fixed_joint_lump__MP_BODY_visual'>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -33,8 +33,8 @@
       </visual>
     </link>
     <joint name='j_c1_LF' type='revolute'>
-      <pose relative_to='base_link'>0.1248 0.06164 0.001116 3.14159 -1.57071 -0.785398</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0.1248 0.06164 0.001116 3.14159 -1.57071 -0.785398</pose>
+      <parent>base_footprint</parent>
       <child>c1_LF</child>
       <axis>
         <xyz>1 0 0</xyz>
@@ -204,8 +204,8 @@
       </visual>
     </link>
     <joint name='j_c1_LM' type='revolute'>
-      <pose relative_to='base_link'>0 0.1034 0.001116 3.14159 -1.57071 -3e-06</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0 0.1034 0.001116 3.14159 -1.57071 -3e-06</pose>
+      <parent>base_footprint</parent>
       <child>c1_LM</child>
       <axis>
         <xyz>1 0 0</xyz>
@@ -375,8 +375,8 @@
       </visual>
     </link>
     <joint name='j_c1_LR' type='revolute'>
-      <pose relative_to='base_link'>-0.1248 0.06164 0.001116 -3.14159 -1.57071 0.785398</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>-0.1248 0.06164 0.001116 -3.14159 -1.57071 0.785398</pose>
+      <parent>base_footprint</parent>
       <child>c1_LR</child>
       <axis>
         <xyz>1 0 0</xyz>
@@ -546,8 +546,8 @@
       </visual>
     </link>
     <joint name='j_c1_RF' type='revolute'>
-      <pose relative_to='base_link'>0.1248 -0.06164 0.001116 3.14159 -1.57071 -2.35619</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0.1248 -0.06164 0.001116 3.14159 -1.57071 -2.35619</pose>
+      <parent>base_footprint</parent>
       <child>c1_RF</child>
       <axis>
         <xyz>1 0 0</xyz>
@@ -717,8 +717,8 @@
       </visual>
     </link>
     <joint name='j_c1_RM' type='revolute'>
-      <pose relative_to='base_link'>0 -0.1034 0.001116 3.14159 -1.57071 -3.14159</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0 -0.1034 0.001116 3.14159 -1.57071 -3.14159</pose>
+      <parent>base_footprint</parent>
       <child>c1_RM</child>
       <axis>
         <xyz>1 0 0</xyz>
@@ -888,8 +888,8 @@
       </visual>
     </link>
     <joint name='j_c1_RR' type='revolute'>
-      <pose relative_to='base_link'>-0.1248 -0.06164 0.001116 3.14159 -1.57071 2.35619</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>-0.1248 -0.06164 0.001116 3.14159 -1.57071 2.35619</pose>
+      <parent>base_footprint</parent>
       <child>c1_RR</child>
       <axis>
         <xyz>1 0 0</xyz>
