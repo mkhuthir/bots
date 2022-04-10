@@ -11,47 +11,37 @@ from launch_ros.substitutions import FindPackageShare
  
 def generate_launch_description():
  
-  # Constants for paths to different files and folders
-  gazebo_models_path =    'models'
-  package_name =          'robot_gazebo'
-  robot_name_in_model =   'pxm3'
-  rviz_config_file_path = 'rviz/pxm3.rviz'
-  urdf_file_path =        'xacro/pxm3.xacro'
-  world_file_path =       'worlds/basic.world'
-     
-  # Pose where we want to spawn the robot
+
+  pkg_name =    'robot_gazebo'
+  robot_name =  'golem'
+  world_name =  'basic.world'
+
   spawn_x_val =   '0.0'
   spawn_y_val =   '0.0'
   spawn_z_val =   '0.0'
   spawn_yaw_val = '0.0'
- 
-   
-  # Set the path to different files and folders.  
-  pkg_gazebo_ros =            FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
-  pkg_share =                 FindPackageShare(package=package_name).find(package_name)
-  
-  default_urdf_model_path =   os.path.join(pkg_share, urdf_file_path)
-  default_rviz_config_path =  os.path.join(pkg_share, rviz_config_file_path)
-  world_path =                os.path.join(pkg_share, world_file_path)
-  gazebo_models_path =        os.path.join(pkg_share, gazebo_models_path)
-  
-  gzserver_path   = os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
-  gzclient_path   = os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
 
-  os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
-   
+  pkg_gazebo_ros =  FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
+  pkg_share =       FindPackageShare(package=pkg_name).find(pkg_name)
+
+  rviz_config_path = 'rviz/pxm3.rviz'
+  urdf_file_path =        'xacro/pxm3.xacro'
+  world_path     =    os.path.join(pkg_share,'worlds',world_name)
+  gzserver_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
+  gzclient_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
+  models_path    =    os.path.join(pkg_share,'models')
+  urdf_model_path =   os.path.join(pkg_share, urdf_file_path)
+  rviz_config_path =  os.path.join(pkg_share, rviz_config_path)
+
+  os.environ["GAZEBO_MODEL_PATH"] = models_path
+
   # Launch configuration variables specific to simulation
-  gui = LaunchConfiguration('gui')
-  headless = LaunchConfiguration('headless')
-  namespace = LaunchConfiguration('namespace')
-  rviz_config_file = LaunchConfiguration('rviz_config_file')
-  urdf_model = LaunchConfiguration('urdf_model')
-  use_namespace = LaunchConfiguration('use_namespace')
-  use_robot_state_pub = LaunchConfiguration('use_robot_state_pub')
-  use_rviz = LaunchConfiguration('use_rviz')
-  use_sim_time = LaunchConfiguration('use_sim_time')
+  gui =           LaunchConfiguration('gui')
+  headless =      LaunchConfiguration('headless')
+  rviz_config =   LaunchConfiguration('rviz_config_file')
+  urdf_model =    LaunchConfiguration('urdf_model')
   use_simulator = LaunchConfiguration('use_simulator')
-  world = LaunchConfiguration('world')
+  world =         LaunchConfiguration('world')
 
   return LaunchDescription() ([
     # Declare the launch arguments  
@@ -75,7 +65,7 @@ def generate_launch_description():
               
     DeclareLaunchArgument(
       name='rviz_config_file',
-      default_value=default_rviz_config_path,
+      default_value=rviz_config_path,
       description='Full path to the RVIZ config file to use'
     ),
   
@@ -87,7 +77,7 @@ def generate_launch_description():
   
     DeclareLaunchArgument(
       name='urdf_model', 
-      default_value=default_urdf_model_path, 
+      default_value=urdf_model_path, 
       description='Absolute path to robot urdf file'
     ),
       
@@ -122,10 +112,11 @@ def generate_launch_description():
     ),
     
     # Subscribe to the joint states of the robot, and publish the 3D pose of each link.    
-    start_robot_state_publisher_cmd = Node(
+    Node(
       package=      'robot_state_publisher',
       executable=   'robot_state_publisher',
-      parameters=[{ 'robot_description': Command(['xacro ', urdf_model])}])
+      parameters=[{ 'robot_description': Command(['xacro ', urdf_model])}]
+    ),
   
     # Publish the joint states of the robot
     Node(
@@ -133,7 +124,7 @@ def generate_launch_description():
       executable= 'joint_state_publisher',
       name=       'joint_state_publisher',
       condition=UnlessCondition(gui)
-    )
+    ),
   
     # Launch RViz
     Node(
@@ -141,7 +132,7 @@ def generate_launch_description():
       executable= 'rviz2',
       name=       'rviz2',
       output=     'screen',
-      arguments=  ['-d', rviz_config_file]
+      arguments=  ['-d', rviz_config]
     ),
   
     # Start Gazebo server
@@ -161,12 +152,12 @@ def generate_launch_description():
     Node(
       package=    'gazebo_ros', 
       executable= 'spawn_entity.py',
-      arguments=[ '-entity', robot_name_in_model, 
-                  '-topic', 'robot_description',
-                  '-x', spawn_x_val,
-                  '-y', spawn_y_val,
-                  '-z', spawn_z_val,
-                  '-Y', spawn_yaw_val],
+      arguments=[ '-entity' ,robot_name, 
+                  '-topic'  ,'robot_description',
+                  '-x'      ,spawn_x_val,
+                  '-y'      ,spawn_y_val,
+                  '-z'      ,spawn_z_val,
+                  '-Y'      ,spawn_yaw_val],
       output=     'screen'
     )
   
