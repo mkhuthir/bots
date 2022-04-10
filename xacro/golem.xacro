@@ -87,6 +87,10 @@
 
     </link>
 
+    <gazebo reference="body_link"> 
+        <material>Gazebo/Blue</material> 
+    </gazebo> 
+
 <!-- ****************************************************** Camera RGB Joint *********************************************************  -->
     
     <joint name="camera_rgb_joint" type="fixed">
@@ -253,6 +257,9 @@
 
     </link>
 
+    <gazebo reference="coxa_${side}${position}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
 <!-- ****************************************************** Femur Joint **************************************************************  -->
 
     <joint name="femur_joint_${side}${position}" type="revolute">
@@ -306,6 +313,10 @@
         </inertial>
 
     </link>
+
+    <gazebo reference="femur_${side}${position}"> 
+        <material>Gazebo/Red</material> 
+    </gazebo> 
     
 <!-- ****************************************************** Tibia Joint **************************************************************  -->
 
@@ -360,6 +371,10 @@
         </inertial>
 
     </link>
+
+     <gazebo reference="tibia_${side}${position}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
     
 <!-- ****************************************************** Tarsus Joint *************************************************************  -->
     
@@ -415,6 +430,9 @@
 
     </link>
     
+    <gazebo reference="tarsus_${side}${position}"> 
+        <material>Gazebo/Red</material> 
+    </gazebo> 
 <!-- ****************************************************** Foot Joint ***************************************************************  -->
 
     <joint name="foot_joint_${side}${position}" type="fixed">

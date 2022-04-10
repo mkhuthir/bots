@@ -420,6 +420,9 @@ Visualization Manager:
     - Class: rviz_default_plugins/Measure
       Line color: 128; 128; 0
     - Class: rviz_default_plugins/SetInitialPose
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -455,18 +458,18 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.023919884115457535
-        Y: -0.013144531287252903
-        Z: -0.11458911746740341
+        X: 0.0043171001598238945
+        Y: 0.029605844989418983
+        Z: -0.0843057781457901
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8647966980934143
+      Pitch: 0.49979710578918457
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.6154018640518188
+      Yaw: 5.803585529327393
     Saved: ~
 Window Geometry:
   Displays:

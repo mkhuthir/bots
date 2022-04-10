@@ -41,6 +41,9 @@
         <mesh filename="package://robot_gazebo/meshes/golem/body.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue"/>
+      <gazebo reference="body_link">
+        <material>Gazebo/Blue</material>
+      </gazebo>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
