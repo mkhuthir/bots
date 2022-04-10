@@ -7,43 +7,43 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
- 
+
+
+pkg_name =    'robot_gazebo'
+robot_name =  'golem'
+world_name =  'basic.world'
+
+spawn_x_val =   '0.0'
+spawn_y_val =   '0.0'
+spawn_z_val =   '0.0'
+spawn_yaw_val = '0.0'
+
+pkg_gazebo_ros =  FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
+pkg_share =       FindPackageShare(package=pkg_name).find(pkg_name)
+
+world_path     =    os.path.join(pkg_share,'worlds',world_name)
+gzserver_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
+gzclient_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
+urdf_model_path =   os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
+rviz_config_path =  os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
+
+os.environ["GAZEBO_MODEL_PATH"] = urdf_model_path
+
+gui =           LaunchConfiguration('gui')
+headless =      LaunchConfiguration('headless')
+rviz_config =   LaunchConfiguration('rviz_config_file')
+urdf_model =    LaunchConfiguration('urdf_model')
+use_simulator = LaunchConfiguration('use_simulator')
+world =         LaunchConfiguration('world')
+
  
 def generate_launch_description():
- 
-
-  pkg_name =    'robot_gazebo'
-  robot_name =  'golem'
-  world_name =  'basic.world'
-
-  spawn_x_val =   '0.0'
-  spawn_y_val =   '0.0'
-  spawn_z_val =   '0.0'
-  spawn_yaw_val = '0.0'
-
-  pkg_gazebo_ros =  FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
-  pkg_share =       FindPackageShare(package=pkg_name).find(pkg_name)
-  
-  world_path     =    os.path.join(pkg_share,'worlds',world_name)
-  gzserver_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
-  gzclient_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
-  urdf_model_path =   os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
-  rviz_config_path =  os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
-
-  os.environ["GAZEBO_MODEL_PATH"] = urdf_model_path
-
-  gui =           LaunchConfiguration('gui')
-  headless =      LaunchConfiguration('headless')
-  rviz_config =   LaunchConfiguration('rviz_config_file')
-  urdf_model =    LaunchConfiguration('urdf_model')
-  use_simulator = LaunchConfiguration('use_simulator')
-  world =         LaunchConfiguration('world')
 
   return LaunchDescription([
 
     DeclareLaunchArgument(
       name='gui',
-      default_value='True',
+      default_value='False',
       description='Flag to enable joint_state_publisher_gui'),
       
     DeclareLaunchArgument(
