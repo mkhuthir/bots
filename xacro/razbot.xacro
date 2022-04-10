@@ -10,6 +10,8 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  -->
 
+    <xacro:property name="mesh_path"          value="package://robot_gazebo/meshes/razbot/"/>
+
 	<xacro:property name="body_length_x"        value="0.294" />
 	<xacro:property name="body_length_y"        value="0.340" />
 	<xacro:property name="coxa_length"          value="0.052" />
@@ -45,22 +47,22 @@
 
 <!-- ******************************************************  *************************************************************************  -->
 
-    <link name="base_link"/>
+    <link name="base_footprint"/>
 
 <!-- ******************************************************  *************************************************************************  -->
 
     <joint name="base_joint" type="fixed">
-        <parent link="base_link" />
-        <child link="body_link" />
+        <parent link="base_footprint" />
+        <child link="base_link" />
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
     </joint>
 
 <!-- ******************************************************  *************************************************************************  -->
-	<link name="body_link">
+	<link name="base_link">
         <visual>
             <origin	xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="package://robot_gazebo/meshes/razbot/body.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${mesh_path}body.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </visual>
@@ -68,7 +70,7 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://robot_gazebo/meshes/razbot/body.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${mesh_path}body.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="blue"/>
         </collision>
@@ -112,7 +114,7 @@
 		<!-- leg position -->
 		<joint name="leg_center_joint_${side}${position}" type="fixed">
 			<origin xyz="${x} ${y} 0.0" rpy="0.0 0.0 0.0" />
-			<parent link="body_link" />
+			<parent link="base_link" />
 			<child link="leg_center_${side}${position}" />
 		</joint>
 <!-- ******************************************************  *************************************************************************  -->
@@ -152,7 +154,7 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="package://robot_gazebo/meshes/razbot/coxa.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_path}coxa.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="green"/>
             </visual>
@@ -160,7 +162,7 @@
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://robot_gazebo/meshes/razbot/coxa.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_path}coxa.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="green"/>
             </collision>
@@ -201,14 +203,14 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="package://robot_gazebo/meshes/razbot/femur.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_path}femur.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="red"/>
             </visual>
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://robot_gazebo/meshes/razbot/femur.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_path}femur.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="red"/>
             </collision>
@@ -247,14 +249,14 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="package://robot_gazebo/meshes/razbot/tibia.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_path}tibia.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="green"/>
             </visual>
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://robot_gazebo/meshes/razbot/tibia.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="${mesh_path}tibia.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="green"/>
             </collision>
@@ -268,7 +270,29 @@
             </inertial>
         </link>
 
-<!-- ******************************************************  *************************************************************************  -->
+<!-- ****************************************************** Gazebo Colors*************************************************************  -->
+
+    <gazebo reference="base_link"> 
+        <material>Gazebo/Blue</material> 
+    </gazebo> 
+
+    <gazebo reference="leg_center_${side}${position}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
+
+    <gazebo reference="coxa_${side}${position}"> 
+        <material>Gazebo/Red</material> 
+    </gazebo> 
+
+    <gazebo reference="femur_${side}${position}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
+
+    <gazebo reference="tibia_${side}${position}"> 
+            <material>Gazebo/Red</material> 
+    </gazebo> 
+
+<!-- ****************************************************** end of Macro *************************************************************  -->
 
 	</xacro:macro>
     
