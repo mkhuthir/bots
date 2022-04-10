@@ -8,6 +8,8 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  -->
   
+  <xacro:property name="mesh_path"          value="package://robot_gazebo/meshes/pxm3/"/>
+
   <xacro:property name="connect_offset"     value="0.02633" />
   <xacro:property name="thigh_offset_y"     value="-0.0645" />
   <xacro:property name="thigh_offset_z"     value="-0.0145" />
@@ -39,22 +41,21 @@
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
 
-
 <!-- ****************************************************** Main Macro ***************************************************************  -->
 
   <xacro:macro name="pxm3" params="parent *origin">
 
 <!-- ****************************************************** Attachment Joint *********************************************************  -->
 
-        <joint name="j_pxm3_attachment" type="fixed">
+        <joint name="j_base_${parent}" type="fixed">
           <parent link="${parent}"/>
-          <child link="MP_BODY"/>
+          <child link="base_link"/>
           <xacro:insert_block name="origin" />
         </joint>
 
-<!-- ****************************************************** MP_Body Link *************************************************************  -->
+<!-- ****************************************************** base_link Link *************************************************************  -->
 
-        <link name="MP_BODY">
+        <link name="base_link">
 
           <inertial>
             <origin xyz="0 0 0" />
@@ -67,7 +68,7 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
               <!--box size="0.102 0.109 0.106" /-->
-              <mesh filename="package://robot_gazebo/meshes/pxm3/body.STL"  scale="1 1 1"/>
+              <mesh filename="${mesh_path}body.STL"  scale="1 1 1"/>
             </geometry>
             <material name="blue"/>
           </visual>
@@ -75,7 +76,7 @@
           <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-              <mesh filename="package://robot_gazebo/meshes/pxm3/body_coll.STL"  scale="1 1 1"/>
+              <mesh filename="${mesh_path}body_coll.STL"  scale="1 1 1"/>
             </geometry>
           </collision>
           
@@ -112,7 +113,7 @@
         <origin xyz="0 -0.0252 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}connect.STL"  scale="1 1 1"/>
         </geometry>
         <material name="red"/>
       </visual>
@@ -120,7 +121,7 @@
       <collision>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_gazebo/meshes/pxm3/connect_coll.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}connect_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
@@ -140,7 +141,7 @@
         <origin xyz="0 -0.0252 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}connect.STL"  scale="1 1 1"/>
         </geometry>
         <material name="green"/>
       </visual>
@@ -148,7 +149,7 @@
       <collision>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_gazebo/meshes/pxm3/connect_coll.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}connect_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
@@ -167,7 +168,7 @@
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}thigh_l.STL"  scale="1 1 1"/>
         </geometry>
         <material name="red"/>
       </visual>
@@ -175,7 +176,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l_coll.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}thigh_l_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
@@ -194,7 +195,7 @@
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
           <!--box size="0.045 0.022 0.0325" /-->
-          <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}tibia_l.STL"  scale="1 1 1"/>
         </geometry>
         <material name="green"/>
       </visual>
@@ -202,7 +203,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
-          <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l_coll.STL"  scale="1 1 1"/>
+          <mesh filename="${mesh_path}tibia_l_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
 
@@ -211,7 +212,7 @@
 <!-- ****************************************************** C1 Joint *****************************************************************  -->
 
     <joint name="j_c1_${suffix}" type="revolute">
-      <parent link="MP_BODY"/>
+      <parent link="base_link"/>
       <child link="c1_${suffix}"/>
       <origin xyz="${xyz}" rpy="${rpy}" />
       <axis xyz="1 0 0" />
@@ -289,13 +290,13 @@
    
   </xacro:macro>
 
-<!-- ****************************************************** Base link ****************************************************************  -->
+<!-- ****************************************************** Base footprint ***********************************************************  -->
 
-  <link name="base_link"/>
+  <link name="base_footprint"/>
 
 <!-- ****************************************************** Main Macro ***************************************************************  -->
 
-  <xacro:pxm3 parent="base_link">
+  <xacro:pxm3 parent="base_footprint">
       <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:pxm3>
 
