@@ -211,6 +211,22 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="c1_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="c2_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="thigh_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_RM">
@@ -363,6 +379,22 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="c1_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="c2_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="thigh_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_RR">
@@ -515,6 +547,22 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="c1_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="c2_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="thigh_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_LF">
@@ -667,6 +715,22 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="c1_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="c2_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="thigh_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_LM">
@@ -819,6 +883,22 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="c1_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="c2_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="thigh_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_LR">
@@ -971,6 +1051,22 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="c1_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="c2_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="thigh_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- Left Rear    -->
   <!-- ****************************************************** End of Main Macro ********************************************************  -->

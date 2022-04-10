@@ -285,7 +285,27 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
+<!-- ****************************************************** Gazebo Colors*************************************************************  -->
 
+    <gazebo reference="base_link"> 
+        <material>Gazebo/Blue</material> 
+    </gazebo> 
+
+    <gazebo reference="c1_${suffix}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
+
+    <gazebo reference="c2_${suffix}"> 
+        <material>Gazebo/Red</material> 
+    </gazebo> 
+
+    <gazebo reference="thigh_${suffix}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
+
+    <gazebo reference="tibia_${suffix}"> 
+            <material>Gazebo/Red</material> 
+    </gazebo> 
 <!-- ****************************************************** end of Macro *************************************************************  -->
    
   </xacro:macro>

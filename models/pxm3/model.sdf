@@ -21,6 +21,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/body_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -30,6 +38,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/body.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_c1_LF' type='revolute'>
@@ -72,6 +86,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='c1_LF_fixed_joint_lump__c2_LF_collision_1'>
         <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
@@ -81,6 +103,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='c1_LF_visual'>
         <pose>0 -0.0252 0 0 -0 0</pose>
@@ -90,6 +120,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='c1_LF_fixed_joint_lump__c2_LF_visual_1'>
         <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
@@ -99,6 +135,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_thigh_LF' type='revolute'>
@@ -141,6 +183,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='thigh_LF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -150,6 +200,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_tibia_LF' type='revolute'>
@@ -192,6 +248,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_LF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -201,6 +265,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_c1_LM' type='revolute'>
@@ -243,6 +313,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='c1_LM_fixed_joint_lump__c2_LM_collision_1'>
         <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
@@ -252,6 +330,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='c1_LM_visual'>
         <pose>0 -0.0252 0 0 -0 0</pose>
@@ -261,6 +347,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='c1_LM_fixed_joint_lump__c2_LM_visual_1'>
         <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
@@ -270,6 +362,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_thigh_LM' type='revolute'>
@@ -312,6 +410,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='thigh_LM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -321,6 +427,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_tibia_LM' type='revolute'>
@@ -363,6 +475,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_LM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -372,6 +492,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_c1_LR' type='revolute'>
@@ -414,6 +540,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='c1_LR_fixed_joint_lump__c2_LR_collision_1'>
         <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
@@ -423,6 +557,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='c1_LR_visual'>
         <pose>0 -0.0252 0 0 -0 0</pose>
@@ -432,6 +574,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='c1_LR_fixed_joint_lump__c2_LR_visual_1'>
         <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
@@ -441,6 +589,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_thigh_LR' type='revolute'>
@@ -483,6 +637,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='thigh_LR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -492,6 +654,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_tibia_LR' type='revolute'>
@@ -534,6 +702,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_LR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -543,6 +719,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_c1_RF' type='revolute'>
@@ -585,6 +767,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='c1_RF_fixed_joint_lump__c2_RF_collision_1'>
         <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
@@ -594,6 +784,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='c1_RF_visual'>
         <pose>0 -0.0252 0 0 -0 0</pose>
@@ -603,6 +801,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='c1_RF_fixed_joint_lump__c2_RF_visual_1'>
         <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
@@ -612,6 +816,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_thigh_RF' type='revolute'>
@@ -654,6 +864,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='thigh_RF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -663,6 +881,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_tibia_RF' type='revolute'>
@@ -705,6 +929,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_RF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -714,6 +946,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_c1_RM' type='revolute'>
@@ -756,6 +994,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='c1_RM_fixed_joint_lump__c2_RM_collision_1'>
         <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
@@ -765,6 +1011,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='c1_RM_visual'>
         <pose>0 -0.0252 0 0 -0 0</pose>
@@ -774,6 +1028,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='c1_RM_fixed_joint_lump__c2_RM_visual_1'>
         <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
@@ -783,6 +1043,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_thigh_RM' type='revolute'>
@@ -825,6 +1091,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='thigh_RM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -834,6 +1108,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_tibia_RM' type='revolute'>
@@ -876,6 +1156,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_RM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -885,6 +1173,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_c1_RR' type='revolute'>
@@ -927,6 +1221,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='c1_RR_fixed_joint_lump__c2_RR_collision_1'>
         <pose>0 -0.02767 0 -3.14159 1.5708 0</pose>
@@ -936,6 +1238,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='c1_RR_visual'>
         <pose>0 -0.0252 0 0 -0 0</pose>
@@ -945,6 +1255,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='c1_RR_fixed_joint_lump__c2_RR_visual_1'>
         <pose>0 -0.0288 0 -3.14159 1.5708 0</pose>
@@ -954,6 +1270,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_thigh_RR' type='revolute'>
@@ -996,6 +1318,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='thigh_RR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1005,6 +1335,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='j_tibia_RR' type='revolute'>
@@ -1047,6 +1383,14 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_RR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1056,6 +1400,12 @@
             <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
   </model>
