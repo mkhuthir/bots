@@ -20,6 +20,14 @@
             <size>0.7 0.39 0.2</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__front_caster_collision_1'>
         <pose>0.217 0 0.09 0 -0 0</pose>
@@ -28,6 +36,14 @@
             <radius>0.09</radius>
           </sphere>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__lidar_link_collision_2'>
         <pose>0.215 0 0.32 0 -0 0</pose>
@@ -37,6 +53,14 @@
             <radius>0.0508</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
         <pose>0 0 0.14 1.5708 -0 -3.14159</pose>
@@ -46,6 +70,12 @@
             <uri>model://robot_gazebo/meshes/twr/robot_base.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__front_caster_visual_1'>
         <pose>0.217 0 0.09 0 -0 0</pose>
@@ -54,6 +84,12 @@
             <radius>0.09</radius>
           </sphere>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__lidar_link_visual_2'>
         <pose>0.215 0 0.32 0 -0 0</pose>
@@ -63,6 +99,12 @@
             <radius>0.0508</radius>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='drivewhl_l_joint' type='revolute'>
@@ -105,6 +147,14 @@
             <radius>0.14</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='drivewhl_l_link_visual'>
         <pose>0 0 0 1.5708 -0 0</pose>
@@ -114,6 +164,12 @@
             <radius>0.14</radius>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='drivewhl_r_joint' type='revolute'>
@@ -156,6 +212,14 @@
             <radius>0.14</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='drivewhl_r_link_visual'>
         <pose>0 0 0 1.5708 -0 0</pose>
@@ -165,6 +229,12 @@
             <radius>0.14</radius>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

@@ -184,5 +184,21 @@
       <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="drivewhl_l_link">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <gazebo reference="drivewhl_r_link">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <gazebo reference="front_caster">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="lidar_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- *********************************************************************************************************************************  -->
 </robot>

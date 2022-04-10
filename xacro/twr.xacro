@@ -235,7 +235,11 @@
         <material>Gazebo/Red</material> 
     </gazebo> 
 
-    <gazebo reference="${prefix}_link"> 
+    <gazebo reference="drivewhl_l_link"> 
+        <material>Gazebo/Gray</material> 
+    </gazebo> 
+
+    <gazebo reference="drivewhl_r_link"> 
         <material>Gazebo/Gray</material> 
     </gazebo> 
 
