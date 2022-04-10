@@ -41,9 +41,6 @@
         <mesh filename="package://robot_gazebo/meshes/golem/body.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue"/>
-      <gazebo reference="body_link">
-        <material>Gazebo/Blue</material>
-      </gazebo>
     </visual>
     <collision>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -310,6 +307,22 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="body_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="coxa_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="femur_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="tibia_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tarsus_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_RM" type="fixed">
@@ -503,6 +516,22 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="body_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="coxa_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="femur_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="tibia_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tarsus_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_RF" type="fixed">
@@ -696,6 +725,22 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="body_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="coxa_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="femur_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="tibia_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tarsus_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LR" type="fixed">
@@ -889,6 +934,22 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="body_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="coxa_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="femur_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="tibia_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tarsus_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LM" type="fixed">
@@ -1082,6 +1143,22 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="body_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="coxa_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="femur_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="tibia_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tarsus_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LF" type="fixed">
@@ -1275,6 +1352,22 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="body_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="coxa_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="femur_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="tibia_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tarsus_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ******************************************************  End *********************************************************************  -->
 </robot>

@@ -21,6 +21,14 @@
             <uri>model://robot_gazebo/meshes/golem/body.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='base_link_fixed_joint_lump__body_link_visual'>
         <pose>0 0 0.064 0 -0 0</pose>
@@ -30,6 +38,12 @@
             <uri>model://robot_gazebo/meshes/golem/body.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='coxa_joint_LF' type='revolute'>
@@ -72,6 +86,14 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='coxa_LF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -81,6 +103,12 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='femur_joint_LF' type='revolute'>
@@ -123,6 +151,14 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='femur_LF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -132,6 +168,12 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tibia_joint_LF' type='revolute'>
@@ -174,6 +216,14 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_LF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -183,6 +233,12 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tarsus_joint_LF' type='revolute'>
@@ -225,6 +281,14 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tarsus_LF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -234,6 +298,12 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='coxa_joint_LM' type='revolute'>
@@ -276,6 +346,14 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='coxa_LM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -285,6 +363,12 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='femur_joint_LM' type='revolute'>
@@ -327,6 +411,14 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='femur_LM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -336,6 +428,12 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tibia_joint_LM' type='revolute'>
@@ -378,6 +476,14 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_LM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -387,6 +493,12 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tarsus_joint_LM' type='revolute'>
@@ -429,6 +541,14 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tarsus_LM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -438,6 +558,12 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='coxa_joint_LR' type='revolute'>
@@ -480,6 +606,14 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='coxa_LR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -489,6 +623,12 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='femur_joint_LR' type='revolute'>
@@ -531,6 +671,14 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='femur_LR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -540,6 +688,12 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tibia_joint_LR' type='revolute'>
@@ -582,6 +736,14 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_LR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -591,6 +753,12 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tarsus_joint_LR' type='revolute'>
@@ -633,6 +801,14 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tarsus_LR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -642,6 +818,12 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='coxa_joint_RF' type='revolute'>
@@ -684,6 +866,14 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='coxa_RF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -693,6 +883,12 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='femur_joint_RF' type='revolute'>
@@ -735,6 +931,14 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='femur_RF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -744,6 +948,12 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tibia_joint_RF' type='revolute'>
@@ -786,6 +996,14 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_RF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -795,6 +1013,12 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tarsus_joint_RF' type='revolute'>
@@ -837,6 +1061,14 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tarsus_RF_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -846,6 +1078,12 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='coxa_joint_RM' type='revolute'>
@@ -888,6 +1126,14 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='coxa_RM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -897,6 +1143,12 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='femur_joint_RM' type='revolute'>
@@ -939,6 +1191,14 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='femur_RM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -948,6 +1208,12 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tibia_joint_RM' type='revolute'>
@@ -990,6 +1256,14 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_RM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -999,6 +1273,12 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tarsus_joint_RM' type='revolute'>
@@ -1041,6 +1321,14 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tarsus_RM_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1050,6 +1338,12 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='coxa_joint_RR' type='revolute'>
@@ -1092,6 +1386,14 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='coxa_RR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1101,6 +1403,12 @@
             <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='femur_joint_RR' type='revolute'>
@@ -1143,6 +1451,14 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='femur_RR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1152,6 +1468,12 @@
             <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tibia_joint_RR' type='revolute'>
@@ -1194,6 +1516,14 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tibia_RR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1203,6 +1533,12 @@
             <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='tarsus_joint_RR' type='revolute'>
@@ -1245,6 +1581,14 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='tarsus_RR_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1254,6 +1598,12 @@
             <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='pan_joint' type='revolute'>
