@@ -16,6 +16,12 @@
 	<xacro:property name="femur_length"     value="0.065" />
 	<xacro:property name="tibia_length"     value="0.133" />
 
+	<!-- Joint properties -->
+	<xacro:property name="joint_lower_limit" value="-${3.14}" />
+	<xacro:property name="joint_upper_limit" value="${3.14}" />
+	<xacro:property name="joint_effort" value="6.0" />
+	<xacro:property name="joint_velocity" value="0.524" />
+
 <!-- ****************************************************** Colors *******************************************************************  -->
 
     <material name="red">
@@ -100,12 +106,7 @@
         </inertial>
     </link>
 
-<!-- ******************************************************  *************************************************************************  -->
-	<!-- Joint properties -->
-	<xacro:property name="joint_lower_limit" value="-${3.14}" />
-	<xacro:property name="joint_upper_limit" value="${3.14}" />
-	<xacro:property name="joint_effort" value="6.0" />
-	<xacro:property name="joint_velocity" value="0.524" />
+ 
 <!-- ******************************************************  *************************************************************************  -->
 	<!-- Leg macro -->
 	<xacro:macro name="leg" params="side position x y angle axis">
