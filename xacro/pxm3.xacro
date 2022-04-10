@@ -8,9 +8,14 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  -->
   
-  <xacro:property name="connect_offset" value="0.02633" />
-  <xacro:property name="thigh_offset_y" value="-0.0645" />
-  <xacro:property name="thigh_offset_z" value="-0.0145" />
+  <xacro:property name="connect_offset"     value="0.02633" />
+  <xacro:property name="thigh_offset_y"     value="-0.0645" />
+  <xacro:property name="thigh_offset_z"     value="-0.0145" />
+
+  <xacro:property name="joint_lower_limit"  value="-2.6179939"/>
+  <xacro:property name="joint_upper_limit"  value="2.6179939"/>
+  <xacro:property name="joint_effort"       value="2.8"/>
+  <xacro:property name="joint_velocity"     value="5.6548668"/>
 
 <!-- ****************************************************** Colors *******************************************************************  -->
 
@@ -100,7 +105,7 @@
       <inertial>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <mass value="0.024357719"/>
-      <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
+        <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
       </inertial>
 
       <visual>
@@ -128,7 +133,7 @@
       <inertial>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <mass value="0.024357719"/>
-      <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
+        <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
       </inertial>
 
       <visual>
@@ -155,7 +160,7 @@
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <mass value="0.024357719"/>
-      <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
+        <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
       </inertial>
 
       <visual>
@@ -182,7 +187,7 @@
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <mass value="0.024357719"/>
-      <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
+        <inertia ixx="0.0051411124"  ixy="-0.00057530255"  ixz="-0.000024729049" iyy="0.0081915737" iyz="-0.000019223094" izz="0.0011379812" />
       </inertial>
 
       <visual>
@@ -210,7 +215,7 @@
       <child link="c1_${suffix}"/>
       <origin xyz="${xyz}" rpy="${rpy}" />
       <axis xyz="1 0 0" />
-      <limit effort="2.8" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
     </joint>
 
 <!-- ****************************************************** C2 Joint *****************************************************************  -->
@@ -228,7 +233,7 @@
       <child link="thigh_${suffix}"/>
       <origin xyz="0 0 0" rpy=" 0 3.14159 3.14159" />
       <axis xyz="1 0 0" />
-      <limit effort="2.8" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
     </joint>
 
 <!-- ****************************************************** Tibia Joint **************************************************************  -->
@@ -238,7 +243,7 @@
       <child link="tibia_${suffix}"/>
       <origin xyz="0 ${thigh_offset_y} ${thigh_offset_z}" rpy="-1.5707 0 3.14159" />
       <axis xyz="1 0 0" />
-      <limit effort="2.8" velocity="5.6548668" lower="-2.6179939" upper="2.6179939" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
     </joint>
 
 <!-- ****************************************************** C1 Transmission **********************************************************  -->

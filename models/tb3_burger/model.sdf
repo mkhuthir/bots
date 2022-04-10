@@ -1,268 +1,167 @@
-<?xml version="1.0" ?>
-<sdf version="1.5">
-<!-- ****************************************************** **************************************************************************  -->
-
-  <model name="tb3_burger">
-
-<!-- ****************************************************** **************************************************************************  -->
-
-    <link name="base">
-
+<sdf version='1.7'>
+  <model name='tb3_burger'>
+    <link name='base_footprint'>
       <inertial>
-        <pose>-0.032 0 0.070 0 0 0</pose>
+        <pose>-0.00429 0 0.030734 0 -0 0</pose>
+        <mass>0.944735</mass>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <ixx>0.00717896</ixx>
+          <ixy>-1.22941e-05</ixy>
+          <ixz>0.00057674</ixz>
+          <iyy>0.00721804</iyy>
+          <iyz>-5.01209e-06</iyz>
+          <izz>0.00413858</izz>
         </inertia>
-        <mass>1.0</mass>
       </inertial>
-
-      <collision name="base_collision">
-        <pose>-0.032 0 0.070 0 0 0</pose>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
+        <pose>-0.032 0 0.08 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.140 0.140 0.140</size>
+            <size>0.14 0.14 0.143</size>
           </box>
         </geometry>
       </collision>
-
-      <visual name="base_visual">
-        <pose>-0.032 0 0 0 0 0</pose>
+      <collision name='base_footprint_fixed_joint_lump__caster_back_link_collision_1'>
+        <pose>-0.081 1e-06 0.005 -1.57 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.03 0.009 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__base_scan_collision_2'>
+        <pose>-0.017 0 0.1755 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0315</length>
+            <radius>0.055</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
+        <pose>-0.032 0 0.01 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/burger_base.stl</uri>
             <scale>0.001 0.001 0.001</scale>
+            <uri>model://robot_gazebo/meshes/tb3/burger_base.stl</uri>
           </mesh>
         </geometry>
       </visual>
-
-      <collision name="caster_collision">
-        <pose>-0.081 0 -0.004 0 0 0</pose>
+      <visual name='base_footprint_fixed_joint_lump__caster_back_link_visual_1'>
+        <pose>-0.081 0 0.006 -1.57 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.005000</radius>
+            <radius>0.007</radius>
           </sphere>
         </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
-        </surface>
-      </collision>
-
-    </link>
-<!-- ****************************************************** **************************************************************************  -->
-
-  <link name="lidar">
-
-    <inertial>
-      <pose>-0.020 0 0.161 0 0 0</pose>
-      <inertia>
-        <ixx>0.001</ixx>
-        <ixy>0.000</ixy>
-        <ixz>0.000</ixz>
-        <iyy>0.001</iyy>
-        <iyz>0.000</iyz>
-        <izz>0.001</izz>
-      </inertia>
-      <mass>0.125</mass>
-    </inertial>
-
-    <collision name="lidar_sensor_collision">
-        <pose>-0.020 0 0.161 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.0508</radius>
-            <length>0.055</length>
-          </cylinder>
-        </geometry>
-      </collision>
-
-      <visual name="lidar_sensor_visual">
-        <pose>-0.032 0 0.171 0 0 0</pose>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__base_scan_visual_2'>
+        <pose>-0.032 0 0.182 0 -0 0</pose>
         <geometry>
           <mesh>
+            <scale>0.001 0.001 0.001</scale>
             <uri>model://robot_gazebo/meshes/tb3/lds.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
-        </geometry>
-      </visual>
-
-      <sensor name="hls_lfcd_lds" type="ray">
-        <always_on>1</always_on>
-        <visualize>0</visualize>
-        <pose>-0.032 0 0.171 0 0 0</pose>
-        <update_rate>1800</update_rate>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>360</samples>
-              <resolution>1.000000</resolution>
-              <min_angle>0.000000</min_angle>
-              <max_angle>6.280000</max_angle>
-            </horizontal>
-          </scan>
-          <range>
-            <min>0.120000</min>
-            <max>3.5</max>
-            <resolution>0.015000</resolution>
-          </range>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>0.01</stddev>
-          </noise>
-        </ray>
-      </sensor>
-
-    </link>
-
-<!-- ****************************************************** **************************************************************************  -->
-
-    <link name="left_wheel">
-
-      <inertial>
-        <pose>0 0.08 0.023 -1.57 0 0</pose>
-        <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
-        </inertia>
-        <mass>0.1</mass>
-      </inertial>
-
-      <collision name="left_wheel_collision">
-        <pose>0 0.08 0.023 -1.57 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.033</radius>
-            <length>0.018</length>
-          </cylinder>
-        </geometry>
-          <surface>
-          <!-- This friction pamareter don't contain reliable data!! -->
-            <friction>
-              <ode>
-                <mu>100000.0</mu>
-                <mu2>100000.0</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0.0</slip1>
-                <slip2>0.0</slip2>
-              </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <visual name="left_wheel_visual">
-        <pose>0 0.08 0.023 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/left_tire.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
     </link>
-
-<!-- ****************************************************** **************************************************************************  -->
-
-    <link name="right_wheel">
-
-      <inertial>
-        <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
-        <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
-        </inertia>
-        <mass>0.1</mass>
-      </inertial>
-    
-      <collision name="right_wheel_collision">
-        <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.033</radius>
-            <length>0.018</length>
-          </cylinder>
-        </geometry>
-          <surface>
-          <!-- This friction pamareter don't contain reliable data!! -->
-            <friction>
-              <ode>
-                <mu>100000.0</mu>
-                <mu2>100000.0</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0.0</slip1>
-                <slip2>0.0</slip2>
-              </ode>
-          </friction>
-        </surface>
-      </collision>
-
-      <visual name="right_wheel_visual">
-        <pose>0.0 -0.08 0.023 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://robot_gazebo/meshes/tb3/right_tire.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-
-<!-- ****************************************************** **************************************************************************  -->
-
-    <joint name="left_wheel_joint" type="revolute">
-      <parent>base</parent>
-      <child>left_wheel</child>
-      <pose>0.0 0.08 0.023 -1.57 0 0</pose>
-      <axis>
-        <xyz>0 1 0</xyz>
-      </axis>
-    </joint>
-
-<!-- ****************************************************** **************************************************************************  -->
-
-    <joint name="right_wheel_joint" type="revolute">
-      <parent>base</parent>
-      <child>right_wheel</child>
-      <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
-      <axis>
-        <xyz>0 1 0</xyz>
-      </axis>
-    </joint>
-    
-<!-- ****************************************************** **************************************************************************  -->
-
-    <joint name="lidar_joint" type="fixed">
-      <parent>base</parent>
-      <child>lidar</child>
-      <pose>-0.032 0 0.171 0 0 0</pose>
+    <joint name='wheel_left_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 0.08 0.033 -1.57 0 0</pose>
+      <parent>base_footprint</parent>
+      <child>wheel_left_link</child>
       <axis>
         <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
       </axis>
     </joint>
-
-<!-- ****************************************************** **************************************************************************  -->
-
-  <static>0</static>
+    <link name='wheel_left_link'>
+      <pose relative_to='wheel_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0284989</mass>
+        <inertia>
+          <ixx>1.11756e-05</ixx>
+          <ixy>-4.23698e-11</ixy>
+          <ixz>-5.93817e-09</ixz>
+          <iyy>1.11924e-05</iyy>
+          <iyz>-1.44001e-11</iyz>
+          <izz>2.07126e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_left_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.018</length>
+            <radius>0.033</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='wheel_left_link_visual'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://robot_gazebo/meshes/tb3/left_tire.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='wheel_right_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 -0.08 0.033 -1.57 0 0</pose>
+      <parent>base_footprint</parent>
+      <child>wheel_right_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_right_link'>
+      <pose relative_to='wheel_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0284989</mass>
+        <inertia>
+          <ixx>1.11756e-05</ixx>
+          <ixy>-4.23698e-11</ixy>
+          <ixz>-5.93817e-09</ixz>
+          <iyy>1.11924e-05</iyy>
+          <iyz>-1.44001e-11</iyz>
+          <izz>2.07126e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_right_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.018</length>
+            <radius>0.033</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='wheel_right_link_visual'>
+        <pose>0 0 0 1.57 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://robot_gazebo/meshes/tb3/right_tire.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
   </model>
 </sdf>
