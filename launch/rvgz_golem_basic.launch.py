@@ -22,11 +22,11 @@ spawn_yaw_val = '0.0'
 pkg_gazebo_ros =  FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
 pkg_share =       FindPackageShare(package=pkg_name).find(pkg_name)
 
-world_path     =    os.path.join(pkg_share,'worlds',world_name)
-gzserver_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
-gzclient_path  =    os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
-urdf_model_path =   os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
-rviz_config_path =  os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
+world_path =       os.path.join(pkg_share,'worlds',world_name)
+gzserver_path =    os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
+gzclient_path =    os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
+urdf_model_path =  os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
+rviz_config_path = os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
 
 os.environ["GAZEBO_MODEL_PATH"] = urdf_model_path
 

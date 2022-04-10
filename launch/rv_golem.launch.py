@@ -21,7 +21,6 @@ urdf        = os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
 gui =           LaunchConfiguration('gui')
 use_simulator = LaunchConfiguration('use_simulator')
 
-
 def generate_launch_description():
 
     return LaunchDescription([
