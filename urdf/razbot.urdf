@@ -27,15 +27,15 @@
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
   <!-- ******************************************************  *************************************************************************  -->
-  <link name="base_link"/>
+  <link name="base_footprint"/>
   <!-- ******************************************************  *************************************************************************  -->
   <joint name="base_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="body_link"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
   <!-- ******************************************************  *************************************************************************  -->
-  <link name="body_link">
+  <link name="base_link">
     <visual>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
@@ -75,7 +75,7 @@
   <!-- leg position -->
   <joint name="leg_center_joint_RR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="-0.147 -0.08475 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_RR"/>
   </joint>
   <!-- ******************************************************  *************************************************************************  -->
@@ -212,12 +212,28 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ******************************************************  *************************************************************************  -->
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="leg_center_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="coxa_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="femur_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ******************************************************  *************************************************************************  -->
   <!-- leg position -->
   <joint name="leg_center_joint_RM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.17 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_RM"/>
   </joint>
   <!-- ******************************************************  *************************************************************************  -->
@@ -354,12 +370,28 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ******************************************************  *************************************************************************  -->
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="leg_center_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="coxa_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="femur_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ******************************************************  *************************************************************************  -->
   <!-- leg position -->
   <joint name="leg_center_joint_RF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.147 -0.08475 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_RF"/>
   </joint>
   <!-- ******************************************************  *************************************************************************  -->
@@ -496,12 +528,28 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ******************************************************  *************************************************************************  -->
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="leg_center_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="coxa_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="femur_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ******************************************************  *************************************************************************  -->
   <!-- leg position -->
   <joint name="leg_center_joint_LR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="-0.147 0.08475 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_LR"/>
   </joint>
   <!-- ******************************************************  *************************************************************************  -->
@@ -638,12 +686,28 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ******************************************************  *************************************************************************  -->
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="leg_center_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="coxa_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="femur_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ******************************************************  *************************************************************************  -->
   <!-- leg position -->
   <joint name="leg_center_joint_LM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.17 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_LM"/>
   </joint>
   <!-- ******************************************************  *************************************************************************  -->
@@ -780,12 +844,28 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ******************************************************  *************************************************************************  -->
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="leg_center_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="coxa_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="femur_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ******************************************************  *************************************************************************  -->
   <!-- leg position -->
   <joint name="leg_center_joint_LF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.147 0.08475 0.0"/>
-    <parent link="body_link"/>
+    <parent link="base_link"/>
     <child link="leg_center_LF"/>
   </joint>
   <!-- ******************************************************  *************************************************************************  -->
@@ -922,6 +1002,22 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ******************************************************  *************************************************************************  -->
+  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="leg_center_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="coxa_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="femur_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="tibia_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- ******************************************************  *************************************************************************  -->
 </robot>
