@@ -3,10 +3,10 @@
 
 import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import Command, LaunchConfiguration, PythonExpression
+from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
@@ -31,10 +31,8 @@ rviz_config_path =  os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
 os.environ["GAZEBO_MODEL_PATH"] = urdf_model_path
 
 gui =           LaunchConfiguration('gui')
-headless =      LaunchConfiguration('headless')
 rviz_config =   LaunchConfiguration('rviz_config_file')
 urdf_model =    LaunchConfiguration('urdf_model')
-use_simulator = LaunchConfiguration('use_simulator')
 world =         LaunchConfiguration('world')
 
  
@@ -44,53 +42,23 @@ def generate_launch_description():
 
     DeclareLaunchArgument(
       name='gui',
-      default_value='False',
+      default_value='True',
       description='Flag to enable joint_state_publisher_gui'),
-      
-    DeclareLaunchArgument(
-      name='namespace',
-      default_value='',
-      description='Top-level namespace'),
-  
-    DeclareLaunchArgument(
-      name='use_namespace',
-      default_value='false',
-      description='Whether to apply a namespace to the navigation stack'),
-              
+                  
     DeclareLaunchArgument(
       name='rviz_config_file',
       default_value=rviz_config_path,
       description='Full path to the RVIZ config file to use'),
   
     DeclareLaunchArgument(
-      name='headless',
-      default_value='False',
-      description='Whether to execute gzclient'),
-  
-    DeclareLaunchArgument(
       name='urdf_model', 
       default_value=urdf_model_path, 
       description='Absolute path to robot urdf file'),
-      
-    DeclareLaunchArgument(
-      name='use_robot_state_pub',
-      default_value='True',
-      description='Whether to start the robot state publisher'),
-  
-    DeclareLaunchArgument(
-      name='use_rviz',
-      default_value='True',
-      description='Whether to start RVIZ'),
-      
+    
     DeclareLaunchArgument(
       name='use_sim_time',
       default_value='true',
       description='Use simulation (Gazebo) clock if true'),
-  
-    DeclareLaunchArgument(
-      name='use_simulator',
-      default_value='True',
-      description='Whether to start the simulator'),
   
     DeclareLaunchArgument(
       name='world',
@@ -109,6 +77,12 @@ def generate_launch_description():
       executable= 'joint_state_publisher',
       name=       'joint_state_publisher',
       condition=UnlessCondition(gui)),
+    
+    Node(
+      package=    'joint_state_publisher_gui',
+      executable= 'joint_state_publisher_gui',
+      name=       'joint_state_publisher_gui',
+      condition=IfCondition(gui)),
   
     # Launch RViz
     Node(
@@ -121,13 +95,11 @@ def generate_launch_description():
     # Start Gazebo server
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(gzserver_path),
-      condition=IfCondition(use_simulator),
       launch_arguments={'world': world}.items()),
   
     # Start Gazebo client    
     IncludeLaunchDescription(
-      PythonLaunchDescriptionSource(gzclient_path),
-      condition=IfCondition(PythonExpression([use_simulator, ' and not ', headless]))),
+      PythonLaunchDescriptionSource(gzclient_path)),
   
     # Launch the robot
     Node(
