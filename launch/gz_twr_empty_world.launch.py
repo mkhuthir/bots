@@ -8,8 +8,8 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
  
 pkg_name =    'robot_gazebo'
-robot_name =  'pxm3'
-world_name =  'basic.world'
+robot_name =  'twr'
+world_name =  'empty.world'
 
 spawn_x_val =     '0.0'
 spawn_y_val =     '0.0'
@@ -27,13 +27,13 @@ sdf_model_path = os.path.join(models_path,robot_name,'model.sdf')
 
 os.environ["GAZEBO_MODEL_PATH"] = models_path
 
+headless =      LaunchConfiguration('headless')
+sdf_model =     LaunchConfiguration('sdf_model')
+use_simulator = LaunchConfiguration('use_simulator')
+world =         LaunchConfiguration('world')
+
 def generate_launch_description():
-  
-  headless =      LaunchConfiguration('headless')
-  sdf_model =     LaunchConfiguration('sdf_model')
-  use_simulator = LaunchConfiguration('use_simulator')
-  world =         LaunchConfiguration('world')
-   
+     
   return LaunchDescription([ 
    
     DeclareLaunchArgument(
@@ -73,17 +73,17 @@ def generate_launch_description():
       condition=IfCondition(PythonExpression([use_simulator,' and not ', headless]))),
   
     # Launch the robot
-      Node(
-          package=    'gazebo_ros', 
-          executable= 'spawn_entity.py',
-          arguments=  ['-entity' ,robot_name, 
-                      '-file'    ,sdf_model,
-                      '-x'       ,spawn_x_val,
-                      '-y'       ,spawn_y_val,
-                      '-z'       ,spawn_z_val,
-                      '-Y'       ,spawn_yaw_val
-                      ],
-          output='screen'
-      )
+    Node(
+        package=    'gazebo_ros', 
+        executable= 'spawn_entity.py',
+        arguments= ['-entity'  ,robot_name, 
+                    '-file'    ,sdf_model,
+                    '-x'       ,spawn_x_val,
+                    '-y'       ,spawn_y_val,
+                    '-z'       ,spawn_z_val,
+                    '-Y'       ,spawn_yaw_val
+                    ],
+        output='screen'
+    )
     
   ])
