@@ -64,7 +64,6 @@
           </inertial>
 
           <visual>
-            <!--origin xyz="-0.0235 0 -0.03525" rpy="0 0 0" /-->
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
               <!--box size="0.102 0.109 0.106" /-->
@@ -82,14 +81,18 @@
           
         </link>
 
+        <gazebo reference="base_link"> 
+          <material>Gazebo/Blue</material> 
+        </gazebo> 
+
 <!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
 
-      <xacro:legs xyz="0.1248    -0.06164  0.001116" rpy="0 4.7123 0.7853981633974483"   suffix="RF"/> <!-- Right Front  -->
-      <xacro:legs xyz="0         -0.1034   0.001116" rpy="0 4.7123 0"                    suffix="RM"/> <!-- Right Middle -->
-      <xacro:legs xyz="-0.1248   -0.06164  0.001116" rpy="0 4.7123 -0.7853981633974483"  suffix="RR"/> <!-- Right Rear   -->
-      <xacro:legs xyz="0.1248    0.06164   0.001116" rpy="0 4.7123 2.356194490192345"    suffix="LF"/> <!-- Left Front   -->
-      <xacro:legs xyz="0         0.1034    0.001116" rpy="0 4.7123 3.14159"              suffix="LM"/> <!-- Left Middle  -->
-      <xacro:legs xyz="-0.1248   0.06164   0.001116" rpy="0 4.7123 3.9269908169872414"   suffix="LR"/> <!-- Left Rear    -->
+      <xacro:legs xyz=" 0.1248  -0.06164  0.001116" rpy="0 4.7123  0.7853981633974483"   suffix="RF"/> <!-- Right Front  -->
+      <xacro:legs xyz=" 0       -0.1034   0.001116" rpy="0 4.7123  0"                    suffix="RM"/> <!-- Right Middle -->
+      <xacro:legs xyz="-0.1248  -0.06164  0.001116" rpy="0 4.7123 -0.7853981633974483"   suffix="RR"/> <!-- Right Rear   -->
+      <xacro:legs xyz=" 0.1248   0.06164  0.001116" rpy="0 4.7123  2.356194490192345"    suffix="LF"/> <!-- Left Front   -->
+      <xacro:legs xyz=" 0        0.1034   0.001116" rpy="0 4.7123  3.14159"              suffix="LM"/> <!-- Left Middle  -->
+      <xacro:legs xyz="-0.1248   0.06164  0.001116" rpy="0 4.7123  3.9269908169872414"   suffix="LR"/> <!-- Left Rear    -->
 
 <!-- ****************************************************** End of Main Macro ********************************************************  -->
 
@@ -98,6 +101,16 @@
 <!-- ****************************************************** Legs Macro ***************************************************************  -->
 
   <xacro:macro name="legs" params="xyz rpy suffix">
+
+<!-- ****************************************************** C1 Joint *****************************************************************  -->
+
+    <joint name="j_c1_${suffix}" type="revolute">
+      <parent link="base_link"/>
+      <child link="c1_${suffix}"/>
+      <origin xyz="${xyz}" rpy="${rpy}" />
+      <axis xyz="1 0 0" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
+    </joint>
 
 <!-- ****************************************************** C1 Link ******************************************************************  -->
 
@@ -127,6 +140,31 @@
 
     </link>
 
+    <gazebo reference="c1_${suffix}"> 
+      <material>Gazebo/Green</material> 
+    </gazebo> 
+
+<!-- ****************************************************** C1 Transmission **********************************************************  -->
+
+    <transmission name="t_c1_${suffix}">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="j_c1_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>    
+      </joint>
+      <actuator name="m_c1_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+<!-- ****************************************************** C2 Joint *****************************************************************  -->
+
+    <joint name="j_c2_${suffix}" type="fixed">
+      <parent link="c1_${suffix}"/>
+      <child link="c2_${suffix}"/>
+      <origin xyz="0 -0.054 0" rpy="0 1.5704 3.14159" />
+    </joint>
+
 <!-- ****************************************************** C2 Link ******************************************************************  -->
 
     <link name="c2_${suffix}">
@@ -155,6 +193,20 @@
 
     </link>
 
+    <gazebo reference="c2_${suffix}"> 
+      <material>Gazebo/Red</material> 
+    </gazebo> 
+
+<!-- ****************************************************** Thigh Joint **************************************************************  -->
+
+    <joint name="j_thigh_${suffix}" type="revolute">
+      <parent link="c2_${suffix}"/>
+      <child link="thigh_${suffix}"/>
+      <origin xyz="0 0 0" rpy=" 0 3.14159 3.14159" />
+      <axis xyz="1 0 0" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
+    </joint>
+
 <!-- ****************************************************** Thigh Link ***************************************************************  -->
 
     <link name="thigh_${suffix}">
@@ -181,6 +233,33 @@
       </collision>
 
     </link>
+
+    <gazebo reference="thigh_${suffix}"> 
+      <material>Gazebo/Green</material> 
+    </gazebo>
+
+<!-- ****************************************************** Thigh Transmission *******************************************************  -->
+
+    <transmission name="t_thigh_${suffix}">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="j_thigh_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>    
+      </joint>
+      <actuator name="m_thigh_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+<!-- ****************************************************** Tibia Joint **************************************************************  -->
+
+    <joint name="j_tibia_${suffix}" type="revolute">
+      <parent link="thigh_${suffix}"/>
+      <child link="tibia_${suffix}"/>
+      <origin xyz="0 ${thigh_offset_y} ${thigh_offset_z}" rpy="-1.5707 0 3.14159" />
+      <axis xyz="1 0 0" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
+    </joint>
 
 <!-- ****************************************************** Tibia Link ***************************************************************  -->
 
@@ -209,69 +288,9 @@
 
     </link>
 
-<!-- ****************************************************** C1 Joint *****************************************************************  -->
-
-    <joint name="j_c1_${suffix}" type="revolute">
-      <parent link="base_link"/>
-      <child link="c1_${suffix}"/>
-      <origin xyz="${xyz}" rpy="${rpy}" />
-      <axis xyz="1 0 0" />
-      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
-    </joint>
-
-<!-- ****************************************************** C2 Joint *****************************************************************  -->
-
-    <joint name="j_c2_${suffix}" type="fixed">
-      <parent link="c1_${suffix}"/>
-      <child link="c2_${suffix}"/>
-      <origin xyz="0 -0.054 0" rpy="0 1.5704 3.14159" />
-    </joint>
-
-<!-- ****************************************************** Thigh Joint **************************************************************  -->
-
-    <joint name="j_thigh_${suffix}" type="revolute">
-      <parent link="c2_${suffix}"/>
-      <child link="thigh_${suffix}"/>
-      <origin xyz="0 0 0" rpy=" 0 3.14159 3.14159" />
-      <axis xyz="1 0 0" />
-      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
-    </joint>
-
-<!-- ****************************************************** Tibia Joint **************************************************************  -->
-
-    <joint name="j_tibia_${suffix}" type="revolute">
-      <parent link="thigh_${suffix}"/>
-      <child link="tibia_${suffix}"/>
-      <origin xyz="0 ${thigh_offset_y} ${thigh_offset_z}" rpy="-1.5707 0 3.14159" />
-      <axis xyz="1 0 0" />
-      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
-    </joint>
-
-<!-- ****************************************************** C1 Transmission **********************************************************  -->
-
-    <transmission name="t_c1_${suffix}">
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="j_c1_${suffix}">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>    
-      </joint>
-      <actuator name="m_c1_${suffix}">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
-        <mechanicalReduction>1</mechanicalReduction>
-      </actuator>
-    </transmission>
-
-<!-- ****************************************************** Thigh Transmission *******************************************************  -->
-
-    <transmission name="t_thigh_${suffix}">
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="j_thigh_${suffix}">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>    
-      </joint>
-      <actuator name="m_thigh_${suffix}">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
-        <mechanicalReduction>1</mechanicalReduction>
-      </actuator>
-    </transmission>
+    <gazebo reference="tibia_${suffix}"> 
+      <material>Gazebo/Red</material> 
+    </gazebo> 
 
 <!-- ****************************************************** Tibia Transmission *******************************************************  -->
 
@@ -285,27 +304,7 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
-<!-- ****************************************************** Gazebo Colors*************************************************************  -->
-
-    <gazebo reference="base_link"> 
-        <material>Gazebo/Blue</material> 
-    </gazebo> 
-
-    <gazebo reference="c1_${suffix}"> 
-        <material>Gazebo/Green</material> 
-    </gazebo> 
-
-    <gazebo reference="c2_${suffix}"> 
-        <material>Gazebo/Red</material> 
-    </gazebo> 
-
-    <gazebo reference="thigh_${suffix}"> 
-        <material>Gazebo/Green</material> 
-    </gazebo> 
-
-    <gazebo reference="tibia_${suffix}"> 
-            <material>Gazebo/Red</material> 
-    </gazebo> 
+ 
 <!-- ****************************************************** end of Macro *************************************************************  -->
    
   </xacro:macro>
@@ -321,6 +320,5 @@
   </xacro:pxm3>
 
 <!-- *********************************************************************************************************************************  -->
-
 
 </robot>
