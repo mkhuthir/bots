@@ -69,6 +69,10 @@
 
   </link>
 
+  <gazebo reference="base_link"> 
+    <material>Gazebo/Blue</material> 
+  </gazebo> 
+
 <!-- ****************************************************** Wheel Left Joint *********************************************************  -->
 
   <joint name="wheel_left_joint" type="continuous">
