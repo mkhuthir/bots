@@ -17,8 +17,8 @@
     <xacro:property name="tibia_length"     value="0.08774"/>
     <xacro:property name="tarsus_length"    value="0.12065"/>
 
-    <xacro:property name="joint_lower_limit"    value="-${3.14}"/>
-    <xacro:property name="joint_upper_limit"    value="${3.14}"/>
+    <xacro:property name="joint_lower_limit"    value="-${pi}"/>
+    <xacro:property name="joint_upper_limit"    value="${pi}"/>
     <xacro:property name="joint_effort"         value="6.0"/>
     <xacro:property name="joint_velocity"       value="0.524"/>
 
@@ -82,6 +82,10 @@
                 izz="1.0" />
         </inertial>
     </link>
+
+    <gazebo reference="base_link"> 
+        <material>Gazebo/Blue</material> 
+    </gazebo> 
 
 <!-- ****************************************************** Camera RGB Joint *********************************************************  -->
     
@@ -244,6 +248,10 @@
         </inertial>
     </link>
 
+    <gazebo reference="coxa_${side}${position}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
+
 <!-- ****************************************************** Femur Joint **************************************************************  -->
 
     <joint name="femur_joint_${side}${position}" type="revolute">
@@ -294,6 +302,9 @@
         </inertial>
     </link>
     
+    <gazebo reference="femur_${side}${position}"> 
+        <material>Gazebo/Red</material> 
+    </gazebo> 
 <!-- ****************************************************** Tibia Joint **************************************************************  -->
 
     <joint name="tibia_joint_${side}${position}" type="revolute">
@@ -344,6 +355,10 @@
         </inertial>
     </link>
     
+    <gazebo reference="tibia_${side}${position}"> 
+        <material>Gazebo/Green</material> 
+    </gazebo> 
+
 <!-- ****************************************************** Tarsus Joint *************************************************************  -->
     
     <joint name="tarsus_joint_${side}${position}" type="revolute">
@@ -394,6 +409,9 @@
         </inertial>
     </link>
     
+    <gazebo reference="tarsus_${side}${position}"> 
+            <material>Gazebo/Red</material> 
+    </gazebo> 
 <!-- ****************************************************** Foot Joint ***************************************************************  -->
 
     <joint name="foot_joint_${side}${position}" type="fixed">
@@ -414,28 +432,6 @@
                 izz="1.0" />
         </inertial>
     </link>
-
-<!-- ****************************************************** Gazebo Colors*************************************************************  -->
-
-    <gazebo reference="base_link"> 
-        <material>Gazebo/Blue</material> 
-    </gazebo> 
-
-    <gazebo reference="coxa_${side}${position}"> 
-        <material>Gazebo/Green</material> 
-    </gazebo> 
-
-    <gazebo reference="femur_${side}${position}"> 
-        <material>Gazebo/Red</material> 
-    </gazebo> 
-
-    <gazebo reference="tibia_${side}${position}"> 
-        <material>Gazebo/Green</material> 
-    </gazebo> 
-
-    <gazebo reference="tarsus_${side}${position}"> 
-            <material>Gazebo/Red</material> 
-    </gazebo> 
 
 <!-- ******************************************************  End of Macro ************************************************************  -->
 
