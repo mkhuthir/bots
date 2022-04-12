@@ -111,6 +111,10 @@
 
   </link>
 
+  <gazebo reference="wheel_left_link"> 
+    <material>Gazebo/FlatBlack</material> 
+  </gazebo>
+
 <!-- ****************************************************** Wheel Right Joint ********************************************************  -->
 
   <joint name="wheel_right_joint" type="continuous">
@@ -149,6 +153,10 @@
 
   </link>
 
+  <gazebo reference="wheel_right_link"> 
+    <material>Gazebo/FlatBlack</material> 
+  </gazebo> 
+
 <!-- ****************************************************** Caster Back Right Joint **************************************************  -->
 
   <joint name="caster_back_right_joint" type="fixed">
@@ -185,6 +193,10 @@
 
   </link>
 
+  <gazebo reference="caster_back_right_link"> 
+    <material>Gazebo/White</material> 
+  </gazebo> 
+
 <!-- ****************************************************** Caster Back Left Joint ***************************************************  -->
 
   <joint name="caster_back_left_joint" type="fixed">
@@ -220,6 +232,10 @@
     </inertial>
 
   </link>
+
+  <gazebo reference="caster_back_left_link"> 
+    <material>Gazebo/White</material> 
+  </gazebo> 
 
 <!-- ****************************************************** IMU Joint ****************************************************************  -->
 
@@ -269,6 +285,10 @@
     </inertial>
 
   </link>
+
+  <gazebo reference="base_scan"> 
+    <material>Gazebo/Green</material> 
+  </gazebo> 
 
 <!-- ****************************************************** Camera Joint ************************************************************* -->
 
