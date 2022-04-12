@@ -138,7 +138,7 @@
     </link>
 
     <gazebo reference="${prefix}_link"> 
-        <material>Gazebo/Flatblack</material> 
+        <material>Gazebo/FlatBlack</material> 
     </gazebo> 
 
 <!-- ****************************************************** Drive Wheels Joint Macro *************************************************  -->
