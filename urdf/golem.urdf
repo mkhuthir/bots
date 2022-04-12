@@ -55,6 +55,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
   <!-- ****************************************************** Camera RGB Joint *********************************************************  -->
   <joint name="camera_rgb_joint" type="fixed">
     <parent link="base_link"/>
@@ -103,7 +106,7 @@
     <child link="pan_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.1 0.0 0.034"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Pan Link *****************************************************************  -->
   <link name="pan_link">
@@ -135,7 +138,7 @@
     <parent link="leg_center_RR"/>
     <child link="coxa_RR"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_RR">
@@ -170,13 +173,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="coxa_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_RR" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
     <parent link="coxa_RR"/>
     <child link="femur_RR"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_RR">
@@ -211,13 +217,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="femur_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_RR" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
     <parent link="femur_RR"/>
     <child link="tibia_RR"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_RR">
@@ -252,13 +261,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tibia_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_RR" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
     <parent link="tibia_RR"/>
     <child link="tarsus_RR"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_RR">
@@ -293,6 +305,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tarsus_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_RR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -307,22 +322,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="coxa_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="femur_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="tibia_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tarsus_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_RM" type="fixed">
@@ -344,7 +343,7 @@
     <parent link="leg_center_RM"/>
     <child link="coxa_RM"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_RM">
@@ -379,13 +378,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="coxa_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_RM" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
     <parent link="coxa_RM"/>
     <child link="femur_RM"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_RM">
@@ -420,13 +422,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="femur_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_RM" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
     <parent link="femur_RM"/>
     <child link="tibia_RM"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_RM">
@@ -461,13 +466,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tibia_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_RM" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
     <parent link="tibia_RM"/>
     <child link="tarsus_RM"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_RM">
@@ -502,6 +510,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tarsus_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_RM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -516,22 +527,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="coxa_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="femur_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="tibia_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tarsus_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_RF" type="fixed">
@@ -553,7 +548,7 @@
     <parent link="leg_center_RF"/>
     <child link="coxa_RF"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_RF">
@@ -588,13 +583,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="coxa_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_RF" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
     <parent link="coxa_RF"/>
     <child link="femur_RF"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_RF">
@@ -629,13 +627,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="femur_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_RF" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
     <parent link="femur_RF"/>
     <child link="tibia_RF"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_RF">
@@ -670,13 +671,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tibia_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_RF" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
     <parent link="tibia_RF"/>
     <child link="tarsus_RF"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_RF">
@@ -711,6 +715,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tarsus_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_RF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -725,22 +732,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="coxa_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="femur_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="tibia_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tarsus_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LR" type="fixed">
@@ -762,7 +753,7 @@
     <parent link="leg_center_LR"/>
     <child link="coxa_LR"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_LR">
@@ -797,13 +788,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="coxa_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_LR" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
     <parent link="coxa_LR"/>
     <child link="femur_LR"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_LR">
@@ -838,13 +832,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="femur_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_LR" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
     <parent link="femur_LR"/>
     <child link="tibia_LR"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_LR">
@@ -879,13 +876,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tibia_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_LR" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
     <parent link="tibia_LR"/>
     <child link="tarsus_LR"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_LR">
@@ -920,6 +920,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tarsus_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_LR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -934,22 +937,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="coxa_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="femur_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="tibia_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tarsus_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LM" type="fixed">
@@ -971,7 +958,7 @@
     <parent link="leg_center_LM"/>
     <child link="coxa_LM"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_LM">
@@ -1006,13 +993,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="coxa_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_LM" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
     <parent link="coxa_LM"/>
     <child link="femur_LM"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_LM">
@@ -1047,13 +1037,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="femur_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_LM" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
     <parent link="femur_LM"/>
     <child link="tibia_LM"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_LM">
@@ -1088,13 +1081,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tibia_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_LM" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
     <parent link="tibia_LM"/>
     <child link="tarsus_LM"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_LM">
@@ -1129,6 +1125,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tarsus_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_LM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -1143,22 +1142,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="coxa_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="femur_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="tibia_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tarsus_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ****************************************************** Leg Center Joint *********************************************************  -->
   <joint name="leg_center_joint_LF" type="fixed">
@@ -1180,7 +1163,7 @@
     <parent link="leg_center_LF"/>
     <child link="coxa_LF"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_LF">
@@ -1215,13 +1198,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="coxa_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_LF" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
     <parent link="coxa_LF"/>
     <child link="femur_LF"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_LF">
@@ -1256,13 +1242,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="femur_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_LF" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
     <parent link="femur_LF"/>
     <child link="tibia_LF"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_LF">
@@ -1297,13 +1286,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tibia_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_LF" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
     <parent link="tibia_LF"/>
     <child link="tarsus_LF"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.14" upper="3.14" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_LF">
@@ -1338,6 +1330,9 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+  <gazebo reference="tarsus_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_LF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -1352,22 +1347,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="coxa_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="femur_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="tibia_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tarsus_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ******************************************************  End of Macro ************************************************************  -->
   <!-- ******************************************************  End *********************************************************************  -->
 </robot>

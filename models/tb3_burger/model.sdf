@@ -20,6 +20,14 @@
             <size>0.14 0.14 0.143</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__caster_back_link_collision_1'>
         <pose>-0.081 1e-06 0.005 -1.57 0 0</pose>
@@ -28,6 +36,14 @@
             <size>0.03 0.009 0.02</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__base_scan_collision_2'>
         <pose>-0.017 0 0.1755 0 -0 0</pose>
@@ -37,6 +53,14 @@
             <radius>0.055</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
         <pose>-0.032 0 0.01 0 -0 0</pose>
@@ -46,6 +70,12 @@
             <uri>model://robot_gazebo/meshes/tb3/burger_base.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__caster_back_link_visual_1'>
         <pose>-0.081 0 0.006 -1.57 0 0</pose>
@@ -54,6 +84,12 @@
             <radius>0.007</radius>
           </sphere>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__base_scan_visual_2'>
         <pose>-0.032 0 0.182 0 -0 0</pose>
@@ -63,6 +99,12 @@
             <uri>model://robot_gazebo/meshes/tb3/lds.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='wheel_left_joint' type='revolute'>
@@ -103,6 +145,14 @@
             <radius>0.033</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='wheel_left_link_visual'>
         <pose>0 0 0 1.57 -0 0</pose>
@@ -112,6 +162,12 @@
             <uri>model://robot_gazebo/meshes/tb3/left_tire.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/FlatBlack</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='wheel_right_joint' type='revolute'>
@@ -152,6 +208,14 @@
             <radius>0.033</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='wheel_right_link_visual'>
         <pose>0 0 0 1.57 -0 0</pose>
@@ -161,6 +225,12 @@
             <uri>model://robot_gazebo/meshes/tb3/right_tire.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/FlatBlack</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
   </model>

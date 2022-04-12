@@ -6,6 +6,8 @@ echo 'This script will convert from XACRO to URDF.'
 
 echo 'golem'
 xacro ../xacro/golem.xacro          > ../urdf/golem.urdf
+echo 'kr16_2'
+xacro ../xacro/kr16_2.xacro          > ../urdf/kr16_2.urdf
 echo 'pxm3'
 xacro ../xacro/pxm3.xacro           > ../urdf/pxm3.urdf
 echo 'razbot'

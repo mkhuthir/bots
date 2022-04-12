@@ -57,6 +57,9 @@
       <inertia ixx="1.7666666666666664" ixy="0.0" ixz="0.0" iyy="2.140333333333333" iyz="0.0" izz="0.6403333333333334"/>
     </inertial>
   </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Drive Wheels Link Macro **************************************************  -->
   <!-- ****************************************************** Drive Wheels Link and Joint **********************************************  -->
   <!-- Instantiate two wheels using the macro we just made through the xacro:wheel tags. We also define the parameters to have one        -->
@@ -81,6 +84,9 @@
       <inertia ixx="0.5746000000000001" ixy="0" ixz="0" iyy="0.5746000000000001" iyz="0" izz="1.0829000000000002"/>
     </inertial>
   </link>
+  <gazebo reference="drivewhl_l_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
   <!-- ****************************************************** Drive Wheels Joint Macro *************************************************  -->
   <!-- Connect the wheels to the base_link at the appropriate location, and define a continuous joint to allow the wheels to freely       -->
   <!-- rotate about an axis                                                                                                               -->
@@ -111,6 +117,9 @@
       <inertia ixx="0.5746000000000001" ixy="0" ixz="0" iyy="0.5746000000000001" iyz="0" izz="1.0829000000000002"/>
     </inertial>
   </link>
+  <gazebo reference="drivewhl_r_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
   <!-- ****************************************************** Drive Wheels Joint Macro *************************************************  -->
   <!-- Connect the wheels to the base_link at the appropriate location, and define a continuous joint to allow the wheels to freely       -->
   <!-- rotate about an axis                                                                                                               -->
@@ -142,6 +151,9 @@
       <inertia ixx="0.032562" ixy="0.0" ixz="0.0" iyy="0.032562" iyz="0.0" izz="0.032562"/>
     </inertial>
   </link>
+  <gazebo reference="front_caster">
+    <material>Gazebo/White</material>
+  </gazebo>
   <!-- **************************************************** Front Caster Joint *********************************************************  -->
   <joint name="caster_joint" type="fixed">
     <parent link="base_link"/>
@@ -184,19 +196,6 @@
       <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="drivewhl_l_link">
-    <material>Gazebo/Gray</material>
-  </gazebo>
-  <gazebo reference="drivewhl_r_link">
-    <material>Gazebo/Gray</material>
-  </gazebo>
-  <gazebo reference="front_caster">
-    <material>Gazebo/White</material>
-  </gazebo>
   <gazebo reference="lidar_link">
     <material>Gazebo/Green</material>
   </gazebo>

@@ -166,7 +166,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Gray</name>
+            <name>Gazebo/FlatBlack</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -231,7 +231,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Gray</name>
+            <name>Gazebo/FlatBlack</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>

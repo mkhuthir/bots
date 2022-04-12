@@ -6,6 +6,8 @@ echo 'This script will convert URDF to SDF.'
 
 echo 'golem'
 gz sdf -p ../urdf/golem.urdf            > ../models/golem/model.sdf
+echo 'kr16_2'
+gz sdf -p ../urdf/kr16_2.urdf           > ../models/kr16_2/model.sdf
 echo 'pxm3'
 gz sdf -p ../urdf/pxm3.urdf             > ../models/pxm3/model.sdf
 echo 'razbot'

@@ -44,7 +44,6 @@
       <inertia ixx="3.1081800" ixy="-0.25460189" ixz="2.0318174" iyy="6.3787776" iyz="0.16417863" izz="5.3316425"/>
     </inertial>
     <visual>
-      <!--origin xyz="-0.0235 0 -0.03525" rpy="0 0 0" /-->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <!--box size="0.102 0.109 0.106" /-->
@@ -59,7 +58,18 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
   <!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
+  <!-- ****************************************************** C1 Joint *****************************************************************  -->
+  <joint name="j_c1_RF" type="revolute">
+    <parent link="base_link"/>
+    <child link="c1_RF"/>
+    <origin rpy="0 4.7123  0.7853981633974483" xyz=" 0.1248  -0.06164  0.001116"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_RF">
     <inertial>
@@ -82,6 +92,26 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c1_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C1 Transmission **********************************************************  -->
+  <transmission name="t_c1_RF">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_c1_RF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_c1_RF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** C2 Joint *****************************************************************  -->
+  <joint name="j_c2_RF" type="fixed">
+    <parent link="c1_RF"/>
+    <child link="c2_RF"/>
+    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+  </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_RF">
     <inertial>
@@ -104,6 +134,17 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c2_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Joint **************************************************************  -->
+  <joint name="j_thigh_RF" type="revolute">
+    <parent link="c2_RF"/>
+    <child link="thigh_RF"/>
+    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Thigh Link ***************************************************************  -->
   <link name="thigh_RF">
     <inertial>
@@ -126,6 +167,28 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="thigh_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
+  <transmission name="t_thigh_RF">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_thigh_RF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_thigh_RF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** Tibia Joint **************************************************************  -->
+  <joint name="j_tibia_RF" type="revolute">
+    <parent link="thigh_RF"/>
+    <child link="tibia_RF"/>
+    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Tibia Link ***************************************************************  -->
   <link name="tibia_RF">
     <inertial>
@@ -148,58 +211,9 @@
       </geometry>
     </collision>
   </link>
-  <!-- ****************************************************** C1 Joint *****************************************************************  -->
-  <joint name="j_c1_RF" type="revolute">
-    <parent link="base_link"/>
-    <child link="c1_RF"/>
-    <origin rpy="0 4.7123 0.7853981633974483" xyz="0.1248    -0.06164  0.001116"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C2 Joint *****************************************************************  -->
-  <joint name="j_c2_RF" type="fixed">
-    <parent link="c1_RF"/>
-    <child link="c2_RF"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
-  </joint>
-  <!-- ****************************************************** Thigh Joint **************************************************************  -->
-  <joint name="j_thigh_RF" type="revolute">
-    <parent link="c2_RF"/>
-    <child link="thigh_RF"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** Tibia Joint **************************************************************  -->
-  <joint name="j_tibia_RF" type="revolute">
-    <parent link="thigh_RF"/>
-    <child link="tibia_RF"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C1 Transmission **********************************************************  -->
-  <transmission name="t_c1_RF">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_c1_RF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_c1_RF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
-  <transmission name="t_thigh_RF">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_thigh_RF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_thigh_RF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <gazebo reference="tibia_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_RF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -211,23 +225,15 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="c1_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="c2_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="thigh_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tibia_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Joint *****************************************************************  -->
+  <joint name="j_c1_RM" type="revolute">
+    <parent link="base_link"/>
+    <child link="c1_RM"/>
+    <origin rpy="0 4.7123  0" xyz=" 0       -0.1034   0.001116"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_RM">
     <inertial>
@@ -250,6 +256,26 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c1_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C1 Transmission **********************************************************  -->
+  <transmission name="t_c1_RM">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_c1_RM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_c1_RM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** C2 Joint *****************************************************************  -->
+  <joint name="j_c2_RM" type="fixed">
+    <parent link="c1_RM"/>
+    <child link="c2_RM"/>
+    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+  </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_RM">
     <inertial>
@@ -272,6 +298,17 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c2_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Joint **************************************************************  -->
+  <joint name="j_thigh_RM" type="revolute">
+    <parent link="c2_RM"/>
+    <child link="thigh_RM"/>
+    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Thigh Link ***************************************************************  -->
   <link name="thigh_RM">
     <inertial>
@@ -294,6 +331,28 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="thigh_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
+  <transmission name="t_thigh_RM">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_thigh_RM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_thigh_RM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** Tibia Joint **************************************************************  -->
+  <joint name="j_tibia_RM" type="revolute">
+    <parent link="thigh_RM"/>
+    <child link="tibia_RM"/>
+    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Tibia Link ***************************************************************  -->
   <link name="tibia_RM">
     <inertial>
@@ -316,58 +375,9 @@
       </geometry>
     </collision>
   </link>
-  <!-- ****************************************************** C1 Joint *****************************************************************  -->
-  <joint name="j_c1_RM" type="revolute">
-    <parent link="base_link"/>
-    <child link="c1_RM"/>
-    <origin rpy="0 4.7123 0" xyz="0         -0.1034   0.001116"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C2 Joint *****************************************************************  -->
-  <joint name="j_c2_RM" type="fixed">
-    <parent link="c1_RM"/>
-    <child link="c2_RM"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
-  </joint>
-  <!-- ****************************************************** Thigh Joint **************************************************************  -->
-  <joint name="j_thigh_RM" type="revolute">
-    <parent link="c2_RM"/>
-    <child link="thigh_RM"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** Tibia Joint **************************************************************  -->
-  <joint name="j_tibia_RM" type="revolute">
-    <parent link="thigh_RM"/>
-    <child link="tibia_RM"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C1 Transmission **********************************************************  -->
-  <transmission name="t_c1_RM">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_c1_RM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_c1_RM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
-  <transmission name="t_thigh_RM">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_thigh_RM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_thigh_RM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <gazebo reference="tibia_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_RM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -379,23 +389,15 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="c1_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="c2_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="thigh_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tibia_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Joint *****************************************************************  -->
+  <joint name="j_c1_RR" type="revolute">
+    <parent link="base_link"/>
+    <child link="c1_RR"/>
+    <origin rpy="0 4.7123 -0.7853981633974483" xyz="-0.1248  -0.06164  0.001116"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_RR">
     <inertial>
@@ -418,6 +420,26 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c1_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C1 Transmission **********************************************************  -->
+  <transmission name="t_c1_RR">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_c1_RR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_c1_RR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** C2 Joint *****************************************************************  -->
+  <joint name="j_c2_RR" type="fixed">
+    <parent link="c1_RR"/>
+    <child link="c2_RR"/>
+    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+  </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_RR">
     <inertial>
@@ -440,6 +462,17 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c2_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Joint **************************************************************  -->
+  <joint name="j_thigh_RR" type="revolute">
+    <parent link="c2_RR"/>
+    <child link="thigh_RR"/>
+    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Thigh Link ***************************************************************  -->
   <link name="thigh_RR">
     <inertial>
@@ -462,6 +495,28 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="thigh_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
+  <transmission name="t_thigh_RR">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_thigh_RR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_thigh_RR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** Tibia Joint **************************************************************  -->
+  <joint name="j_tibia_RR" type="revolute">
+    <parent link="thigh_RR"/>
+    <child link="tibia_RR"/>
+    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Tibia Link ***************************************************************  -->
   <link name="tibia_RR">
     <inertial>
@@ -484,58 +539,9 @@
       </geometry>
     </collision>
   </link>
-  <!-- ****************************************************** C1 Joint *****************************************************************  -->
-  <joint name="j_c1_RR" type="revolute">
-    <parent link="base_link"/>
-    <child link="c1_RR"/>
-    <origin rpy="0 4.7123 -0.7853981633974483" xyz="-0.1248   -0.06164  0.001116"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C2 Joint *****************************************************************  -->
-  <joint name="j_c2_RR" type="fixed">
-    <parent link="c1_RR"/>
-    <child link="c2_RR"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
-  </joint>
-  <!-- ****************************************************** Thigh Joint **************************************************************  -->
-  <joint name="j_thigh_RR" type="revolute">
-    <parent link="c2_RR"/>
-    <child link="thigh_RR"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** Tibia Joint **************************************************************  -->
-  <joint name="j_tibia_RR" type="revolute">
-    <parent link="thigh_RR"/>
-    <child link="tibia_RR"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C1 Transmission **********************************************************  -->
-  <transmission name="t_c1_RR">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_c1_RR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_c1_RR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
-  <transmission name="t_thigh_RR">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_thigh_RR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_thigh_RR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <gazebo reference="tibia_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_RR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -547,23 +553,15 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="c1_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="c2_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="thigh_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tibia_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Joint *****************************************************************  -->
+  <joint name="j_c1_LF" type="revolute">
+    <parent link="base_link"/>
+    <child link="c1_LF"/>
+    <origin rpy="0 4.7123  2.356194490192345" xyz=" 0.1248   0.06164  0.001116"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_LF">
     <inertial>
@@ -586,6 +584,26 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c1_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C1 Transmission **********************************************************  -->
+  <transmission name="t_c1_LF">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_c1_LF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_c1_LF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** C2 Joint *****************************************************************  -->
+  <joint name="j_c2_LF" type="fixed">
+    <parent link="c1_LF"/>
+    <child link="c2_LF"/>
+    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+  </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_LF">
     <inertial>
@@ -608,6 +626,17 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c2_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Joint **************************************************************  -->
+  <joint name="j_thigh_LF" type="revolute">
+    <parent link="c2_LF"/>
+    <child link="thigh_LF"/>
+    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Thigh Link ***************************************************************  -->
   <link name="thigh_LF">
     <inertial>
@@ -630,6 +659,28 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="thigh_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
+  <transmission name="t_thigh_LF">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_thigh_LF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_thigh_LF">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** Tibia Joint **************************************************************  -->
+  <joint name="j_tibia_LF" type="revolute">
+    <parent link="thigh_LF"/>
+    <child link="tibia_LF"/>
+    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Tibia Link ***************************************************************  -->
   <link name="tibia_LF">
     <inertial>
@@ -652,58 +703,9 @@
       </geometry>
     </collision>
   </link>
-  <!-- ****************************************************** C1 Joint *****************************************************************  -->
-  <joint name="j_c1_LF" type="revolute">
-    <parent link="base_link"/>
-    <child link="c1_LF"/>
-    <origin rpy="0 4.7123 2.356194490192345" xyz="0.1248    0.06164   0.001116"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C2 Joint *****************************************************************  -->
-  <joint name="j_c2_LF" type="fixed">
-    <parent link="c1_LF"/>
-    <child link="c2_LF"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
-  </joint>
-  <!-- ****************************************************** Thigh Joint **************************************************************  -->
-  <joint name="j_thigh_LF" type="revolute">
-    <parent link="c2_LF"/>
-    <child link="thigh_LF"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** Tibia Joint **************************************************************  -->
-  <joint name="j_tibia_LF" type="revolute">
-    <parent link="thigh_LF"/>
-    <child link="tibia_LF"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C1 Transmission **********************************************************  -->
-  <transmission name="t_c1_LF">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_c1_LF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_c1_LF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
-  <transmission name="t_thigh_LF">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_thigh_LF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_thigh_LF">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <gazebo reference="tibia_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_LF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -715,23 +717,15 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="c1_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="c2_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="thigh_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tibia_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Joint *****************************************************************  -->
+  <joint name="j_c1_LM" type="revolute">
+    <parent link="base_link"/>
+    <child link="c1_LM"/>
+    <origin rpy="0 4.7123  3.14159" xyz=" 0        0.1034   0.001116"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_LM">
     <inertial>
@@ -754,6 +748,26 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c1_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C1 Transmission **********************************************************  -->
+  <transmission name="t_c1_LM">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_c1_LM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_c1_LM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** C2 Joint *****************************************************************  -->
+  <joint name="j_c2_LM" type="fixed">
+    <parent link="c1_LM"/>
+    <child link="c2_LM"/>
+    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+  </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_LM">
     <inertial>
@@ -776,6 +790,17 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c2_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Joint **************************************************************  -->
+  <joint name="j_thigh_LM" type="revolute">
+    <parent link="c2_LM"/>
+    <child link="thigh_LM"/>
+    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Thigh Link ***************************************************************  -->
   <link name="thigh_LM">
     <inertial>
@@ -798,6 +823,28 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="thigh_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
+  <transmission name="t_thigh_LM">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_thigh_LM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_thigh_LM">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** Tibia Joint **************************************************************  -->
+  <joint name="j_tibia_LM" type="revolute">
+    <parent link="thigh_LM"/>
+    <child link="tibia_LM"/>
+    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Tibia Link ***************************************************************  -->
   <link name="tibia_LM">
     <inertial>
@@ -820,58 +867,9 @@
       </geometry>
     </collision>
   </link>
-  <!-- ****************************************************** C1 Joint *****************************************************************  -->
-  <joint name="j_c1_LM" type="revolute">
-    <parent link="base_link"/>
-    <child link="c1_LM"/>
-    <origin rpy="0 4.7123 3.14159" xyz="0         0.1034    0.001116"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C2 Joint *****************************************************************  -->
-  <joint name="j_c2_LM" type="fixed">
-    <parent link="c1_LM"/>
-    <child link="c2_LM"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
-  </joint>
-  <!-- ****************************************************** Thigh Joint **************************************************************  -->
-  <joint name="j_thigh_LM" type="revolute">
-    <parent link="c2_LM"/>
-    <child link="thigh_LM"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** Tibia Joint **************************************************************  -->
-  <joint name="j_tibia_LM" type="revolute">
-    <parent link="thigh_LM"/>
-    <child link="tibia_LM"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C1 Transmission **********************************************************  -->
-  <transmission name="t_c1_LM">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_c1_LM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_c1_LM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
-  <transmission name="t_thigh_LM">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_thigh_LM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_thigh_LM">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <gazebo reference="tibia_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_LM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -883,23 +881,15 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="c1_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="c2_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="thigh_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tibia_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Joint *****************************************************************  -->
+  <joint name="j_c1_LR" type="revolute">
+    <parent link="base_link"/>
+    <child link="c1_LR"/>
+    <origin rpy="0 4.7123  3.9269908169872414" xyz="-0.1248   0.06164  0.001116"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** C1 Link ******************************************************************  -->
   <link name="c1_LR">
     <inertial>
@@ -922,6 +912,26 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c1_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C1 Transmission **********************************************************  -->
+  <transmission name="t_c1_LR">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_c1_LR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_c1_LR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** C2 Joint *****************************************************************  -->
+  <joint name="j_c2_LR" type="fixed">
+    <parent link="c1_LR"/>
+    <child link="c2_LR"/>
+    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+  </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_LR">
     <inertial>
@@ -944,6 +954,17 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="c2_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Joint **************************************************************  -->
+  <joint name="j_thigh_LR" type="revolute">
+    <parent link="c2_LR"/>
+    <child link="thigh_LR"/>
+    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Thigh Link ***************************************************************  -->
   <link name="thigh_LR">
     <inertial>
@@ -966,6 +987,28 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="thigh_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
+  <transmission name="t_thigh_LR">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_thigh_LR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_thigh_LR">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ****************************************************** Tibia Joint **************************************************************  -->
+  <joint name="j_tibia_LR" type="revolute">
+    <parent link="thigh_LR"/>
+    <child link="tibia_LR"/>
+    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
+  </joint>
   <!-- ****************************************************** Tibia Link ***************************************************************  -->
   <link name="tibia_LR">
     <inertial>
@@ -988,58 +1031,9 @@
       </geometry>
     </collision>
   </link>
-  <!-- ****************************************************** C1 Joint *****************************************************************  -->
-  <joint name="j_c1_LR" type="revolute">
-    <parent link="base_link"/>
-    <child link="c1_LR"/>
-    <origin rpy="0 4.7123 3.9269908169872414" xyz="-0.1248   0.06164   0.001116"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C2 Joint *****************************************************************  -->
-  <joint name="j_c2_LR" type="fixed">
-    <parent link="c1_LR"/>
-    <child link="c2_LR"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
-  </joint>
-  <!-- ****************************************************** Thigh Joint **************************************************************  -->
-  <joint name="j_thigh_LR" type="revolute">
-    <parent link="c2_LR"/>
-    <child link="thigh_LR"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** Tibia Joint **************************************************************  -->
-  <joint name="j_tibia_LR" type="revolute">
-    <parent link="thigh_LR"/>
-    <child link="tibia_LR"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="2.8" lower="-2.6179939" upper="2.6179939" velocity="5.6548668"/>
-  </joint>
-  <!-- ****************************************************** C1 Transmission **********************************************************  -->
-  <transmission name="t_c1_LR">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_c1_LR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_c1_LR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <!-- ****************************************************** Thigh Transmission *******************************************************  -->
-  <transmission name="t_thigh_LR">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="j_thigh_LR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="m_thigh_LR">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <gazebo reference="tibia_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_LR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -1051,22 +1045,6 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- ****************************************************** Gazebo Colors*************************************************************  -->
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <gazebo reference="c1_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="c2_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="thigh_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="tibia_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- Left Rear    -->
   <!-- ****************************************************** End of Main Macro ********************************************************  -->
