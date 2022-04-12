@@ -3,7 +3,9 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /Global Options1
+        - /Grid1
       Splitter Ratio: 0.5
     Tree Height: 787
   - Class: rviz_common/Selection
@@ -37,7 +39,7 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 10
+      Plane Cell Count: 20
       Reference Frame: <Fixed Frame>
       Value: true
     - Alpha: 1
@@ -58,199 +60,53 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        body_link:
+          Value: true
+        flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        link_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_rgb_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        coxa_LF:
+        link_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        coxa_LM:
+        link_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        coxa_LR:
+        link_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        coxa_RF:
+        link_5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        coxa_RM:
+        link_6:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        coxa_RR:
+        tool0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        femur_LF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        femur_LM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        femur_LR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        femur_RF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        femur_RM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        femur_RR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        foot_LF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        foot_LM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        foot_LR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        foot_RF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        foot_RM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        foot_RR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        leg_center_LF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        leg_center_LM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        leg_center_LR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        leg_center_RF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        leg_center_RM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        leg_center_RR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        pan_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        tarsus_LF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tarsus_LM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tarsus_LR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tarsus_RF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tarsus_RM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tarsus_RR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tibia_LF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tibia_LM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tibia_LR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tibia_RF:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tibia_RM:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tibia_RR:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
@@ -261,89 +117,25 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        base:
+          Value: true
         base_link:
           Value: false
-        body_link:
+        flange:
           Value: true
-        camera_depth_optical_frame:
+        link_1:
           Value: true
-        camera_rgb_optical_frame:
+        link_2:
           Value: true
-        coxa_LF:
+        link_3:
           Value: true
-        coxa_LM:
+        link_4:
           Value: true
-        coxa_LR:
+        link_5:
           Value: true
-        coxa_RF:
+        link_6:
           Value: true
-        coxa_RM:
-          Value: true
-        coxa_RR:
-          Value: true
-        femur_LF:
-          Value: true
-        femur_LM:
-          Value: true
-        femur_LR:
-          Value: true
-        femur_RF:
-          Value: true
-        femur_RM:
-          Value: true
-        femur_RR:
-          Value: true
-        foot_LF:
-          Value: true
-        foot_LM:
-          Value: true
-        foot_LR:
-          Value: true
-        foot_RF:
-          Value: true
-        foot_RM:
-          Value: true
-        foot_RR:
-          Value: true
-        imu_link:
-          Value: false
-        leg_center_LF:
-          Value: true
-        leg_center_LM:
-          Value: true
-        leg_center_LR:
-          Value: true
-        leg_center_RF:
-          Value: true
-        leg_center_RM:
-          Value: true
-        leg_center_RR:
-          Value: true
-        pan_link:
-          Value: true
-        tarsus_LF:
-          Value: true
-        tarsus_LM:
-          Value: true
-        tarsus_LR:
-          Value: true
-        tarsus_RF:
-          Value: true
-        tarsus_RM:
-          Value: true
-        tarsus_RR:
-          Value: true
-        tibia_LF:
-          Value: true
-        tibia_LM:
-          Value: true
-        tibia_LR:
-          Value: true
-        tibia_RF:
-          Value: true
-        tibia_RM:
-          Value: true
-        tibia_RR:
+        tool0:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -352,62 +144,22 @@ Visualization Manager:
       Show Names: false
       Tree:
         base_link:
-          body_link:
-            camera_depth_optical_frame:
-              {}
-            camera_rgb_optical_frame:
-              {}
-            imu_link:
-              {}
-            leg_center_LF:
-              coxa_LF:
-                femur_LF:
-                  tibia_LF:
-                    tarsus_LF:
-                      foot_LF:
-                        {}
-            leg_center_LM:
-              coxa_LM:
-                femur_LM:
-                  tibia_LM:
-                    tarsus_LM:
-                      foot_LM:
-                        {}
-            leg_center_LR:
-              coxa_LR:
-                femur_LR:
-                  tibia_LR:
-                    tarsus_LR:
-                      foot_LR:
-                        {}
-            leg_center_RF:
-              coxa_RF:
-                femur_RF:
-                  tibia_RF:
-                    tarsus_RF:
-                      foot_RF:
-                        {}
-            leg_center_RM:
-              coxa_RM:
-                femur_RM:
-                  tibia_RM:
-                    tarsus_RM:
-                      foot_RM:
-                        {}
-            leg_center_RR:
-              coxa_RR:
-                femur_RR:
-                  tibia_RR:
-                    tarsus_RR:
-                      foot_RR:
-                        {}
-            pan_link:
-              {}
+          base:
+            {}
+          link_1:
+            link_2:
+              link_3:
+                link_4:
+                  link_5:
+                    link_6:
+                      flange:
+                        tool0:
+                          {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 0; 0; 0
+    Background Color: 85; 87; 83
     Fixed Frame: base_link
     Frame Rate: 30
   Name: root
@@ -451,25 +203,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.0905253887176514
+      Distance: 4.758500576019287
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0043171001598238945
-        Y: 0.029605844989418983
-        Z: -0.0843057781457901
+        X: -0.38981911540031433
+        Y: 1.131339192390442
+        Z: -0.46727168560028076
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.49979710578918457
+      Pitch: 0.5047972202301025
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.803585529327393
+      Yaw: 5.388589859008789
     Saved: ~
 Window Geometry:
   Displays:
