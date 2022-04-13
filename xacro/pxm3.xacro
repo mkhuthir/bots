@@ -323,7 +323,7 @@
 
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
-      <robotNamespace>/phantomx</robotNamespace>
+      <robotNamespace>/pxm3</robotNamespace>
     </plugin>
   </gazebo>
 
