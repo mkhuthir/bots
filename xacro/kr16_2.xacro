@@ -214,6 +214,7 @@
 
 <!-- ****************************************************** ROS base_link to KUKA $ROBROOT coordinate system transform *********** -->
     <link name="${prefix}base" />
+    
     <joint name="${prefix}base_link-base" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${prefix}base_link"/>
@@ -222,6 +223,7 @@
 
 <!-- ***************** This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers ***************************** -->
     <link name="${prefix}tool0" />
+    
     <joint name="${prefix}flange-tool0" type="fixed">
       <parent link="${prefix}flange"/>
       <child link="${prefix}tool0"/>
@@ -234,4 +236,5 @@
 
 <xacro:kuka_kr16_2 prefix=""/>
 
+<!-- ****************************************************** End ********************************************************************* -->
 </robot>
