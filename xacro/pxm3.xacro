@@ -319,6 +319,14 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:pxm3>
 
+<!-- ****************************************************** Gazebo Control ***********************************************************  -->
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/phantomx</robotNamespace>
+    </plugin>
+  </gazebo>
+
 <!-- *********************************************************************************************************************************  -->
 
 </robot>
