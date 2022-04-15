@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:include filename="$(find robot_gazebo)/urdf/common_colours.xacro"/>
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_colours.xacro"/>
 
   <xacro:macro name="material_kuka_orange">
     <material name="">
