@@ -45,7 +45,9 @@
         </geometry>
       </collision>
     </link>
+    
 <!-- ****************************************************** link 2 **************************************************************** -->
+    
     <link name="${prefix}link_2">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -61,6 +63,7 @@
         </geometry>
       </collision>
     </link>
+    
 <!-- ****************************************************** link 3 **************************************************************** -->
 
     <link name="${prefix}link_3">
@@ -78,6 +81,7 @@
         </geometry>
       </collision>
     </link>
+    
 <!-- ****************************************************** link 4 **************************************************************** -->
 
     <link name="${prefix}link_4">
@@ -95,6 +99,7 @@
         </geometry>
       </collision>
     </link>
+    
 <!-- ****************************************************** link 5 **************************************************************** -->
 
     <link name="${prefix}link_5">
@@ -112,6 +117,7 @@
         </geometry>
       </collision>
     </link>
+    
 <!-- ****************************************************** link 6 **************************************************************** -->
 
     <link name="${prefix}link_6">
@@ -129,6 +135,7 @@
         </geometry>
       </collision>
     </link>
+    
 <!-- ****************************************************** tool 0 ******************************************************************* -->
 <!-- ************************************** Following REP199, this frame shall be use to attach EEF or other equipment *************** -->
     
@@ -195,6 +202,7 @@
       <axis xyz="-1 0 0"/>
       <limit lower="${radians(-350)}" upper="${radians(350)}" effort="0" velocity="${radians(800)}"/>
     </joint>
+    
 <!-- ****************************************************** tool frame - fixed frame ********************************************* -->
 
     <joint name="${prefix}joint_a6-tool0" type="fixed">
@@ -215,7 +223,7 @@
       <child link="${prefix}base"/>
     </joint>
 
-    <!-- ********************** This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers ******************* -->
+<!-- ********************** This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers ******************* -->
     
     <link name="${prefix}tool0" />
 
