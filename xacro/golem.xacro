@@ -19,7 +19,7 @@
 
     <xacro:property name="joint_lower_limit"    value="-${radians(180)}"/>
     <xacro:property name="joint_upper_limit"    value=" ${radians(180)}"/>
-    <xacro:property name="joint_effort"         value="6.0"/>
+    <xacro:property name="joint_effort"         value=" 6.0"/>
     <xacro:property name="joint_velocity"       value=" ${radians(300)}"/>
 
 <!-- ****************************************************** Colors *******************************************************************  -->
