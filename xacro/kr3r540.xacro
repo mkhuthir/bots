@@ -2,7 +2,7 @@
 
 <robot name="kr3r540" xmlns:xacro="http://wiki.ros.org/xacro">
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_materials.xacro"/>
+  <xacro:include filename="package://robot_gazebo/xacro/common_materials.xacro"/>
   <xacro:property name="mesh_path" value="package://robot_gazebo/meshes/kr3r540/"/>
 
 <!-- ****************************************************** Macro ******************************************************************** -->
@@ -130,13 +130,15 @@
       </collision>
     </link>
 <!-- ****************************************************** tool 0 ******************************************************************* -->
-
-<!-- ********************** Following REP199, this frame shall be use to attach EEF or other equipment -->
+<!-- ************************************** Following REP199, this frame shall be use to attach EEF or other equipment *************** -->
+    
     <link name="${prefix}flange" />
+    
 <!-- ****************************************************** END LINKS **************************************************************** -->
 
 <!-- ****************************************************** JOINTS ******************************************************************* -->
 <!-- ****************************************************** joint 1 (A1) ************************************************************* -->
+    
     <joint name="${prefix}joint_a1" type="revolute">
       <origin xyz="0 0 0.345" rpy="0 0 0"/>
       <parent link="${prefix}base_link"/>
@@ -144,6 +146,7 @@
       <axis xyz="0 0 -1"/>
       <limit lower="${radians(-170)}" upper="${radians(170)}" effort="0" velocity="${radians(530)}"/>
     </joint>
+    
 <!-- ****************************************************** joint 2 (A2) **************************************************************** -->
 
     <joint name="${prefix}joint_a2" type="revolute">
@@ -153,6 +156,7 @@
       <axis xyz="0 1 0"/>
       <limit lower="${radians(-170)}" upper="${radians(50)}" effort="0" velocity="${radians(529)}"/>
     </joint>
+    
 <!-- ****************************************************** joint 3 (A3) **************************************************************** -->
 
     <joint name="${prefix}joint_a3" type="revolute">
@@ -171,6 +175,7 @@
       <axis xyz="-1 0 0"/>
       <limit lower="${radians(-175)}" upper="${radians(175)}" effort="0" velocity="${radians(600)}"/>
     </joint>
+    
 <!-- ****************************************************** joint 5 (A5) **************************************************************** -->
 
     <joint name="${prefix}joint_a5" type="revolute">
@@ -180,6 +185,7 @@
       <axis xyz="0 1 0"/>
       <limit lower="${radians(-120)}" upper="${radians(120)}" effort="0" velocity="${radians(600)}"/>
     </joint>
+    
 <!-- ****************************************************** joint 6 (A6) **************************************************************** -->
 
     <joint name="${prefix}joint_a6" type="revolute">
@@ -196,9 +202,11 @@
       <child link="${prefix}flange"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
+    
 <!-- ****************************************************** END JOINTS *********************************************************** -->
 
-<!-- ********************** ROS base_link to KUKA $ROBROOT coordinate system transform -->
+<!-- ****************************** ROS base_link to KUKA $ROBROOT coordinate system transform *********************************** -->
+   
     <link name="${prefix}base" />
 
     <joint name="${prefix}base_link-base" type="fixed">
@@ -207,7 +215,8 @@
       <child link="${prefix}base"/>
     </joint>
 
-    <!-- ********************** This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers -->
+    <!-- ********************** This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers ******************* -->
+    
     <link name="${prefix}tool0" />
 
     <joint name="${prefix}flange-tool0" type="fixed">
@@ -215,11 +224,15 @@
       <child link="${prefix}tool0"/>
       <origin xyz="0 0 0" rpy="0 ${radians(90)} 0"/>
     </joint>
+    
+<!-- ****************************************************** End Macro *********************************************************** -->
+
   </xacro:macro>
 
 <!-- ****************************************************** Generates a urdf from macro ********************************************** -->
 
   <xacro:kuka_kr3r540 prefix=""/>
+  
 <!-- ****************************************************** End ********************************************************************** -->
 
 </robot>
