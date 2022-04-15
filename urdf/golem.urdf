@@ -106,7 +106,7 @@
     <child link="pan_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.1 0.0 0.034"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Pan Link *****************************************************************  -->
   <link name="pan_link">
@@ -138,7 +138,7 @@
     <parent link="leg_center_RR"/>
     <child link="coxa_RR"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_RR">
@@ -182,7 +182,7 @@
     <parent link="coxa_RR"/>
     <child link="femur_RR"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_RR">
@@ -226,7 +226,7 @@
     <parent link="femur_RR"/>
     <child link="tibia_RR"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_RR">
@@ -270,7 +270,7 @@
     <parent link="tibia_RR"/>
     <child link="tarsus_RR"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_RR">
@@ -343,7 +343,7 @@
     <parent link="leg_center_RM"/>
     <child link="coxa_RM"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_RM">
@@ -387,7 +387,7 @@
     <parent link="coxa_RM"/>
     <child link="femur_RM"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_RM">
@@ -431,7 +431,7 @@
     <parent link="femur_RM"/>
     <child link="tibia_RM"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_RM">
@@ -475,7 +475,7 @@
     <parent link="tibia_RM"/>
     <child link="tarsus_RM"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_RM">
@@ -548,7 +548,7 @@
     <parent link="leg_center_RF"/>
     <child link="coxa_RF"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_RF">
@@ -592,7 +592,7 @@
     <parent link="coxa_RF"/>
     <child link="femur_RF"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_RF">
@@ -636,7 +636,7 @@
     <parent link="femur_RF"/>
     <child link="tibia_RF"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_RF">
@@ -680,7 +680,7 @@
     <parent link="tibia_RF"/>
     <child link="tarsus_RF"/>
     <axis xyz="0.0 0.0 1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_RF">
@@ -753,7 +753,7 @@
     <parent link="leg_center_LR"/>
     <child link="coxa_LR"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_LR">
@@ -797,7 +797,7 @@
     <parent link="coxa_LR"/>
     <child link="femur_LR"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_LR">
@@ -841,7 +841,7 @@
     <parent link="femur_LR"/>
     <child link="tibia_LR"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_LR">
@@ -885,7 +885,7 @@
     <parent link="tibia_LR"/>
     <child link="tarsus_LR"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_LR">
@@ -958,7 +958,7 @@
     <parent link="leg_center_LM"/>
     <child link="coxa_LM"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_LM">
@@ -1002,7 +1002,7 @@
     <parent link="coxa_LM"/>
     <child link="femur_LM"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_LM">
@@ -1046,7 +1046,7 @@
     <parent link="femur_LM"/>
     <child link="tibia_LM"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_LM">
@@ -1090,7 +1090,7 @@
     <parent link="tibia_LM"/>
     <child link="tarsus_LM"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_LM">
@@ -1163,7 +1163,7 @@
     <parent link="leg_center_LF"/>
     <child link="coxa_LF"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Coxa Transmission ********************************************************  -->
   <transmission name="coxa_transmission_LF">
@@ -1207,7 +1207,7 @@
     <parent link="coxa_LF"/>
     <child link="femur_LF"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Femur Transmission *******************************************************  -->
   <transmission name="femur_transmission_LF">
@@ -1251,7 +1251,7 @@
     <parent link="femur_LF"/>
     <child link="tibia_LF"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="tibia_transmission_LF">
@@ -1295,7 +1295,7 @@
     <parent link="tibia_LF"/>
     <child link="tarsus_LF"/>
     <axis xyz="0.0 0.0 -1"/>
-    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="0.524"/>
+    <limit effort="6.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.235987755982989"/>
   </joint>
   <!-- ****************************************************** Tarsus Transmission ******************************************************  -->
   <transmission name="tarsus_transmission_LF">
