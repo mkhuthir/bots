@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
 <!-- colours based on RAL values given in "FAQ - Colours of robot and robot
      controller", version "KUKA.Tifs | 2010-01-21 |YM| DefaultColorsRobotAndController.doc",
      downloaded 2015-07-18 from
@@ -113,3 +116,5 @@
 
 <!-- RAL 9016 - traffic white -->
 <xacro:property name="colour_kuka_ral_traffic_white"    value="${241/255}  ${240/255} ${234/255} 1.0" />
+
+</robot>

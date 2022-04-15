@@ -2,7 +2,7 @@
 
 <robot name="kr3r540" xmlns:xacro="http://wiki.ros.org/xacro">
 
-  <xacro:include filename="package://robot_gazebo/xacro/common_materials.xacro"/>
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_materials.xacro"/>
   <xacro:property name="mesh_path" value="package://robot_gazebo/meshes/kr3r540/"/>
 
 <!-- ****************************************************** Macro ******************************************************************** -->
