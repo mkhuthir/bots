@@ -1,12 +1,17 @@
 <?xml version="1.0"?>
+
 <robot name="kr5_arc" xmlns:xacro="http://wiki.ros.org/xacro">
 
 
   <xacro:property name="mesh_path"        value="package://robot_gazebo/meshes/kr5_arc/"/>
 
+<!-- ****************************************************** Macro ******************************************************************** -->
+
   <xacro:macro name="kuka_kr5_arc" params="prefix">
-    <!-- LINKS -->
-    <!-- base link -->
+
+<!-- ****************************************************** LINKS ******************************************************************** -->
+<!-- ****************************************************** base link ************************************************************ -->
+
     <link name="${prefix}base_link">
       <inertial>
         <origin xyz="-0.017519394031846 8.11394768450848E-07 0.0975924044854325"
@@ -33,7 +38,13 @@
         </geometry>
       </collision>
     </link>
-    <!-- link 1 (A1) -->
+
+    <gazebo reference="${prefix}base_link">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+<!-- ****************************************************** link 1 (A1) **************************************************************** -->
+    
     <link name="${prefix}link_1">
       <inertial>
         <origin
@@ -62,7 +73,13 @@
         </geometry>
       </collision>
     </link>
-    <!-- link 2 -->
+
+    <gazebo reference="${prefix}link_1">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+<!-- ****************************************************** link 2 **************************************************************** -->
+
     <link name="${prefix}link_2">
       <inertial>
         <origin
@@ -91,7 +108,13 @@
         </geometry>
       </collision>
     </link>
-    <!-- link 3 -->
+
+    <gazebo reference="${prefix}link_2">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+<!-- ****************************************************** link 2 **************************************************************** -->
+
     <link name="${prefix}link_3">
       <inertial>
         <origin
@@ -120,7 +143,13 @@
         </geometry>
       </collision>
     </link>
-    <!-- link 4 -->
+
+    <gazebo reference="${prefix}link_3">
+      <material>Gazebo/Orange</material>
+    </gazebo>  
+
+<!-- ****************************************************** link 4 **************************************************************** -->
+
     <link name="${prefix}link_4">
       <inertial>
         <origin
@@ -149,7 +178,13 @@
         </geometry>
       </collision>
     </link>
-    <!-- link 5 -->
+
+    <gazebo reference="${prefix}link_4">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+<!-- ****************************************************** link 5 **************************************************************** -->
+
     <link name="${prefix}link_5">
       <inertial>
         <origin
@@ -178,7 +213,13 @@
         </geometry>
       </collision>
     </link>
-    <!-- link 6 -->
+
+    <gazebo reference="${prefix}link_5">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+<!-- ****************************************************** link 6 **************************************************************** -->
+
     <link name="${prefix}link_6">
       <inertial>
         <origin
@@ -207,14 +248,21 @@
         </geometry>
       </collision>
     </link>
-    <!-- tool link -->
-    <!-- Following REP199, this frame shall be use to attach EEF or other equipment -->
+
+    <gazebo reference="${prefix}link_6">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+<!-- ****************************************************** tool 0 ******************************************************************* -->
+<!-- ************************************** Following REP199, this frame shall be use to attach EEF or other equipment *************** -->
+
     <link name="${prefix}flange" />
 
-    <!-- END LINKS -->
+<!-- ****************************************************** END LINKS **************************************************************** -->
 
-    <!-- JOINTS -->
-    <!-- joint 1 (A1) -->
+<!-- ****************************************************** JOINTS ******************************************************************* -->
+<!-- ****************************************************** joint 1 (A1) ************************************************************* -->
+
     <joint name="${prefix}joint_a1" type="revolute">
       <origin xyz="0 0 0.4" rpy="${radians(180)} 0 0"/>
       <parent link="${prefix}base_link"/>
@@ -222,7 +270,9 @@
       <axis xyz="0 0 1"/>
       <limit effort="0" lower="${radians(-155)}" upper="${radians(155)}" velocity="${radians(154)}"/>
     </joint>
-    <!-- joint 2 (A2) -->
+
+<!-- ****************************************************** joint 2 (A2) **************************************************************** -->
+
     <joint name="${prefix}joint_a2" type="revolute">
       <origin xyz="0.18 0 0" rpy="${radians(90)} 0 0"/>
       <parent link="${prefix}link_1"/>
@@ -230,7 +280,9 @@
       <axis xyz="0 0 1"/>
       <limit effort="0" lower="${radians(-180)}" upper="${radians(65)}" velocity="${radians(154)}"/>
     </joint>
-    <!-- joint 3 (A3) -->
+
+<!-- ****************************************************** joint 3 (A3) **************************************************************** -->
+
     <joint name="${prefix}joint_a3" type="revolute">
       <origin xyz="0.6 0 0" rpy="0 0 0"/>
       <parent link="${prefix}link_2"/>
@@ -238,7 +290,9 @@
       <axis xyz="0 0 1"/>
       <limit effort="0" lower="${radians(-15)}" upper="${radians(158)}" velocity="${radians(228)}"/>
     </joint>
-    <!-- joint 4 (A4) -->
+
+<!-- ****************************************************** joint 4 (A4) **************************************************************** -->
+
     <joint name="${prefix}joint_a4" type="revolute">
       <origin xyz="0 -0.12 0" rpy="0 ${-radians(90)} 0"/>
       <parent link="${prefix}link_3"/>
@@ -246,7 +300,9 @@
       <axis xyz="0 0 1"/>
       <limit effort="0" lower="${radians(-350)}" upper="${radians(350)}" velocity="${radians(343)}"/>
     </joint>
-    <!-- joint 5 (A5) -->
+
+<!-- ****************************************************** joint 5 (A5) **************************************************************** -->
+
     <joint name="${prefix}joint_a5" type="revolute">
       <origin xyz="0 0 -0.62" rpy="0 ${radians(90)} 0"/>
       <parent link="${prefix}link_4"/>
@@ -254,7 +310,9 @@
       <axis xyz="0 0 1"/>
       <limit effort="0" lower="${radians(-130)}" upper="${radians(130)}" velocity="${radians(384)}"/>
     </joint>
-    <!-- joint 6 (A6) -->
+
+<!-- ****************************************************** joint 6 (A6) **************************************************************** -->
+
     <joint name="${prefix}joint_a6" type="revolute">
       <origin xyz="0 0 0" rpy="0 ${-radians(90)} 0"/>
       <parent link="${prefix}link_5"/>
@@ -262,32 +320,44 @@
       <axis xyz="0 0 1"/>
       <limit effort="0" lower="${radians(-350)}" upper="${radians(350)}" velocity="${radians(721)}"/>
     </joint>
-    <!-- tool frame - fixed frame -->
+
+<!-- ****************************************************** tool frame - fixed frame ********************************************* -->
+
     <joint name="${prefix}joint_a6-flange" type="fixed">
       <parent link="${prefix}link_6"/>
       <child link="${prefix}flange"/>
       <origin xyz="0 0 -0.115" rpy="0 ${radians(90)} ${-radians(90)}"/>
     </joint>
-    <!-- END JOINTS -->
 
-    <!-- ROS base_link to KUKA $ROBROOT coordinate system transform -->
+<!-- ****************************************************** END JOINTS *********************************************************** -->
+
+<!-- ****************************** ROS base_link to KUKA $ROBROOT coordinate system transform *********************************** -->
+
     <link name="${prefix}base" />
+
     <joint name="${prefix}base_link-base" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${prefix}base_link"/>
       <child link="${prefix}base"/>
     </joint>
 
-    <!-- This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers -->
+<!-- ********************** This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers **************************** -->
+
     <link name="${prefix}tool0" />
     <joint name="${prefix}flange-tool0" type="fixed">
       <parent link="${prefix}flange"/>
       <child link="${prefix}tool0"/>
       <origin xyz="0 0 0" rpy="0 ${radians(90)} 0"/>
     </joint>
-    
+
+<!-- ****************************************************** End Macro **************************************************************** -->
+
   </xacro:macro>
 
+<!-- ****************************************************** Generates a urdf from macro ********************************************** -->
+
   <xacro:kuka_kr5_arc prefix=""/>
+
+<!-- ****************************************************** End ********************************************************************** -->
 
 </robot>
