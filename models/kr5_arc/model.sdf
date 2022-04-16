@@ -1,0 +1,342 @@
+<sdf version='1.7'>
+  <model name='kuka_kr5_arc'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.017519 1e-06 0.097592 0 -0 0</pose>
+        <mass>7.58586</mass>
+        <inertia>
+          <ixx>0.0441803</ixx>
+          <ixy>5.37434e-07</ixy>
+          <ixz>0.00404556</ixz>
+          <iyy>0.0584309</iyy>
+          <iyz>-4.89901e-07</iyz>
+          <izz>0.0514876</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/collision/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/visual/base_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_a1' type='revolute'>
+      <pose relative_to='base_link'>0 0 0.4 3.14159 -0 0</pose>
+      <parent>base_link</parent>
+      <child>link_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.70526</lower>
+          <upper>2.70526</upper>
+          <effort>0</effort>
+          <velocity>2.68781</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_1'>
+      <pose relative_to='joint_a1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.035997 0.007838 -0.086497 0 -0 0</pose>
+        <mass>5.77242</mass>
+        <inertia>
+          <ixx>0.032702</ixx>
+          <ixy>-0.00189988</ixy>
+          <ixz>0.00937014</ixz>
+          <iyy>0.0373788</iyy>
+          <iyz>-0.00197023</iyz>
+          <izz>0.0348614</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/collision/link_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/visual/link_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_a2' type='revolute'>
+      <pose relative_to='link_1'>0.18 0 0 1.5708 -0 0</pose>
+      <parent>link_1</parent>
+      <child>link_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>1.13446</upper>
+          <effort>0</effort>
+          <velocity>2.68781</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_2'>
+      <pose relative_to='joint_a2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.006102 0.040112 -0.115311 0 -0 0</pose>
+        <mass>4.64975</mass>
+        <inertia>
+          <ixx>0.066346</ixx>
+          <ixy>0.000173652</ixy>
+          <ixz>0.000586191</ixz>
+          <iyy>0.0704079</iyy>
+          <iyz>-0.00203071</iyz>
+          <izz>0.0102816</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/collision/link_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/visual/link_2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_a3' type='revolute'>
+      <pose relative_to='link_2'>0.6 0 0 0 -0 0</pose>
+      <parent>link_2</parent>
+      <child>link_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>2.75762</upper>
+          <effort>0</effort>
+          <velocity>3.97935</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_3'>
+      <pose relative_to='joint_a3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.075503 -0.046482 -0.005065 0 -0 0</pose>
+        <mass>4.35934</mass>
+        <inertia>
+          <ixx>0.0202008</ixx>
+          <ixy>5.72395e-05</ixy>
+          <ixz>0.000556621</ixz>
+          <iyy>0.0246797</iyy>
+          <iyz>0.00069702</iyz>
+          <izz>0.0178068</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/collision/link_3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/visual/link_3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_a4' type='revolute'>
+      <pose relative_to='link_3'>0 -0.12 0 0 -1.5708 0</pose>
+      <parent>link_3</parent>
+      <child>link_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-6.10865</lower>
+          <upper>6.10865</upper>
+          <effort>0</effort>
+          <velocity>5.98648</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_4'>
+      <pose relative_to='joint_a4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.085749 -0.001494 -0.002716 0 -0 0</pose>
+        <mass>2.0681</mass>
+        <inertia>
+          <ixx>0.00444944</ixx>
+          <ixy>-0.000424915</ixy>
+          <ixz>-0.000117341</ixz>
+          <iyy>0.00882693</iyy>
+          <iyz>0.000136971</iyz>
+          <izz>0.0101131</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/collision/link_4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/visual/link_4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_a5' type='revolute'>
+      <pose relative_to='link_4'>0 0 -0.62 0 1.5708 0</pose>
+      <parent>link_4</parent>
+      <child>link_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.26893</lower>
+          <upper>2.26893</upper>
+          <effort>0</effort>
+          <velocity>6.70206</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_5'>
+      <pose relative_to='joint_a5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.328309</mass>
+        <inertia>
+          <ixx>0.000221789</ixx>
+          <ixy>-9.59629e-07</ixy>
+          <ixz>1.40396e-20</ixz>
+          <iyy>0.000321152</iyy>
+          <iyz>-4.44974e-20</iyz>
+          <izz>0.000275966</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_5_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/collision/link_5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/visual/link_5.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_a6' type='revolute'>
+      <pose relative_to='link_5'>0 0 0 0 -1.5708 0</pose>
+      <parent>link_5</parent>
+      <child>link_6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-6.10865</lower>
+          <upper>6.10865</upper>
+          <effort>0</effort>
+          <velocity>12.5838</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_6'>
+      <pose relative_to='joint_a6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.009839 -2.8e-05 -0 0 -0 0</pose>
+        <mass>0.0789495</mass>
+        <inertia>
+          <ixx>3.53285e-05</ixx>
+          <ixy>-3.233e-08</ixy>
+          <ixz>-6.96432e-19</ixz>
+          <iyy>2.30178e-05</iyy>
+          <iyz>-9.2655e-19</iyz>
+          <izz>2.28539e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_6_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/collision/link_6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_6_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/kr5_arc/visual/link_6.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

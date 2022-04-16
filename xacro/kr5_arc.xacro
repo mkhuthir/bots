@@ -4,7 +4,7 @@
 
   <xacro:property name="mesh_path"        value="package://robot_gazebo/meshes/kr5_arc/"/>
 
-  <xacro:macro name="kr5_arc" params="prefix">
+  <xacro:macro name="kuka_kr5_arc" params="prefix">
     <!-- LINKS -->
     <!-- base link -->
     <link name="${prefix}base_link">
