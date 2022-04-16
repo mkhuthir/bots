@@ -3,150 +3,160 @@
 
 <!-- ****************************************************** Properties**************************************************************** -->
 
+  <xacro:property name="mesh_path"        value="package://robot_gazebo/meshes/lbr_iiwa_14_r820/"/>
+
+<!-- ****************************************************** Macro ******************************************************************** -->
+
   <xacro:macro name="kuka_lbr_iiwa_14_r820" params="prefix">
 
+<!-- ****************************************************** LINKS ******************************************************************** -->
 
-    <!-- link list -->
+<!-- ****************************************************** base link **************************************************************** -->
+
     <link name="${prefix}base_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/base_link.dae" />
+          <mesh filename="${mesh_path}visual/base_link.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/base_link.stl" />
+          <mesh filename="${mesh_path}collision/base_link.stl" />
         </geometry>
       </collision>
     </link>
 
-
+<!-- ****************************************************** link 1 (A1) ************************************************************** -->
 
     <link name="${prefix}link_1">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/link_1.dae" />
+          <mesh filename="${mesh_path}visual/link_1.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/link_1.stl" />
+          <mesh filename="${mesh_path}collision/link_1.stl" />
         </geometry>
       </collision>
     </link>
 
-
+<!-- ****************************************************** link 2 **************************************************************** -->
 
     <link name="${prefix}link_2">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/link_2.dae" />
+          <mesh filename="${mesh_path}visual/link_2.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/link_2.stl" />
+          <mesh filename="${mesh_path}collision/link_2.stl" />
         </geometry>
       </collision>
     </link>
 
-
+<!-- ****************************************************** link 3 **************************************************************** -->
 
     <link name="${prefix}link_3">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/link_3.dae" />
+          <mesh filename="${mesh_path}visual/link_3.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/link_3.stl" />
+          <mesh filename="${mesh_path}collision/link_3.stl" />
         </geometry>
       </collision>
     </link>
 
-
+<!-- ****************************************************** link 4 **************************************************************** -->
 
     <link name="${prefix}link_4">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/link_4.dae" />
+          <mesh filename="${mesh_path}visual/link_4.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/link_4.stl" />
+          <mesh filename="${mesh_path}collision/link_4.stl" />
         </geometry>
       </collision>
     </link>
 
-
+<!-- ****************************************************** link 5 **************************************************************** -->
 
     <link name="${prefix}link_5">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/link_5.dae" />
+          <mesh filename="${mesh_path}visual/link_5.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/link_5.stl" />
+          <mesh filename="${mesh_path}collision/link_5.stl" />
         </geometry>
       </collision>
     </link>
 
-
+<!-- ****************************************************** link 6 **************************************************************** -->
 
     <link name="${prefix}link_6">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/link_6.dae" />
+          <mesh filename="${mesh_path}visual/link_6.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/link_6.stl" />
+          <mesh filename="${mesh_path}collision/link_6.stl" />
         </geometry>
       </collision>
     </link>
 
-
+<!-- ****************************************************** link 7 **************************************************************** -->
 
     <link name="${prefix}link_7">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/visual/link_7.dae" />
+          <mesh filename="${mesh_path}visual/link_7.dae" />
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kuka_lbr_iiwa_support/meshes/lbr_iiwa_14_r820/collision/link_7.stl" />
+          <mesh filename="${mesh_path}collision/link_7.stl" />
         </geometry>
       </collision>
     </link>
 
+<!-- ****************************************************** tool 0 ******************************************************************* -->
+<!-- ******************* Following REP199, this frame shall be use to attach EEF or other equipment ********************************** -->
 
   
     <link name="${prefix}tool0" />
-    <!-- end of link list -->
+<!-- ****************************************************** END LINKS **************************************************************** -->
 
-    <!-- joint list -->
+<!-- ****************************************************** JOINTS ******************************************************************* -->
+<!-- ****************************************************** joint 1 (A1) ************************************************************* -->
+
     <joint name="${prefix}joint_a1" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="${prefix}base_link" />
@@ -155,6 +165,7 @@
       <limit lower="-2.9668" upper="2.9668" effort="0" velocity="1.4834" />
     </joint>
 
+<!-- ****************************************************** joint 2 (A2) **************************************************************** -->
 
 
     <joint name="${prefix}joint_a2" type="revolute">
@@ -165,7 +176,7 @@
       <limit lower="-2.0942" upper="2.0942" effort="0" velocity="1.4834" />
     </joint>
 
-
+<!-- ****************************************************** joint 3 (A3) **************************************************************** -->
 
     <joint name="${prefix}joint_a3" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -175,7 +186,7 @@
       <limit lower="-2.9668" upper="2.9668" effort="0" velocity="1.7452" />
     </joint>
 
-
+<!-- ****************************************************** joint 4 (A4) **************************************************************** -->
     
     <joint name="${prefix}joint_a4" type="revolute">
       <origin xyz="0.00043624 0 0.42" rpy="0 0 0" />
@@ -185,7 +196,7 @@
       <limit lower="-2.0942" upper="2.0942" effort="0" velocity="1.3089" />
     </joint>
 
-
+<!-- ****************************************************** joint 5 (A5) **************************************************************** -->
 
     <joint name="${prefix}joint_a5" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -195,7 +206,7 @@
       <limit lower="-2.9668" upper="2.9668" effort="0" velocity="2.2688" />
     </joint>
 
-
+<!-- ****************************************************** joint 6 (A6) **************************************************************** -->
 
     <joint name="${prefix}joint_a6" type="revolute">
       <origin xyz="0 0 0.4" rpy="0 0 0" />
@@ -205,7 +216,7 @@
       <limit lower="-2.0942" upper="2.0942" effort="0" velocity="2.356" />
     </joint>
 
-
+<!-- ****************************************************** joint 7 (A7) **************************************************************** -->
 
     <joint name="${prefix}joint_a7" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -215,7 +226,7 @@
       <limit lower="-3.0541" upper="3.0541" effort="0" velocity="2.356" />
     </joint>
 
-
+<!-- ***************** This frame corresponds to the $TOOL coordinate system in KUKA KRC controllers ********************************* -->
 
     <joint name="${prefix}joint_a7-tool0" type="fixed">
       <origin xyz="0 0 0.126" rpy="0 0 0" />
@@ -225,9 +236,9 @@
     </joint>
 
 
-    <!-- end of joint list -->
+<!-- ****************************************************** END JOINTS *********************************************************** -->
 
-    <!-- ROS base_link to KUKA $ROBROOT coordinate system transform -->
+<!-- ****************************************************** ROS base_link to KUKA $ROBROOT coordinate system transform *********** -->
 
     <link name="${prefix}base" />
 
@@ -237,11 +248,11 @@
       <child link="${prefix}base"/>
     </joint>
 
-
+<!-- ****************************************************** End Macro **************************************************************** -->
 
   </xacro:macro>
 
-
+<!-- ****************************************************** Generates a urdf from macro ********************************************** -->
 
   <xacro:kuka_lbr_iiwa_14_r820 prefix=""/>
 
