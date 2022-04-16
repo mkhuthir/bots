@@ -8,6 +8,8 @@ echo 'golem'
 gz sdf -p ../urdf/golem.urdf            > ../models/golem/model.sdf
 echo 'kr3r540'
 gz sdf -p ../urdf/kr3r540.urdf           > ../models/kr3r540/model.sdf
+echo 'kr5_arc'
+gz sdf -p ../urdf/kr5_arc.urdf           > ../models/kr5_arc/model.sdf
 echo 'kr16_2'
 gz sdf -p ../urdf/kr16_2.urdf           > ../models/kr16_2/model.sdf
 echo 'pxm3'

@@ -8,6 +8,8 @@ echo 'golem'
 xacro ../xacro/golem.xacro          > ../urdf/golem.urdf
 echo 'kr3r540'
 xacro ../xacro/kr3r540.xacro          > ../urdf/kr3r540.urdf
+echo 'kr5_arc'
+xacro ../xacro/kr5_arc.xacro          > ../urdf/kr5_arc.urdf
 echo 'kr16_2'
 xacro ../xacro/kr16_2.xacro          > ../urdf/kr16_2.urdf
 echo 'pxm3'
