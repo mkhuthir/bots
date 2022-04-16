@@ -28,7 +28,7 @@
     </collision>
   </link>
   <gazebo reference="base_link">
-    <material>Gazebo/Orange</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <!-- ****************************************************** link 1 (A1) **************************************************************** -->
   <link name="link_1">
@@ -166,7 +166,7 @@
     </collision>
   </link>
   <gazebo reference="link_6">
-    <material>Gazebo/Orange</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <!-- ****************************************************** tool 0 ******************************************************************* -->
   <!-- ************************************** Following REP199, this frame shall be use to attach EEF or other equipment *************** -->
