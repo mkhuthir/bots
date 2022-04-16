@@ -39,7 +39,7 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 10
+      Plane Cell Count: 25
       Reference Frame: <Fixed Frame>
       Value: true
     - Alpha: 1
@@ -159,7 +159,7 @@ Visualization Manager:
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 0; 0; 0
+    Background Color: 46; 52; 54
     Fixed Frame: base_link
     Frame Rate: 30
   Name: root
@@ -210,18 +210,18 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -1.3755887746810913
-        Y: 2.329411029815674
-        Z: -1.1939207315444946
+        X: 0.6103003025054932
+        Y: 0.41663822531700134
+        Z: -0.019190311431884766
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4947970509529114
+      Pitch: 0.49979710578918457
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.283603668212891
+      Yaw: 5.338609218597412
     Saved: ~
 Window Geometry:
   Displays:
