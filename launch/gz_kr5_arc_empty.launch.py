@@ -9,7 +9,7 @@ from launch_ros.substitutions import FindPackageShare
  
 pkg_name =    'robot_gazebo'
 robot_name =  'kr5_arc'
-world_name =  'basic.world'
+world_name =  'empty.world'
 
 spawn_x_val =     '0.0'
 spawn_y_val =     '0.0'
