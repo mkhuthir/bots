@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <robot name="lbr_iiwa_14_r820" xmlns:xacro="http://wiki.ros.org/xacro">
 
+<!-- ****************************************************** Properties**************************************************************** -->
+
   <xacro:macro name="kuka_lbr_iiwa_14_r820" params="prefix">
+
+
     <!-- link list -->
     <link name="${prefix}base_link">
       <visual>
@@ -17,6 +21,9 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="${prefix}link_1">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -31,6 +38,9 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="${prefix}link_2">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -45,6 +55,9 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="${prefix}link_3">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -59,6 +72,9 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="${prefix}link_4">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -73,6 +89,9 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="${prefix}link_5">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -87,6 +106,9 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="${prefix}link_6">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -101,6 +123,9 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="${prefix}link_7">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -115,6 +140,9 @@
         </geometry>
       </collision>
     </link>
+
+
+  
     <link name="${prefix}tool0" />
     <!-- end of link list -->
 
@@ -126,6 +154,9 @@
       <axis xyz="0 0 1" />
       <limit lower="-2.9668" upper="2.9668" effort="0" velocity="1.4834" />
     </joint>
+
+
+
     <joint name="${prefix}joint_a2" type="revolute">
       <origin xyz="-0.00043624 0 0.36" rpy="0 0 0" />
       <parent link="${prefix}link_1" />
@@ -133,6 +164,9 @@
       <axis xyz="0 1 0" />
       <limit lower="-2.0942" upper="2.0942" effort="0" velocity="1.4834" />
     </joint>
+
+
+
     <joint name="${prefix}joint_a3" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="${prefix}link_2" />
@@ -140,6 +174,9 @@
       <axis xyz="0 0 1" />
       <limit lower="-2.9668" upper="2.9668" effort="0" velocity="1.7452" />
     </joint>
+
+
+    
     <joint name="${prefix}joint_a4" type="revolute">
       <origin xyz="0.00043624 0 0.42" rpy="0 0 0" />
       <parent link="${prefix}link_3" />
@@ -147,6 +184,9 @@
       <axis xyz="0 -1 0" />
       <limit lower="-2.0942" upper="2.0942" effort="0" velocity="1.3089" />
     </joint>
+
+
+
     <joint name="${prefix}joint_a5" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="${prefix}link_4" />
@@ -154,6 +194,9 @@
       <axis xyz="0 0 1" />
       <limit lower="-2.9668" upper="2.9668" effort="0" velocity="2.2688" />
     </joint>
+
+
+
     <joint name="${prefix}joint_a6" type="revolute">
       <origin xyz="0 0 0.4" rpy="0 0 0" />
       <parent link="${prefix}link_5" />
@@ -161,6 +204,9 @@
       <axis xyz="0 1 0" />
       <limit lower="-2.0942" upper="2.0942" effort="0" velocity="2.356" />
     </joint>
+
+
+
     <joint name="${prefix}joint_a7" type="revolute">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="${prefix}link_6" />
@@ -168,24 +214,38 @@
       <axis xyz="0 0 1" />
       <limit lower="-3.0541" upper="3.0541" effort="0" velocity="2.356" />
     </joint>
+
+
+
     <joint name="${prefix}joint_a7-tool0" type="fixed">
       <origin xyz="0 0 0.126" rpy="0 0 0" />
       <parent link="${prefix}link_7" />
       <child link="${prefix}tool0" />
       <axis xyz="0 0 0" />
     </joint>
+
+
     <!-- end of joint list -->
 
     <!-- ROS base_link to KUKA $ROBROOT coordinate system transform -->
+
     <link name="${prefix}base" />
+
     <joint name="${prefix}base_link-base" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${prefix}base_link"/>
       <child link="${prefix}base"/>
     </joint>
+
+
+
   </xacro:macro>
 
+
+
   <xacro:kuka_lbr_iiwa_14_r820 prefix=""/>
+
+<!-- ****************************************************** End ********************************************************************** -->
 
 </robot>
 
