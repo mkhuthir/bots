@@ -1,5 +1,5 @@
 <sdf version='1.7'>
-  <model name='kuka_kr5_arc'>
+  <model name='kr5_arc'>
     <link name='base_link'>
       <inertial>
         <pose>-0.017519 1e-06 0.097592 0 -0 0</pose>
