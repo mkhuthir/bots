@@ -16,6 +16,11 @@
   <!-- ****************************************************** LINKS ******************************************************************** -->
   <!-- ****************************************************** base link **************************************************************** -->
   <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -33,10 +38,15 @@
     </collision>
   </link>
   <gazebo reference="base_link">
-    <material>Gazebo/Orange</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <!-- ****************************************************** link 1 (A1) **************************************************************** -->
   <link name="link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -58,6 +68,11 @@
   </gazebo>
   <!-- ****************************************************** link 2 **************************************************************** -->
   <link name="link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -79,6 +94,11 @@
   </gazebo>
   <!-- ****************************************************** link 2 **************************************************************** -->
   <link name="link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -100,6 +120,11 @@
   </gazebo>
   <!-- ****************************************************** link 4 **************************************************************** -->
   <link name="link_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -121,6 +146,11 @@
   </gazebo>
   <!-- ****************************************************** link 5 **************************************************************** -->
   <link name="link_5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -142,6 +172,11 @@
   </gazebo>
   <!-- ****************************************************** link 6 **************************************************************** -->
   <link name="link_6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -159,7 +194,7 @@
     </collision>
   </link>
   <gazebo reference="link_6">
-    <material>Gazebo/Orange</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <!-- ****************************************************** tool 0 ******************************************************************* -->
   <!-- ************************************** Following REP199, this frame shall be use to attach EEF or other equipment *************** -->

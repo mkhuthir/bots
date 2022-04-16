@@ -40,7 +40,7 @@
     </link>
 
     <gazebo reference="${prefix}base_link">
-      <material>Gazebo/Orange</material>
+      <material>Gazebo/Gray</material>
     </gazebo>
 
 <!-- ****************************************************** link 1 (A1) **************************************************************** -->
@@ -250,7 +250,7 @@
     </link>
 
     <gazebo reference="${prefix}link_6">
-      <material>Gazebo/Orange</material>
+      <material>Gazebo/Gray</material>
     </gazebo>
 
 <!-- ****************************************************** tool 0 ******************************************************************* -->
