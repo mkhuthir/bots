@@ -18,10 +18,10 @@
 	<xacro:property name="femur_length"         value="0.065" />
 	<xacro:property name="tibia_length"         value="0.133" />
 
-	<xacro:property name="joint_lower_limit"    value="-${3.14}" />
-	<xacro:property name="joint_upper_limit"    value="${3.14}" />
+	<xacro:property name="joint_lower_limit"    value="${radians(-180)}" />
+	<xacro:property name="joint_upper_limit"    value="${radians( 180)}" />
 	<xacro:property name="joint_effort"         value="6.0" />
-	<xacro:property name="joint_velocity"       value="0.524" />
+	<xacro:property name="joint_velocity"       value="${radians( 300)}" />
 
 <!-- ****************************************************** Colors *******************************************************************  -->
 

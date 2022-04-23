@@ -14,10 +14,10 @@
   <xacro:property name="thigh_offset_y"     value="-0.0645" />
   <xacro:property name="thigh_offset_z"     value="-0.0145" />
 
-  <xacro:property name="joint_lower_limit"  value="-${radians(150)}"/>
-  <xacro:property name="joint_upper_limit"  value=" ${radians(150)}"/>
-  <xacro:property name="joint_effort"       value=" 2.8"/>
-  <xacro:property name="joint_velocity"     value=" ${radians(324)}"/>
+  <xacro:property name="joint_lower_limit"  value="${radians(-150)}"/>
+  <xacro:property name="joint_upper_limit"  value="${radians(150)}"/>
+  <xacro:property name="joint_effort"       value="2.8"/>
+  <xacro:property name="joint_velocity"     value="${radians(324)}"/>
 
 <!-- ****************************************************** Colors *******************************************************************  -->
 
