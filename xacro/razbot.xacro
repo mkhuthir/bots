@@ -54,14 +54,14 @@
     <joint name="base_joint" type="fixed">
         <parent link="base_footprint" />
         <child link="base_link" />
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
 	<link name="base_link">
         <visual>
-            <origin	xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <origin	xyz="0 0 0" rpy="0 0 0" />
             <geometry>
                 <mesh filename="${mesh_path}body.stl" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -69,7 +69,7 @@
         </visual>
 
         <collision>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="${mesh_path}body.stl" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -77,7 +77,7 @@
         </collision>
 
         <inertial>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <mass value="0.00001"/>
             <inertia
                 ixx="1.0" ixy="0.0"  ixz="0.0"
@@ -95,14 +95,14 @@
 	<joint name="imu_joint" type="fixed">
 		<parent link="base_link" />
 		<child link="imu_link" />
-		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
 	</joint>
 
 <!-- ****************************************************** IMU Link *****************************************************************  -->
 
 	<link name="imu_link">
         <inertial>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <mass value="0.00001"/>
             <inertia
                 ixx="1.0" ixy="0.0"  ixz="0.0"
@@ -118,7 +118,7 @@
 <!-- ****************************************************** Leg Center Joint *********************************************************  -->
 		
 		<joint name="leg_center_joint_${side}${position}" type="fixed">
-			<origin xyz="${x} ${y} 0.0" rpy="0.0 0.0 0.0" />
+			<origin xyz="${x} ${y} 0.0" rpy="0 0 0" />
 			<parent link="base_link" />
 			<child link="leg_center_${side}${position}" />
 		</joint>
@@ -127,7 +127,7 @@
 
 		<link name="leg_center_${side}${position}" >
             <inertial>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <mass value="0.00001"/>
                 <inertia
                     ixx="1.0" ixy="0.0"  ixz="0.0"
@@ -139,7 +139,7 @@
 <!-- ****************************************************** Coxa Joint **************************************************************  -->
 		
 		<joint name="coxa_joint_${side}${position}" type="revolute">
-			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${angle}" />
+			<origin xyz="0 0 0" rpy="0.0 0.0 ${angle}" />
 			<parent link="leg_center_${side}${position}" />
 			<child link="coxa_${side}${position}" />
 			<axis xyz="0.0 0.0 1.0" />
@@ -151,7 +151,7 @@
         <link name="coxa_${side}${position}">
 
             <visual>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
                     <mesh filename="${mesh_path}coxa.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
@@ -159,7 +159,7 @@
             </visual>
 
             <collision>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
                     <mesh filename="${mesh_path}coxa.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
@@ -167,7 +167,7 @@
             </collision>
 
             <inertial>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <mass value="0.00001"/>
                 <inertia
                     ixx="1.0" ixy="0.0"  ixz="0.0"
@@ -197,7 +197,7 @@
 <!-- ****************************************************** Femur Joint **************************************************************  -->
 		
 		<joint name="femur_joint_${side}${position}" type="revolute">
-			<origin xyz="${coxa_length} 0.0 0.0" rpy="-${pi/2} ${pi/2} 0.0" />
+			<origin xyz="${coxa_length} 0.0 0.0" rpy="$(radians(-90)} $(radians(90)} 0.0" />
 			<parent link="coxa_${side}${position}" />
 			<child link="femur_${side}${position}" />
 			<axis xyz="0.0 0.0 ${-axis}" />
@@ -208,21 +208,21 @@
 
         <link name="femur_${side}${position}">
             <visual>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
                     <mesh filename="${mesh_path}femur.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="red"/>
             </visual>
             <collision>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
                     <mesh filename="${mesh_path}femur.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="red"/>
             </collision>
             <inertial>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <mass value="0.00001"/>
                 <inertia
                     ixx="1.0" ixy="0.0"  ixz="0.0"
@@ -251,7 +251,7 @@
 <!-- ****************************************************** Tibia Joint *************************************************************  -->
 		
 		<joint name="tibia_joint_${side}${position}" type="revolute">
-			<origin xyz="0.0 -${femur_length} 0.0" rpy="${pi} 0.0 0.0" />
+			<origin xyz="0.0 -${femur_length} 0.0" rpy="${radians(180)} 0 0" />
 			<parent link="femur_${side}${position}" />
 			<child link="tibia_${side}${position}" />
 			<axis xyz="0.0 0.0 ${axis}" />
@@ -262,21 +262,21 @@
 
         <link name="tibia_${side}${position}">
             <visual>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
                     <mesh filename="${mesh_path}tibia.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="green"/>
             </visual>
             <collision>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <origin xyz="0 0.0 0.0" rpy="0 0 0" />
                 <geometry>
                     <mesh filename="${mesh_path}tibia.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="green"/>
             </collision>
             <inertial>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+                <origin xyz="0 0.0 0.0" rpy="0 0 0" />
                 <mass value="0.00001"/>
                 <inertia
                     ixx="1.0" ixy="0.0"  ixz="0.0"
@@ -308,13 +308,13 @@
     
 <!-- ****************************************************** Build Robot **************************************************************  -->
 
-	<xacro:leg side="R" position="R" x="-${body_length_x/2}"    y="-${0.1695/2}"        angle="-${5*pi/6}"   axis=" 1" />
-	<xacro:leg side="R" position="M" x=" 0.0"                   y="-${body_length_y/2}" angle="-${pi/2}"     axis=" 1" />
-	<xacro:leg side="R" position="F" x=" ${body_length_x/2}"    y="-${0.1695/2}"        angle="-${pi/6}"     axis=" 1" />
+	<xacro:leg side="R" position="R" x="-${body_length_x/2}"    y="-${0.1695/2}"        angle="${radians(-150)}"    axis=" 1" />
+	<xacro:leg side="R" position="M" x=" 0.0"                   y="-${body_length_y/2}" angle="${radians(-90)}"     axis=" 1" />
+	<xacro:leg side="R" position="F" x=" ${body_length_x/2}"    y="-${0.1695/2}"        angle="${radians(-30)}"     axis=" 1" />
 
-	<xacro:leg side="L" position="R" x="-${body_length_x/2}"    y=" ${0.1695/2}"        angle=" ${5*pi/6}"   axis="-1" />
-	<xacro:leg side="L" position="M" x=" 0.0"                   y=" ${body_length_y/2}" angle=" ${pi/2}"     axis="-1" />
-	<xacro:leg side="L" position="F" x=" ${body_length_x/2}"    y=" ${0.1695/2}"        angle=" ${pi/6}"     axis="-1" />
+	<xacro:leg side="L" position="R" x="-${body_length_x/2}"    y=" ${0.1695/2}"        angle="${radians(150)}"     axis="-1" />
+	<xacro:leg side="L" position="M" x=" 0.0"                   y=" ${body_length_y/2}" angle="${radians(90)}"      axis="-1" />
+	<xacro:leg side="L" position="F" x=" ${body_length_x/2}"    y=" ${0.1695/2}"        angle="${radians(30)}"      axis="-1" />
 
 <!-- ******************************************************  *************************************************************************  -->
 
