@@ -197,7 +197,7 @@
 <!-- ****************************************************** Femur Joint **************************************************************  -->
 		
 		<joint name="femur_joint_${side}${position}" type="revolute">
-			<origin xyz="${coxa_length} 0.0 0.0" rpy="$(radians(-90)} $(radians(90)} 0.0" />
+			<origin xyz="${coxa_length} 0.0 0.0" rpy="${radians(-90)} ${radians(90)} 0.0" />
 			<parent link="coxa_${side}${position}" />
 			<child link="femur_${side}${position}" />
 			<axis xyz="0.0 0.0 ${-axis}" />
