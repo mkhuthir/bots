@@ -164,7 +164,6 @@
 <!-- ****************************************************** C2 Link ******************************************************************  -->
 
     <link name="c2_${suffix}">
-
       <inertial>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <mass value="0.024357719"/>
@@ -172,7 +171,6 @@
                   iyy="0.0081915737" iyz="-0.000019223094"
                   izz="0.0011379812" />
       </inertial>
-
       <visual>
         <origin xyz="0 -0.0252 0" rpy="0 0 0"  />
         <geometry>
@@ -181,14 +179,12 @@
         </geometry>
         <material name="green"/>
       </visual>
-
       <collision>
         <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
         <geometry>
           <mesh filename="${mesh_path}connect_coll.STL"  scale="1 1 1"/>
         </geometry>
       </collision>
-
     </link>
 
     <gazebo reference="c2_${suffix}"> 
