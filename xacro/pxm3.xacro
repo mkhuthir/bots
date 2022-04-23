@@ -87,12 +87,12 @@
 
 <!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
 
-      <xacro:legs xyz=" 0.1248  -0.06164  0.001116" rpy="0 4.7123  0.7853981633974483"   suffix="RF"/> <!-- Right Front  -->
-      <xacro:legs xyz=" 0       -0.1034   0.001116" rpy="0 4.7123  0"                    suffix="RM"/> <!-- Right Middle -->
-      <xacro:legs xyz="-0.1248  -0.06164  0.001116" rpy="0 4.7123 -0.7853981633974483"   suffix="RR"/> <!-- Right Rear   -->
-      <xacro:legs xyz=" 0.1248   0.06164  0.001116" rpy="0 4.7123  2.356194490192345"    suffix="LF"/> <!-- Left Front   -->
-      <xacro:legs xyz=" 0        0.1034   0.001116" rpy="0 4.7123  3.14159"              suffix="LM"/> <!-- Left Middle  -->
-      <xacro:legs xyz="-0.1248   0.06164  0.001116" rpy="0 4.7123  3.9269908169872414"   suffix="LR"/> <!-- Left Rear    -->
+      <xacro:legs xyz=" 0.1248  -0.06164  0.001116" rpy="0 ${radians(270)} ${radians(45)}"  suffix="RF"/> <!-- Right Front  -->
+      <xacro:legs xyz=" 0       -0.1034   0.001116" rpy="0 ${radians(270)} 0"               suffix="RM"/> <!-- Right Middle -->
+      <xacro:legs xyz="-0.1248  -0.06164  0.001116" rpy="0 ${radians(270)} ${radians(-45)}" suffix="RR"/> <!-- Right Rear   -->
+      <xacro:legs xyz=" 0.1248   0.06164  0.001116" rpy="0 ${radians(270)} ${radians(135)}" suffix="LF"/> <!-- Left Front   -->
+      <xacro:legs xyz=" 0        0.1034   0.001116" rpy="0 ${radians(270)} ${radians(180)}" suffix="LM"/> <!-- Left Middle  -->
+      <xacro:legs xyz="-0.1248   0.06164  0.001116" rpy="0 ${radians(270)} ${radians(225)}" suffix="LR"/> <!-- Left Rear    -->
 
 <!-- ****************************************************** End of Main Macro ********************************************************  -->
 
