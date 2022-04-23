@@ -47,7 +47,7 @@
       </visual>
     </link>
     <joint name='j_c1_LF' type='revolute'>
-      <pose relative_to='base_footprint'>0.1248 0.06164 0.001116 3.14159 -1.57071 -0.785398</pose>
+      <pose relative_to='base_footprint'>0.1248 0.06164 0.001116 2.35619 -1.5708 0</pose>
       <parent>base_footprint</parent>
       <child>c1_LF</child>
       <axis>
@@ -71,8 +71,8 @@
         <mass>0.0487154</mass>
         <inertia>
           <ixx>0.00627912</ixx>
-          <ixy>-0.000594507</ixy>
-          <ixz>-4.94596e-05</ixz>
+          <ixy>-0.000594526</ixy>
+          <ixz>-4.94581e-05</ixz>
           <iyy>0.0163831</iyy>
           <iyz>-0.000594526</iyz>
           <izz>0.00627912</izz>
@@ -144,7 +144,7 @@
       </visual>
     </link>
     <joint name='j_thigh_LF' type='revolute'>
-      <pose relative_to='c1_LF'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <pose relative_to='c1_LF'>0 -0.054 0 0 1.5708 0</pose>
       <parent>c1_LF</parent>
       <child>thigh_LF</child>
       <axis>
@@ -209,7 +209,7 @@
       </visual>
     </link>
     <joint name='j_tibia_LF' type='revolute'>
-      <pose relative_to='thigh_LF'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <pose relative_to='thigh_LF'>0 -0.0645 -0.0145 -1.5708 -0 3.14159</pose>
       <parent>thigh_LF</parent>
       <child>tibia_LF</child>
       <axis>
@@ -274,7 +274,7 @@
       </visual>
     </link>
     <joint name='j_c1_LM' type='revolute'>
-      <pose relative_to='base_footprint'>0 0.1034 0.001116 3.14159 -1.57071 -3e-06</pose>
+      <pose relative_to='base_footprint'>0 0.1034 0.001116 3.14159 -1.5708 0</pose>
       <parent>base_footprint</parent>
       <child>c1_LM</child>
       <axis>
@@ -298,8 +298,8 @@
         <mass>0.0487154</mass>
         <inertia>
           <ixx>0.00627912</ixx>
-          <ixy>-0.000594507</ixy>
-          <ixz>-4.94596e-05</ixz>
+          <ixy>-0.000594526</ixy>
+          <ixz>-4.94581e-05</ixz>
           <iyy>0.0163831</iyy>
           <iyz>-0.000594526</iyz>
           <izz>0.00627912</izz>
@@ -371,7 +371,7 @@
       </visual>
     </link>
     <joint name='j_thigh_LM' type='revolute'>
-      <pose relative_to='c1_LM'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <pose relative_to='c1_LM'>0 -0.054 0 0 1.5708 0</pose>
       <parent>c1_LM</parent>
       <child>thigh_LM</child>
       <axis>
@@ -436,7 +436,7 @@
       </visual>
     </link>
     <joint name='j_tibia_LM' type='revolute'>
-      <pose relative_to='thigh_LM'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <pose relative_to='thigh_LM'>0 -0.0645 -0.0145 -1.5708 -0 3.14159</pose>
       <parent>thigh_LM</parent>
       <child>tibia_LM</child>
       <axis>
@@ -501,7 +501,7 @@
       </visual>
     </link>
     <joint name='j_c1_LR' type='revolute'>
-      <pose relative_to='base_footprint'>-0.1248 0.06164 0.001116 -3.14159 -1.57071 0.785398</pose>
+      <pose relative_to='base_footprint'>-0.1248 0.06164 0.001116 -2.35619 -1.5708 0</pose>
       <parent>base_footprint</parent>
       <child>c1_LR</child>
       <axis>
@@ -525,8 +525,8 @@
         <mass>0.0487154</mass>
         <inertia>
           <ixx>0.00627912</ixx>
-          <ixy>-0.000594507</ixy>
-          <ixz>-4.94596e-05</ixz>
+          <ixy>-0.000594526</ixy>
+          <ixz>-4.94581e-05</ixz>
           <iyy>0.0163831</iyy>
           <iyz>-0.000594526</iyz>
           <izz>0.00627912</izz>
@@ -598,7 +598,7 @@
       </visual>
     </link>
     <joint name='j_thigh_LR' type='revolute'>
-      <pose relative_to='c1_LR'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <pose relative_to='c1_LR'>0 -0.054 0 0 1.5708 0</pose>
       <parent>c1_LR</parent>
       <child>thigh_LR</child>
       <axis>
@@ -663,7 +663,7 @@
       </visual>
     </link>
     <joint name='j_tibia_LR' type='revolute'>
-      <pose relative_to='thigh_LR'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <pose relative_to='thigh_LR'>0 -0.0645 -0.0145 -1.5708 -0 3.14159</pose>
       <parent>thigh_LR</parent>
       <child>tibia_LR</child>
       <axis>
@@ -728,7 +728,7 @@
       </visual>
     </link>
     <joint name='j_c1_RF' type='revolute'>
-      <pose relative_to='base_footprint'>0.1248 -0.06164 0.001116 3.14159 -1.57071 -2.35619</pose>
+      <pose relative_to='base_footprint'>0.1248 -0.06164 0.001116 0.785398 -1.5708 0</pose>
       <parent>base_footprint</parent>
       <child>c1_RF</child>
       <axis>
@@ -752,8 +752,8 @@
         <mass>0.0487154</mass>
         <inertia>
           <ixx>0.00627912</ixx>
-          <ixy>-0.000594507</ixy>
-          <ixz>-4.94596e-05</ixz>
+          <ixy>-0.000594526</ixy>
+          <ixz>-4.94581e-05</ixz>
           <iyy>0.0163831</iyy>
           <iyz>-0.000594526</iyz>
           <izz>0.00627912</izz>
@@ -825,7 +825,7 @@
       </visual>
     </link>
     <joint name='j_thigh_RF' type='revolute'>
-      <pose relative_to='c1_RF'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <pose relative_to='c1_RF'>0 -0.054 0 0 1.5708 0</pose>
       <parent>c1_RF</parent>
       <child>thigh_RF</child>
       <axis>
@@ -890,7 +890,7 @@
       </visual>
     </link>
     <joint name='j_tibia_RF' type='revolute'>
-      <pose relative_to='thigh_RF'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <pose relative_to='thigh_RF'>0 -0.0645 -0.0145 -1.5708 -0 3.14159</pose>
       <parent>thigh_RF</parent>
       <child>tibia_RF</child>
       <axis>
@@ -955,7 +955,7 @@
       </visual>
     </link>
     <joint name='j_c1_RM' type='revolute'>
-      <pose relative_to='base_footprint'>0 -0.1034 0.001116 3.14159 -1.57071 -3.14159</pose>
+      <pose relative_to='base_footprint'>0 -0.1034 0.001116 0 -1.5708 0</pose>
       <parent>base_footprint</parent>
       <child>c1_RM</child>
       <axis>
@@ -979,8 +979,8 @@
         <mass>0.0487154</mass>
         <inertia>
           <ixx>0.00627912</ixx>
-          <ixy>-0.000594507</ixy>
-          <ixz>-4.94596e-05</ixz>
+          <ixy>-0.000594526</ixy>
+          <ixz>-4.94581e-05</ixz>
           <iyy>0.0163831</iyy>
           <iyz>-0.000594526</iyz>
           <izz>0.00627912</izz>
@@ -1052,7 +1052,7 @@
       </visual>
     </link>
     <joint name='j_thigh_RM' type='revolute'>
-      <pose relative_to='c1_RM'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <pose relative_to='c1_RM'>0 -0.054 0 0 1.5708 0</pose>
       <parent>c1_RM</parent>
       <child>thigh_RM</child>
       <axis>
@@ -1117,7 +1117,7 @@
       </visual>
     </link>
     <joint name='j_tibia_RM' type='revolute'>
-      <pose relative_to='thigh_RM'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <pose relative_to='thigh_RM'>0 -0.0645 -0.0145 -1.5708 -0 3.14159</pose>
       <parent>thigh_RM</parent>
       <child>tibia_RM</child>
       <axis>
@@ -1182,7 +1182,7 @@
       </visual>
     </link>
     <joint name='j_c1_RR' type='revolute'>
-      <pose relative_to='base_footprint'>-0.1248 -0.06164 0.001116 3.14159 -1.57071 2.35619</pose>
+      <pose relative_to='base_footprint'>-0.1248 -0.06164 0.001116 -0.785398 -1.5708 0</pose>
       <parent>base_footprint</parent>
       <child>c1_RR</child>
       <axis>
@@ -1206,8 +1206,8 @@
         <mass>0.0487154</mass>
         <inertia>
           <ixx>0.00627912</ixx>
-          <ixy>-0.000594507</ixy>
-          <ixz>-4.94596e-05</ixz>
+          <ixy>-0.000594526</ixy>
+          <ixz>-4.94581e-05</ixz>
           <iyy>0.0163831</iyy>
           <iyz>-0.000594526</iyz>
           <izz>0.00627912</izz>
@@ -1279,7 +1279,7 @@
       </visual>
     </link>
     <joint name='j_thigh_RR' type='revolute'>
-      <pose relative_to='c1_RR'>0 -0.054 0 3.13485 1.5704 3.13485</pose>
+      <pose relative_to='c1_RR'>0 -0.054 0 0 1.5708 0</pose>
       <parent>c1_RR</parent>
       <child>thigh_RR</child>
       <axis>
@@ -1344,7 +1344,7 @@
       </visual>
     </link>
     <joint name='j_tibia_RR' type='revolute'>
-      <pose relative_to='thigh_RR'>0 -0.0645 -0.0145 -1.5707 0 3.14159</pose>
+      <pose relative_to='thigh_RR'>0 -0.0645 -0.0145 -1.5708 -0 3.14159</pose>
       <parent>thigh_RR</parent>
       <child>tibia_RR</child>
       <axis>

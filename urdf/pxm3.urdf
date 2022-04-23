@@ -66,7 +66,7 @@
   <joint name="j_c1_RF" type="revolute">
     <parent link="base_link"/>
     <child link="c1_RF"/>
-    <origin rpy="0 4.7123  0.7853981633974483" xyz=" 0.1248  -0.06164  0.001116"/>
+    <origin rpy="0 4.71238898038469 0.7853981633974483" xyz=" 0.1248  -0.06164  0.001116"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -110,7 +110,7 @@
   <joint name="j_c2_RF" type="fixed">
     <parent link="c1_RF"/>
     <child link="c2_RF"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+    <origin rpy="0 1.5707963267948966 3.141592653589793" xyz="0 -0.054 0"/>
   </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_RF">
@@ -141,7 +141,7 @@
   <joint name="j_thigh_RF" type="revolute">
     <parent link="c2_RF"/>
     <child link="thigh_RF"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <origin rpy=" 0 3.141592653589793 3.141592653589793" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -185,7 +185,7 @@
   <joint name="j_tibia_RF" type="revolute">
     <parent link="thigh_RF"/>
     <child link="tibia_RF"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <origin rpy="-1.5707963267948966 0 3.141592653589793" xyz="0 -0.0645 -0.0145"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -230,7 +230,7 @@
   <joint name="j_c1_RM" type="revolute">
     <parent link="base_link"/>
     <child link="c1_RM"/>
-    <origin rpy="0 4.7123  0" xyz=" 0       -0.1034   0.001116"/>
+    <origin rpy="0 4.71238898038469 0" xyz=" 0       -0.1034   0.001116"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -274,7 +274,7 @@
   <joint name="j_c2_RM" type="fixed">
     <parent link="c1_RM"/>
     <child link="c2_RM"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+    <origin rpy="0 1.5707963267948966 3.141592653589793" xyz="0 -0.054 0"/>
   </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_RM">
@@ -305,7 +305,7 @@
   <joint name="j_thigh_RM" type="revolute">
     <parent link="c2_RM"/>
     <child link="thigh_RM"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <origin rpy=" 0 3.141592653589793 3.141592653589793" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -349,7 +349,7 @@
   <joint name="j_tibia_RM" type="revolute">
     <parent link="thigh_RM"/>
     <child link="tibia_RM"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <origin rpy="-1.5707963267948966 0 3.141592653589793" xyz="0 -0.0645 -0.0145"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -394,7 +394,7 @@
   <joint name="j_c1_RR" type="revolute">
     <parent link="base_link"/>
     <child link="c1_RR"/>
-    <origin rpy="0 4.7123 -0.7853981633974483" xyz="-0.1248  -0.06164  0.001116"/>
+    <origin rpy="0 4.71238898038469 -0.7853981633974483" xyz="-0.1248  -0.06164  0.001116"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -438,7 +438,7 @@
   <joint name="j_c2_RR" type="fixed">
     <parent link="c1_RR"/>
     <child link="c2_RR"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+    <origin rpy="0 1.5707963267948966 3.141592653589793" xyz="0 -0.054 0"/>
   </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_RR">
@@ -469,7 +469,7 @@
   <joint name="j_thigh_RR" type="revolute">
     <parent link="c2_RR"/>
     <child link="thigh_RR"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <origin rpy=" 0 3.141592653589793 3.141592653589793" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -513,7 +513,7 @@
   <joint name="j_tibia_RR" type="revolute">
     <parent link="thigh_RR"/>
     <child link="tibia_RR"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <origin rpy="-1.5707963267948966 0 3.141592653589793" xyz="0 -0.0645 -0.0145"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -558,7 +558,7 @@
   <joint name="j_c1_LF" type="revolute">
     <parent link="base_link"/>
     <child link="c1_LF"/>
-    <origin rpy="0 4.7123  2.356194490192345" xyz=" 0.1248   0.06164  0.001116"/>
+    <origin rpy="0 4.71238898038469 2.356194490192345" xyz=" 0.1248   0.06164  0.001116"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -602,7 +602,7 @@
   <joint name="j_c2_LF" type="fixed">
     <parent link="c1_LF"/>
     <child link="c2_LF"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+    <origin rpy="0 1.5707963267948966 3.141592653589793" xyz="0 -0.054 0"/>
   </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_LF">
@@ -633,7 +633,7 @@
   <joint name="j_thigh_LF" type="revolute">
     <parent link="c2_LF"/>
     <child link="thigh_LF"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <origin rpy=" 0 3.141592653589793 3.141592653589793" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -677,7 +677,7 @@
   <joint name="j_tibia_LF" type="revolute">
     <parent link="thigh_LF"/>
     <child link="tibia_LF"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <origin rpy="-1.5707963267948966 0 3.141592653589793" xyz="0 -0.0645 -0.0145"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -722,7 +722,7 @@
   <joint name="j_c1_LM" type="revolute">
     <parent link="base_link"/>
     <child link="c1_LM"/>
-    <origin rpy="0 4.7123  3.14159" xyz=" 0        0.1034   0.001116"/>
+    <origin rpy="0 4.71238898038469 3.141592653589793" xyz=" 0        0.1034   0.001116"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -766,7 +766,7 @@
   <joint name="j_c2_LM" type="fixed">
     <parent link="c1_LM"/>
     <child link="c2_LM"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+    <origin rpy="0 1.5707963267948966 3.141592653589793" xyz="0 -0.054 0"/>
   </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_LM">
@@ -797,7 +797,7 @@
   <joint name="j_thigh_LM" type="revolute">
     <parent link="c2_LM"/>
     <child link="thigh_LM"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <origin rpy=" 0 3.141592653589793 3.141592653589793" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -841,7 +841,7 @@
   <joint name="j_tibia_LM" type="revolute">
     <parent link="thigh_LM"/>
     <child link="tibia_LM"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <origin rpy="-1.5707963267948966 0 3.141592653589793" xyz="0 -0.0645 -0.0145"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -886,7 +886,7 @@
   <joint name="j_c1_LR" type="revolute">
     <parent link="base_link"/>
     <child link="c1_LR"/>
-    <origin rpy="0 4.7123  3.9269908169872414" xyz="-0.1248   0.06164  0.001116"/>
+    <origin rpy="0 4.71238898038469 3.9269908169872414" xyz="-0.1248   0.06164  0.001116"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -930,7 +930,7 @@
   <joint name="j_c2_LR" type="fixed">
     <parent link="c1_LR"/>
     <child link="c2_LR"/>
-    <origin rpy="0 1.5704 3.14159" xyz="0 -0.054 0"/>
+    <origin rpy="0 1.5707963267948966 3.141592653589793" xyz="0 -0.054 0"/>
   </joint>
   <!-- ****************************************************** C2 Link ******************************************************************  -->
   <link name="c2_LR">
@@ -961,7 +961,7 @@
   <joint name="j_thigh_LR" type="revolute">
     <parent link="c2_LR"/>
     <child link="thigh_LR"/>
-    <origin rpy=" 0 3.14159 3.14159" xyz="0 0 0"/>
+    <origin rpy=" 0 3.141592653589793 3.141592653589793" xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
@@ -1005,7 +1005,7 @@
   <joint name="j_tibia_LR" type="revolute">
     <parent link="thigh_LR"/>
     <child link="tibia_LR"/>
-    <origin rpy="-1.5707 0 3.14159" xyz="0 -0.0645 -0.0145"/>
+    <origin rpy="-1.5707963267948966 0 3.141592653589793" xyz="0 -0.0645 -0.0145"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.8" lower="-2.6179938779914944" upper="2.6179938779914944" velocity="5.654866776461628"/>
   </joint>
