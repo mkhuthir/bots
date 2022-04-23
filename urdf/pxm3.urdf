@@ -46,7 +46,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.102 0.109 0.106" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/body.STL" scale="1 1 1"/>
       </geometry>
       <material name="blue"/>
@@ -80,7 +79,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -122,7 +120,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -155,7 +152,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -244,7 +240,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -286,7 +281,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -319,7 +313,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -408,7 +401,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -450,7 +442,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -483,7 +474,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -572,7 +562,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -614,7 +603,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -647,7 +635,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -736,7 +723,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -778,7 +764,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -811,7 +796,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -900,7 +884,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
@@ -942,7 +925,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.0252 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/connect.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -975,7 +957,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/thigh_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="red"/>
