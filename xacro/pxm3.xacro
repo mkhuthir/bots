@@ -87,7 +87,7 @@
 
 <!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
 
-      <xacro:legs xyz=" 0.1248  -0.06164  0.001116" rpy="0 ${radians(270)} ${radians(45)}"  suffix="RF"/> <!-- Right Front  -->
+      <xacro:legs xyz=" 0.1248  -0.06164  0.001116" rpy="0 ${radians(270)} ${radians( 45)}" suffix="RF"/> <!-- Right Front  -->
       <xacro:legs xyz=" 0       -0.1034   0.001116" rpy="0 ${radians(270)} 0"               suffix="RM"/> <!-- Right Middle -->
       <xacro:legs xyz="-0.1248  -0.06164  0.001116" rpy="0 ${radians(270)} ${radians(-45)}" suffix="RR"/> <!-- Right Rear   -->
       <xacro:legs xyz=" 0.1248   0.06164  0.001116" rpy="0 ${radians(270)} ${radians(135)}" suffix="LF"/> <!-- Left Front   -->
