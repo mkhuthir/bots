@@ -6,14 +6,6 @@
 <!-- March 2022                                                                                                                         -->
 <!-- *********************************************************************************************************************************  -->
 
-<!-- ****************************************************** Import RVIZ Materials*****************************************************  --> 
-
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />
-
-<!-- ****************************************************** Macro ********************************************************************  --> 
-
-  <xacro:macro name="rrbot" params="parent prefix">
-
 <!-- ****************************************************** Parameters ***************************************************************  --> 
 
     <xacro:property name="mesh_path"    value="package://robot_gazebo/meshes/rrbot/" />
@@ -24,6 +16,14 @@
     <xacro:property name="height3"      value="1"     /> <!-- Link 3 -->
     <xacro:property name="camera_link"  value="0.05"  /> <!-- Size of square 'camera' box -->
     <xacro:property name="axel_offset"  value="0.05"  /> <!-- Space btw top of beam and the each joint -->
+    
+<!-- ****************************************************** Import RVIZ Materials*****************************************************  --> 
+
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />
+
+<!-- ****************************************************** Macro ********************************************************************  --> 
+
+  <xacro:macro name="rrbot" params="parent prefix">
 
 <!-- ****************************************************** Base Joint ***************************************************************  -->
 
