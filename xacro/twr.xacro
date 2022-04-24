@@ -19,36 +19,14 @@
   <xacro:property name="wheel_width"  value="0.06"/>
 
 <!-- x-axis points forward, y-axis points to left, z-axis points upwards                                                                -->
-<!-- Define the gap between the wheel and chassis along y-axis in meters                                                                -->
-  <xacro:property name="wheel_ygap" value="0.035"/>
-<!-- Position the wheels along the z-axis                                                                                               -->
-  <xacro:property name="wheel_zoff" value="0.05"/>
-<!-- Position the wheels along the x-axis                                                                                               -->
-  <xacro:property name="wheel_xoff" value="0.221"/>
-<!-- Position the caster wheel along the x-axis                                                                                         -->
-  <xacro:property name="caster_xoff" value="0.217"/>
+  <xacro:property name="wheel_ygap"   value="0.035"/> <!-- gap between the wheel and chassis along y-axis in meters                     -->
+  <xacro:property name="wheel_zoff"   value="0.05" /> <!-- Position the wheels along the z-axis                                         -->
+  <xacro:property name="wheel_xoff"   value="0.221"/> <!-- Position the wheels along the x-axis                                         -->
+  <xacro:property name="caster_xoff"  value="0.217"/> <!-- Position the caster wheel along the x-axis                                   -->
 
-<!-- ****************************************************** Colors *******************************************************************  -->
+<!-- ****************************************************** Import RVIZ Materials*****************************************************  --> 
 
-  <material name="red">
-    <color rgba="1.0 0.0 0.0 1.0"/>
-  </material>
-
-  <material name="green">
-    <color rgba="0.0 1.0 0.0 1.0"/>
-  </material>
-
-  <material name="blue">
-    <color rgba="0.0 0.0 1.0 1.0"/>
-  </material>
-
-  <material name="black">
-    <color rgba="0.3 0.3 0.3 1.0"/>
-  </material>
-
-  <material name="white">
-    <color rgba="1.0 1.0 1.0 1.0"/>
-  </material>
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />
 
 <!-- ****************************************************** Macros *******************************************************************  -->
 <!-- Define intertial property macros                                                                                                   -->
