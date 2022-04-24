@@ -1,6 +1,12 @@
 <sdf version='1.7'>
   <model name='kr3r540'>
+    <joint name='base_joint' type='fixed'>
+      <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
+      <parent>world</parent>
+      <child>base_link</child>
+    </joint>
     <link name='base_link'>
+      <pose relative_to='base_joint'>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>1</mass>
