@@ -102,10 +102,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>237 36000000</sim_time>
-      <real_time>117 111430782</real_time>
-      <wall_time>1650824248 735653243</wall_time>
-      <iterations>106974</iterations>
+      <sim_time>298 200000000</sim_time>
+      <real_time>61 891424395</real_time>
+      <wall_time>1650825449 752834975</wall_time>
+      <iterations>61164</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -122,7 +122,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>3.76668 -3.97041 1.80378 0 0.279643 2.24419</pose>
+        <pose>1.72599 -1.71517 0.931227 -0 0.343643 2.19619</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
