@@ -8,8 +8,8 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
  
 pkg_name =    'robot_gazebo'
-robot_name =  'lbr_iiwa_14_r820'
-world_name =  'empty.world'
+robot_name =  'razbot'
+world_name =  robot_name+'.world'
 
 spawn_x_val =     '0.0'
 spawn_y_val =     '0.0'

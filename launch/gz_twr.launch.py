@@ -8,8 +8,8 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
  
 pkg_name =    'robot_gazebo'
-robot_name =  'tb3_waffle'
-world_name =  'empty.world'
+robot_name =  'twr'
+world_name =  robot_name+'.world'
 
 spawn_x_val =     '0.0'
 spawn_y_val =     '0.0'
