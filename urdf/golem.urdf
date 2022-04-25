@@ -9,7 +9,7 @@
   <!-- March 2022                                                                                                                         -->
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Parameters ***************************************************************  -->
-  <!-- ****************************************************** Import RVIZ Materials*****************************************************  -->
+  <!-- ****************************************************** Includes *****************************************************************  -->
   <material name="red">
     <color rgba="1.0 0.0 0.0 1.0"/>
   </material>
@@ -37,6 +37,120 @@
   <material name="yellow">
     <color rgba="1.0 1.0 0.0 1.0"/>
   </material>
+  <!-- ****************************************************** Golem Robot **************************************************************  -->
+  <!-- Muthanna Alwahash                                                                                                                  -->
+  <!-- March 2022                                                                                                                         -->
+  <!-- *********************************************************************************************************************************  -->
+  <!-- ****************************************************** Base Link ****************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <!-- ****************************************************** Leg Macro ****************************************************************  -->
+  <!-- ****************************************************** Build Robot Model ********************************************************  -->
+  <!-- ****************************************************** Coxa Link ****************************************************************  -->
+  <gazebo reference="coxa_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Femur Link ***************************************************************  -->
+  <gazebo reference="femur_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tarsus Link **************************************************************  -->
+  <gazebo reference="tarsus_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ******************************************************  End of Macro ************************************************************  -->
+  <!-- ****************************************************** Coxa Link ****************************************************************  -->
+  <gazebo reference="coxa_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Femur Link ***************************************************************  -->
+  <gazebo reference="femur_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tarsus Link **************************************************************  -->
+  <gazebo reference="tarsus_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ******************************************************  End of Macro ************************************************************  -->
+  <!-- ****************************************************** Coxa Link ****************************************************************  -->
+  <gazebo reference="coxa_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Femur Link ***************************************************************  -->
+  <gazebo reference="femur_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tarsus Link **************************************************************  -->
+  <gazebo reference="tarsus_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ******************************************************  End of Macro ************************************************************  -->
+  <!-- ****************************************************** Coxa Link ****************************************************************  -->
+  <gazebo reference="coxa_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Femur Link ***************************************************************  -->
+  <gazebo reference="femur_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tarsus Link **************************************************************  -->
+  <gazebo reference="tarsus_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ******************************************************  End of Macro ************************************************************  -->
+  <!-- ****************************************************** Coxa Link ****************************************************************  -->
+  <gazebo reference="coxa_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Femur Link ***************************************************************  -->
+  <gazebo reference="femur_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tarsus Link **************************************************************  -->
+  <gazebo reference="tarsus_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ******************************************************  End of Macro ************************************************************  -->
+  <!-- ****************************************************** Coxa Link ****************************************************************  -->
+  <gazebo reference="coxa_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Femur Link ***************************************************************  -->
+  <gazebo reference="femur_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tarsus Link **************************************************************  -->
+  <gazebo reference="tarsus_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ******************************************************  End of Macro ************************************************************  -->
+  <!-- ******************************************************  End *********************************************************************  -->
+  <!-- Gazebo                                     -->
   <!-- ****************************************************** Base Footprint ***********************************************************  -->
   <link name="base_footprint"/>
   <!-- ****************************************************** Base Joint ***************************************************************  -->
@@ -67,9 +181,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
   <!-- ****************************************************** Camera RGB Joint *********************************************************  -->
   <joint name="camera_rgb_joint" type="fixed">
     <parent link="base_link"/>
@@ -185,9 +296,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="coxa_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_RR" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
@@ -229,9 +337,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="femur_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_RR" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
@@ -273,9 +378,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tibia_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_RR" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
@@ -317,9 +419,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tarsus_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_RR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -390,9 +489,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="coxa_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_RM" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
@@ -434,9 +530,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="femur_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_RM" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
@@ -478,9 +571,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tibia_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_RM" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
@@ -522,9 +612,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tarsus_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_RM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -595,9 +682,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="coxa_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_RF" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
@@ -639,9 +723,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="femur_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_RF" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
@@ -683,9 +764,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tibia_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_RF" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
@@ -727,9 +805,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tarsus_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_RF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -800,9 +875,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="coxa_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_LR" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
@@ -844,9 +916,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="femur_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_LR" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
@@ -888,9 +957,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tibia_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_LR" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
@@ -932,9 +998,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tarsus_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_LR" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -1005,9 +1068,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="coxa_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_LM" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
@@ -1049,9 +1109,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="femur_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_LM" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
@@ -1093,9 +1150,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tibia_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_LM" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
@@ -1137,9 +1191,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tarsus_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_LM" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
@@ -1210,9 +1261,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="coxa_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Femur Joint **************************************************************  -->
   <joint name="femur_joint_LF" type="revolute">
     <origin rpy="-1.5707963267948966 1.5707963267948966 0.0" xyz="0.05893 0.0 0.0"/>
@@ -1254,9 +1302,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="femur_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Joint **************************************************************  -->
   <joint name="tibia_joint_LF" type="revolute">
     <origin rpy="3.141592653589793 0.0 0.0" xyz="0.0 -0.10798 0.0"/>
@@ -1298,9 +1343,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tibia_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Tarsus Joint *************************************************************  -->
   <joint name="tarsus_joint_LF" type="revolute">
     <origin rpy="0.0 0.0 0.0" xyz="0.08774 0.0 0.0"/>
@@ -1342,9 +1384,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="tarsus_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Foot Joint ***************************************************************  -->
   <joint name="foot_joint_LF" type="fixed">
     <origin rpy="0.0 0.0 0.0" xyz="0.12065 0.0 0.0"/>
