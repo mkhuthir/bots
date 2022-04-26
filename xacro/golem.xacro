@@ -25,7 +25,7 @@
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find robot_gazebo)/gazebo/golem_gz.xacro" />               <!-- Gazebo                                     -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_golem.xacro" />               <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Base Footprint ***********************************************************  -->
 

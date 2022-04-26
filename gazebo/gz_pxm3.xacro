@@ -1,0 +1,294 @@
+<?xml version="1.0" ?>
+<robot name="pxm3"  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- ****************************************************** Phantom X MKIII Robot ****************************************************  -->
+<!-- Muthanna Alwahash                                                                                                                  -->
+<!-- March 2022                                                                                                                         -->
+<!-- *********************************************************************************************************************************  -->
+
+<!-- ****************************************************** Parameters ***************************************************************  -->
+  
+  <xacro:property name="mesh_path"          value="package://robot_gazebo/meshes/pxm3/"/>
+
+  <xacro:property name="connect_offset"     value=" 0.02633" />
+  <xacro:property name="thigh_offset_y"     value="-0.0645" />
+  <xacro:property name="thigh_offset_z"     value="-0.0145" />
+
+  <xacro:property name="joint_lower_limit"  value="${radians(-150)}"/>
+  <xacro:property name="joint_upper_limit"  value="${radians(150)}"/>
+  <xacro:property name="joint_effort"       value="2.8"/>
+  <xacro:property name="joint_velocity"     value="${radians(324)}"/>
+
+<!-- ****************************************************** Import RVIZ Materials*****************************************************  --> 
+
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />
+
+<!-- ****************************************************** Main Macro ***************************************************************  -->
+
+  <xacro:macro name="pxm3" params="parent">
+
+<!-- ****************************************************** Attachment Joint *********************************************************  -->
+
+        <joint name="j_base_${parent}" type="fixed">
+          <parent link="${parent}"/>
+          <child link="base_link"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+        </joint>
+
+<!-- ****************************************************** base_link Link *************************************************************  -->
+
+        <link name="base_link">
+          <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="0.97559947"/>
+            <inertia  ixx="3.1081800" ixy="-0.25460189" ixz="2.0318174"
+                      iyy="6.3787776" iyz="0.16417863"
+                      izz="5.3316425" />
+          </inertial>
+          <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+              <mesh filename="${mesh_path}body.STL"  scale="1 1 1"/>
+            </geometry>
+            <material name="blue"/>
+          </visual>
+          <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+              <mesh filename="${mesh_path}body_coll.STL"  scale="1 1 1"/>
+            </geometry>
+          </collision>
+        </link>
+
+        <gazebo reference="base_link"> 
+          <material>Gazebo/Blue</material> 
+        </gazebo> 
+
+<!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
+
+      <xacro:legs xyz=" 0.1248  -0.06164  0.001116" rpy="0 ${radians(270)} ${radians( 45)}" suffix="RF"/> <!-- Right Front  -->
+      <xacro:legs xyz=" 0       -0.1034   0.001116" rpy="0 ${radians(270)} 0"               suffix="RM"/> <!-- Right Middle -->
+      <xacro:legs xyz="-0.1248  -0.06164  0.001116" rpy="0 ${radians(270)} ${radians(-45)}" suffix="RR"/> <!-- Right Rear   -->
+      <xacro:legs xyz=" 0.1248   0.06164  0.001116" rpy="0 ${radians(270)} ${radians(135)}" suffix="LF"/> <!-- Left Front   -->
+      <xacro:legs xyz=" 0        0.1034   0.001116" rpy="0 ${radians(270)} ${radians(180)}" suffix="LM"/> <!-- Left Middle  -->
+      <xacro:legs xyz="-0.1248   0.06164  0.001116" rpy="0 ${radians(270)} ${radians(225)}" suffix="LR"/> <!-- Left Rear    -->
+
+<!-- ****************************************************** End of Main Macro ********************************************************  -->
+
+  </xacro:macro>
+
+<!-- ****************************************************** Legs Macro ***************************************************************  -->
+
+  <xacro:macro name="legs" params="xyz rpy suffix">
+
+<!-- ****************************************************** C1 Joint *****************************************************************  -->
+
+    <joint name="j_c1_${suffix}" type="revolute">
+      <parent link="base_link"/>
+      <child link="c1_${suffix}"/>
+      <origin xyz="${xyz}" rpy="${rpy}" />
+      <axis xyz="1 0 0" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
+    </joint>
+
+<!-- ****************************************************** C1 Link ******************************************************************  -->
+
+    <link name="c1_${suffix}">
+      <inertial>
+        <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
+        <mass value="0.024357719"/>
+        <inertia  ixx="0.0051411124" ixy="-0.00057530255" ixz="-0.000024729049"
+                  iyy="0.0081915737" iyz="-0.000019223094"
+                  izz="0.0011379812" />
+      </inertial>
+      <visual>
+        <origin xyz="0 -0.0252 0" rpy="0 0 0"  />
+        <geometry>
+          <mesh filename="${mesh_path}connect.STL"  scale="1 1 1"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+      <collision>
+        <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
+        <geometry>
+          <mesh filename="${mesh_path}connect_coll.STL"  scale="1 1 1"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="c1_${suffix}"> 
+      <material>Gazebo/Green</material> 
+    </gazebo> 
+
+<!-- ****************************************************** C1 Transmission **********************************************************  -->
+
+    <transmission name="t_c1_${suffix}">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="j_c1_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>    
+      </joint>
+      <actuator name="m_c1_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+<!-- ****************************************************** C2 Joint *****************************************************************  -->
+
+    <joint name="j_c2_${suffix}" type="fixed">
+      <parent link="c1_${suffix}"/>
+      <child link="c2_${suffix}"/>
+      <origin xyz="0 -0.054 0" rpy="0 ${radians(90)} ${radians(180)}" />
+    </joint>
+
+<!-- ****************************************************** C2 Link ******************************************************************  -->
+
+    <link name="c2_${suffix}">
+      <inertial>
+        <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
+        <mass value="0.024357719"/>
+        <inertia  ixx="0.0051411124" ixy="-0.00057530255" ixz="-0.000024729049"
+                  iyy="0.0081915737" iyz="-0.000019223094"
+                  izz="0.0011379812" />
+      </inertial>
+      <visual>
+        <origin xyz="0 -0.0252 0" rpy="0 0 0"  />
+        <geometry>
+          <mesh filename="${mesh_path}connect.STL"  scale="1 1 1"/>
+        </geometry>
+        <material name="green"/>
+      </visual>
+      <collision>
+        <origin xyz="0 -${connect_offset} 0" rpy="0 0 0"  />
+        <geometry>
+          <mesh filename="${mesh_path}connect_coll.STL"  scale="1 1 1"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="c2_${suffix}"> 
+      <material>Gazebo/Red</material> 
+    </gazebo> 
+
+<!-- ****************************************************** Thigh Joint **************************************************************  -->
+
+    <joint name="j_thigh_${suffix}" type="revolute">
+      <parent link="c2_${suffix}"/>
+      <child link="thigh_${suffix}"/>
+      <origin xyz="0 0 0" rpy=" 0 ${radians(180)} ${radians(180)}" />
+      <axis xyz="1 0 0" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
+    </joint>
+
+<!-- ****************************************************** Thigh Link ***************************************************************  -->
+
+    <link name="thigh_${suffix}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"  />
+        <mass value="0.024357719"/>
+        <inertia  ixx="0.0051411124" ixy="-0.00057530255" ixz="-0.000024729049"
+                  iyy="0.0081915737" iyz="-0.000019223094"
+                  izz="0.0011379812" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"  />
+        <geometry>
+          <mesh filename="${mesh_path}thigh_l.STL"  scale="1 1 1"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"  />
+        <geometry>
+          <mesh filename="${mesh_path}thigh_l_coll.STL"  scale="1 1 1"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="thigh_${suffix}"> 
+      <material>Gazebo/Green</material> 
+    </gazebo>
+
+<!-- ****************************************************** Thigh Transmission *******************************************************  -->
+
+    <transmission name="t_thigh_${suffix}">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="j_thigh_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>    
+      </joint>
+      <actuator name="m_thigh_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+<!-- ****************************************************** Tibia Joint **************************************************************  -->
+
+    <joint name="j_tibia_${suffix}" type="revolute">
+      <parent link="thigh_${suffix}"/>
+      <child link="tibia_${suffix}"/>
+      <origin xyz="0 ${thigh_offset_y} ${thigh_offset_z}" rpy="${radians(-90)} 0 ${radians(180)}" />
+      <axis xyz="1 0 0" />
+      <limit lower="${joint_lower_limit}" upper="${joint_upper_limit}" effort="${joint_effort}" velocity="${joint_velocity}"/>
+    </joint>
+
+<!-- ****************************************************** Tibia Link ***************************************************************  -->
+
+    <link name="tibia_${suffix}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"  />
+        <mass value="0.024357719"/>
+        <inertia  ixx="0.0051411124" ixy="-0.00057530255"  ixz="-0.000024729049" 
+                  iyy="0.0081915737" iyz="-0.000019223094" 
+                  izz="0.0011379812" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"  />
+        <geometry>
+          <!--box size="0.045 0.022 0.0325" /-->
+          <mesh filename="${mesh_path}tibia_l.STL"  scale="1 1 1"/>
+        </geometry>
+        <material name="green"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"  />
+        <geometry>
+          <mesh filename="${mesh_path}tibia_l_coll.STL"  scale="1 1 1"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo reference="tibia_${suffix}"> 
+      <material>Gazebo/Red</material> 
+    </gazebo> 
+
+<!-- ****************************************************** Tibia Transmission *******************************************************  -->
+
+    <transmission name="t_tibia_${suffix}">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="j_tibia_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="m_tibia_${suffix}">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+ 
+<!-- ****************************************************** end of Macro *************************************************************  -->
+   
+  </xacro:macro>
+
+<!-- ****************************************************** Base footprint ***********************************************************  -->
+
+  <link name="base_footprint"/>
+
+<!-- ****************************************************** Main Macro ***************************************************************  -->
+
+  <xacro:pxm3 parent="base_footprint" />
+
+<!-- ****************************************************** Gazebo Control ***********************************************************  -->
+
+<!-- *********************************************************************************************************************************  -->
+
+</robot>
