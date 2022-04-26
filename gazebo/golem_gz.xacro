@@ -15,7 +15,7 @@
 
 <!-- ****************************************************** Leg Macro ****************************************************************  -->
 
-    <xacro:macro name="leg_gz" params="side position x y angle axis">
+    <xacro:macro name="leg_gz" params="side position">
 
 <!-- ****************************************************** Coxa Link ****************************************************************  -->
 
@@ -47,12 +47,12 @@
 
 <!-- ****************************************************** Build Robot Model ********************************************************  -->
  
-    <xacro:leg_gz side="R" position="R" x="-0.1778" y="-0.0825"  angle="-${pi*3/4}" axis="1"/>
-    <xacro:leg_gz side="R" position="M" x="0.0"     y="-0.13335" angle="-${pi/2}"   axis="1"/>
-    <xacro:leg_gz side="R" position="F" x="0.1778"  y="-0.0825"  angle="-${pi/4}"   axis="1"/>
-    <xacro:leg_gz side="L" position="R" x="-0.1778" y="0.0825"   angle="${pi*3/4}"  axis="-1"/>
-    <xacro:leg_gz side="L" position="M" x="0.0"     y="0.13335"  angle="${pi/2}"    axis="-1"/>
-    <xacro:leg_gz side="L" position="F" x="0.1778"  y="0.0825"   angle="${pi/4}"    axis="-1"/>
+    <xacro:leg_gz side="R" position="R" />
+    <xacro:leg_gz side="R" position="M" />
+    <xacro:leg_gz side="R" position="F" />
+    <xacro:leg_gz side="L" position="R" />
+    <xacro:leg_gz side="L" position="M" />
+    <xacro:leg_gz side="L" position="F" />
 
 <!-- ******************************************************  End *********************************************************************  -->
 
