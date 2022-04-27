@@ -1,6 +1,6 @@
 <sdf version='1.7'>
   <model name='diffbot'>
-    <link name='base_link'>
+    <link name='base_footprint'>
       <inertial>
         <pose>0 0 -0.01 0 -0 0</pose>
         <mass>0.5</mass>
@@ -13,7 +13,7 @@
           <izz>0.000763</izz>
         </inertia>
       </inertial>
-      <collision name='base_link_collision'>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
@@ -29,7 +29,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_link_fixed_joint_lump__caster_frontal_wheel_collision_1'>
+      <collision name='base_footprint_fixed_joint_lump__caster_frontal_wheel_collision_1'>
         <pose>0.035 0 -0.025 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -45,7 +45,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_link_fixed_joint_lump__caster_rear_wheel_collision_2'>
+      <collision name='base_footprint_fixed_joint_lump__caster_rear_wheel_collision_2'>
         <pose>-0.035 0 -0.025 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -61,7 +61,7 @@
           </friction>
         </surface>
       </collision>
-      <visual name='base_link_visual'>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
         <pose>0 0 0.025 0 -0 0</pose>
         <geometry>
           <box>
@@ -75,7 +75,7 @@
           </script>
         </material>
       </visual>
-      <visual name='base_link_fixed_joint_lump__caster_frontal_wheel_visual_1'>
+      <visual name='base_footprint_fixed_joint_lump__caster_frontal_wheel_visual_1'>
         <pose>0.035 0 -0.025 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -89,7 +89,7 @@
           </script>
         </material>
       </visual>
-      <visual name='base_link_fixed_joint_lump__caster_rear_wheel_visual_2'>
+      <visual name='base_footprint_fixed_joint_lump__caster_rear_wheel_visual_2'>
         <pose>-0.035 0 -0.025 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -105,8 +105,8 @@
       </visual>
     </link>
     <joint name='left_wheel_joint' type='revolute'>
-      <pose relative_to='base_link'>0 -0.05 -0.025 0 -0 0</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0 -0.05 -0.025 0 -0 0</pose>
+      <parent>base_footprint</parent>
       <child>left_wheel</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -170,8 +170,8 @@
       </visual>
     </link>
     <joint name='right_wheel_joint' type='revolute'>
-      <pose relative_to='base_link'>0 0.05 -0.025 0 -0 0</pose>
-      <parent>base_link</parent>
+      <pose relative_to='base_footprint'>0 0.05 -0.025 0 -0 0</pose>
+      <parent>base_footprint</parent>
       <child>right_wheel</child>
       <axis>
         <xyz>0 1 0</xyz>
