@@ -8,21 +8,17 @@
 
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
-    <gazebo reference="base_link"> 
-        <material>Gazebo/Red</material> 
-    </gazebo>
-
-<!-- ****************************************************** Macro ********************************************************************  -->
-
-<xacro:macro name="wheel" params="prefix">
+  <gazebo reference="base_link"> 
+      <material>Gazebo/Red</material> 
+  </gazebo>
 
 <!-- ****************************************************** Drive Wheels Link Macro **************************************************  -->
 
-    <gazebo reference="${prefix}_link"> 
-        <material>Gazebo/FlatBlack</material> 
-    </gazebo> 
+  <xacro:macro name="wheel" params="prefix">
 
-<!-- ****************************************************** End of Macro *************************************************************  -->
+      <gazebo reference="${prefix}_link"> 
+          <material>Gazebo/FlatBlack</material> 
+      </gazebo> 
 
   </xacro:macro>
 
@@ -40,7 +36,7 @@
 <!-- ****************************************************** LIDAR Link ***************************************************************  -->
 
   <gazebo reference="lidar_link"> 
-    <material>Gazebo/Green</material> 
+      <material>Gazebo/Green</material> 
   </gazebo> 
 
 <!-- *********************************************************************************************************************************  -->

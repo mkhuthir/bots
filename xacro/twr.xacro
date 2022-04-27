@@ -24,9 +24,10 @@
   <xacro:property name="wheel_xoff"   value="0.221"/> <!-- Position the wheels along the x-axis                                         -->
   <xacro:property name="caster_xoff"  value="0.217"/> <!-- Position the caster wheel along the x-axis                                   -->
 
-<!-- ****************************************************** Import RVIZ Materials*****************************************************  --> 
+<!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_twr.xacro" />               <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Macros *******************************************************************  -->
 <!-- Define intertial property macros                                                                                                   -->
@@ -87,10 +88,6 @@
     <xacro:box_inertia m="40.0" w="${base_width}" d="${base_length}" h="${base_height}"/>
     
   </link>
-
-  <gazebo reference="base_link"> 
-      <material>Gazebo/Red</material> 
-  </gazebo>
   
 <!-- ****************************************************** Drive Wheels Link Macro **************************************************  -->
 
@@ -114,10 +111,6 @@
       <xacro:cylinder_inertia m="110.5" r="${wheel_radius}" h="${wheel_width}"/>
       
     </link>
-
-    <gazebo reference="${prefix}_link"> 
-        <material>Gazebo/FlatBlack</material> 
-    </gazebo> 
 
 <!-- ****************************************************** Drive Wheels Joint Macro *************************************************  -->
 <!-- Connect the wheels to the base_link at the appropriate location, and define a continuous joint to allow the wheels to freely       -->
@@ -163,10 +156,6 @@
     <xacro:sphere_inertia m="10.05" r="${(wheel_radius+wheel_zoff-(base_height/2))}"/>
 
   </link>
-
-  <gazebo reference="front_caster"> 
-      <material>Gazebo/White</material> 
-  </gazebo> 
 
 <!-- **************************************************** Front Caster Joint *********************************************************  -->
 
@@ -219,10 +208,6 @@
       <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
     </inertial>
   </link>
-
-  <gazebo reference="lidar_link"> 
-    <material>Gazebo/Green</material> 
-  </gazebo> 
 
 <!-- *********************************************************************************************************************************  -->
 
