@@ -24,7 +24,6 @@
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
   <xacro:include filename="$(find robot_gazebo)/gazebo/gz_diffbot.xacro" />             <!-- Gazebo                                     -->
 
-
 <!-- ****************************************************** Macro ********************************************************************  --> 
 
   <xacro:macro name="diffbot" params="prefix">
