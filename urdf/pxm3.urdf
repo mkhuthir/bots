@@ -313,7 +313,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -462,7 +461,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -611,7 +609,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -760,7 +757,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -909,7 +905,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
@@ -1058,7 +1053,6 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--box size="0.045 0.022 0.0325" /-->
         <mesh filename="package://robot_gazebo/meshes/pxm3/tibia_l.STL" scale="1 1 1"/>
       </geometry>
       <material name="green"/>
