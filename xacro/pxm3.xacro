@@ -230,7 +230,6 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"  />
         <geometry>
-          <!--box size="0.045 0.022 0.0325" /-->
           <mesh filename="${mesh_path}tibia_l.STL"  scale="1 1 1"/>
         </geometry>
         <material name="green"/>

@@ -9,7 +9,7 @@
   <!-- March 2022                                                                                                                         -->
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Parameters ***************************************************************  -->
-  <!-- ****************************************************** Import RVIZ Materials*****************************************************  -->
+  <!-- ****************************************************** Includes *****************************************************************  -->
   <material name="red">
     <color rgba="1.0 0.0 0.0 1.0"/>
   </material>
@@ -37,6 +37,124 @@
   <material name="yellow">
     <color rgba="1.0 1.0 0.0 1.0"/>
   </material>
+  <!-- ****************************************************** Phantom X MKIII Robot ****************************************************  -->
+  <!-- Muthanna Alwahash                                                                                                                  -->
+  <!-- March 2022                                                                                                                         -->
+  <!-- *********************************************************************************************************************************  -->
+  <!-- ****************************************************** Main Macro ***************************************************************  -->
+  <!-- ****************************************************** Legs Macro ***************************************************************  -->
+  <!-- ****************************************************** Main Macro ***************************************************************  -->
+  <!-- ****************************************************** base_link Link *************************************************************  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
+  <!-- ****************************************************** C1 Link ******************************************************************  -->
+  <gazebo reference="c1_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C2 Link ******************************************************************  -->
+  <gazebo reference="c2_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Link ***************************************************************  -->
+  <gazebo reference="thigh_RF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_RF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Link ******************************************************************  -->
+  <gazebo reference="c1_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C2 Link ******************************************************************  -->
+  <gazebo reference="c2_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Link ***************************************************************  -->
+  <gazebo reference="thigh_RM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_RM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Link ******************************************************************  -->
+  <gazebo reference="c1_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C2 Link ******************************************************************  -->
+  <gazebo reference="c2_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Link ***************************************************************  -->
+  <gazebo reference="thigh_RR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_RR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Link ******************************************************************  -->
+  <gazebo reference="c1_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C2 Link ******************************************************************  -->
+  <gazebo reference="c2_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Link ***************************************************************  -->
+  <gazebo reference="thigh_LF">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_LF">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Link ******************************************************************  -->
+  <gazebo reference="c1_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C2 Link ******************************************************************  -->
+  <gazebo reference="c2_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Link ***************************************************************  -->
+  <gazebo reference="thigh_LM">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_LM">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- ****************************************************** C1 Link ******************************************************************  -->
+  <gazebo reference="c1_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** C2 Link ******************************************************************  -->
+  <gazebo reference="c2_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Thigh Link ***************************************************************  -->
+  <gazebo reference="thigh_LR">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** Tibia Link ***************************************************************  -->
+  <gazebo reference="tibia_LR">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** end of Macro *************************************************************  -->
+  <!-- Left Rear    -->
+  <!-- ****************************************************** End of Main Macro ********************************************************  -->
+  <!-- *********************************************************************************************************************************  -->
+  <!-- Gazebo                                     -->
   <!-- ****************************************************** Main Macro ***************************************************************  -->
   <!-- ****************************************************** Legs Macro ***************************************************************  -->
   <!-- ****************************************************** Base footprint ***********************************************************  -->
@@ -69,9 +187,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>
   <!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
   <!-- ****************************************************** C1 Joint *****************************************************************  -->
   <joint name="j_c1_RF" type="revolute">
@@ -102,9 +217,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c1_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** C1 Transmission **********************************************************  -->
   <transmission name="t_c1_RF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -143,9 +255,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c2_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Joint **************************************************************  -->
   <joint name="j_thigh_RF" type="revolute">
     <parent link="c2_RF"/>
@@ -175,9 +284,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="thigh_RF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Transmission *******************************************************  -->
   <transmission name="t_thigh_RF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -219,9 +325,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="tibia_RF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_RF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -263,9 +366,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c1_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** C1 Transmission **********************************************************  -->
   <transmission name="t_c1_RM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -304,9 +404,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c2_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Joint **************************************************************  -->
   <joint name="j_thigh_RM" type="revolute">
     <parent link="c2_RM"/>
@@ -336,9 +433,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="thigh_RM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Transmission *******************************************************  -->
   <transmission name="t_thigh_RM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -380,9 +474,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="tibia_RM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_RM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -424,9 +515,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c1_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** C1 Transmission **********************************************************  -->
   <transmission name="t_c1_RR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -465,9 +553,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c2_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Joint **************************************************************  -->
   <joint name="j_thigh_RR" type="revolute">
     <parent link="c2_RR"/>
@@ -497,9 +582,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="thigh_RR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Transmission *******************************************************  -->
   <transmission name="t_thigh_RR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -541,9 +623,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="tibia_RR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_RR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -585,9 +664,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c1_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** C1 Transmission **********************************************************  -->
   <transmission name="t_c1_LF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -626,9 +702,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c2_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Joint **************************************************************  -->
   <joint name="j_thigh_LF" type="revolute">
     <parent link="c2_LF"/>
@@ -658,9 +731,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="thigh_LF">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Transmission *******************************************************  -->
   <transmission name="t_thigh_LF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -702,9 +772,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="tibia_LF">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_LF">
     <type>transmission_interface/SimpleTransmission</type>
@@ -746,9 +813,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c1_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** C1 Transmission **********************************************************  -->
   <transmission name="t_c1_LM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -787,9 +851,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c2_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Joint **************************************************************  -->
   <joint name="j_thigh_LM" type="revolute">
     <parent link="c2_LM"/>
@@ -819,9 +880,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="thigh_LM">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Transmission *******************************************************  -->
   <transmission name="t_thigh_LM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -863,9 +921,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="tibia_LM">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_LM">
     <type>transmission_interface/SimpleTransmission</type>
@@ -907,9 +962,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c1_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** C1 Transmission **********************************************************  -->
   <transmission name="t_c1_LR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -948,9 +1000,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="c2_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Joint **************************************************************  -->
   <joint name="j_thigh_LR" type="revolute">
     <parent link="c2_LR"/>
@@ -980,9 +1029,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="thigh_LR">
-    <material>Gazebo/Green</material>
-  </gazebo>
   <!-- ****************************************************** Thigh Transmission *******************************************************  -->
   <transmission name="t_thigh_LR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -1024,9 +1070,6 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="tibia_LR">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** Tibia Transmission *******************************************************  -->
   <transmission name="t_tibia_LR">
     <type>transmission_interface/SimpleTransmission</type>
@@ -1041,6 +1084,5 @@
   <!-- ****************************************************** end of Macro *************************************************************  -->
   <!-- Left Rear    -->
   <!-- ****************************************************** End of Main Macro ********************************************************  -->
-  <!-- ****************************************************** Gazebo Control ***********************************************************  -->
   <!-- *********************************************************************************************************************************  -->
 </robot>
