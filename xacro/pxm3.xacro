@@ -19,9 +19,10 @@
   <xacro:property name="joint_effort"       value="2.8"/>
   <xacro:property name="joint_velocity"     value="${radians(324)}"/>
 
-<!-- ****************************************************** Import RVIZ Materials*****************************************************  --> 
+<!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_pxm3.xacro" />                <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Main Macro ***************************************************************  -->
 
@@ -59,10 +60,6 @@
             </geometry>
           </collision>
         </link>
-
-        <gazebo reference="base_link"> 
-          <material>Gazebo/Blue</material> 
-        </gazebo> 
 
 <!-- ****************************************************** Create Legs using Legs Macro **********************************************  -->
 
@@ -116,10 +113,6 @@
       </collision>
     </link>
 
-    <gazebo reference="c1_${suffix}"> 
-      <material>Gazebo/Green</material> 
-    </gazebo> 
-
 <!-- ****************************************************** C1 Transmission **********************************************************  -->
 
     <transmission name="t_c1_${suffix}">
@@ -166,10 +159,6 @@
       </collision>
     </link>
 
-    <gazebo reference="c2_${suffix}"> 
-      <material>Gazebo/Red</material> 
-    </gazebo> 
-
 <!-- ****************************************************** Thigh Joint **************************************************************  -->
 
     <joint name="j_thigh_${suffix}" type="revolute">
@@ -204,10 +193,6 @@
         </geometry>
       </collision>
     </link>
-
-    <gazebo reference="thigh_${suffix}"> 
-      <material>Gazebo/Green</material> 
-    </gazebo>
 
 <!-- ****************************************************** Thigh Transmission *******************************************************  -->
 
@@ -258,10 +243,6 @@
       </collision>
     </link>
 
-    <gazebo reference="tibia_${suffix}"> 
-      <material>Gazebo/Red</material> 
-    </gazebo> 
-
 <!-- ****************************************************** Tibia Transmission *******************************************************  -->
 
     <transmission name="t_tibia_${suffix}">
@@ -286,8 +267,6 @@
 <!-- ****************************************************** Main Macro ***************************************************************  -->
 
   <xacro:pxm3 parent="base_footprint" />
-
-<!-- ****************************************************** Gazebo Control ***********************************************************  -->
 
 <!-- *********************************************************************************************************************************  -->
 
