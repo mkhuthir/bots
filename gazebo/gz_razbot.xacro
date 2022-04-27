@@ -42,12 +42,12 @@
     
 <!-- ****************************************************** Build Robot **************************************************************  -->
 
-	<xacro:leg side="R" position="R" />
-	<xacro:leg side="R" position="M" />
-	<xacro:leg side="R" position="F" />
-	<xacro:leg side="L" position="R" />
-	<xacro:leg side="L" position="M" />
-	<xacro:leg side="L" position="F" />
+	<xacro:leg_gz side="R" position="R" />
+	<xacro:leg_gz side="R" position="M" />
+	<xacro:leg_gz side="R" position="F" />
+	<xacro:leg_gz side="L" position="R" />
+	<xacro:leg_gz side="L" position="M" />
+	<xacro:leg_gz side="L" position="F" />
 
 <!-- ******************************************************  *************************************************************************  -->
 
