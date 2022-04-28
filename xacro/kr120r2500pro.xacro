@@ -5,6 +5,11 @@
 
   <xacro:property name="mesh_path"        value="package://robot_gazebo/meshes/kr120r2500pro/"/>
 
+<!-- ****************************************************** Includes *****************************************************************  --> 
+
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_kr120r2500pro.xacro" />       <!-- Gazebo                                     -->
+
 <!-- ****************************************************** Macro ******************************************************************** -->
 
   <xacro:macro name="kuka_kr120r2500pro" params="parent prefix">
@@ -274,14 +279,6 @@
 <!-- ****************************************************** End Macro **************************************************************** -->
 
   </xacro:macro>
-
-<!-- ****************************************************** World Link *************************************************************** -->
-  
-  <link name="world"/>
-
-  <gazebo reference="world">
-    <static>true</static>
-  </gazebo>
 
 <!-- ****************************************************** Generates a urdf from macro ********************************************** -->
 

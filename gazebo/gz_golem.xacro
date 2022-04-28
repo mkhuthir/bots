@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="golem" xmlns:xacro="http://ros.org/wiki/xacro">
 
 <!-- ****************************************************** Golem Robot **************************************************************  -->
 <!-- Muthanna Alwahash                                                                                                                  -->

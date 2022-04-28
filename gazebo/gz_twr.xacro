@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<robot name="twr" xmlns:xacro="http://ros.org/wiki/xacro">
 
 <!-- ****************************************************** Two Wheeled Robot ********************************************************  -->
 <!-- Muthanna Alwahash                                                                                                                  -->

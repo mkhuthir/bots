@@ -2,10 +2,14 @@
 
 <robot name="kr3r540" xmlns:xacro="http://wiki.ros.org/xacro">
 
-<!-- ****************************************************** Properties**************************************************************** -->
+<!-- ****************************************************** Parameters ***************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_materials.xacro"/>
   <xacro:property name="mesh_path" value="package://robot_gazebo/meshes/kr3r540/"/>
+
+<!-- ****************************************************** Includes *****************************************************************  --> 
+
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_kr3r540.xacro" />             <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Macro ******************************************************************** -->
 
@@ -38,10 +42,6 @@
       </collision>
     </link>
 
-    <gazebo reference="${prefix}base_link">
-      <material>Gazebo/Gray</material>
-    </gazebo>
-
 <!-- ****************************************************** link 1 (A1) ************************************************************** -->
 
     <link name="${prefix}link_1">
@@ -68,10 +68,6 @@
       </collision>
     </link>
 
-    <gazebo reference="${prefix}link_1">
-      <material>Gazebo/Orange</material>
-    </gazebo>
-    
 <!-- ****************************************************** link 2 ******************************************************************* -->
     
     <link name="${prefix}link_2">
@@ -98,10 +94,6 @@
       </collision>
     </link>
 
-    <gazebo reference="${prefix}link_2">
-      <material>Gazebo/Orange</material>
-    </gazebo>
-    
 <!-- ****************************************************** link 2 ******************************************************************* -->
 
     <link name="${prefix}link_3">
@@ -128,10 +120,6 @@
       </collision>
     </link>
 
-    <gazebo reference="${prefix}link_3">
-      <material>Gazebo/Orange</material>
-    </gazebo>
-    
 <!-- ****************************************************** link 4 ******************************************************************* -->
 
     <link name="${prefix}link_4">
@@ -157,10 +145,6 @@
         </geometry>
       </collision>
     </link>
-
-    <gazebo reference="${prefix}link_4">
-      <material>Gazebo/Orange</material>
-    </gazebo>
     
 <!-- ****************************************************** link 5 ******************************************************************* -->
 
@@ -187,10 +171,6 @@
         </geometry>
       </collision>
     </link>
-    
-    <gazebo reference="${prefix}link_5">
-      <material>Gazebo/Orange</material>
-    </gazebo>
 
 <!-- ****************************************************** link 6 ******************************************************************* -->
 
@@ -217,10 +197,6 @@
         </geometry>
       </collision>
     </link>
-    
-    <gazebo reference="${prefix}link_6">
-      <material>Gazebo/Gray</material>
-    </gazebo>
 
 <!-- ****************************************************** tool 0 ******************************************************************* -->
 <!-- ************************************** Following REP199, this frame shall be use to attach EEF or other equipment *************** -->
@@ -332,14 +308,6 @@
 <!-- ****************************************************** End Macro **************************************************************** -->
 
   </xacro:macro>
-
-<!-- ****************************************************** World Link *************************************************************** -->
-  
-  <link name="world"/>
-
-  <gazebo reference="world">
-    <static>true</static>
-  </gazebo>
 
 <!-- ****************************************************** Generates a urdf from macro ********************************************** -->
 

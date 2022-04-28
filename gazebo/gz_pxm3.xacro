@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<robot name="pxm3" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <!-- ****************************************************** Phantom X MKIII Robot ****************************************************  -->
 <!-- Muthanna Alwahash                                                                                                                  -->
