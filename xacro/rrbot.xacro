@@ -17,9 +17,10 @@
     <xacro:property name="camera_link"  value="0.05"  /> <!-- Size of square 'camera' box -->
     <xacro:property name="axel_offset"  value="0.05"  /> <!-- Space btw top of beam and the each joint -->
     
-<!-- ****************************************************** Import RVIZ Materials*****************************************************  --> 
+<!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_rrbot.xacro" />               <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Macro ********************************************************************  --> 
 
@@ -224,14 +225,6 @@
 <!-- ****************************************************** End Macro ****************************************************************  -->
 
   </xacro:macro>
-
-<!-- ****************************************************** World Link ****************************************************************  -->
-  
-  <link name="world"/>
-
-  <gazebo reference="world">
-    <static>true</static>
-  </gazebo>
 
 <!-- ****************************************************** Expand Macro *************************************************************  -->
   

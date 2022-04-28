@@ -26,6 +26,14 @@
             <size>0.1 0.1 2</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='base_link_visual'>
         <pose>0 0 1 0 -0 0</pose>
@@ -34,6 +42,12 @@
             <size>0.1 0.1 2</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint1' type='revolute'>
@@ -75,6 +89,14 @@
             <size>0.1 0.1 1</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link1_visual'>
         <pose>0 0 0.45 0 -0 0</pose>
@@ -83,6 +105,12 @@
             <size>0.1 0.1 1</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint2' type='revolute'>
@@ -124,6 +152,14 @@
             <size>0.1 0.1 1</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='link2_fixed_joint_lump__camera_link_collision_1'>
         <pose>0.05 0 0.9 0 -0 0</pose>
@@ -132,6 +168,14 @@
             <size>0.05 0.05 0.05</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='link2_fixed_joint_lump__hokuyo_link_collision_2'>
         <pose>0 0 0.975 0 -0 0</pose>
@@ -140,6 +184,14 @@
             <size>0.1 0.1 0.1</size>
           </box>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link2_visual'>
         <pose>0 0 0.45 0 -0 0</pose>
@@ -148,6 +200,12 @@
             <size>0.1 0.1 1</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='link2_fixed_joint_lump__camera_link_visual_1'>
         <pose>0.05 0 0.9 0 -0 0</pose>
@@ -156,6 +214,12 @@
             <size>0.05 0.05 0.05</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='link2_fixed_joint_lump__hokuyo_link_visual_2'>
         <pose>0 0 0.975 0 -0 0</pose>
@@ -165,6 +229,12 @@
             <uri>model://robot_gazebo/meshes/rrbot/hokuyo.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
   </model>
