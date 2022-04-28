@@ -27,6 +27,14 @@
             <uri>model://robot_gazebo/meshes/kr16_2/collision/base_link.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='base_link_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -36,6 +44,12 @@
             <uri>model://robot_gazebo/meshes/kr16_2/visual/base_link.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint_a1' type='revolute'>
