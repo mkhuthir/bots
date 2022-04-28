@@ -78,6 +78,14 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/collision/link_1.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link_1_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -87,6 +95,12 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/visual/link_1.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint_a2' type='revolute'>
@@ -129,6 +143,14 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/collision/link_2.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link_2_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -138,6 +160,12 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/visual/link_2.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint_a3' type='revolute'>
@@ -180,6 +208,14 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/collision/link_3.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link_3_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -189,6 +225,12 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/visual/link_3.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint_a4' type='revolute'>
@@ -231,6 +273,14 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/collision/link_4.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link_4_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -240,6 +290,12 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/visual/link_4.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint_a5' type='revolute'>
@@ -282,6 +338,14 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/collision/link_5.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link_5_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -291,6 +355,12 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/visual/link_5.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint_a6' type='revolute'>
@@ -333,6 +403,14 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/collision/link_6.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link_6_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -342,6 +420,12 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/visual/link_6.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='joint_a7' type='revolute'>
@@ -384,6 +468,14 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/collision/link_7.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='link_7_visual'>
         <pose>0 0 0 0 -0 0</pose>
@@ -393,6 +485,12 @@
             <uri>model://robot_gazebo/meshes/lbr_iiwa_14_r820/visual/link_7.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
   </model>
