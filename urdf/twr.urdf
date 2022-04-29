@@ -79,7 +79,7 @@
   <!-- ****************************************************** Base Link ****************************************************************  -->
   <link name="base_link">
     <visual>
-      <origin rpy="1.5707963267949 0 3.141592654" xyz="0 0 -0.05"/>
+      <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="0 0 -0.05"/>
       <geometry>
         <mesh filename="package://robot_gazebo/meshes/twr/robot_base.stl"/>
       </geometry>
@@ -102,7 +102,7 @@
   <!-- wheel on both sides at the back of our robot (i.e. x_reflect=-1).                                                                  -->
   <link name="drivewhl_l_link">
     <visual>
-      <origin rpy="1.5707963267949 0 0" xyz="0 0 0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.06" radius="0.14"/>
       </geometry>
@@ -132,7 +132,7 @@
   </joint>
   <link name="drivewhl_r_link">
     <visual>
-      <origin rpy="1.5707963267949 0 0" xyz="0 0 0"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.06" radius="0.14"/>
       </geometry>
