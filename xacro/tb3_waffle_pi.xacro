@@ -11,7 +11,6 @@
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
   <xacro:include filename="$(find robot_gazebo)/gazebo/gz_tb3_waffle_pi.xacro" />       <!-- Gazebo                                     -->
 
-
 <!-- ****************************************************** Base Footprint Link ******************************************************  -->
 
   <link name="base_footprint"/>
@@ -264,6 +263,9 @@
     <parent link="camera_rgb_frame"/>
     <child link="camera_rgb_optical_frame"/>
   </joint>
+
+<!-- ****************************************************** RGB Camera Optical Link **************************************************  -->
+
   <link name="camera_rgb_optical_frame"/>
 
 <!-- *********************************************************************************************************************************  -->
