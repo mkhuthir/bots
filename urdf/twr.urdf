@@ -127,9 +127,10 @@
     <parent link="base_link"/>
     <child link="drivewhl_l_link"/>
     <origin rpy="0 0 0" xyz="-0.221 0.23 -0.05"/>
-    <limit effort="30" lower="-3.1415" upper="3.1415" velocity="5.0"/>
+    <limit effort="30" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.0"/>
     <axis xyz="0 1 0"/>
   </joint>
+  <!-- ****************************************************** End of Macro *************************************************************  -->
   <link name="drivewhl_r_link">
     <visual>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
@@ -157,9 +158,10 @@
     <parent link="base_link"/>
     <child link="drivewhl_r_link"/>
     <origin rpy="0 0 0" xyz="-0.221 -0.23 -0.05"/>
-    <limit effort="30" lower="-3.1415" upper="3.1415" velocity="5.0"/>
+    <limit effort="30" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.0"/>
     <axis xyz="0 1 0"/>
   </joint>
+  <!-- ****************************************************** End of Macro *************************************************************  -->
   <!-- ****************************************************** Front Caster Link ********************************************************  -->
   <!-- We add a caster wheel. It will be modeled as sphere. We define the wheel’s geometry, material and the joint to connect it to       -->
   <!-- base_link at the appropriate location.                                                                                             -->

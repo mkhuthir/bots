@@ -17,7 +17,7 @@
   <xacro:property name="wheel_radius"         value="0.025"             />
   <xacro:property name="caster_wheel_mass"    value="0.1"               /> <!-- arbitrary value for caster wheel mass     -->
   <xacro:property name="caster_wheel_radius"  value="${wheel_radius}"   />
-  <xacro:property name="z_offset"             value="-${base_height/2}" /> <!-- Space btw top of beam and the each joint  -->
+  <xacro:property name="z_offset"             value="${base_height/2}" /> <!-- Space btw top of beam and the each joint  -->
     
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
@@ -37,7 +37,7 @@
     <joint name="base_joint" type="fixed">
         <parent link="base_footprint"/>
         <child link="${prefix}base_link"/>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 ${(wheel_radius+z_offset)}" rpy="0.0 0.0 0.0"/>
     </joint>
 
 <!-- ****************************************************** Base Link ****************************************************************  -->
@@ -46,7 +46,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <box size="${base_width} ${base_length} ${base_height}"/>
+        <box size="${base_length} ${base_width} ${base_height}"/>
       </geometry>
     </collision>
     <visual>
@@ -71,7 +71,7 @@
     <joint name="${prefix}left_wheel_joint" type="continuous">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}left_wheel"/>
-      <origin xyz="0 -${(base_width+wheel_width)/2} ${z_offset}" rpy="0 0 0"/>
+      <origin xyz="0 -${(base_width+wheel_width)/2} ${-z_offset}" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
     </joint>
@@ -80,20 +80,20 @@
 
     <link name="${prefix}left_wheel">
       <collision>
-        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <cylinder length="${wheel_width}" radius="${wheel_radius}"/>
         </geometry>
       </collision>
       <visual>
-        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <cylinder length="${wheel_width}" radius="${wheel_radius}"/>
         </geometry>
         <material name="black"/>
       </visual>
       <inertial>
-        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <mass value="${wheel_mass}"/>
         <inertia
           ixx="${wheel_mass / 12.0 * (3*wheel_radius + wheel_width*wheel_width)}" ixy="0.0" ixz="0.0"
@@ -107,7 +107,7 @@
     <joint name="${prefix}right_wheel_joint" type="continuous">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}right_wheel"/>
-      <origin xyz="0 ${(base_width+wheel_width)/2} ${z_offset}" rpy="0 0 0"/>
+      <origin xyz="0 ${(base_width+wheel_width)/2} ${-z_offset}" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
     </joint>
@@ -116,20 +116,20 @@
 
     <link name="${prefix}right_wheel">
       <collision>
-        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <cylinder length="${wheel_width}" radius="${wheel_radius}"/>
         </geometry>
       </collision>
       <visual>
-        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <cylinder length="${wheel_width}" radius="${wheel_radius}"/>
         </geometry>
         <material name="black"/>
       </visual>
       <inertial>
-        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <mass value="${wheel_mass}"/>
         <inertia
           ixx="${wheel_mass / 12.0 * (3*wheel_radius + wheel_width*wheel_width)}" ixy="0.0" ixz="0.0"
@@ -143,7 +143,7 @@
     <joint name="${prefix}front_caster_joint" type="fixed">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}front_caster"/>
-      <origin xyz="${base_length/2 - caster_wheel_radius} 0 ${z_offset}" rpy="0 0 0"/>
+      <origin xyz="${base_length/2 - caster_wheel_radius} 0 ${-z_offset}" rpy="0 0 0"/>
     </joint>
 
 <!-- ****************************************************** Front caster Link ********************************************************  -->
@@ -177,7 +177,7 @@
     <joint name="${prefix}rear_caster_joint" type="fixed">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}rear_caster"/>
-      <origin xyz="${-base_length/2 + caster_wheel_radius} 0 ${z_offset}" rpy="0 0 0"/>
+      <origin xyz="${-base_length/2 + caster_wheel_radius} 0 ${-z_offset}" rpy="0 0 0"/>
     </joint>
 
 <!-- ****************************************************** Rear Caster Link *********************************************************  -->
