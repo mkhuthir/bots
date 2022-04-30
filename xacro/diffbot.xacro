@@ -8,16 +8,17 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  --> 
  
-  <xacro:property name="base_mass"      value="0.6"               /> <!-- arbitrary value for base mass             -->
-  <xacro:property name="base_width"     value="0.20"              />
-  <xacro:property name="base_length"    value="0.40"              />
-  <xacro:property name="base_height"    value="0.10"              />
-  <xacro:property name="wheel_mass"     value="0.3"               /> <!-- arbitrary value for wheel mass            -->
-  <xacro:property name="wheel_width"    value="0.030"             />
-  <xacro:property name="wheel_radius"   value="0.050"             />
-  <xacro:property name="caster_mass"    value="0.1"               /> <!-- arbitrary value for caster wheel mass     -->
-  <xacro:property name="caster_radius"  value="${wheel_radius}"   />
-  <xacro:property name="z_offset"       value="${base_height/2}"  /> <!-- Space btw top of beam and the each joint  -->
+  <xacro:property name="base_mass"      value="0.6"                               />  <!-- arbitrary value for base mass                -->
+  <xacro:property name="base_width"     value="0.20"                              />
+  <xacro:property name="base_length"    value="0.40"                              />
+  <xacro:property name="base_height"    value="0.10"                              />
+  <xacro:property name="wheel_mass"     value="0.3"                               />  <!-- arbitrary value for wheel mass               -->
+  <xacro:property name="wheel_width"    value="0.030"                             />
+  <xacro:property name="wheel_radius"   value="0.050"                             />
+  <xacro:property name="caster_mass"    value="0.1"                               />  <!-- arbitrary value for caster wheel mass        -->
+  <xacro:property name="caster_radius"  value="${wheel_radius}"                   />
+  <xacro:property name="y_offset"       value="${(base_width+wheel_width*1.2)/2}" />
+  <xacro:property name="z_offset"       value="${base_height/2}"                  />  <!-- Space btw top of beam and the each joint     -->
     
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
@@ -71,7 +72,7 @@
     <joint name="${prefix}left_wheel_joint" type="continuous">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}left_wheel"/>
-      <origin xyz="0 -${(base_width+wheel_width)/2} ${-z_offset}" rpy="0 0 0"/>
+      <origin xyz="0 -${y_offset} -${z_offset}" rpy="0 0 0"/>
       <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
@@ -108,7 +109,7 @@
     <joint name="${prefix}right_wheel_joint" type="continuous">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}right_wheel"/>
-      <origin xyz="0 ${(base_width+wheel_width)/2} ${-z_offset}" rpy="0 0 0"/>
+      <origin xyz="0 ${y_offset} -${z_offset}" rpy="0 0 0"/>
       <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
