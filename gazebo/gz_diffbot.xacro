@@ -20,13 +20,13 @@
 <!-- ****************************************************** Left Wheel Link **********************************************************  -->
  
     <gazebo reference="${prefix}left_wheel"> 
-      <material>Gazebo/Gray</material> 
+      <material>Gazebo/Red</material> 
     </gazebo> 
 
 <!-- ****************************************************** Right Wheel Link ********************************************************  -->
 
     <gazebo reference="${prefix}right_wheel"> 
-      <material>Gazebo/Gray</material> 
+      <material>Gazebo/Red</material> 
     </gazebo> 
 
 <!-- ****************************************************** Front caster Link ********************************************************  -->

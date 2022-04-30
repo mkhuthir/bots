@@ -50,11 +50,11 @@
   </gazebo>
   <!-- ****************************************************** Left Wheel Link **********************************************************  -->
   <gazebo reference="left_wheel">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/Red</material>
   </gazebo>
   <!-- ****************************************************** Right Wheel Link ********************************************************  -->
   <gazebo reference="right_wheel">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/Red</material>
   </gazebo>
   <!-- ****************************************************** Front caster Link ********************************************************  -->
   <gazebo reference="front_caster">
