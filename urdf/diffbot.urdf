@@ -46,15 +46,15 @@
   <!-- ****************************************************** Expand Macro *************************************************************  -->
   <!-- ****************************************************** Base Link ****************************************************************  -->
   <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Orange</material>
   </gazebo>
   <!-- ****************************************************** Left Wheel Link **********************************************************  -->
   <gazebo reference="left_wheel">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <!-- ****************************************************** Right Wheel Link ********************************************************  -->
   <gazebo reference="right_wheel">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <!-- ****************************************************** Front caster Link ********************************************************  -->
   <gazebo reference="front_caster">
