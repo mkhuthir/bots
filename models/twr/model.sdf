@@ -63,7 +63,7 @@
         </surface>
       </collision>
       <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
-        <pose>0 0 0.14 1.5708 -0 3.14159</pose>
+        <pose>0 0 0.14 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
