@@ -16,9 +16,10 @@
       <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
         <pose>0 0 0.1 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.4 0.2 0.1</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/diffbot/base.stl</uri>
+          </mesh>
         </geometry>
         <surface>
           <contact>
@@ -64,9 +65,10 @@
       <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
         <pose>0 0 0.1 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.4 0.2 0.1</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/diffbot/base.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
