@@ -79,7 +79,7 @@
   <!-- ****************************************************** Base Link ****************************************************************  -->
   <link name="base_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 -0.05"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_gazebo/meshes/twr/robot_base.stl"/>
       </geometry>
