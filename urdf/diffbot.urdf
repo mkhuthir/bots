@@ -82,14 +82,15 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!-- <box size="${base_length} ${base_width} ${base_height}"/> -->
         <mesh filename="package://robot_gazebo/meshes/diffbot/base.stl" scale="1 1 1"/>
+        <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_gazebo/meshes/diffbot/base.stl" scale="1 1 1"/>
+        <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
       </geometry>
       <material name="orange"/>
     </visual>
