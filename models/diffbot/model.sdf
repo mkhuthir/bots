@@ -111,6 +111,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
+          <effort>30</effort>
+          <velocity>5</velocity>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
         </limit>
@@ -176,6 +178,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
+          <effort>30</effort>
+          <velocity>5</velocity>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
         </limit>
