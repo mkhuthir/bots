@@ -18,9 +18,17 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/diffbot/base.stl</uri>
+            <uri>model://robot_gazebo/meshes/diffbot/base.dae</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__front_caster_collision_1'>
         <pose>0.15 0 0.05 0 -0 0</pose>
@@ -59,9 +67,15 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/diffbot/base.stl</uri>
+            <uri>model://robot_gazebo/meshes/diffbot/base.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__front_caster_visual_1'>
         <pose>0.15 0 0.05 0 -0 0</pose>
