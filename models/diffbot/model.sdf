@@ -18,7 +18,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/diffbot/base.dae</uri>
+            <uri>model://robot_gazebo/meshes/diffbot/base.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -67,7 +67,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/diffbot/base.dae</uri>
+            <uri>model://robot_gazebo/meshes/diffbot/base.stl</uri>
           </mesh>
         </geometry>
         <material>
