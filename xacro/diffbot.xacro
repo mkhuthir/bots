@@ -49,13 +49,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="${mesh_path}base.dae" scale="1 1 1"/>  <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
+        <mesh filename="${mesh_path}base.stl" scale="1 1 1"/>  <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
       </geometry>
     </collision>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="${mesh_path}base.dae" scale="1 1 1"/>  <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
+        <mesh filename="${mesh_path}base.stl" scale="1 1 1"/>  <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
       </geometry>
       <material name="orange"/>
     </visual>
