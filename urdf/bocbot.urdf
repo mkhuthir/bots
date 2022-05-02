@@ -41,22 +41,22 @@
     <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="front_left_wheel">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <gazebo reference="back_left_wheel">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <gazebo reference="front_right_wheel">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <gazebo reference="back_right_wheel">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Gray</material>
   </gazebo>
   <gazebo reference="camera">
-    <material>Gazebo/Red</material>
+    <material>Gazebo/Green</material>
   </gazebo>
   <gazebo reference="hokuyo">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Red</material>
   </gazebo>
   <!--skid_steer_drive_controller-->
   <gazebo>
