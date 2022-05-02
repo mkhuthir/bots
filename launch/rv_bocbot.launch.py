@@ -12,7 +12,7 @@ from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
 
 pkg_name    = 'robot_gazebo'
-robot_name  = 'diffbot'
+robot_name  = 'bocbot'
 
 pkg_share   = FindPackageShare(package=pkg_name).find(pkg_name)
 rviz_config = os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
