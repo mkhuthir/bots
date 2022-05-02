@@ -191,6 +191,14 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='back_left_wheel_visual'>
         <pose>0 0 0 -1.5707 1.5708 0</pose>
@@ -200,6 +208,12 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='back_right_wheel_joint' type='revolute'>
@@ -244,6 +258,14 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='back_right_wheel_visual'>
         <pose>0 0 0 -1.5707 1.5708 0</pose>
@@ -253,6 +275,12 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='front_left_wheel_joint' type='revolute'>
@@ -297,6 +325,14 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='front_left_wheel_visual'>
         <pose>0 0 0 -1.5707 1.5708 0</pose>
@@ -306,6 +342,12 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='front_right_wheel_joint' type='revolute'>
@@ -350,6 +392,14 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='front_right_wheel_visual'>
         <pose>0 0 0 -1.5707 1.5708 0</pose>
@@ -359,6 +409,12 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
     </link>
     <static>0</static>

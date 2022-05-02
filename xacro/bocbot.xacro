@@ -47,6 +47,7 @@
       <geometry>
         <box size=".4 .2 .1"/>
       </geometry>
+      <material name="blue"/>
     </visual>
 
   </link>
@@ -62,6 +63,7 @@
       <geometry>
         <cylinder length="0.05" radius="0.1"/>
       </geometry>
+      <material name="grey"/>
     </visual>
 
     <collision>
@@ -84,6 +86,7 @@
       <geometry>
         <cylinder length="0.05" radius="0.1"/>
       </geometry>
+      <material name="grey"/>
     </visual>
 
     <collision>
@@ -106,6 +109,7 @@
       <geometry>
         <cylinder length="0.05" radius="0.1"/>
       </geometry>
+      <material name="grey"/>
     </visual>
 
     <collision>
@@ -128,6 +132,7 @@
       <geometry>
         <cylinder length="0.05" radius="0.1"/>
       </geometry>
+      <material name="grey"/>
     </visual>
 
     <collision>
@@ -150,6 +155,7 @@
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
+      <material name="green"/>
     </visual>
 
     <collision name="camera_colision">
@@ -173,6 +179,7 @@
         <mesh filename="${mesh_path}hokuyo.dae"/>
         <!-- <box size="0.05 0.05 0.05"/> -->
       </geometry>
+      <material name="red"/>
     </visual>
 
     <collision name="hokuyo_colision">
