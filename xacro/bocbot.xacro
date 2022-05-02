@@ -1,9 +1,22 @@
 <?xml version='1.0'?>
 
-<robot name="bocbot" 
-  xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="bocbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="bocbot.gazebo" />
+<!-- ****************************************************** diffbot Robot ************************************************************  -->
+<!-- Muthanna Alwahash                                                                                                                  -->
+<!-- March 2022                                                                                                                         -->
+<!-- *********************************************************************************************************************************  -->
+
+<!-- ****************************************************** Parameters ***************************************************************  --> 
+ 
+  <xacro:property name="mesh_path"      value="package://robot_gazebo/meshes/bocbot/"/>
+
+<!-- ****************************************************** Includes *****************************************************************  --> 
+
+  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_bocbot.xacro" />              <!-- Gazebo                                     -->
+
+<!-- ****************************************************** Base Footprint ***********************************************************  -->
 
   <link name="robot_footprint"></link>
 
@@ -157,8 +170,8 @@
     <visual name="hokuyo_visual">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <!-- <mesh filename="$(find bocbot)/meshes/hokuyo.dae"/> -->
-        <box size="0.05 0.05 0.05"/>
+        <mesh filename="${mesh_path}hokuyo.dae"/>
+        <!-- <box size="0.05 0.05 0.05"/> -->
       </geometry>
     </visual>
 
@@ -221,16 +234,6 @@
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
 
-  <gazebo reference="chassis">
-    <material>Gazebo/Blue</material>
-  </gazebo>
 
-  <gazebo reference="camera">
-    <material>Gazebo/Red</material>
-  </gazebo>
-
-  <gazebo reference="hokuyo">
-    <material>Gazebo/Black</material>
-  </gazebo>
 
 </robot>

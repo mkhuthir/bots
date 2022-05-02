@@ -1,6 +1,18 @@
 <?xml version="1.0"?>
 <robot>
 
+  <gazebo reference="chassis">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="hokuyo">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
   <!--skid_steer_drive_controller-->
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_diff_drive.so">
