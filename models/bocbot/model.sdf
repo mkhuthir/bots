@@ -83,9 +83,9 @@
       <sensor name='camera_sensor' type='camera'>
         <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
           <ros>
-            <namespace>/bocbot</namespace>
-            <argument>camera/image_raw:=/bocbot/camera/image</argument>
-            <argument>camera/camera_info:=/bocbot/camera/image/camera_info</argument>
+            <namespace>bocbot</namespace>
+            <argument>--remap camera/image_raw:=camera/image_raw</argument>
+            <argument>--remap camera/camera_info:=camera/camera_info</argument>
           </ros>
           <camera_name>camera</camera_name>
           <frame_name>camera</frame_name>
@@ -417,26 +417,30 @@
         </material>
       </visual>
     </link>
+    <plugin name='joint_states_pub' filename='libgazebo_ros_joint_state_publisher.so'>
+      <joint_name>front_left_wheel_joint</joint_name>
+      <joint_name>back_left_wheel_joint</joint_name>
+      <joint_name>front_right_wheel_joint</joint_name>
+      <joint_name>back_right_wheel_joint</joint_name>
+    </plugin>
     <static>0</static>
-    <plugin name='skid_steer_drive_controller' filename='libgazebo_ros_diff_drive.so'>
+    <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
       <ros>
-        <namespace>/bocbot</namespace>
-        <argument>/cmd_vel:=mr_cme_vel</argument>
-        <argument>/odom:=odom</argument>
+        <namespace>bocbot</namespace>
+        <argument>--remap cmd_vel:=cme_vel</argument>
+        <argument>--remap odom:=odom</argument>
       </ros>
       <update_rate>100.0</update_rate>
       <num_wheel_pairs>2</num_wheel_pairs>
       <odometry_frame>odom</odometry_frame>
       <left_joint>front_left_wheel_joint</left_joint>
       <left_joint>back_left_wheel_joint</left_joint>
-      <wheel_separation>0.4</wheel_separation>
-      <wheel_diameter>0.2</wheel_diameter>
       <right_joint>front_right_wheel_joint</right_joint>
       <right_joint>back_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
       <wheel_diameter>0.2</wheel_diameter>
-      <robot_base_frame>footprint</robot_base_frame>
       <max_wheel_torque>20</max_wheel_torque>
+      <robot_base_frame>footprint</robot_base_frame>
       <publish_odom>1</publish_odom>
       <publish_odom_tf>1</publish_odom_tf>
       <publish_wheel_tf>1</publish_wheel_tf>
