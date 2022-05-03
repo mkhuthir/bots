@@ -37,16 +37,17 @@
     <material>Gazebo/Gray</material>
   </gazebo>
 
-<!-- ******************************************************  *************************************************************************  -->
+<!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
 
-  <!--skid_steer_drive_controller-->
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
       <ros>
         <namespace>/bocbot</namespace>
         <argument>/cmd_vel:=mr_cme_vel</argument>
         <argument>/odom:=odom</argument>
       </ros>
+
       <update_rate>100.0</update_rate>
       <num_wheel_pairs>2</num_wheel_pairs>
       <odometry_frame>odom</odometry_frame>
@@ -69,14 +70,23 @@
       <publish_wheel_tf>true</publish_wheel_tf>
 
       <odometry_source>world</odometry_source>
+
     </plugin>
   </gazebo>
 
-<!-- ******************************************************  *************************************************************************  -->
-
-  <!-- camera -->
+<!-- ******************************************************  Camera ******************************************************************  -->
   <gazebo reference="camera">
     <sensor type="camera" name="camera_sensor">
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>/bocbot</namespace>
+          <argument>camera/image_raw:=/bocbot/camera/image</argument>
+          <argument>camera/camera_info:=/bocbot/camera/image/camera_info</argument>
+        </ros>
+        <camera_name>camera</camera_name>
+        <frame_name>camera</frame_name>
+        <hack_baseline>0.07</hack_baseline>
+      </plugin>
       <update_rate>30.0</update_rate>
       <always_on>1</always_on>
       <camera name="camera">
@@ -99,22 +109,12 @@
           <center>0.5 0.5</center>
         </distortion>
       </camera>
-      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-        <ros>
-          <namespace>/bocbot</namespace>
-          <argument>camera/image_raw:=/bocbot/camera/image</argument>
-          <argument>camera/camera_info:=/bocbot/camera/image/camera_info</argument>
-        </ros>
-        <camera_name>camera</camera_name>
-        <frame_name>camera</frame_name>
-        <hack_baseline>0.07</hack_baseline>
-      </plugin>
     </sensor>
     <material>Gazebo/Green</material>
   </gazebo>
 
-<!-- ******************************************************  *************************************************************************  -->
-  <!-- hokuyo -->
+<!-- ****************************************************** hokuyo  ******************************************************************  -->
+
   <gazebo reference="hokuyo">
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
@@ -134,12 +134,10 @@
           <max>30.0</max>
           <resolution>0.01</resolution>
         </range>
+<!-- Noise parameters based on published spec for Hokuyo laser achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and stddev   -->
+<!-- of 0.01m will put 99.7% of samples within 0.03m of the true reading.                                                               -->
         <noise>
           <type>gaussian</type>
-          <!-- Noise parameters based on published spec for Hokuyo laser
-                achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
-                stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-                reading. -->
           <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
@@ -156,6 +154,6 @@
     <material>Gazebo/Red</material>
   </gazebo>
 
-<!-- ******************************************************  *************************************************************************  -->
+<!-- ****************************************************** end **********************************************************************  -->
 
 </robot>

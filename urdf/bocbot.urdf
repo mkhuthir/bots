@@ -4,7 +4,7 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="bocbot">
-  <!-- ****************************************************** diffbot Robot ************************************************************  -->
+  <!-- ****************************************************** bocbot Robot *************************************************************  -->
   <!-- Muthanna Alwahash                                                                                                                  -->
   <!-- March 2022                                                                                                                         -->
   <!-- *********************************************************************************************************************************  -->
@@ -37,28 +37,31 @@
   <material name="yellow">
     <color rgba="1.0 1.0 0.0 1.0"/>
   </material>
-  <gazebo reference="chassis">
+  <!-- ****************************************************** bocbot Robot *************************************************************  -->
+  <!-- Muthanna Alwahash                                                                                                                  -->
+  <!-- March 2022                                                                                                                         -->
+  <!-- *********************************************************************************************************************************  -->
+  <!-- ******************************************************  *************************************************************************  -->
+  <gazebo reference="base">
     <material>Gazebo/Blue</material>
   </gazebo>
+  <!-- ******************************************************  *************************************************************************  -->
   <gazebo reference="front_left_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
+  <!-- ******************************************************  *************************************************************************  -->
   <gazebo reference="back_left_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
+  <!-- ******************************************************  *************************************************************************  -->
   <gazebo reference="front_right_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
+  <!-- ******************************************************  *************************************************************************  -->
   <gazebo reference="back_right_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
-  <gazebo reference="camera">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="hokuyo">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <!--skid_steer_drive_controller-->
+  <!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
   <gazebo>
     <plugin filename="libgazebo_ros_diff_drive.so" name="skid_steer_drive_controller">
       <ros>
@@ -77,7 +80,7 @@
       <right_joint>back_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
       <wheel_diameter>0.2</wheel_diameter>
-      <robot_base_frame>robot_footprint</robot_base_frame>
+      <robot_base_frame>footprint</robot_base_frame>
       <max_wheel_torque>20</max_wheel_torque>
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
@@ -85,9 +88,19 @@
       <odometry_source>world</odometry_source>
     </plugin>
   </gazebo>
-  <!-- camera -->
+  <!-- ******************************************************  Camera ******************************************************************  -->
   <gazebo reference="camera">
     <sensor name="camera_sensor" type="camera">
+      <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
+        <ros>
+          <namespace>/bocbot</namespace>
+          <argument>camera/image_raw:=/bocbot/camera/image</argument>
+          <argument>camera/camera_info:=/bocbot/camera/image/camera_info</argument>
+        </ros>
+        <camera_name>camera</camera_name>
+        <frame_name>camera</frame_name>
+        <hack_baseline>0.07</hack_baseline>
+      </plugin>
       <update_rate>30.0</update_rate>
       <always_on>1</always_on>
       <camera name="camera">
@@ -110,19 +123,10 @@
           <center>0.5 0.5</center>
         </distortion>
       </camera>
-      <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
-        <ros>
-          <namespace>/bocbot</namespace>
-          <argument>camera/image_raw:=/bocbot/camera/image</argument>
-          <argument>camera/camera_info:=/bocbot/camera/image/camera_info</argument>
-        </ros>
-        <camera_name>camera</camera_name>
-        <frame_name>camera</frame_name>
-        <hack_baseline>0.07</hack_baseline>
-      </plugin>
     </sensor>
+    <material>Gazebo/Green</material>
   </gazebo>
-  <!-- hokuyo -->
+  <!-- ****************************************************** hokuyo  ******************************************************************  -->
   <gazebo reference="hokuyo">
     <sensor name="head_hokuyo_sensor" type="ray">
       <pose>0 0 0 0 0 0</pose>
@@ -142,12 +146,10 @@
           <max>30.0</max>
           <resolution>0.01</resolution>
         </range>
+        <!-- Noise parameters based on published spec for Hokuyo laser achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and stddev   -->
+        <!-- of 0.01m will put 99.7% of samples within 0.03m of the true reading.                                                               -->
         <noise>
           <type>gaussian</type>
-          <!-- Noise parameters based on published spec for Hokuyo laser
-                achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
-                stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-                reading. -->
           <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
@@ -161,16 +163,14 @@
         <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
     </sensor>
+    <material>Gazebo/Red</material>
   </gazebo>
+  <!-- ****************************************************** end **********************************************************************  -->
   <!-- Gazebo                                     -->
   <!-- ****************************************************** Base Footprint ***********************************************************  -->
-  <link name="robot_footprint"/>
-  <joint name="robot_footprint_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="robot_footprint"/>
-    <child link="chassis"/>
-  </joint>
-  <link name="chassis">
+  <link name="footprint"/>
+  <!-- ******************************************************  *************************************************************************  -->
+  <link name="base">
     <pose>0 0 0.1 0 0 0</pose>
     <inertial>
       <mass value="15.0"/>
@@ -183,7 +183,7 @@
         <box size=".4 .2 .1"/>
       </geometry>
     </collision>
-    <visual name="chassis_visual">
+    <visual name="base_visual">
       <origin rpy=" 0 0 0" xyz="0 0 0"/>
       <geometry>
         <box size=".4 .2 .1"/>
@@ -191,6 +191,7 @@
       <material name="blue"/>
     </visual>
   </link>
+  <!-- ******************************************************  *************************************************************************  -->
   <link name="front_left_wheel">
     <inertial>
       <mass value="5.0"/>
@@ -211,6 +212,7 @@
       </geometry>
     </collision>
   </link>
+  <!-- ******************************************************  *************************************************************************  -->
   <link name="back_left_wheel">
     <inertial>
       <mass value="5.0"/>
@@ -231,6 +233,7 @@
       </geometry>
     </collision>
   </link>
+  <!-- ******************************************************  *************************************************************************  -->
   <link name="front_right_wheel">
     <inertial>
       <mass value="5.0"/>
@@ -251,6 +254,7 @@
       </geometry>
     </collision>
   </link>
+  <!-- ******************************************************  *************************************************************************  -->
   <link name="back_right_wheel">
     <inertial>
       <mass value="5.0"/>
@@ -271,6 +275,7 @@
       </geometry>
     </collision>
   </link>
+  <!-- ******************************************************  *************************************************************************  -->
   <link name="camera">
     <inertial>
       <mass value="0.1"/>
@@ -291,6 +296,7 @@
       </geometry>
     </collision>
   </link>
+  <!-- ******************************************************  *************************************************************************  -->
   <link name="hokuyo">
     <inertial>
       <mass value="1e-5"/>
@@ -312,48 +318,61 @@
       </geometry>
     </collision>
   </link>
+  <!-- ******************************************************  *************************************************************************  -->
+  <joint name="footprint_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="footprint"/>
+    <child link="base"/>
+  </joint>
+  <!-- ******************************************************  *************************************************************************  -->
   <joint name="front_left_wheel_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.12 0.15 0"/>
     <child link="front_left_wheel"/>
-    <parent link="chassis"/>
+    <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
+  <!-- ******************************************************  *************************************************************************  -->
   <joint name="front_right_wheel_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.12 -0.15 0"/>
     <child link="front_right_wheel"/>
-    <parent link="chassis"/>
+    <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
+  <!-- ******************************************************  *************************************************************************  -->
   <joint name="back_left_wheel_joint" type="continuous">
     <origin rpy="0 0 0" xyz="-0.12 0.15 0"/>
     <child link="back_left_wheel"/>
-    <parent link="chassis"/>
+    <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
+  <!-- ******************************************************  *************************************************************************  -->
   <joint name="back_right_wheel_joint" type="continuous">
     <origin rpy="0 0 0" xyz="-0.12 -0.15 0"/>
     <child link="back_right_wheel"/>
-    <parent link="chassis"/>
+    <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
+  <!-- ******************************************************  *************************************************************************  -->
   <joint name="camera_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.2 0 0"/>
     <child link="camera"/>
-    <parent link="chassis"/>
+    <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
+  <!-- ******************************************************  *************************************************************************  -->
   <joint name="hokuyo_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.15 0 0.1"/>
     <child link="hokuyo"/>
-    <parent link="chassis"/>
+    <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
+  <!-- ******************************************************  *************************************************************************  -->
 </robot>
