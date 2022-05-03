@@ -41,10 +41,14 @@
 
   <gazebo>
     <plugin name="joint_states_pub" filename="libgazebo_ros_joint_state_publisher.so">
+      
       <joint_name>front_left_wheel_joint</joint_name>
       <joint_name>back_left_wheel_joint</joint_name>
       <joint_name>front_right_wheel_joint</joint_name>
       <joint_name>back_right_wheel_joint</joint_name>
+
+      <update_rate>100.0</update_rate>
+
     </plugin>
  </gazebo>
 
@@ -166,7 +170,7 @@
           <namespace>bocbot</namespace>
           <argument>--remap ~/out:=scan</argument>
         </ros>
-        
+
         <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
 
