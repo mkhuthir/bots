@@ -7,34 +7,36 @@
 <!-- March 2022                                                                                                                         -->
 <!-- *********************************************************************************************************************************  -->
 
+<!-- ******************************************************  *************************************************************************  -->
+
   <gazebo reference="base">
     <material>Gazebo/Blue</material>
   </gazebo>
 
+<!-- ******************************************************  *************************************************************************  -->
+
   <gazebo reference="front_left_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
+
+<!-- ******************************************************  *************************************************************************  -->
   
   <gazebo reference="back_left_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
 
+<!-- ******************************************************  *************************************************************************  -->
+
   <gazebo reference="front_right_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
+
+<!-- ******************************************************  *************************************************************************  -->
 
   <gazebo reference="back_right_wheel">
     <material>Gazebo/Gray</material>
   </gazebo>
 
-  <gazebo reference="camera">
-    <material>Gazebo/Green</material>
-  </gazebo>
-
-  <gazebo reference="hokuyo">
-    <material>Gazebo/Red</material>
-  </gazebo>
-    
 <!-- ******************************************************  *************************************************************************  -->
 
   <!--skid_steer_drive_controller-->
@@ -77,7 +79,6 @@
     <sensor type="camera" name="camera_sensor">
       <update_rate>30.0</update_rate>
       <always_on>1</always_on>
-
       <camera name="camera">
         <horizontal_fov>1.3962634</horizontal_fov>
         <image>
@@ -109,6 +110,7 @@
         <hack_baseline>0.07</hack_baseline>
       </plugin>
     </sensor>
+    <material>Gazebo/Green</material>
   </gazebo>
 
 <!-- ******************************************************  *************************************************************************  -->
@@ -151,6 +153,7 @@
         <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
     </sensor>
+    <material>Gazebo/Red</material>
   </gazebo>
 
 <!-- ******************************************************  *************************************************************************  -->
