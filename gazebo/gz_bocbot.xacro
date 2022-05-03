@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
-<robot>
 
-  <gazebo reference="chassis">
+<robot name="bocbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- ****************************************************** bocbot Robot *************************************************************  -->
+<!-- Muthanna Alwahash                                                                                                                  -->
+<!-- March 2022                                                                                                                         -->
+<!-- *********************************************************************************************************************************  -->
+
+  <gazebo reference="base">
     <material>Gazebo/Blue</material>
   </gazebo>
 
@@ -29,6 +35,7 @@
     <material>Gazebo/Red</material>
   </gazebo>
     
+<!-- ******************************************************  *************************************************************************  -->
 
   <!--skid_steer_drive_controller-->
   <gazebo>
@@ -52,7 +59,7 @@
       <wheel_separation>0.4</wheel_separation>
       <wheel_diameter>0.2</wheel_diameter>
 
-      <robot_base_frame>robot_footprint</robot_base_frame>
+      <robot_base_frame>footprint</robot_base_frame>
       <max_wheel_torque>20</max_wheel_torque>
 
       <publish_odom>true</publish_odom>
@@ -62,6 +69,8 @@
       <odometry_source>world</odometry_source>
     </plugin>
   </gazebo>
+
+<!-- ******************************************************  *************************************************************************  -->
 
   <!-- camera -->
   <gazebo reference="camera">
@@ -102,6 +111,7 @@
     </sensor>
   </gazebo>
 
+<!-- ******************************************************  *************************************************************************  -->
   <!-- hokuyo -->
   <gazebo reference="hokuyo">
     <sensor type="ray" name="head_hokuyo_sensor">
@@ -142,5 +152,7 @@
       </plugin>
     </sensor>
   </gazebo>
+
+<!-- ******************************************************  *************************************************************************  -->
 
 </robot>
