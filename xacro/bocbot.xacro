@@ -104,8 +104,8 @@
 <!-- ****************************************************** Wheel Joint **************************************************************  -->    
 
     <joint type="continuous" name="${position}_${side}_wheel_joint">
-        <origin xyz="${x} ${y} 0.15 0" rpy="0 0 0"/>
-        <child link="front_left_wheel"/>
+        <origin xyz="${x} ${y} 0" rpy="0 0 0"/>
+        <child link="${position}_${side}_wheel"/>
         <parent link="base"/>
         <axis xyz="0 1 0" rpy="0 0 0"/>
         <limit effort="10000" velocity="1000"/>
@@ -153,7 +153,7 @@
     <parent link="base"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
-  
+
 <!-- ****************************************************** Hokuyo Link **************************************************************  -->
 
   <link name="hokuyo">
