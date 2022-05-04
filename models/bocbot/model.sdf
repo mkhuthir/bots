@@ -2,15 +2,15 @@
   <model name='bocbot'>
     <link name='footprint'>
       <inertial>
-        <pose>0.001656 0.000331 0.000331 0 -0 0</pose>
+        <pose>0.001325 0 0 0 -0 0</pose>
         <mass>15.1</mass>
         <inertia>
-          <ixx>0.100499</ixx>
-          <ixy>-0.00124172</ixy>
-          <ixz>-0.00124187</ixz>
-          <iyy>0.106459</iyy>
-          <iyz>-0.000248344</iyz>
-          <izz>0.106459</izz>
+          <ixx>0.100002</ixx>
+          <ixy>0</ixy>
+          <ixz>-1.48675e-07</ixz>
+          <iyy>0.103976</iyy>
+          <iyz>0</iyz>
+          <izz>0.103976</izz>
         </inertia>
       </inertial>
       <collision name='footprint_fixed_joint_lump__collision_collision'>
@@ -33,9 +33,10 @@
       <collision name='footprint_fixed_joint_lump__hokuyo_colision_collision_2'>
         <pose>0.15 0 0.1 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.1 0.1 0.1</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/bocbot/hokuyo.dae</uri>
+          </mesh>
         </geometry>
       </collision>
       <visual name='footprint_fixed_joint_lump__base_visual_visual'>
@@ -83,7 +84,7 @@
         </material>
       </visual>
       <sensor name='camera_sensor' type='camera'>
-        <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+        <plugin name='camera' filename='libgazebo_ros_camera.so'>
           <ros>
             <namespace>bocbot</namespace>
             <argument>--remap camera/image_raw:=camera/image_raw</argument>
@@ -118,8 +119,15 @@
         <pose>0.2 0 0 0 -0 0</pose>
       </sensor>
       <sensor name='head_hokuyo_sensor' type='ray'>
+        <plugin name='hokuyo' filename='libgazebo_ros_ray_sensor.so'>
+          <ros>
+            <namespace>bocbot</namespace>
+            <argument>--remap ~/out:=scan</argument>
+          </ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+        </plugin>
+        <update_rate>30</update_rate>
         <visualize>0</visualize>
-        <update_rate>40</update_rate>
         <ray>
           <scan>
             <horizontal>
@@ -140,14 +148,6 @@
             <stddev>0.01</stddev>
           </noise>
         </ray>
-        <update_rate>30</update_rate>
-        <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_ray_sensor.so'>
-          <ros>
-            <namespace>bocbot</namespace>
-            <argument>--remap ~/out:=scan</argument>
-          </ros>
-          <output_type>sensor_msgs/LaserScan</output_type>
-        </plugin>
         <pose>0.15 0 0.1 0 -0 0</pose>
       </sensor>
     </link>
@@ -434,14 +434,17 @@
         <argument>--remap odom:=odom</argument>
       </ros>
       <update_rate>100.0</update_rate>
-      <num_wheel_pairs>2</num_wheel_pairs>
       <odometry_frame>odom</odometry_frame>
+      <num_wheel_pairs>2</num_wheel_pairs>
       <left_joint>front_left_wheel_joint</left_joint>
-      <left_joint>back_left_wheel_joint</left_joint>
       <right_joint>front_right_wheel_joint</right_joint>
-      <right_joint>back_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
       <wheel_diameter>0.2</wheel_diameter>
+      <max_wheel_torque>20</max_wheel_torque>
+      <left_joint>back_left_wheel_joint</left_joint>
+      <right_joint>back_right_wheel_joint</right_joint>
+      <wheel_separation>0.4</wheel_separation>
+      <wheel_diameter>"0.2</wheel_diameter>
       <max_wheel_torque>20</max_wheel_torque>
       <robot_base_frame>footprint</robot_base_frame>
       <publish_odom>1</publish_odom>
