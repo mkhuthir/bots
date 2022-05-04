@@ -16,9 +16,10 @@
       <collision name='footprint_fixed_joint_lump__collision_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.4 0.2 0.1</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/bocbot/base.stl</uri>
+          </mesh>
         </geometry>
       </collision>
       <collision name='footprint_fixed_joint_lump__camera_colision_collision_1'>
@@ -40,9 +41,10 @@
       <visual name='footprint_fixed_joint_lump__base_visual_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.4 0.2 0.1</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/bocbot/base.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
@@ -172,8 +174,8 @@
     <link name='back_left_wheel'>
       <pose relative_to='back_left_wheel_joint'>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 1.5707 1.5707</pose>
-        <mass>5</mass>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
+        <mass>15</mass>
         <inertia>
           <ixx>0.1</ixx>
           <ixy>0</ixy>
@@ -184,7 +186,7 @@
         </inertia>
       </inertial>
       <collision name='back_left_wheel_collision'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -201,7 +203,7 @@
         </surface>
       </collision>
       <visual name='back_left_wheel_visual'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -239,8 +241,8 @@
     <link name='back_right_wheel'>
       <pose relative_to='back_right_wheel_joint'>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 1.5707 1.5707</pose>
-        <mass>5</mass>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
+        <mass>15</mass>
         <inertia>
           <ixx>0.1</ixx>
           <ixy>0</ixy>
@@ -251,7 +253,7 @@
         </inertia>
       </inertial>
       <collision name='back_right_wheel_collision'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -268,7 +270,7 @@
         </surface>
       </collision>
       <visual name='back_right_wheel_visual'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -306,8 +308,8 @@
     <link name='front_left_wheel'>
       <pose relative_to='front_left_wheel_joint'>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 1.5707 1.5707</pose>
-        <mass>5</mass>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
+        <mass>15</mass>
         <inertia>
           <ixx>0.1</ixx>
           <ixy>0</ixy>
@@ -318,7 +320,7 @@
         </inertia>
       </inertial>
       <collision name='front_left_wheel_collision'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -335,7 +337,7 @@
         </surface>
       </collision>
       <visual name='front_left_wheel_visual'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -373,8 +375,8 @@
     <link name='front_right_wheel'>
       <pose relative_to='front_right_wheel_joint'>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 1.5707 1.5707</pose>
-        <mass>5</mass>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
+        <mass>15</mass>
         <inertia>
           <ixx>0.1</ixx>
           <ixy>0</ixy>
@@ -385,7 +387,7 @@
         </inertia>
       </inertial>
       <collision name='front_right_wheel_collision'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
@@ -402,7 +404,7 @@
         </surface>
       </collision>
       <visual name='front_right_wheel_visual'>
-        <pose>0 0 0 -1.5707 1.5708 0</pose>
+        <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
           <cylinder>
             <length>0.05</length>
