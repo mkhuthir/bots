@@ -19,9 +19,9 @@
   <xacro:property name="wheel_mass"     value="5.0"      /> 
   <xacro:property name="wheel_width"    value="0.05"     />
   <xacro:property name="wheel_radius"   value="0.08"     />
-  <xacro:property name="wheel_gap"      value="0.0"      />
-  <xacro:property name="wheel_x"        value="${(base_width+wheel_width)/2+wheel_gap}" />
-  <xacro:property name="wheel_y"        value="0.15"     />
+  <xacro:property name="wheel_gap"      value="0.01"     />
+  <xacro:property name="wheel_x"        value="0.12"     />
+  <xacro:property name="wheel_y"        value="${(base_width+wheel_width)/2+wheel_gap}" />
 
   <xacro:property name="camera_mass"    value="0.1"      /> 
   <xacro:property name="camera_width"   value="0.05"     />
@@ -39,7 +39,7 @@
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_skidbot.xacro" />              <!-- Gazebo                                     -->
+  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_skidbot.xacro" />             <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Base Footprint ***********************************************************  -->
 
