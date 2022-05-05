@@ -18,8 +18,9 @@
   
   <xacro:property name="wheel_mass"     value="5.0"      /> 
   <xacro:property name="wheel_width"    value="0.05"     />
-  <xacro:property name="wheel_radius"   value="0.10"     />
-  <xacro:property name="wheel_x"        value="0.12"     />
+  <xacro:property name="wheel_radius"   value="0.08"     />
+  <xacro:property name="wheel_gap"      value="0.0"      />
+  <xacro:property name="wheel_x"        value="${(base_width+wheel_width)/2+wheel_gap}" />
   <xacro:property name="wheel_y"        value="0.15"     />
 
   <xacro:property name="camera_mass"    value="0.1"      /> 
@@ -31,9 +32,9 @@
   <xacro:property name="hokuyo_mass"    value="1e-5"     />
   <xacro:property name="hokuyo_width"   value="0.05"     />
   <xacro:property name="hokuyo_length"  value="0.05"     />
-  <xacro:property name="hokuyo_height"  value="0.080165" />
-  <xacro:property name="hokuyo_x"       value="0.15"     />
-  <xacro:property name="hokuyo_z"       value="0.05"     />
+  <xacro:property name="hokuyo_height"  value="0.0706"   />
+  <xacro:property name="hokuyo_x"       value="0.11"     />
+  <xacro:property name="hokuyo_z"       value="${(hokuyo_height+base_height)/2}" />
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
@@ -55,7 +56,7 @@
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
   <link name='base'>
-    <pose>0 0 0.1 0 0 0</pose>
+    <pose>0 0 0 0 0 0</pose>
     <inertial>
       <mass value="${base_mass}"/>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
@@ -183,7 +184,7 @@
 <!-- ****************************************************** Hokuyo Joint *************************************************************  -->
 
   <joint type="fixed" name="hokuyo_joint">
-    <origin xyz="${hokuyo_x} 0 ${hokuyo_Z}" rpy="0 0 0"/>
+    <origin xyz="${hokuyo_x} 0 ${hokuyo_z}" rpy="0 0 0"/>
     <child link="hokuyo"/>
     <parent link="base"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>

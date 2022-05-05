@@ -7,7 +7,7 @@
         <inertia>
           <ixx>0.100002</ixx>
           <ixy>0</ixy>
-          <ixz>-1.48675e-07</ixz>
+          <ixz>-9.27001e-08</ixz>
           <iyy>0.103976</iyy>
           <iyz>0</iyz>
           <izz>0.103976</izz>
@@ -31,7 +31,7 @@
         </geometry>
       </collision>
       <collision name='footprint_fixed_joint_lump__hokuyo_colision_collision_2'>
-        <pose>0.15 0 0.1 0 -0 0</pose>
+        <pose>0.11 0 0.0853 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -69,7 +69,7 @@
         </material>
       </visual>
       <visual name='footprint_fixed_joint_lump__hokuyo_visual_visual_2'>
-        <pose>0.15 0 0.1 0 -0 0</pose>
+        <pose>0.11 0 0.0853 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -148,11 +148,11 @@
             <stddev>0.01</stddev>
           </noise>
         </ray>
-        <pose>0.15 0 0.1 0 -0 0</pose>
+        <pose>0.11 0 0.0853 0 -0 0</pose>
       </sensor>
     </link>
     <joint name='back_left_wheel_joint' type='revolute'>
-      <pose relative_to='footprint'>-0.12 0.15 0 0 -0 0</pose>
+      <pose relative_to='footprint'>-0.125 0.15 0 0 -0 0</pose>
       <parent>footprint</parent>
       <child>back_left_wheel</child>
       <axis>
@@ -190,7 +190,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -207,7 +207,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <material>
@@ -219,7 +219,7 @@
       </visual>
     </link>
     <joint name='back_right_wheel_joint' type='revolute'>
-      <pose relative_to='footprint'>-0.12 -0.15 0 0 -0 0</pose>
+      <pose relative_to='footprint'>-0.125 -0.15 0 0 -0 0</pose>
       <parent>footprint</parent>
       <child>back_right_wheel</child>
       <axis>
@@ -257,7 +257,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -274,7 +274,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <material>
@@ -286,7 +286,7 @@
       </visual>
     </link>
     <joint name='front_left_wheel_joint' type='revolute'>
-      <pose relative_to='footprint'>0.12 0.15 0 0 -0 0</pose>
+      <pose relative_to='footprint'>0.125 0.15 0 0 -0 0</pose>
       <parent>footprint</parent>
       <child>front_left_wheel</child>
       <axis>
@@ -324,7 +324,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -341,7 +341,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <material>
@@ -353,7 +353,7 @@
       </visual>
     </link>
     <joint name='front_right_wheel_joint' type='revolute'>
-      <pose relative_to='footprint'>0.12 -0.15 0 0 -0 0</pose>
+      <pose relative_to='footprint'>0.125 -0.15 0 0 -0 0</pose>
       <parent>footprint</parent>
       <child>front_right_wheel</child>
       <axis>
@@ -391,7 +391,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <surface>
@@ -408,7 +408,7 @@
         <geometry>
           <cylinder>
             <length>0.05</length>
-            <radius>0.1</radius>
+            <radius>0.08</radius>
           </cylinder>
         </geometry>
         <material>
@@ -440,11 +440,11 @@
       <left_joint>front_left_wheel_joint</left_joint>
       <right_joint>front_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
-      <wheel_diameter>0.2</wheel_diameter>
+      <wheel_diameter>0.16</wheel_diameter>
       <left_joint>back_left_wheel_joint</left_joint>
       <right_joint>back_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
-      <wheel_diameter>0.2</wheel_diameter>
+      <wheel_diameter>0.16</wheel_diameter>
       <max_wheel_torque>20</max_wheel_torque>
       <max_wheel_acceleration>1.0</max_wheel_acceleration>
       <update_rate>100.0</update_rate>

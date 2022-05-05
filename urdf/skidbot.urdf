@@ -83,16 +83,16 @@
         <argument>--remap odom:=odom</argument>
       </ros>
       <num_wheel_pairs>2</num_wheel_pairs>
-      <!-- 1st Set -->
+      <!-- 1st Wheels Set -->
       <left_joint>front_left_wheel_joint</left_joint>
       <right_joint>front_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
-      <wheel_diameter>0.2</wheel_diameter>
-      <!-- 2nd Set -->
+      <wheel_diameter>0.16</wheel_diameter>
+      <!-- 2nd Wheels Set -->
       <left_joint>back_left_wheel_joint</left_joint>
       <right_joint>back_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
-      <wheel_diameter>0.2</wheel_diameter>
+      <wheel_diameter>0.16</wheel_diameter>
       <max_wheel_torque>20</max_wheel_torque>
       <max_wheel_acceleration>1.0</max_wheel_acceleration>
       <update_rate>100.0</update_rate>
@@ -191,7 +191,7 @@
   </joint>
   <!-- ****************************************************** Base Link ****************************************************************  -->
   <link name="base">
-    <pose>0 0 0.1 0 0 0</pose>
+    <pose>0 0 0 0 0 0</pose>
     <inertial>
       <mass value="15.0"/>
       <origin rpy=" 0 0 0" xyz="0 0 0"/>
@@ -225,20 +225,20 @@
     <visual>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
     </collision>
   </link>
   <!-- ****************************************************** Wheel Joint **************************************************************  -->
   <joint name="front_right_wheel_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="0.12 -0.15 0"/>
+    <origin rpy="0 0 0" xyz="0.125 -0.15 0"/>
     <child link="front_right_wheel"/>
     <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -256,20 +256,20 @@
     <visual>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
     </collision>
   </link>
   <!-- ****************************************************** Wheel Joint **************************************************************  -->
   <joint name="front_left_wheel_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="0.12 0.15 0"/>
+    <origin rpy="0 0 0" xyz="0.125 0.15 0"/>
     <child link="front_left_wheel"/>
     <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -287,20 +287,20 @@
     <visual>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
     </collision>
   </link>
   <!-- ****************************************************** Wheel Joint **************************************************************  -->
   <joint name="back_right_wheel_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.12 -0.15 0"/>
+    <origin rpy="0 0 0" xyz="-0.125 -0.15 0"/>
     <child link="back_right_wheel"/>
     <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -318,20 +318,20 @@
     <visual>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin rpy=" 0 1.5707963267948966 1.5707963267948966" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.05" radius="0.08"/>
       </geometry>
     </collision>
   </link>
   <!-- ****************************************************** Wheel Joint **************************************************************  -->
   <joint name="back_left_wheel_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.12 0.15 0"/>
+    <origin rpy="0 0 0" xyz="-0.125 0.15 0"/>
     <child link="back_left_wheel"/>
     <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -392,7 +392,7 @@
   </link>
   <!-- ****************************************************** Hokuyo Joint *************************************************************  -->
   <joint name="hokuyo_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.15 0 0.1"/>
+    <origin rpy="0 0 0" xyz="0.11 0 0.0853"/>
     <child link="hokuyo"/>
     <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
