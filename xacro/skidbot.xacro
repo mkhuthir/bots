@@ -19,6 +19,8 @@
   <xacro:property name="wheel_mass"     value="5.0"                               /> 
   <xacro:property name="wheel_width"    value="0.05"                              />
   <xacro:property name="wheel_radius"   value="0.10"                              />
+  <xacro:property name="wheel_x"        value="0.12"                              />
+  <xacro:property name="wheel_y"        value="0.15"                              />
 
   <xacro:property name="camera_mass"    value="0.1"                               /> 
   <xacro:property name="camera_width"   value="0.05"                              />
@@ -29,9 +31,6 @@
   <xacro:property name="hokuyo_width"   value="0.05"                              />
   <xacro:property name="hokuyo_length"  value="0.05"                              />
   <xacro:property name="hokuyo_height"  value="0.080165"                          />
-
-  <xacro:property name="y_offset"       value="${(base_width+wheel_width*1.2)/2}" />
-  <xacro:property name="z_offset"       value="${base_height/2}"                  /> 
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
@@ -117,10 +116,10 @@
 
 <!-- ****************************************************** Expand Wheels Macro ******************************************************  -->
 
-<xacro:wheel position="front" side="right" x=" 0.12" y="-0.15" />
-<xacro:wheel position="front" side="left"  x=" 0.12" y=" 0.15" />
-<xacro:wheel position="back"  side="right" x="-0.12" y="-0.15" />
-<xacro:wheel position="back"  side="left"  x="-0.12" y=" 0.15" />
+<xacro:wheel position="front" side="right" x=" ${wheel_x}" y="-${wheel_y}" />
+<xacro:wheel position="front" side="left"  x=" ${wheel_x}" y=" ${wheel_y}" />
+<xacro:wheel position="back"  side="right" x="-${wheel_x}" y="-${wheel_y}" />
+<xacro:wheel position="back"  side="left"  x="-${wheel_x}" y=" ${wheel_y}" />
 
 <!-- ****************************************************** Camera Link **************************************************************  -->
 

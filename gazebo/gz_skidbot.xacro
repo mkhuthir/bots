@@ -59,7 +59,7 @@
 <!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
 
   <gazebo>
-    <plugin name="skid_drive" filename="libgazebo_ros_diff_drive.so">
+    <plugin name="skid_drive" filename="libgazebo_ros_skid_steer_drive.so">
 
       <ros>
         <namespace>skidbot</namespace>
@@ -69,11 +69,13 @@
 
       <num_wheel_pairs>2</num_wheel_pairs>
       
+      <!-- 1st Set -->
       <left_joint>front_left_wheel_joint</left_joint>
       <right_joint>front_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
       <wheel_diameter>${(wheel_radius*2)}</wheel_diameter>
    
+      <!-- 2nd Set -->
       <left_joint>back_left_wheel_joint</left_joint>
       <right_joint>back_right_wheel_joint</right_joint>
       <wheel_separation>0.4</wheel_separation>
