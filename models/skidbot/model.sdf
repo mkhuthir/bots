@@ -430,7 +430,7 @@
       <update_rate>100.0</update_rate>
     </plugin>
     <static>0</static>
-    <plugin name='skid_drive' filename='libgazebo_ros_diff_drive.so'>
+    <plugin name='skid_drive' filename='libgazebo_ros_skid_steer_drive.so'>
       <ros>
         <namespace>skidbot</namespace>
         <argument>--remap cmd_vel:=cme_vel</argument>

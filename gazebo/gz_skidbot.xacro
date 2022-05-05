@@ -59,7 +59,7 @@
 <!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
 
   <gazebo>
-    <plugin name="skid_drive" filename="libgazebo_ros_skid_steer_drive.so">
+    <plugin name="skid_drive" filename="libgazebo_ros_diff_drive.so">
 
       <ros>
         <namespace>skidbot</namespace>
