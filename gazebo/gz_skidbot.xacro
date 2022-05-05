@@ -10,31 +10,7 @@
 <!-- ****************************************************** Base *********************************************************************  -->
 
   <gazebo reference="base">
-    <material>Gazebo/Orange</material>
-  </gazebo>
-
-<!-- ****************************************************** Front Left Wheel *********************************************************  -->
-
-  <gazebo reference="front_left_wheel">
-    <material>Gazebo/Gray</material>
-  </gazebo>
-
-<!-- ****************************************************** Back Left Wheel **********************************************************  -->
-  
-  <gazebo reference="back_left_wheel">
-    <material>Gazebo/Gray</material>
-  </gazebo>
-
-<!-- ****************************************************** Front Right Wheel ********************************************************  -->
-
-  <gazebo reference="front_right_wheel">
-    <material>Gazebo/Gray</material>
-  </gazebo>
-
-<!-- ****************************************************** Back Right Wheel *********************************************************  -->
-
-  <gazebo reference="back_right_wheel">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/Blue</material>
   </gazebo>
 
 <!-- ******************************************************  Joint States Publisher **************************************************  -->
