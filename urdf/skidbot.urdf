@@ -76,7 +76,7 @@
   </gazebo>
   <!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
   <gazebo>
-    <plugin filename="libgazebo_ros_skid_steer_drive.so" name="skid_drive">
+    <plugin filename="libgazebo_ros_diff_drive.so" name="skid_drive">
       <ros>
         <namespace>skidbot</namespace>
         <argument>--remap cmd_vel:=cme_vel</argument>
