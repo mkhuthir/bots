@@ -43,7 +43,7 @@
     <plugin name="joint_states_pub" filename="libgazebo_ros_joint_state_publisher.so">
       
       <ros>
-        <namespace>skidbot</namespace>
+        <namespace>${name_space}</namespace>
       </ros>
 
       <joint_name>front_left_wheel_joint</joint_name>
@@ -62,7 +62,7 @@
     <plugin name="skid_drive" filename="libgazebo_ros_diff_drive.so">
 
       <ros>
-        <namespace>skidbot</namespace>
+        <namespace>${name_space}</namespace>
         <argument>--remap cmd_vel:=cme_vel</argument>
         <argument>--remap odom:=odom</argument>
       </ros>
@@ -103,7 +103,7 @@
       <plugin name="camera" filename="libgazebo_ros_camera.so">
 
         <ros>
-          <namespace>skidbot</namespace>
+          <namespace>${name_space}</namespace>
           <argument>--remap camera/image_raw:=camera/image_raw</argument>
           <argument>--remap camera/camera_info:=camera/camera_info</argument>
         </ros>
@@ -150,7 +150,7 @@
       <plugin name="hokuyo" filename="libgazebo_ros_ray_sensor.so">
       
         <ros>
-          <namespace>skidbot</namespace>
+          <namespace>${name_space}</namespace>
           <argument>--remap ~/out:=scan</argument>
         </ros>
 

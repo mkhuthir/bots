@@ -11,6 +11,8 @@
  
   <xacro:property name="mesh_path"      value="package://robot_gazebo/meshes/skidbot/"/>
 
+  <xacro:property name="name_space"     value="skidbot"  /> 
+
   <xacro:property name="base_mass"      value="15.0"     /> <!-- arbitrary mass value -->
   <xacro:property name="base_width"     value="0.20"     />
   <xacro:property name="base_length"    value="0.40"     />
@@ -171,7 +173,7 @@
       <geometry>
         <mesh filename="${mesh_path}hokuyo.dae"/> <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
       </geometry>
-      <material name="red"/>
+      <!-- <material name="red"/> -->
     </visual>
     <collision name="hokuyo_colision">
       <origin xyz="0 0 0" rpy="0 0 0" />
