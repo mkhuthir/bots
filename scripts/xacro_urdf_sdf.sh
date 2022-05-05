@@ -9,7 +9,6 @@ sdf="src/robot_gazebo/models/"
 
 # list of robots
 robots=(
-    bocbot
     diffbot
     golem
     kr3r540
@@ -20,6 +19,7 @@ robots=(
     pxm3 
     razbot
     rrbot
+    skidbot
     tb3_burger
     tb3_waffle
     tb3_waffle_pi
