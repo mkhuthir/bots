@@ -148,7 +148,7 @@
       <plugin filename="libgazebo_ros_ray_sensor.so" name="hokuyo">
         <ros>
           <namespace>skidbot</namespace>
-          <argument>--remap ~/out:=scan</argument>
+          <argument>--remap out:=scan</argument>
         </ros>
         <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
@@ -160,8 +160,8 @@
           <horizontal>
             <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
-            <max_angle>1.570796</max_angle>
+            <min_angle>-1.5707963267948966</min_angle>
+            <max_angle> 1.5707963267948966</max_angle>
           </horizontal>
         </scan>
         <range>
@@ -178,7 +178,7 @@
         </noise>
       </ray>
     </sensor>
-    <material>Gazebo/Red</material>
+    <!-- <material>Gazebo/Red</material> -->
   </gazebo>
   <!-- ****************************************************** end **********************************************************************  -->
   <!-- Gazebo                                     -->
