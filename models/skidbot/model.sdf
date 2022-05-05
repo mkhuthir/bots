@@ -179,10 +179,10 @@
       <collision name='back_left_wheel_collision'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <surface>
           <contact>
@@ -196,10 +196,10 @@
       <visual name='back_left_wheel_visual'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
@@ -246,10 +246,10 @@
       <collision name='back_right_wheel_collision'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <surface>
           <contact>
@@ -263,10 +263,10 @@
       <visual name='back_right_wheel_visual'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
@@ -313,10 +313,10 @@
       <collision name='front_left_wheel_collision'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <surface>
           <contact>
@@ -330,10 +330,10 @@
       <visual name='front_left_wheel_visual'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
@@ -380,10 +380,10 @@
       <collision name='front_right_wheel_collision'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <surface>
           <contact>
@@ -397,10 +397,10 @@
       <visual name='front_right_wheel_visual'>
         <pose>0 0 0 -1.5708 1.5708 0</pose>
         <geometry>
-          <cylinder>
-            <length>0.05</length>
-            <radius>0.08</radius>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/skidbot/wheel.dae</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
