@@ -381,7 +381,7 @@
         <mesh filename="package://robot_gazebo/meshes/skidbot/hokuyo.dae"/>
         <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
       </geometry>
-      <material name="red"/>
+      <!-- <material name="red"/> -->
     </visual>
     <collision name="hokuyo_colision">
       <origin rpy="0 0 0" xyz="0 0 0"/>
