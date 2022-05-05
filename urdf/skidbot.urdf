@@ -80,8 +80,6 @@
     <plugin filename="libgazebo_ros_diff_drive.so" name="skid_drive">
       <ros>
         <namespace>skidbot</namespace>
-        <argument>--remap cmd_vel:=cme_vel</argument>
-        <argument>--remap odom:=odom</argument>
       </ros>
       <num_wheel_pairs>2</num_wheel_pairs>
       <!-- 1st Wheels Set -->
@@ -110,8 +108,6 @@
       <plugin filename="libgazebo_ros_camera.so" name="camera">
         <ros>
           <namespace>skidbot</namespace>
-          <argument>--remap camera/image_raw:=camera/image_raw</argument>
-          <argument>--remap camera/camera_info:=camera/camera_info</argument>
         </ros>
         <camera_name>camera</camera_name>
         <frame_name>camera</frame_name>
@@ -148,7 +144,6 @@
       <plugin filename="libgazebo_ros_ray_sensor.so" name="hokuyo">
         <ros>
           <namespace>skidbot</namespace>
-          <argument>--remap out:=scan</argument>
         </ros>
         <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
