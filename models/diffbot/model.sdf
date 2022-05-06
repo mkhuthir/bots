@@ -2,15 +2,15 @@
   <model name='diffbot'>
     <link name='base_footprint'>
       <inertial>
-        <pose>-0 0 0.09875 0 -0 0</pose>
+        <pose>0 0 0.0925 0 -0 0</pose>
         <mass>0.8</mass>
         <inertia>
-          <ixx>0.00910575</ixx>
+          <ixx>0.009117</ixx>
           <ixy>0</ixy>
-          <ixz>1.0842e-20</ixz>
-          <iyy>0.00570495</iyy>
+          <ixz>0</ixz>
+          <iyy>0.00691201</iyy>
           <iyz>0</iyz>
-          <izz>0.0131112</izz>
+          <izz>0.014037</izz>
         </inertia>
       </inertial>
       <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
@@ -31,10 +31,10 @@
         </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__front_caster_collision_1'>
-        <pose>0.114 0 0.08 0 -0 0</pose>
+        <pose>0.13775 0 0.055 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.08</radius>
+            <radius>0.055</radius>
           </sphere>
         </geometry>
         <surface>
@@ -47,10 +47,10 @@
         </surface>
       </collision>
       <collision name='base_footprint_fixed_joint_lump__rear_caster_collision_2'>
-        <pose>-0.114 0 0.08 0 -0 0</pose>
+        <pose>-0.13775 0 0.055 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.08</radius>
+            <radius>0.055</radius>
           </sphere>
         </geometry>
         <surface>
@@ -78,10 +78,10 @@
         </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__front_caster_visual_1'>
-        <pose>0.114 0 0.08 0 -0 0</pose>
+        <pose>0.13775 0 0.055 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.08</radius>
+            <radius>0.055</radius>
           </sphere>
         </geometry>
         <material>
@@ -92,10 +92,10 @@
         </material>
       </visual>
       <visual name='base_footprint_fixed_joint_lump__rear_caster_visual_2'>
-        <pose>-0.114 0 0.08 0 -0 0</pose>
+        <pose>-0.13775 0 0.055 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.08</radius>
+            <radius>0.055</radius>
           </sphere>
         </geometry>
         <material>

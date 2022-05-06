@@ -164,54 +164,54 @@
   <joint name="front_caster_joint" type="fixed">
     <parent link="base_link"/>
     <child link="front_caster"/>
-    <origin rpy="0 0 0" xyz="0.114 0 -0.025"/>
+    <origin rpy="0 0 0" xyz="0.13775 0 -0.05"/>
   </joint>
   <!-- ****************************************************** Front caster Link ********************************************************  -->
   <link name="front_caster">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <sphere radius="0.055"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <sphere radius="0.055"/>
       </geometry>
       <material name="white"/>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.1"/>
-      <inertia ixx="0.00025600000000000004" ixy="0.0" ixz="0.0" iyy="0.00025600000000000004" iyz="0.0" izz="0.00025600000000000004"/>
+      <inertia ixx="0.00012100000000000001" ixy="0.0" ixz="0.0" iyy="0.00012100000000000001" iyz="0.0" izz="0.00012100000000000001"/>
     </inertial>
   </link>
   <!-- ****************************************************** Rear Caster Joint ********************************************************  -->
   <joint name="rear_caster_joint" type="fixed">
     <parent link="base_link"/>
     <child link="rear_caster"/>
-    <origin rpy="0 0 0" xyz="-0.114 0 -0.025"/>
+    <origin rpy="0 0 0" xyz="-0.13775 0 -0.05"/>
   </joint>
   <!-- ****************************************************** Rear Caster Link *********************************************************  -->
   <link name="rear_caster">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <sphere radius="0.055"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.08"/>
+        <sphere radius="0.055"/>
       </geometry>
       <material name="white"/>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.1"/>
-      <inertia ixx="0.00025600000000000004" ixy="0.0" ixz="0.0" iyy="0.00025600000000000004" iyz="0.0" izz="0.00025600000000000004"/>
+      <inertia ixx="0.00012100000000000001" ixy="0.0" ixz="0.0" iyy="0.00012100000000000001" iyz="0.0" izz="0.00012100000000000001"/>
     </inertial>
   </link>
   <!-- ****************************************************** End Macro ****************************************************************  -->
