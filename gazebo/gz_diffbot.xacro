@@ -19,12 +19,6 @@
       <material>Gazebo/White</material> 
     </gazebo> 
 
-<!-- ****************************************************** Rear Caster Link *********************************************************  -->
-
-    <gazebo reference="${prefix}rear_caster"> 
-      <material>Gazebo/White</material> 
-    </gazebo> 
-
 <!-- ******************************************************  Joint States Publisher **************************************************  -->
 
   <gazebo>

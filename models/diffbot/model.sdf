@@ -2,15 +2,15 @@
   <model name='diffbot'>
     <link name='footprint'>
       <inertial>
-        <pose>0.022223 0 0.096112 0 -0 0</pose>
-        <mass>0.90001</mass>
+        <pose>0.043126 0 0.098751 0 -0 0</pose>
+        <mass>0.80001</mass>
         <inertia>
-          <ixx>0.00899298</ixx>
+          <ixx>0.00884183</ixx>
           <ixy>0</ixy>
-          <ixz>-0.00017786</ixz>
-          <iyy>0.0103436</iyy>
+          <ixz>0.000509314</ixz>
+          <iyy>0.00745657</iyy>
           <iyz>0</iyz>
-          <izz>0.0175946</izz>
+          <izz>0.0147377</izz>
         </inertia>
       </inertial>
       <collision name='footprint_fixed_joint_lump__base_collision'>
@@ -39,7 +39,7 @@
         </geometry>
       </collision>
       <collision name='footprint_fixed_joint_lump__front_caster_collision_2'>
-        <pose>0.13775 0 0.065 0 -0 0</pose>
+        <pose>0.145 0 0.055 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.055</radius>
@@ -62,22 +62,6 @@
             <uri>model://robot_gazebo/meshes/diffbot/hokuyo.dae</uri>
           </mesh>
         </geometry>
-      </collision>
-      <collision name='footprint_fixed_joint_lump__rear_caster_collision_4'>
-        <pose>-0.13775 0 0.065 0 -0 0</pose>
-        <geometry>
-          <sphere>
-            <radius>0.055</radius>
-          </sphere>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='footprint_fixed_joint_lump__base_visual'>
         <pose>0 0 0.105 0 -0 0</pose>
@@ -109,7 +93,7 @@
         </material>
       </visual>
       <visual name='footprint_fixed_joint_lump__front_caster_visual_2'>
-        <pose>0.13775 0 0.065 0 -0 0</pose>
+        <pose>0.145 0 0.055 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.055</radius>
@@ -130,20 +114,6 @@
             <uri>model://robot_gazebo/meshes/diffbot/hokuyo.dae</uri>
           </mesh>
         </geometry>
-      </visual>
-      <visual name='footprint_fixed_joint_lump__rear_caster_visual_4'>
-        <pose>-0.13775 0 0.065 0 -0 0</pose>
-        <geometry>
-          <sphere>
-            <radius>0.055</radius>
-          </sphere>
-        </geometry>
-        <material>
-          <script>
-            <name>Gazebo/White</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
       </visual>
       <sensor name='camera_sensor' type='camera'>
         <plugin name='camera' filename='libgazebo_ros_camera.so'>
@@ -211,7 +181,7 @@
       </sensor>
     </link>
     <joint name='left_wheel_joint' type='revolute'>
-      <pose relative_to='footprint'>0 -0.135 0.08 0 -0 0</pose>
+      <pose relative_to='footprint'>-0.12 -0.135 0.08 0 -0 0</pose>
       <parent>footprint</parent>
       <child>left_wheel</child>
       <axis>
@@ -264,7 +234,7 @@
       </visual>
     </link>
     <joint name='right_wheel_joint' type='revolute'>
-      <pose relative_to='footprint'>0 0.135 0.08 0 -0 0</pose>
+      <pose relative_to='footprint'>-0.12 0.135 0.08 0 -0 0</pose>
       <parent>footprint</parent>
       <child>right_wheel</child>
       <axis>

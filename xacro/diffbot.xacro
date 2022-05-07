@@ -23,13 +23,14 @@
   <xacro:property name="wheel_width"    value="0.05"                              />
   <xacro:property name="wheel_radius"   value="0.08"                              />
   <xacro:property name="wheel_gap"      value="0.01"                              /> <!-- Gap between wheels and base                   -->
+  <xacro:property name="wheel_x"        value="0.12"                              /> <!-- x offset from base center -->
   <xacro:property name="wheel_y"        value="${(base_width+wheel_width)/2+wheel_gap}" />
   <xacro:property name="wheel_z"        value="${base_height/4}"                  />  <!-- Space btw top of beam and the each joint     -->
 
   <xacro:property name="caster_mass"    value="0.1"                               />  <!-- arbitrary value for caster wheel mass        -->
   <xacro:property name="caster_radius"  value="${wheel_radius-wheel_z}"           />
-  <xacro:property name="caster_x"       value="${(base_length/2 - caster_radius)*0.95}" />
-  <xacro:property name="caster_z"       value="${base_height/2-0.01}"/>
+  <xacro:property name="caster_x"       value="${(base_length/2 - caster_radius)}" />
+  <xacro:property name="caster_z"       value="${base_height/2}"/>
 
   <xacro:property name="camera_mass"    value="0.1"      /> 
   <xacro:property name="camera_width"   value="0.05"     />
@@ -92,7 +93,7 @@
     <joint name="${prefix}right_wheel_joint" type="continuous">
       <parent link="${prefix}base"/>
       <child link="${prefix}right_wheel"/>
-      <origin xyz="0 ${wheel_y} -${wheel_z}" rpy="0 0 0"/>
+      <origin xyz="-${wheel_x} ${wheel_y} -${wheel_z}" rpy="0 0 0"/>
       <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
@@ -129,7 +130,7 @@
     <joint name="${prefix}left_wheel_joint" type="continuous">
       <parent link="${prefix}base"/>
       <child link="${prefix}left_wheel"/>
-      <origin xyz="0 -${wheel_y} -${wheel_z}" rpy="0 0 0"/>
+      <origin xyz="-${wheel_x} -${wheel_y} -${wheel_z}" rpy="0 0 0"/>
       <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
@@ -196,39 +197,6 @@
       </inertial>
     </link>
 
-<!-- ****************************************************** Rear Caster Joint ********************************************************  -->
-
-    <joint name="${prefix}rear_caster_joint" type="fixed">
-      <parent link="${prefix}base"/>
-      <child link="${prefix}rear_caster"/>
-      <origin xyz="${-caster_x} 0 ${-caster_z}" rpy="0 0 0"/> 
-    </joint>
-
-<!-- ****************************************************** Rear Caster Link *********************************************************  -->
-
-    <link name="${prefix}rear_caster">
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${caster_radius}"/>
-        </geometry>
-      </collision>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${caster_radius}"/>
-        </geometry>
-        <material name="white"/>
-      </visual>
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="${caster_mass}"/>
-        <inertia
-          ixx="${caster_mass * 0.4 * (caster_radius * caster_radius)}" ixy="0.0" ixz="0.0"
-          iyy="${caster_mass * 0.4 * (caster_radius * caster_radius)}" iyz="0.0"
-          izz="${caster_mass * 0.4 * (caster_radius * caster_radius)}"/>
-      </inertial>
-    </link>
 <!-- ****************************************************** Camera Link **************************************************************  -->
 
   <link name="${prefix}camera">
