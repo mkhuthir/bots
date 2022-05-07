@@ -77,6 +77,43 @@
         izz="${base_mass / 12.0 * (base_width*base_width + base_length*base_length)}"/>
     </inertial>
   </link>
+  
+<!-- ****************************************************** Right Wheel Joint ********************************************************  -->
+
+    <joint name="${prefix}right_wheel_joint" type="continuous">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}right_wheel"/>
+      <origin xyz="0 ${wheel_y} -${wheel_z}" rpy="0 0 0"/>
+      <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="0.2"/>
+    </joint>
+
+<!-- ****************************************************** Right Wheel Link ********************************************************  -->
+
+    <link name="${prefix}right_wheel">
+      <collision>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}wheel.dae" scale="1 1 1"/> <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
+        </geometry>
+      </collision>
+      <visual>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
+        <geometry>
+          <mesh filename="${mesh_path}wheel.dae" scale="1 1 1"/> <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <inertial>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
+        <mass value="${wheel_mass}"/>
+        <inertia
+          ixx="${wheel_mass / 12.0 * (3*wheel_radius + wheel_width*wheel_width)}" ixy="0.0" ixz="0.0"
+          iyy="${wheel_mass / 12.0 * wheel_radius*wheel_radius}" iyz="0.0"
+          izz="${wheel_mass / 12.0 * wheel_radius*wheel_radius}"/>
+      </inertial>
+    </link>
 
 <!-- ****************************************************** Left Wheel Joint *********************************************************  -->
 
@@ -115,42 +152,6 @@
       </inertial>
     </link>
 
-<!-- ****************************************************** Right Wheel Joint ********************************************************  -->
-
-    <joint name="${prefix}right_wheel_joint" type="continuous">
-      <parent link="${prefix}base_link"/>
-      <child link="${prefix}right_wheel"/>
-      <origin xyz="0 ${wheel_y} -${wheel_z}" rpy="0 0 0"/>
-      <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
-      <axis xyz="0 1 0"/>
-      <dynamics damping="0.2"/>
-    </joint>
-
-<!-- ****************************************************** Right Wheel Link ********************************************************  -->
-
-    <link name="${prefix}right_wheel">
-      <collision>
-        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
-        <geometry>
-          <mesh filename="${mesh_path}wheel.dae" scale="1 1 1"/> <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
-        </geometry>
-      </collision>
-      <visual>
-        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
-        <geometry>
-          <mesh filename="${mesh_path}wheel.dae" scale="1 1 1"/> <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
-        </geometry>
-        <material name="black"/>
-      </visual>
-      <inertial>
-        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
-        <mass value="${wheel_mass}"/>
-        <inertia
-          ixx="${wheel_mass / 12.0 * (3*wheel_radius + wheel_width*wheel_width)}" ixy="0.0" ixz="0.0"
-          iyy="${wheel_mass / 12.0 * wheel_radius*wheel_radius}" iyz="0.0"
-          izz="${wheel_mass / 12.0 * wheel_radius*wheel_radius}"/>
-      </inertial>
-    </link>
 
 <!-- ****************************************************** Front caster joint *******************************************************  -->
 
