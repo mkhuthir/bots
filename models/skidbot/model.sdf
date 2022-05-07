@@ -2,15 +2,15 @@
   <model name='skidbot'>
     <link name='footprint'>
       <inertial>
-        <pose>0.001325 0 0 0 -0 0</pose>
-        <mass>15.1</mass>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>15</mass>
         <inertia>
           <ixx>0.100002</ixx>
           <ixy>0</ixy>
-          <ixz>-9.27001e-08</ixz>
-          <iyy>0.103976</iyy>
+          <ixz>-9.38298e-08</ixz>
+          <iyy>0.100003</iyy>
           <iyz>0</iyz>
-          <izz>0.103976</izz>
+          <izz>0.100003</izz>
         </inertia>
       </inertial>
       <collision name='footprint_fixed_joint_lump__collision_collision'>

@@ -332,7 +332,7 @@
   <!-- ****************************************************** Camera Link **************************************************************  -->
   <link name="camera">
     <inertial>
-      <mass value="0.1"/>
+      <mass value="1e-05"/>
       <origin rpy=" 0 0 0" xyz="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
     </inertial>

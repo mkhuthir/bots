@@ -10,7 +10,6 @@
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Parameters ***************************************************************  -->
   <!-- Link 3 -->
-  <!-- Size of square 'camera' box -->
   <!-- Space btw top of beam and the each joint -->
   <!-- ****************************************************** Includes *****************************************************************  -->
   <material name="red">
@@ -45,7 +44,7 @@
   <!-- March 2022                                                                                                                         -->
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Base Link ****************************************************************  -->
-  <gazebo reference="base_link">
+  <gazebo reference="base">
     <material>Gazebo/Orange</material>
   </gazebo>
   <!-- ****************************************************** Link 1 *******************************************************************  -->
@@ -57,7 +56,7 @@
     <material>Gazebo/Orange</material>
   </gazebo>
   <!-- ****************************************************** Camera Link **************************************************************  -->
-  <gazebo reference="camera_link">
+  <gazebo reference="camera">
     <material>Gazebo/Green</material>
   </gazebo>
   <!-- ****************************************************** World Link ****************************************************************  -->
@@ -71,10 +70,10 @@
   <joint name="base_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="world"/>
-    <child link="base_link"/>
+    <child link="base"/>
   </joint>
   <!-- ****************************************************** Base Link ****************************************************************  -->
-  <link name="base_link">
+  <link name="base">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 1.0"/>
       <geometry>
@@ -96,7 +95,7 @@
   </link>
   <!-- ****************************************************** Joint 1 ******************************************************************  -->
   <joint name="joint1" type="continuous">
-    <parent link="base_link"/>
+    <parent link="base"/>
     <child link="link1"/>
     <origin rpy="0 0 0" xyz="0 0.1 1.95"/>
     <axis xyz="0 1 0"/>
@@ -156,19 +155,19 @@
   <joint name="tool_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 1"/>
     <parent link="link2"/>
-    <child link="tool_link"/>
+    <child link="tool"/>
   </joint>
   <!-- ****************************************************** Tool Link ****************************************************************  -->
-  <link name="tool_link"/>
+  <link name="tool"/>
   <!-- ****************************************************** Hokuyo Joint *************************************************************  -->
   <joint name="hokuyo_joint" type="fixed">
     <axis xyz="0 1 0"/>
     <origin rpy="0 0 0" xyz="0 0 0.975"/>
     <parent link="link2"/>
-    <child link="hokuyo_link"/>
+    <child link="hokuyo"/>
   </joint>
   <!-- ****************************************************** Hokuyo Link **************************************************************  -->
-  <link name="hokuyo_link">
+  <link name="hokuyo">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -192,28 +191,28 @@
     <axis xyz="0 1 0"/>
     <origin rpy="0 0 0" xyz="0.05 0 0.9"/>
     <parent link="link2"/>
-    <child link="camera_link"/>
+    <child link="camera"/>
   </joint>
   <!-- ****************************************************** Camera Link **************************************************************  -->
-  <link name="camera_link">
-    <collision>
+  <link name="camera">
+    <inertial>
+      <mass value="1e-05"/>
+      <origin rpy=" 0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual name="camera_visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision name="camera_colision">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.05 0.05 0.05"/>
-      </geometry>
-      <material name="red"/>
-    </visual>
-    <inertial>
-      <mass value="1e-5"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
-    </inertial>
   </link>
   <!-- ****************************************************** Camera Optical Joint *****************************************************  -->
   <!-- generate an optical frame http://www.ros.org/reps/rep-0103.html#suffix-frames so that ros and opencv can operate on the camera     -->
@@ -221,13 +220,13 @@
   <!-- it is supposedly originating from                                                                                                  -->
                                                                                                                      --&gt;
 
-    
+  
   <joint name="camera_optical_joint" type="fixed">
     <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="camera_link"/>
-    <child link="camera_link_optical"/>
+    <parent link="camera"/>
+    <child link="camera_optical"/>
   </joint>
   <!-- ****************************************************** Camera Optical Link ******************************************************  -->
-  <link name="camera_link_optical"/>
+  <link name="camera_optical"/>
   <!-- ****************************************************** END **********************************************************************  -->
 </robot>
