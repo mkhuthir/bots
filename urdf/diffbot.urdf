@@ -10,6 +10,7 @@
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Parameters ***************************************************************  -->
   <!-- Space btw top of beam and the each joint     -->
+  <!-- x offset from base center -->
   <!-- ****************************************************** Includes *****************************************************************  -->
   <material name="red">
     <color rgba="1.0 0.0 0.0 1.0"/>
@@ -43,7 +44,7 @@
   <!-- March 2022                                                                                                                         -->
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Base Link ****************************************************************  -->
-  <gazebo reference="base_link">
+  <gazebo reference="base">
     <material>Gazebo/Blue</material>
   </gazebo>
   <!-- ****************************************************** Front caster Link ********************************************************  -->
@@ -54,18 +55,124 @@
   <gazebo reference="rear_caster">
     <material>Gazebo/White</material>
   </gazebo>
+  <!-- ******************************************************  Joint States Publisher **************************************************  -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_joint_state_publisher.so" name="joint_states_pub">
+      <ros>
+        <namespace>diffbot</namespace>
+      </ros>
+      <joint_name>right_wheel_joint</joint_name>
+      <joint_name>left_wheel_joint</joint_name>
+      <update_rate>100.0</update_rate>
+    </plugin>
+  </gazebo>
+  <!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="skid_drive">
+      <ros>
+        <namespace>diffbot</namespace>
+      </ros>
+      <num_wheel_pairs>1</num_wheel_pairs>
+      <!-- 1st Wheels Set -->
+      <right_joint>right_wheel_joint</right_joint>
+      <left_joint>left_wheel_joint</left_joint>
+      <wheel_separation>0.27</wheel_separation>
+      <wheel_diameter>0.16</wheel_diameter>
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <update_rate>100.0</update_rate>
+      <robot_base_frame>footprint</robot_base_frame>
+      <odometry_frame>odom</odometry_frame>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+    </plugin>
+  </gazebo>
+  <!-- ******************************************************  Camera ******************************************************************  -->
+  <gazebo reference="camera">
+    <sensor name="camera_sensor" type="camera">
+      <plugin filename="libgazebo_ros_camera.so" name="camera">
+        <ros>
+          <namespace>diffbot</namespace>
+        </ros>
+        <camera_name>camera</camera_name>
+        <frame_name>camera</frame_name>
+        <hack_baseline>0.07</hack_baseline>
+      </plugin>
+      <update_rate>30.0</update_rate>
+      <always_on>1</always_on>
+      <camera name="camera">
+        <horizontal_fov>1.3962634015954636</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <distortion>
+          <k1>0.0</k1>
+          <k2>0.0</k2>
+          <k3>0.0</k3>
+          <p1>0.0</p1>
+          <p2>0.0</p2>
+          <center>0.5 0.5</center>
+        </distortion>
+      </camera>
+    </sensor>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <!-- ****************************************************** hokuyo  ******************************************************************  -->
+  <gazebo reference="hokuyo">
+    <sensor name="head_hokuyo_sensor" type="ray">
+      <plugin filename="libgazebo_ros_ray_sensor.so" name="hokuyo">
+        <ros>
+          <namespace>diffbot</namespace>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+      </plugin>
+      <update_rate>30</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.141592653589793</min_angle>
+            <max_angle> 3.141592653589793</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <!-- Noise parameters based on published spec for Hokuyo laser achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and stddev   -->
+        <!-- of 0.01m will put 99.7% of samples within 0.03m of the true reading.                                                               -->
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+    </sensor>
+    <!-- <material>Gazebo/Red</material> -->
+  </gazebo>
   <!-- ****************************************************** END **********************************************************************  -->
   <!-- Gazebo                                     -->
-  <!-- ****************************************************** Base Footprint ***********************************************************  -->
-  <link name="base_footprint"/>
+  <!-- ****************************************************** Footprint ****************************************************************  -->
+  <link name="footprint"/>
   <!-- ****************************************************** Base Joint ***************************************************************  -->
-  <joint name="base_joint" type="fixed">
-    <parent link="base_footprint"/>
-    <child link="base_link"/>
+  <joint name="footprint_joint" type="fixed">
+    <parent link="footprint"/>
+    <child link="base"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.10500000000000001"/>
   </joint>
   <!-- ****************************************************** Base Link ****************************************************************  -->
-  <link name="base_link">
+  <link name="base">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -89,7 +196,7 @@
   </link>
   <!-- ****************************************************** Right Wheel Joint ********************************************************  -->
   <joint name="right_wheel_joint" type="continuous">
-    <parent link="base_link"/>
+    <parent link="base"/>
     <child link="right_wheel"/>
     <origin rpy="0 0 0" xyz="0 0.135 -0.025"/>
     <limit effort="30" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.0"/>
@@ -121,7 +228,7 @@
   </link>
   <!-- ****************************************************** Left Wheel Joint *********************************************************  -->
   <joint name="left_wheel_joint" type="continuous">
-    <parent link="base_link"/>
+    <parent link="base"/>
     <child link="left_wheel"/>
     <origin rpy="0 0 0" xyz="0 -0.135 -0.025"/>
     <limit effort="30" lower="-3.141592653589793" upper="3.141592653589793" velocity="5.0"/>
@@ -153,7 +260,7 @@
   </link>
   <!-- ****************************************************** Front caster joint *******************************************************  -->
   <joint name="front_caster_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="base"/>
     <child link="front_caster"/>
     <origin rpy="0 0 0" xyz="0.13775 0 -0.05"/>
   </joint>
@@ -180,7 +287,7 @@
   </link>
   <!-- ****************************************************** Rear Caster Joint ********************************************************  -->
   <joint name="rear_caster_joint" type="fixed">
-    <parent link="base_link"/>
+    <parent link="base"/>
     <child link="rear_caster"/>
     <origin rpy="0 0 0" xyz="-0.13775 0 -0.05"/>
   </joint>
@@ -205,6 +312,34 @@
       <inertia ixx="0.00012100000000000001" ixy="0.0" ixz="0.0" iyy="0.00012100000000000001" iyz="0.0" izz="0.00012100000000000001"/>
     </inertial>
   </link>
+  <!-- ****************************************************** Camera Link **************************************************************  -->
+  <link name="camera">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy=" 0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual name="camera_visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision name="camera_colision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- ****************************************************** Camera Joint *************************************************************  -->
+  <joint name="camera_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.2 0 0"/>
+    <child link="camera"/>
+    <parent link="base"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+  </joint>
   <!-- ****************************************************** Hokuyo Link **************************************************************  -->
   <link name="hokuyo">
     <inertial>
@@ -232,7 +367,7 @@
   <joint name="hokuyo_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.11 0 0.0853"/>
     <child link="hokuyo"/>
-    <parent link="base_link"/>
+    <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
   <!-- ****************************************************** END **********************************************************************  -->

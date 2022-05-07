@@ -76,9 +76,11 @@
       <right_joint>back_right_wheel_joint</right_joint>
       <wheel_separation>0.27</wheel_separation>
       <wheel_diameter>0.16</wheel_diameter>
+      <!---->
       <max_wheel_torque>20</max_wheel_torque>
       <max_wheel_acceleration>1.0</max_wheel_acceleration>
       <update_rate>100.0</update_rate>
+      <!---->
       <robot_base_frame>footprint</robot_base_frame>
       <odometry_frame>odom</odometry_frame>
       <publish_odom>true</publish_odom>
