@@ -10,7 +10,6 @@
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Parameters ***************************************************************  -->
   <!-- Link 3 -->
-  <!-- Space btw top of beam and the each joint -->
   <!-- ****************************************************** Includes *****************************************************************  -->
   <material name="red">
     <color rgba="1.0 0.0 0.0 1.0"/>
@@ -48,11 +47,11 @@
     <material>Gazebo/Orange</material>
   </gazebo>
   <!-- ****************************************************** Link 1 *******************************************************************  -->
-  <gazebo reference="link1">
+  <gazebo reference="link2">
     <material>Gazebo/Orange</material>
   </gazebo>
   <!-- ****************************************************** Link 2 *******************************************************************  -->
-  <gazebo reference="link2">
+  <gazebo reference="link3">
     <material>Gazebo/Orange</material>
   </gazebo>
   <!-- ****************************************************** Camera Link **************************************************************  -->
@@ -96,13 +95,13 @@
   <!-- ****************************************************** Joint 1 ******************************************************************  -->
   <joint name="joint1" type="continuous">
     <parent link="base"/>
-    <child link="link1"/>
+    <child link="link2"/>
     <origin rpy="0 0 0" xyz="0 0.1 1.95"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.7"/>
   </joint>
-  <!-- ****************************************************** Link 1 *******************************************************************  -->
-  <link name="link1">
+  <!-- ****************************************************** Link 2 *******************************************************************  -->
+  <link name="link2">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.45"/>
       <geometry>
@@ -124,14 +123,14 @@
   </link>
   <!-- ****************************************************** Joint 2 ******************************************************************  -->
   <joint name="joint2" type="continuous">
-    <parent link="link1"/>
-    <child link="link2"/>
+    <parent link="link2"/>
+    <child link="link3"/>
     <origin rpy="0 0 0" xyz="0 0.1 0.9"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.7"/>
   </joint>
-  <!-- ****************************************************** Link 2 *******************************************************************  -->
-  <link name="link2">
+  <!-- ****************************************************** Link 3 *******************************************************************  -->
+  <link name="link3">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.45"/>
       <geometry>
@@ -154,43 +153,16 @@
   <!-- ****************************************************** Tool Joint ***************************************************************  -->
   <joint name="tool_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 1"/>
-    <parent link="link2"/>
+    <parent link="link3"/>
     <child link="tool"/>
   </joint>
   <!-- ****************************************************** Tool Link ****************************************************************  -->
   <link name="tool"/>
-  <!-- ****************************************************** Hokuyo Joint *************************************************************  -->
-  <joint name="hokuyo_joint" type="fixed">
-    <axis xyz="0 1 0"/>
-    <origin rpy="0 0 0" xyz="0 0 0.975"/>
-    <parent link="link2"/>
-    <child link="hokuyo"/>
-  </joint>
-  <!-- ****************************************************** Hokuyo Link **************************************************************  -->
-  <link name="hokuyo">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.1 0.1 0.1"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://robot_gazebo/meshes/rrbot/hokuyo.dae"/>
-      </geometry>
-    </visual>
-    <inertial>
-      <mass value="1e-5"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
-    </inertial>
-  </link>
   <!-- ****************************************************** Camera Joint *************************************************************  -->
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 1 0"/>
-    <origin rpy="0 0 0" xyz="0.05 0 0.9"/>
-    <parent link="link2"/>
+    <origin rpy="0 0 0" xyz="0.07500000000000001 0 0.9"/>
+    <parent link="link3"/>
     <child link="camera"/>
   </joint>
   <!-- ****************************************************** Camera Link **************************************************************  -->
@@ -228,5 +200,34 @@
   </joint>
   <!-- ****************************************************** Camera Optical Link ******************************************************  -->
   <link name="camera_optical"/>
+  <!-- ****************************************************** Hokuyo Joint *************************************************************  -->
+  <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.975"/>
+    <parent link="link3"/>
+    <child link="hokuyo"/>
+  </joint>
+  <!-- ****************************************************** Hokuyo Link **************************************************************  -->
+  <link name="hokuyo">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_gazebo/meshes/rrbot/hokuyo.dae"/>
+        <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_gazebo/meshes/rrbot/hokuyo.dae"/>
+        <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1e-05"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
   <!-- ****************************************************** END **********************************************************************  -->
 </robot>

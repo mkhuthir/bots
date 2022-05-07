@@ -53,69 +53,6 @@
     <joint name='joint1' type='revolute'>
       <pose relative_to='base'>0 0.1 1.95 0 -0 0</pose>
       <parent>base</parent>
-      <child>link1</child>
-      <axis>
-        <xyz>0 1 0</xyz>
-        <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
-        </limit>
-        <dynamics>
-          <damping>0.7</damping>
-          <friction>0</friction>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='link1'>
-      <pose relative_to='joint1'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>0 0 0.45 0 -0 0</pose>
-        <mass>1</mass>
-        <inertia>
-          <ixx>0.0841667</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.0841667</iyy>
-          <iyz>0</iyz>
-          <izz>0.00166667</izz>
-        </inertia>
-      </inertial>
-      <collision name='link1_collision'>
-        <pose>0 0 0.45 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.1 0.1 1</size>
-          </box>
-        </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
-      </collision>
-      <visual name='link1_visual'>
-        <pose>0 0 0.45 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.1 0.1 1</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Orange</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
-      </visual>
-    </link>
-    <joint name='joint2' type='revolute'>
-      <pose relative_to='link1'>0 0.1 0.9 0 -0 0</pose>
-      <parent>link1</parent>
       <child>link2</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -132,17 +69,17 @@
       </axis>
     </joint>
     <link name='link2'>
-      <pose relative_to='joint2'>0 0 0 0 -0 0</pose>
+      <pose relative_to='joint1'>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0.45001 0 -0 0</pose>
-        <mass>1.00002</mass>
+        <pose>0 0 0.45 0 -0 0</pose>
+        <mass>1</mass>
         <inertia>
-          <ixx>0.0841734</ixx>
+          <ixx>0.0841667</ixx>
           <ixy>0</ixy>
-          <ixz>-2.24995e-07</ixz>
-          <iyy>0.0841735</iyy>
+          <ixz>0</ixz>
+          <iyy>0.0841667</iyy>
           <iyz>0</iyz>
-          <izz>0.00166869</izz>
+          <izz>0.00166667</izz>
         </inertia>
       </inertial>
       <collision name='link2_collision'>
@@ -161,22 +98,6 @@
           </friction>
         </surface>
       </collision>
-      <collision name='link2_fixed_joint_lump__camera_colision_collision_1'>
-        <pose>0.05 0 0.9 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.05 0.05 0.05</size>
-          </box>
-        </geometry>
-      </collision>
-      <collision name='link2_fixed_joint_lump__hokuyo_collision_2'>
-        <pose>0 0 0.975 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.1 0.1 0.1</size>
-          </box>
-        </geometry>
-      </collision>
       <visual name='link2_visual'>
         <pose>0 0 0.45 0 -0 0</pose>
         <geometry>
@@ -191,8 +112,88 @@
           </script>
         </material>
       </visual>
-      <visual name='link2_fixed_joint_lump__camera_visual_visual_1'>
-        <pose>0.05 0 0.9 0 -0 0</pose>
+    </link>
+    <joint name='joint2' type='revolute'>
+      <pose relative_to='link2'>0 0.1 0.9 0 -0 0</pose>
+      <parent>link2</parent>
+      <child>link3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link3'>
+      <pose relative_to='joint2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>1e-06 0 0.45001 0 -0 0</pose>
+        <mass>1.00002</mass>
+        <inertia>
+          <ixx>0.0841734</ixx>
+          <ixy>0</ixy>
+          <ixz>-3.37493e-07</ixz>
+          <iyy>0.0841735</iyy>
+          <iyz>0</iyz>
+          <izz>0.00166872</izz>
+        </inertia>
+      </inertial>
+      <collision name='link3_collision'>
+        <pose>0 0 0.45 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 1</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='link3_fixed_joint_lump__camera_colision_collision_1'>
+        <pose>0.075 0 0.9 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='link3_fixed_joint_lump__hokuyo_collision_2'>
+        <pose>0 0 0.975 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robot_gazebo/meshes/rrbot/hokuyo.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link3_visual'>
+        <pose>0 0 0.45 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='link3_fixed_joint_lump__camera_visual_visual_1'>
+        <pose>0.075 0 0.9 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.05 0.05 0.05</size>
@@ -205,7 +206,7 @@
           </script>
         </material>
       </visual>
-      <visual name='link2_fixed_joint_lump__hokuyo_visual_2'>
+      <visual name='link3_fixed_joint_lump__hokuyo_visual_2'>
         <pose>0 0 0.975 0 -0 0</pose>
         <geometry>
           <mesh>

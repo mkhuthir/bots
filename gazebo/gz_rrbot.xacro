@@ -15,13 +15,13 @@
 
 <!-- ****************************************************** Link 1 *******************************************************************  -->
 
-  <gazebo reference="${prefix}link1"> 
+  <gazebo reference="${prefix}link2"> 
       <material>Gazebo/Orange</material> 
   </gazebo>
 
 <!-- ****************************************************** Link 2 *******************************************************************  -->
 
-  <gazebo reference="${prefix}link2"> 
+  <gazebo reference="${prefix}link3"> 
       <material>Gazebo/Orange</material> 
   </gazebo>    
 
