@@ -166,14 +166,6 @@
             <uri>model://robot_gazebo/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='left_wheel_visual'>
         <pose>0 0 0 1.5708 -0 0</pose>
@@ -183,12 +175,6 @@
             <uri>model://robot_gazebo/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Gray</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
       </visual>
     </link>
     <joint name='right_wheel_joint' type='revolute'>
@@ -233,14 +219,6 @@
             <uri>model://robot_gazebo/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
       </collision>
       <visual name='right_wheel_visual'>
         <pose>0 0 0 1.5708 -0 0</pose>
@@ -250,12 +228,6 @@
             <uri>model://robot_gazebo/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Gray</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
       </visual>
     </link>
   </model>
