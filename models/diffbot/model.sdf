@@ -2,13 +2,13 @@
   <model name='diffbot'>
     <link name='footprint'>
       <inertial>
-        <pose>0.022223 0 0.09389 0 -0 0</pose>
+        <pose>0.022223 0 0.096112 0 -0 0</pose>
         <mass>0.90001</mass>
         <inertia>
-          <ixx>0.00913298</ixx>
+          <ixx>0.00899298</ixx>
           <ixy>0</ixy>
-          <ixz>-0.000222307</ixz>
-          <iyy>0.0104836</iyy>
+          <ixz>-0.00017786</ixz>
+          <iyy>0.0103436</iyy>
           <iyz>0</iyz>
           <izz>0.0175946</izz>
         </inertia>
@@ -39,7 +39,7 @@
         </geometry>
       </collision>
       <collision name='footprint_fixed_joint_lump__front_caster_collision_2'>
-        <pose>0.13775 0 0.055 0 -0 0</pose>
+        <pose>0.13775 0 0.065 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.055</radius>
@@ -64,7 +64,7 @@
         </geometry>
       </collision>
       <collision name='footprint_fixed_joint_lump__rear_caster_collision_4'>
-        <pose>-0.13775 0 0.055 0 -0 0</pose>
+        <pose>-0.13775 0 0.065 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.055</radius>
@@ -109,7 +109,7 @@
         </material>
       </visual>
       <visual name='footprint_fixed_joint_lump__front_caster_visual_2'>
-        <pose>0.13775 0 0.055 0 -0 0</pose>
+        <pose>0.13775 0 0.065 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.055</radius>
@@ -132,7 +132,7 @@
         </geometry>
       </visual>
       <visual name='footprint_fixed_joint_lump__rear_caster_visual_4'>
-        <pose>-0.13775 0 0.055 0 -0 0</pose>
+        <pose>-0.13775 0 0.065 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.055</radius>

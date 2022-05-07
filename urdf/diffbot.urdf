@@ -262,7 +262,7 @@
   <joint name="front_caster_joint" type="fixed">
     <parent link="base"/>
     <child link="front_caster"/>
-    <origin rpy="0 0 0" xyz="0.13775 0 -0.05"/>
+    <origin rpy="0 0 0" xyz="0.13775 0 -0.04"/>
   </joint>
   <!-- ****************************************************** Front caster Link ********************************************************  -->
   <link name="front_caster">
@@ -289,7 +289,7 @@
   <joint name="rear_caster_joint" type="fixed">
     <parent link="base"/>
     <child link="rear_caster"/>
-    <origin rpy="0 0 0" xyz="-0.13775 0 -0.05"/>
+    <origin rpy="0 0 0" xyz="-0.13775 0 -0.04"/>
   </joint>
   <!-- ****************************************************** Rear Caster Link *********************************************************  -->
   <link name="rear_caster">
