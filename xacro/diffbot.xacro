@@ -43,21 +43,21 @@
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
   <xacro:include filename="$(find robot_gazebo)/gazebo/gz_diffbot.xacro" />             <!-- Gazebo                                     -->
 
-<!-- ****************************************************** Base Footprint ***********************************************************  -->
+<!-- ****************************************************** Footprint ****************************************************************  -->
 
-    <link name="${prefix}base_footprint"/>
+    <link name="${prefix}footprint"/>
 
 <!-- ****************************************************** Base Joint ***************************************************************  -->
 
-    <joint name="base_joint" type="fixed">
-        <parent link="base_footprint"/>
-        <child link="${prefix}base_link"/>
+    <joint name="footprint_joint" type="fixed">
+        <parent link="footprint"/>
+        <child link="${prefix}base"/>
         <origin xyz="0.0 0.0 ${(wheel_radius+wheel_z)}" rpy="0.0 0.0 0.0"/>
     </joint>
 
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
-  <link name="${prefix}base_link">
+  <link name="${prefix}base">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -84,7 +84,7 @@
 <!-- ****************************************************** Right Wheel Joint ********************************************************  -->
 
     <joint name="${prefix}right_wheel_joint" type="continuous">
-      <parent link="${prefix}base_link"/>
+      <parent link="${prefix}base"/>
       <child link="${prefix}right_wheel"/>
       <origin xyz="0 ${wheel_y} -${wheel_z}" rpy="0 0 0"/>
       <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
@@ -121,7 +121,7 @@
 <!-- ****************************************************** Left Wheel Joint *********************************************************  -->
 
     <joint name="${prefix}left_wheel_joint" type="continuous">
-      <parent link="${prefix}base_link"/>
+      <parent link="${prefix}base"/>
       <child link="${prefix}left_wheel"/>
       <origin xyz="0 -${wheel_y} -${wheel_z}" rpy="0 0 0"/>
       <limit upper="${radians(180)}" lower="-${radians(180)}" effort="30" velocity="5.0"/>
@@ -159,7 +159,7 @@
 <!-- ****************************************************** Front caster joint *******************************************************  -->
 
     <joint name="${prefix}front_caster_joint" type="fixed">
-      <parent link="${prefix}base_link"/>
+      <parent link="${prefix}base"/>
       <child link="${prefix}front_caster"/>
       <origin xyz="${caster_x} 0 ${-caster_z}" rpy="0 0 0"/>
     </joint>
@@ -193,7 +193,7 @@
 <!-- ****************************************************** Rear Caster Joint ********************************************************  -->
 
     <joint name="${prefix}rear_caster_joint" type="fixed">
-      <parent link="${prefix}base_link"/>
+      <parent link="${prefix}base"/>
       <child link="${prefix}rear_caster"/>
       <origin xyz="${-caster_x} 0 ${-caster_z}" rpy="0 0 0"/> 
     </joint>
@@ -223,6 +223,37 @@
           izz="${caster_mass * 0.4 * (caster_radius * caster_radius)}"/>
       </inertial>
     </link>
+<!-- ****************************************************** Camera Link **************************************************************  -->
+
+  <link name="${prefix}camera">
+    <inertial>
+      <mass value="${camera_mass}"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+    <visual name="camera_visual">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${camera_length} ${camera_width} ${camera_height}"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision name="camera_colision">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${camera_length} ${camera_width} ${camera_height}"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- ****************************************************** Camera Joint *************************************************************  -->
+
+  <joint type="fixed" name="${prefix}camera_joint">
+    <origin xyz="${camera_x} 0 0" rpy="0 0 0"/>
+    <child link="${prefix}camera"/>
+    <parent link="${prefix}base"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+  </joint>
 
 <!-- ****************************************************** Hokuyo Link **************************************************************  -->
 
@@ -252,7 +283,7 @@
   <joint type="fixed" name="${prefix}hokuyo_joint">
     <origin xyz="${hokuyo_x} 0 ${hokuyo_z}" rpy="0 0 0"/>
     <child link="${prefix}hokuyo"/>
-    <parent link="${prefix}base_link"/>
+    <parent link="${prefix}base"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
 
