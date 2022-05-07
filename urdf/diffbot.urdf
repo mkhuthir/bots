@@ -114,13 +114,15 @@
     <collision>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.08"/>
+        <mesh filename="package://robot_gazebo/meshes/diffbot/wheel.dae" scale="1 1 1"/>
+        <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
       </geometry>
     </collision>
     <visual>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.05" radius="0.08"/>
+        <mesh filename="package://robot_gazebo/meshes/diffbot/wheel.dae" scale="1 1 1"/>
+        <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
       </geometry>
       <material name="black"/>
     </visual>
