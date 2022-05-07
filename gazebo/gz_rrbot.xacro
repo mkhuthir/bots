@@ -9,7 +9,7 @@
  
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
-  <gazebo reference="${prefix}base_link"> 
+  <gazebo reference="${prefix}base"> 
       <material>Gazebo/Orange</material> 
   </gazebo>
 
@@ -27,7 +27,7 @@
 
 <!-- ****************************************************** Camera Link **************************************************************  -->
 
-  <gazebo reference="${prefix}camera_link"> 
+  <gazebo reference="${prefix}camera"> 
       <material>Gazebo/Green</material> 
   </gazebo> 
 
