@@ -10,6 +10,9 @@
 
     <xacro:property name="mesh_path"    value="package://robot_gazebo/meshes/rrbot/" />
 
+    <xacro:property name="name_space"     value="rrbot"  /> 
+    <xacro:property name="prefix"         value=""  /> 
+
     <xacro:property name="mass"         value="1"     /> <!-- arbitrary value for mass -->
     <xacro:property name="width"        value="0.1"   /> <!-- Square dimensions (widthxwidth) of beams -->
     <xacro:property name="height1"      value="2"     /> <!-- Link 1 -->
@@ -25,15 +28,11 @@
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
   <xacro:include filename="$(find robot_gazebo)/gazebo/gz_rrbot.xacro" />               <!-- Gazebo                                     -->
 
-<!-- ****************************************************** Macro ********************************************************************  --> 
-
-  <xacro:macro name="rrbot" params="parent prefix">
-
 <!-- ****************************************************** Base Joint ***************************************************************  -->
 
     <joint name="${prefix}base_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <parent link="${parent}"/>
+      <parent link="world"/>
       <child link="${prefix}base_link" />
     </joint>
 
@@ -225,14 +224,6 @@
 
     <link name="${prefix}camera_link_optical"/>
 
-<!-- ****************************************************** End Macro ****************************************************************  -->
-
-  </xacro:macro>
-
-<!-- ****************************************************** Expand Macro *************************************************************  -->
-  
-  <xacro:rrbot parent="world" prefix="" />
-   
 <!-- ****************************************************** END **********************************************************************  -->
 
 </robot>
