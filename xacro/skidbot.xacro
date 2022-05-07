@@ -12,6 +12,7 @@
   <xacro:property name="mesh_path"      value="package://robot_gazebo/meshes/skidbot/"/>
 
   <xacro:property name="name_space"     value="skidbot"  /> 
+  <xacro:property name="prefix"         value=""  /> 
 
   <xacro:property name="base_mass"      value="15.0"     /> <!-- arbitrary mass value -->
   <xacro:property name="base_width"     value="0.20"     />
@@ -45,19 +46,19 @@
 
 <!-- ****************************************************** Base Footprint ***********************************************************  -->
 
-  <link name="footprint"></link>
+  <link name="${prefix}footprint"></link>
 
 <!-- ****************************************************** Footprint Joint **********************************************************  -->
 
-  <joint type="fixed" name="footprint_joint" >
+  <joint type="fixed" name="${prefix}footprint_joint" >
     <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="footprint"/>
-    <child link="base" />
+    <parent link="${prefix}footprint"/>
+    <child link="${prefix}base" />
   </joint>
 
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
-  <link name='base'>
+  <link name='${prefix}base'>
     <pose>0 0 0 0 0 0</pose>
     <inertial>
       <mass value="${base_mass}"/>
@@ -85,7 +86,7 @@
 
 <!-- ****************************************************** Wheel Link ***************************************************************  -->    
 
-    <link name="${position}_${side}_wheel">
+    <link name="${prefix}${prefix}${position}_${side}_wheel">
       <inertial>
         <mass value="${base_mass}"/>
         <origin xyz="0 0 0" rpy=" 0 ${radians(90)} ${radians(90)}"/>
@@ -108,7 +109,7 @@
 
 <!-- ****************************************************** Wheel Joint **************************************************************  -->    
 
-    <joint type="continuous" name="${position}_${side}_wheel_joint">
+    <joint type="continuous" name="${prefix}${position}_${side}_wheel_joint">
         <origin xyz="${x} ${y} 0" rpy="0 0 0"/>
         <child link="${position}_${side}_wheel"/>
         <parent link="base"/>
@@ -130,7 +131,7 @@
 
 <!-- ****************************************************** Camera Link **************************************************************  -->
 
-  <link name="camera">
+  <link name="${prefix}camera">
     <inertial>
       <mass value="${camera_mass}"/>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
@@ -153,16 +154,16 @@
 
 <!-- ****************************************************** Camera Joint *************************************************************  -->
 
-  <joint type="fixed" name="camera_joint">
+  <joint type="fixed" name="${prefix}camera_joint">
     <origin xyz="${camera_x} 0 0" rpy="0 0 0"/>
-    <child link="camera"/>
-    <parent link="base"/>
+    <child link="${prefix}camera"/>
+    <parent link="${prefix}base"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
 
 <!-- ****************************************************** Hokuyo Link **************************************************************  -->
 
-  <link name="hokuyo">
+  <link name="${prefix}hokuyo">
     <inertial>
       <mass value="${hokuyo_mass}"/>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
@@ -185,10 +186,10 @@
 
 <!-- ****************************************************** Hokuyo Joint *************************************************************  -->
 
-  <joint type="fixed" name="hokuyo_joint">
+  <joint type="fixed" name="${prefix}hokuyo_joint">
     <origin xyz="${hokuyo_x} 0 ${hokuyo_z}" rpy="0 0 0"/>
-    <child link="hokuyo"/>
-    <parent link="base"/>
+    <child link="${prefix}hokuyo"/>
+    <parent link="${prefix}base"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
 

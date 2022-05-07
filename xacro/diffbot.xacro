@@ -12,7 +12,8 @@
   <xacro:property name="mesh_path"      value="package://robot_gazebo/meshes/diffbot/"/>
   
   <xacro:property name="name_space"     value="diffbot"  /> 
-
+  <xacro:property name="prefix"         value=""  /> 
+  
   <xacro:property name="base_mass"      value="0.6"                               />  <!-- arbitrary value for base mass                -->
   <xacro:property name="base_width"     value="0.20"                              />
   <xacro:property name="base_length"    value="0.40"                              />
@@ -41,10 +42,6 @@
 
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
   <xacro:include filename="$(find robot_gazebo)/gazebo/gz_diffbot.xacro" />             <!-- Gazebo                                     -->
-
-<!-- ****************************************************** Macro ********************************************************************  --> 
-
-  <xacro:macro name="diffbot" params="prefix">
 
 <!-- ****************************************************** Base Footprint ***********************************************************  -->
 
@@ -255,18 +252,10 @@
   <joint type="fixed" name="${prefix}hokuyo_joint">
     <origin xyz="${hokuyo_x} 0 ${hokuyo_z}" rpy="0 0 0"/>
     <child link="${prefix}hokuyo"/>
-    <parent link="${prefix}base"/>
+    <parent link="${prefix}base_link"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
 
-<!-- ****************************************************** End Macro ****************************************************************  -->
-
-  </xacro:macro>
-
-<!-- ****************************************************** Expand Macro *************************************************************  -->
-  
-  <xacro:diffbot prefix="" />
-   
 <!-- ****************************************************** END **********************************************************************  -->
 
 </robot>
