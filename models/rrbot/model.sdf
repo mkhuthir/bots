@@ -31,7 +31,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -94,7 +97,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -157,7 +163,10 @@
             <ode/>
           </contact>
           <friction>
-            <ode/>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
           </friction>
         </surface>
       </collision>
@@ -297,6 +306,9 @@
         <pose>0 0 0.975 0 -0 0</pose>
       </sensor>
     </link>
+    <plugin name='gazebo_ros2_control' filename='libgazebo_ros2_control.so'>
+      <parameters>/home/mkhuthir/ws/install/robot_gazebo/share/robot_gazebo/config/rrbot_gazebo_forward_controller_position.yaml</parameters>
+    </plugin>
     <static>0</static>
     <plugin name='joint_states_pub' filename='libgazebo_ros_joint_state_publisher.so'>
       <ros>
