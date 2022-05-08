@@ -86,7 +86,6 @@
       <joint_name>base_joint</joint_name>
       <joint_name>joint1</joint_name>
       <joint_name>joint2</joint_name>
-      <joint_name>tool_joint</joint_name>
       <update_rate>100.0</update_rate>
     </plugin>
   </gazebo>
