@@ -62,18 +62,9 @@
 <!-- ******************************************************  Camera ******************************************************************  -->
 
   <gazebo reference="${prefix}camera">
-    <sensor type="camera" name="camera_sensor">
-      <plugin name="camera" filename="libgazebo_ros_camera.so">
-        <ros>
-          <namespace>${name_space}</namespace>
-        </ros>
-        <camera_name>camera</camera_name>
-        <frame_name>camera</frame_name>
-        <hack_baseline>0.07</hack_baseline>
-      </plugin>
+    <sensor type="camera" name="camera">
       <update_rate>30.0</update_rate>
-      <always_on>1</always_on>
-      <camera name="camera">
+      <camera name="head">
         <horizontal_fov>${radians(80)}</horizontal_fov>
         <image>
           <width>1280</width>
@@ -84,15 +75,39 @@
           <near>0.02</near>
           <far>300</far>
         </clip>
-        <distortion>
-          <k1>0.0</k1>
-          <k2>0.0</k2>
-          <k3>0.0</k3>
-          <p1>0.0</p1>
-          <p2>0.0</p2>
-          <center>0.5 0.5</center>
-        </distortion>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+          That pixel's noise value is added to each of its color
+          channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
       </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>${name_space}</namespace>
+        </ros>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_optical</frameName>
+        <!-- setting hackBaseline to anything but 0.0 will cause a misalignment
+        between the gazebo sensor image and the frame it is supposed to
+        be attached to -->
+        <hackBaseline>0.0</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+        <CxPrime>0</CxPrime>
+        <Cx>0.0</Cx>
+        <Cy>0.0</Cy>
+        <focalLength>0.0</focalLength>
+      </plugin>
     </sensor>
     <material>Gazebo/Green</material>
   </gazebo>
@@ -115,8 +130,8 @@
           <horizontal>
             <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-${radians(90)}</min_angle>
-            <max_angle> ${radians(90)}</max_angle>
+            <min_angle>-${radians(180)}</min_angle>
+            <max_angle> ${radians(180)}</max_angle>
           </horizontal>
         </scan>
         <range>
