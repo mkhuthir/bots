@@ -14,7 +14,7 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(
-  DIRECTORY gazebo launch meshes models rviz scripts urdf worlds xacro
+  DIRECTORY config gazebo launch meshes models rviz scripts urdf worlds xacro
   DESTINATION share/${PROJECT_NAME}
 )
 

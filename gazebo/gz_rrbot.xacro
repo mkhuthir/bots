@@ -10,24 +10,32 @@
 <!-- ****************************************************** Base Link ****************************************************************  -->
 
   <gazebo reference="${prefix}base"> 
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
       <material>Gazebo/Orange</material> 
   </gazebo>
 
 <!-- ****************************************************** Link 1 *******************************************************************  -->
 
   <gazebo reference="${prefix}link2"> 
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
       <material>Gazebo/Orange</material> 
   </gazebo>
 
 <!-- ****************************************************** Link 2 *******************************************************************  -->
 
   <gazebo reference="${prefix}link3"> 
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
       <material>Gazebo/Orange</material> 
   </gazebo>    
 
 <!-- ****************************************************** Camera Link **************************************************************  -->
 
-  <gazebo reference="${prefix}camera"> 
+  <gazebo reference="${prefix}camera">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
       <material>Gazebo/Green</material> 
   </gazebo> 
 
@@ -37,6 +45,14 @@
 
   <gazebo reference="world">
     <static>true</static>
+  </gazebo>
+
+<!-- ****************************************************** ROS Control Plugin *******************************************************  -->
+
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>$(find robot_gazebo)/config/rrbot_gazebo_forward_controller_position.yaml</parameters>
+    </plugin>
   </gazebo>
   
 <!-- ******************************************************  Joint States Publisher **************************************************  -->
