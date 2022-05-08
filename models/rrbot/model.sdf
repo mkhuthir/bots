@@ -306,7 +306,7 @@
         <pose>0 0 0.975 0 -0 0</pose>
       </sensor>
     </link>
-    <plugin name='gazebo_ros2_control' filename='libgazebo_ros2_control.so'>
+    <plugin name='gz_ros2_control' filename='libgazebo_ros2_control.so'>
       <parameters>/home/mkhuthir/ws/install/robot_gazebo/share/robot_gazebo/config/rrbot_gazebo_forward_controller_position.yaml</parameters>
     </plugin>
     <static>0</static>

@@ -73,7 +73,7 @@
   </gazebo>
   <!-- ****************************************************** ROS Control Plugin *******************************************************  -->
   <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+    <plugin filename="libgazebo_ros2_control.so" name="gz_ros2_control">
       <parameters>/home/mkhuthir/ws/install/robot_gazebo/share/robot_gazebo/config/rrbot_gazebo_forward_controller_position.yaml</parameters>
     </plugin>
   </gazebo>

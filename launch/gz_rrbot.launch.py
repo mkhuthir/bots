@@ -3,7 +3,7 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PythonExpression
+from launch.substitutions import Command, LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
  
@@ -23,6 +23,7 @@ world_path     = os.path.join(pkg_share,'worlds',world_name)
 gzserver_path  = os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
 gzclient_path  = os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
 models_path    = os.path.join(pkg_share,'models')
+urdf_model_path= os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
 sdf_model_path = os.path.join(models_path,robot_name,'model.sdf')
 
 os.environ["GAZEBO_MODEL_PATH"] = models_path
@@ -30,6 +31,7 @@ os.environ["GAZEBO_MODEL_PATH"] = models_path
 headless =      LaunchConfiguration('headless')
 sdf_model =     LaunchConfiguration('sdf_model')
 use_simulator = LaunchConfiguration('use_simulator')
+urdf_model =    LaunchConfiguration('urdf_model')
 world =         LaunchConfiguration('world')
 
 def generate_launch_description():
@@ -55,7 +57,12 @@ def generate_launch_description():
       name='use_simulator',
       default_value='True',
       description='Whether to start the simulator'),
-  
+
+    DeclareLaunchArgument(
+      name='urdf_model', 
+      default_value=urdf_model_path, 
+      description='Absolute path to robot urdf file'),
+
     DeclareLaunchArgument(
       name='world',
       default_value=world_path,
@@ -71,7 +78,13 @@ def generate_launch_description():
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(gzclient_path),
       condition=IfCondition(PythonExpression([use_simulator,' and not ', headless]))),
-  
+
+    # Subscribe to the joint states of the robot, and publish the 3D pose of each link.    
+    Node(
+      package=      'robot_state_publisher',
+      executable=   'robot_state_publisher',
+      parameters=[{ 'robot_description': Command(['xacro ', urdf_model])}]),  
+
     # Launch the robot
     Node(
         package=    'gazebo_ros', 
