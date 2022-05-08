@@ -63,6 +63,19 @@
   <gazebo reference="world">
     <static>true</static>
   </gazebo>
+  <!-- ******************************************************  Joint States Publisher **************************************************  -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_joint_state_publisher.so" name="joint_states_pub">
+      <ros>
+        <namespace>rrbot</namespace>
+      </ros>
+      <joint_name>base_joint</joint_name>
+      <joint_name>joint1</joint_name>
+      <joint_name>joint2</joint_name>
+      <joint_name>tool_joint</joint_name>
+      <update_rate>100.0</update_rate>
+    </plugin>
+  </gazebo>
   <!-- ******************************************************  Camera ******************************************************************  -->
   <gazebo reference="camera">
     <sensor name="camera" type="camera">

@@ -10,8 +10,8 @@
 
   <xacro:property name="mesh_path"      value="package://robot_gazebo/meshes/rrbot/" />
 
-  <xacro:property name="name_space"     default="rrbot"  /> 
-  <xacro:property name="prefix"         default=""  /> 
+  <xacro:property name="name_space"     value="rrbot" /> 
+  <xacro:property name="prefix"         value=""      /> 
 
   <xacro:property name="mass"           value="1"     /> <!-- arbitrary value for mass -->
   <xacro:property name="width"          value="0.1"   /> <!-- Square dimensions (widthxwidth) of beams -->
