@@ -4,13 +4,6 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="rrbot">
-  <!-- ****************************************************** RRBot Robot **************************************************************  -->
-  <!-- Muthanna Alwahash                                                                                                                  -->
-  <!-- March 2022                                                                                                                         -->
-  <!-- *********************************************************************************************************************************  -->
-  <!-- ****************************************************** Parameters ***************************************************************  -->
-  <!-- Link 3 -->
-  <!-- ****************************************************** Includes *****************************************************************  -->
   <material name="red">
     <color rgba="1.0 0.0 0.0 1.0"/>
   </material>
@@ -38,155 +31,20 @@
   <material name="yellow">
     <color rgba="1.0 1.0 0.0 1.0"/>
   </material>
-  <!-- ****************************************************** RRBot Robot **************************************************************  -->
-  <!-- Muthanna Alwahash                                                                                                                  -->
-  <!-- March 2022                                                                                                                         -->
-  <!-- *********************************************************************************************************************************  -->
-  <!-- ****************************************************** Base Link ****************************************************************  -->
-  <gazebo reference="base">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Orange</material>
-  </gazebo>
-  <!-- ****************************************************** Link 1 *******************************************************************  -->
-  <gazebo reference="link2">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Orange</material>
-  </gazebo>
-  <!-- ****************************************************** Link 2 *******************************************************************  -->
-  <gazebo reference="link3">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Orange</material>
-  </gazebo>
-  <!-- ****************************************************** Camera Link **************************************************************  -->
-  <gazebo reference="camera">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <!-- ****************************************************** World Link ****************************************************************  -->
+  <!-- RVIZ Colors                                -->
+  <!-- Used for fixing robot -->
   <link name="world"/>
   <gazebo reference="world">
     <static>true</static>
   </gazebo>
-  <!-- ****************************************************** ROS Control Plugin *******************************************************  -->
-  <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gz_ros2_control">
-      <parameters>/home/mkhuthir/ws/install/robot_gazebo/share/robot_gazebo/config/rrbot_gazebo_forward_controller_position.yaml</parameters>
-    </plugin>
-  </gazebo>
-  <!-- ******************************************************  Joint States Publisher **************************************************  -->
-  <gazebo>
-    <plugin filename="libgazebo_ros_joint_state_publisher.so" name="joint_states_pub">
-      <ros>
-        <namespace>rrbot</namespace>
-      </ros>
-      <joint_name>base_joint</joint_name>
-      <joint_name>joint1</joint_name>
-      <joint_name>joint2</joint_name>
-      <update_rate>100.0</update_rate>
-    </plugin>
-  </gazebo>
-  <!-- ******************************************************  Camera ******************************************************************  -->
-  <gazebo reference="camera">
-    <sensor name="camera" type="camera">
-      <update_rate>30.0</update_rate>
-      <camera name="head">
-        <horizontal_fov>1.3962634015954636</horizontal_fov>
-        <image>
-          <width>1280</width>
-          <height>720</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.02</near>
-          <far>300</far>
-        </clip>
-        <noise>
-          <type>gaussian</type>
-          <!-- Noise is sampled independently per pixel on each frame.
-          That pixel's noise value is added to each of its color
-          channels, which at that point lie in the range [0,1]. -->
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
-      </camera>
-      <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
-        <ros>
-          <namespace>rrbot</namespace>
-        </ros>
-        <alwaysOn>true</alwaysOn>
-        <updateRate>0.0</updateRate>
-        <cameraName>camera</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>camera_optical</frameName>
-        <!-- setting hackBaseline to anything but 0.0 will cause a misalignment
-        between the gazebo sensor image and the frame it is supposed to
-        be attached to -->
-        <hackBaseline>0.0</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-        <CxPrime>0</CxPrime>
-        <Cx>0.0</Cx>
-        <Cy>0.0</Cy>
-        <focalLength>0.0</focalLength>
-      </plugin>
-    </sensor>
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <!-- ****************************************************** hokuyo  ******************************************************************  -->
-  <gazebo reference="hokuyo">
-    <sensor name="head_hokuyo_sensor" type="ray">
-      <plugin filename="libgazebo_ros_ray_sensor.so" name="hokuyo">
-        <ros>
-          <namespace>rrbot</namespace>
-        </ros>
-        <output_type>sensor_msgs/LaserScan</output_type>
-      </plugin>
-      <update_rate>30</update_rate>
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>720</samples>
-            <resolution>1</resolution>
-            <min_angle>-3.141592653589793</min_angle>
-            <max_angle> 3.141592653589793</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10</min>
-          <max>30.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <!-- Noise parameters based on published spec for Hokuyo laser achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and stddev   -->
-        <!-- of 0.01m will put 99.7% of samples within 0.03m of the true reading.                                                               -->
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-    </sensor>
-    <!-- <material>Gazebo/Red</material> -->
-  </gazebo>
-  <!-- ****************************************************** END **********************************************************************  -->
-  <!--  Gazebo                                    -->
-  <!-- ****************************************************** Base Joint ***************************************************************  -->
+  <!-- Space btw top of beam and the each joint -->
   <joint name="base_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="world"/>
-    <child link="base"/>
+    <child link="base_link"/>
   </joint>
-  <!-- ****************************************************** Base Link ****************************************************************  -->
-  <link name="base">
+  <!-- Base Link -->
+  <link name="base_link">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 1.0"/>
       <geometry>
@@ -206,16 +64,15 @@
       <inertia ixx="0.3341666666666666" ixy="0.0" ixz="0.0" iyy="0.3341666666666666" iyz="0.0" izz="0.001666666666666667"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Joint 1 ******************************************************************  -->
   <joint name="joint1" type="continuous">
-    <parent link="base"/>
-    <child link="link2"/>
+    <parent link="base_link"/>
+    <child link="link1"/>
     <origin rpy="0 0 0" xyz="0 0.1 1.95"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.7"/>
   </joint>
-  <!-- ****************************************************** Link 2 *******************************************************************  -->
-  <link name="link2">
+  <!-- Middle Link -->
+  <link name="link1">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.45"/>
       <geometry>
@@ -235,16 +92,15 @@
       <inertia ixx="0.08416666666666667" ixy="0.0" ixz="0.0" iyy="0.08416666666666667" iyz="0.0" izz="0.001666666666666667"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Joint 2 ******************************************************************  -->
   <joint name="joint2" type="continuous">
-    <parent link="link2"/>
-    <child link="link3"/>
+    <parent link="link1"/>
+    <child link="link2"/>
     <origin rpy="0 0 0" xyz="0 0.1 0.9"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.7"/>
   </joint>
-  <!-- ****************************************************** Link 3 *******************************************************************  -->
-  <link name="link3">
+  <!-- Top Link -->
+  <link name="link2">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.45"/>
       <geometry>
@@ -264,81 +120,77 @@
       <inertia ixx="0.08416666666666667" ixy="0.0" ixz="0.0" iyy="0.08416666666666667" iyz="0.0" izz="0.001666666666666667"/>
     </inertial>
   </link>
-  <!-- ****************************************************** Tool Joint ***************************************************************  -->
   <joint name="tool_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 1"/>
-    <parent link="link3"/>
-    <child link="tool"/>
+    <parent link="link2"/>
+    <child link="tool_link"/>
   </joint>
-  <!-- ****************************************************** Tool Link ****************************************************************  -->
-  <link name="tool"/>
-  <!-- ****************************************************** Camera Joint *************************************************************  -->
-  <joint name="camera_joint" type="fixed">
-    <axis xyz="0 1 0"/>
-    <origin rpy="0 0 0" xyz="0.07500000000000001 0 0.9"/>
-    <parent link="link3"/>
-    <child link="camera"/>
-  </joint>
-  <!-- ****************************************************** Camera Link **************************************************************  -->
-  <link name="camera">
-    <inertial>
-      <mass value="1e-05"/>
-      <origin rpy=" 0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
-    </inertial>
-    <visual name="camera_visual">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.05 0.05 0.05"/>
-      </geometry>
-      <material name="green"/>
-    </visual>
-    <collision name="camera_colision">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.05 0.05 0.05"/>
-      </geometry>
-    </collision>
-  </link>
-  <!-- ****************************************************** Camera Optical Joint *****************************************************  -->
-  <!-- generate an optical frame http://www.ros.org/reps/rep-0103.html#suffix-frames so that ros and opencv can operate on the camera     -->
-  <!-- frame correctly. these values have to be these values otherwise the gazebo camera image won't be aligned properly with the frame   -->
-  <!-- it is supposedly originating from                                                                                                  -->
-  <joint name="camera_optical_joint" type="fixed">
-    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
-    <parent link="camera"/>
-    <child link="camera_optical"/>
-  </joint>
-  <!-- ****************************************************** Camera Optical Link ******************************************************  -->
-  <link name="camera_optical"/>
-  <!-- ****************************************************** Hokuyo Joint *************************************************************  -->
+  <!-- Tool Link -->
+  <link name="tool_link">
+        </link>
   <joint name="hokuyo_joint" type="fixed">
     <axis xyz="0 1 0"/>
     <origin rpy="0 0 0" xyz="0 0 0.975"/>
-    <parent link="link3"/>
-    <child link="hokuyo"/>
+    <parent link="link2"/>
+    <child link="hokuyo_link"/>
   </joint>
-  <!-- ****************************************************** Hokuyo Link **************************************************************  -->
-  <link name="hokuyo">
+  <!-- Hokuyo Laser -->
+  <link name="hokuyo_link">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_gazebo/meshes/rrbot/hokuyo.dae"/>
-        <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
+        <box size="0.1 0.1 0.1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_gazebo/meshes/rrbot/hokuyo.dae"/>
-        <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
+        <box size="0.05 0.05 0.05"/>
+        <!--<mesh filename="${mesh_path}hokuyo.dae"/>-->
       </geometry>
     </visual>
     <inertial>
-      <mass value="1e-05"/>
+      <mass value="1e-5"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
     </inertial>
   </link>
-  <!-- ****************************************************** END **********************************************************************  -->
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.05 0 0.9"/>
+    <parent link="link2"/>
+    <child link="camera_link"/>
+  </joint>
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <inertial>
+      <mass value="1e-5"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <!-- generate an optical frame http://www.ros.org/reps/rep-0103.html#suffix-frames
+        so that ros and opencv can operate on the camera frame correctly -->
+  <joint name="camera_optical_joint" type="fixed">
+    <!-- these values have to be these values otherwise the gazebo camera image
+          won't be aligned properly with the frame it is supposedly originating from -->
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+  <link name="camera_link_optical">
+        </link>
 </robot>
