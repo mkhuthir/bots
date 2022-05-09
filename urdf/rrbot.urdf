@@ -304,9 +304,6 @@
   <!-- generate an optical frame http://www.ros.org/reps/rep-0103.html#suffix-frames so that ros and opencv can operate on the camera     -->
   <!-- frame correctly. these values have to be these values otherwise the gazebo camera image won't be aligned properly with the frame   -->
   <!-- it is supposedly originating from                                                                                                  -->
-                                                                                                                     --&gt;
-
-  
   <joint name="camera_optical_joint" type="fixed">
     <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
     <parent link="camera"/>
