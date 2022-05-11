@@ -13,17 +13,17 @@
   <xacro:property name="name_space"     value="rrbot" /> 
   <xacro:property name="prefix"         value=""      /> 
 
-  <xacro:property name="mass"           value="1"     /> <!-- arbitrary value for mass -->
-  <xacro:property name="width"          value="0.1"   /> <!-- Square dimensions (widthxwidth) of beams -->
-  <xacro:property name="height1"        value="2"     /> <!-- Link 1 (Base) -->
-  <xacro:property name="height2"        value="1"     /> <!-- Link 2 -->
-  <xacro:property name="height3"        value="1"     /> <!-- Link 3 -->
+  <xacro:property name="mass"           value="1"                       /> <!-- arbitrary value for mass -->
+  <xacro:property name="width"          value="0.1"                     /> <!-- Square dimensions (widthxwidth) of beams -->
+  <xacro:property name="height1"        value="2"                       /> <!-- Link 1 (Base) -->
+  <xacro:property name="height2"        value="1"                       /> <!-- Link 2 -->
+  <xacro:property name="height3"        value="1"                       /> <!-- Link 3 -->
 
-  <xacro:property name="joint_gap"      value="0.05"                   /> <!-- Space btw top of beam and the each joint -->
-  <xacro:property name="joint1_y"       value="${width}"               />
-  <xacro:property name="joint1_z"       value="${height1-joint_gap}"   />
-  <xacro:property name="joint2_y"       value="${width}"               />
-  <xacro:property name="joint2_z"       value="${height2-joint_gap*2}" />
+  <xacro:property name="joint_gap"      value="0.05"                    /> <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="joint1_y"       value="${width}"                />
+  <xacro:property name="joint1_z"       value="${height1-joint_gap}"    />
+  <xacro:property name="joint2_y"       value="${width}"                />
+  <xacro:property name="joint2_z"       value="${height2-joint_gap*2}"  />
 
   <xacro:property name="camera_mass"    value="1e-5"     /> 
   <xacro:property name="camera_width"   value="0.05"     />
@@ -44,6 +44,7 @@
 
   <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
   <xacro:include filename="$(find robot_gazebo)/gazebo/gz_rrbot.xacro" />               <!--  Gazebo                                    -->
+  <xacro:include filename="$(find robot_gazebo)/ros2_control/r2c_rrbot.xacro" />        <!--  ROS2_Control                              -->
 
 <!-- ****************************************************** Base Joint ***************************************************************  -->
 
