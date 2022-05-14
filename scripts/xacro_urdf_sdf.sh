@@ -9,7 +9,6 @@ sdf="src/robot_gazebo/models/"
 
 # list of robots
 robots=(
-    diffbot
     golem
     kr3r540
     kr5_arc
@@ -27,7 +26,7 @@ robots=(
 
 # Phase one: Xacro > URDF
 echo 'Starting to convert from XACRO to URDF......'
-for i in {0..13} 
+for i in {0..12} 
 do
     echo "$((i+1))- ${robots[$i]}"
     xacro "$xacro${robots[$i]}.xacro" > "$urdf${robots[$i]}.urdf"
@@ -36,7 +35,7 @@ echo 'Done!'
 
 # Phase two: URDF > SDF
 echo 'Starting to convert URDF to SDF.......'
-for i in {0..13} 
+for i in {0..12} 
 do
     echo "$((i+1))- ${robots[$i]}"
     gz sdf -p "$urdf${robots[$i]}.urdf" > "$sdf${robots[$i]}/model.sdf"
