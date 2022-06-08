@@ -15,7 +15,7 @@ def generate_launch_description():
                     get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
              )
 
-    xacro_file = os.path.join(get_package_share_directory('cart'),'xacro','cart_velocity.xacro')
+    xacro_file = os.path.join(get_package_share_directory('bots'),'xacro','cart_velocity.xacro')
     
     doc = xacro.parse(open(xacro_file))
     xacro.process_doc(doc)

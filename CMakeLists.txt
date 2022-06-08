@@ -3,30 +3,116 @@ project(bots)
 
 # Muthanna Alwahash 2022
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+# Default to C11
+if(NOT CMAKE_C_STANDARD)
+  set(CMAKE_C_STANDARD 11)
+endif()
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(NOT WIN32)
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 # find dependencies
+# Common Packages
+find_package(control_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+
+# C++ packages
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
+
+# Python packages
+find_package(ament_cmake_python REQUIRED)
+find_package(rclpy REQUIRED)
 
 install(
-  DIRECTORY config gazebo launch meshes models ros2_control rviz scripts urdf worlds xacro
-  DESTINATION share/${PROJECT_NAME}
+  DIRECTORY 
+    config 
+    gazebo 
+    launch 
+    meshes 
+    models 
+    ros2_control 
+    rviz 
+    scripts 
+    urdf 
+    worlds 
+    xacro
+
+  DESTINATION 
+    share/${PROJECT_NAME}
+)
+
+# C++ Executables
+add_executable(gripper src/gripper.cpp)
+ament_target_dependencies( gripper
+  rclcpp
+  std_msgs
+)
+
+add_executable(cpp_node src/cpp_node.cpp)
+ament_target_dependencies( cpp_node 
+rclcpp
+)
+
+add_executable(position src/position.cpp)
+ament_target_dependencies( position
+  rclcpp
+  rclcpp_action
+  control_msgs
+)
+
+add_executable(velocity src/velocity.cpp)
+ament_target_dependencies( velocity
+  rclcpp
+  std_msgs
+)
+
+add_executable(effort src/effort.cpp)
+ament_target_dependencies( effort
+  rclcpp
+  std_msgs
 )
 
 if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
   find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # uncomment the line when a copyright and license is not present in all source files
-  #set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # uncomment the line when this package is not in a git repo
-  #set(ament_cmake_cpplint_FOUND TRUE)
+
   ament_lint_auto_find_test_dependencies()
 endif()
+
+# Install C++ Modules
+install(TARGETS 
+  
+  cpp_node
+  gripper
+  position 
+  velocity 
+  effort 
+  
+  DESTINATION 
+    lib/${PROJECT_NAME}
+)
+
+# Install Python Modules
+ament_python_install_package(${PROJECT_NAME})
+
+install(PROGRAMS
+
+  scripts/py_node.py
+  scripts/gripper.py
+  scripts/effort.py
+  scripts/velocity.py
+
+  DESTINATION 
+    lib/${PROJECT_NAME}
+)
+
 
 ament_package()
