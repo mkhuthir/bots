@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- ****************************************************** RRBot Robot **************************************************************  -->
+<!-- Muthanna Alwahash                                                                                                                  -->
+<!-- March 2022                                                                                                                         -->
+<!-- *********************************************************************************************************************************  -->
+
+<!-- ****************************************************** Parameters ***************************************************************  --> 
+    
+    <xacro:property name="pkg_path"     value="$(find bots)"                /> 
+    <xacro:property name="mesh_path"    value="${pkg_path}/meshes/rrbot"    />
+    <xacro:property name="xacro_path"   value="${pkg_path}/xacro/"          />
+    <xacro:property name="config_path"  value="${pkg_path}/config/"         />
+
+    <xacro:property name="name_space"   value="rrbot" /> 
+    <xacro:property name="prefix"       value=""      /> 
+        
+<!-- ****************************************************** Includes *****************************************************************  --> 
+
+    <xacro:include filename="${xacro_path}common_rviz_materials.xacro" />    <!--  RVIZ Colors  -->
+    <xacro:include filename="${xacro_path}rrbot_gz.xacro" />                 <!--  Gazebo Sim   -->
+    <xacro:include filename="${xacro_path}rrbot_r2c.xacro" />                <!--  ROS2_Control -->
+    <xacro:include filename="${xacro_path}rrbot_urdf.xacro" />               <!--  Robot URDF   -->
+
+<!-- ****************************************************** END **********************************************************************  -->
+
+</robot>
