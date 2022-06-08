@@ -34,7 +34,8 @@ find_package(rclpy REQUIRED)
 install(
   DIRECTORY 
     config 
-    gazebo 
+    gazebo
+    include 
     launch 
     meshes 
     models 
