@@ -8,7 +8,7 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  -->
   
-  <xacro:property name="mesh_path"          value="package://robot_gazebo/meshes/pxm3/"/>
+  <xacro:property name="mesh_path"          value="package://bots/meshes/pxm3/"/>
 
   <xacro:property name="connect_offset"     value=" 0.02633" />
   <xacro:property name="thigh_offset_y"     value="-0.0645" />
@@ -21,8 +21,8 @@
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_pxm3.xacro" />                <!-- Gazebo                                     -->
+  <xacro:include filename="$(find bots)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find bots)/gazebo/gz_pxm3.xacro" />                <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Main Macro ***************************************************************  -->
 

@@ -4,9 +4,9 @@
 
 <!-- Muthanna Alwahash 2022 -->
 
-  <name>robot_gazebo</name>
+  <name>bots</name>
   <version>0.0.0</version>
-  <description>robot_gazebo</description>
+  <description>bots</description>
   <maintainer email="mkhuthir@gmail.com">mkhuthir</maintainer>
   <license>GNU GENERAL PUBLIC LICENSE</license>
 

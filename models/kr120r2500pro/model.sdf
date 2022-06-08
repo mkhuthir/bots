@@ -24,7 +24,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/collision/base_link.stl</uri>
+            <uri>model://bots/meshes/kr120r2500pro/collision/base_link.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -41,7 +41,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/visual/base_link.dae</uri>
+            <uri>model://bots/meshes/kr120r2500pro/visual/base_link.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -89,7 +89,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/collision/link_1.stl</uri>
+            <uri>model://bots/meshes/kr120r2500pro/collision/link_1.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -106,7 +106,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/visual/link_1.dae</uri>
+            <uri>model://bots/meshes/kr120r2500pro/visual/link_1.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -154,7 +154,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/collision/link_2.stl</uri>
+            <uri>model://bots/meshes/kr120r2500pro/collision/link_2.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -171,7 +171,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/visual/link_2.dae</uri>
+            <uri>model://bots/meshes/kr120r2500pro/visual/link_2.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -219,7 +219,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/collision/link_3.stl</uri>
+            <uri>model://bots/meshes/kr120r2500pro/collision/link_3.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -236,7 +236,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/visual/link_3.dae</uri>
+            <uri>model://bots/meshes/kr120r2500pro/visual/link_3.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -284,7 +284,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/collision/link_4.stl</uri>
+            <uri>model://bots/meshes/kr120r2500pro/collision/link_4.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -301,7 +301,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/visual/link_4.dae</uri>
+            <uri>model://bots/meshes/kr120r2500pro/visual/link_4.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -349,7 +349,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/collision/link_5.stl</uri>
+            <uri>model://bots/meshes/kr120r2500pro/collision/link_5.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -366,7 +366,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/visual/link_5.dae</uri>
+            <uri>model://bots/meshes/kr120r2500pro/visual/link_5.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -414,7 +414,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/collision/link_6.stl</uri>
+            <uri>model://bots/meshes/kr120r2500pro/collision/link_6.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -431,7 +431,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/kr120r2500pro/visual/link_6.dae</uri>
+            <uri>model://bots/meshes/kr120r2500pro/visual/link_6.dae</uri>
           </mesh>
         </geometry>
         <material>

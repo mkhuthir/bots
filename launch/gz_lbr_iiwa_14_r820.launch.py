@@ -7,7 +7,7 @@ from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
  
-pkg_name =    'robot_gazebo'
+pkg_name =    'bots'
 robot_name =  'lbr_iiwa_14_r820'
 world_name =  robot_name+'.world'
 

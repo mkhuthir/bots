@@ -67,7 +67,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/twr/robot_base.stl</uri>
+            <uri>model://bots/meshes/twr/robot_base.stl</uri>
           </mesh>
         </geometry>
         <material>

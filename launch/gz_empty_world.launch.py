@@ -7,7 +7,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.substitutions import FindPackageShare
 
-pkg_name   = 'robot_gazebo' 
+pkg_name   = 'bots' 
 world_name = 'empty.world'
 
 pkg_gazebo_ros  = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   

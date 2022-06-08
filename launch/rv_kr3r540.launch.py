@@ -11,7 +11,7 @@ from launch.substitutions import Command
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
 
-pkg_name    = 'robot_gazebo'
+pkg_name    = 'bots'
 robot_name  = 'kr3r540'
 
 pkg_share   = FindPackageShare(package=pkg_name).find(pkg_name)

@@ -18,7 +18,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/body_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/body_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -35,7 +35,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/body.STL</uri>
+            <uri>model://bots/meshes/pxm3/body.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -83,7 +83,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -100,7 +100,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -117,7 +117,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -132,7 +132,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -180,7 +180,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -197,7 +197,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -245,7 +245,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -262,7 +262,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -310,7 +310,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -327,7 +327,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -344,7 +344,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -359,7 +359,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -407,7 +407,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -424,7 +424,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -472,7 +472,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -489,7 +489,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -537,7 +537,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -554,7 +554,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -571,7 +571,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -586,7 +586,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -634,7 +634,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -651,7 +651,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -699,7 +699,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -716,7 +716,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -764,7 +764,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -781,7 +781,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -798,7 +798,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -813,7 +813,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -861,7 +861,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -878,7 +878,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -926,7 +926,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -943,7 +943,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -991,7 +991,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1008,7 +1008,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1025,7 +1025,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1040,7 +1040,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1088,7 +1088,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1105,7 +1105,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1153,7 +1153,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1170,7 +1170,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1218,7 +1218,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1235,7 +1235,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1252,7 +1252,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1267,7 +1267,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/connect.STL</uri>
+            <uri>model://bots/meshes/pxm3/connect.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1315,7 +1315,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1332,7 +1332,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/thigh_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/thigh_l.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1380,7 +1380,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l_coll.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l_coll.STL</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1397,7 +1397,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/pxm3/tibia_l.STL</uri>
+            <uri>model://bots/meshes/pxm3/tibia_l.STL</uri>
           </mesh>
         </geometry>
         <material>

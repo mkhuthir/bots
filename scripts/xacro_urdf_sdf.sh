@@ -3,9 +3,9 @@
 # This script will convert XACRO files to URDF then URDF files to SDF
 
 # locations of files
-xacro="src/robot_gazebo/xacro/"
-urdf="src/robot_gazebo/urdf/"
-sdf="src/robot_gazebo/models/"
+xacro="src/bots/xacro/"
+urdf="src/bots/urdf/"
+sdf="src/bots/models/"
 
 # list of robots
 robots=(

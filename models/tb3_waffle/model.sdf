@@ -75,7 +75,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/tb3/waffle_base.stl</uri>
+            <uri>model://bots/meshes/tb3/waffle_base.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -90,7 +90,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robot_gazebo/meshes/tb3/r200.dae</uri>
+            <uri>model://bots/meshes/tb3/r200.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -115,7 +115,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/tb3/lds.stl</uri>
+            <uri>model://bots/meshes/tb3/lds.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -178,7 +178,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/tb3/left_tire.stl</uri>
+            <uri>model://bots/meshes/tb3/left_tire.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -241,7 +241,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/tb3/right_tire.stl</uri>
+            <uri>model://bots/meshes/tb3/right_tire.stl</uri>
           </mesh>
         </geometry>
         <material>

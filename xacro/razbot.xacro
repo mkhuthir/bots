@@ -10,7 +10,7 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  -->
 
-    <xacro:property name="mesh_path"          value="package://robot_gazebo/meshes/razbot/"/>
+    <xacro:property name="mesh_path"          value="package://bots/meshes/razbot/"/>
 
 	<xacro:property name="body_length_x"        value="0.294" />
 	<xacro:property name="body_length_y"        value="0.340" />
@@ -25,8 +25,8 @@
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_razbot.xacro" />              <!-- Gazebo                                     -->
+  <xacro:include filename="$(find bots)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find bots)/gazebo/gz_razbot.xacro" />              <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Base Footprint ***********************************************************  -->
 

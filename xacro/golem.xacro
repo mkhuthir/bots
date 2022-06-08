@@ -9,7 +9,7 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  --> 
 
-    <xacro:property name="mesh_path"            value="package://robot_gazebo/meshes/golem/"/>
+    <xacro:property name="mesh_path"            value="package://bots/meshes/golem/"/>
     <xacro:property name="body_length_x"        value="0.3556"/>
     <xacro:property name="body_length_y"        value="0.165"/>
     <xacro:property name="coxa_length"          value="0.05893"/>
@@ -24,8 +24,8 @@
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_golem.xacro" />               <!-- Gazebo                                     -->
+  <xacro:include filename="$(find bots)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find bots)/gazebo/gz_golem.xacro" />               <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Base Footprint ***********************************************************  -->
 

@@ -8,8 +8,8 @@
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_tb3_waffle_pi.xacro" />       <!-- Gazebo                                     -->
+  <xacro:include filename="$(find bots)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find bots)/gazebo/gz_tb3_waffle_pi.xacro" />       <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Base Footprint Link ******************************************************  -->
 
@@ -29,7 +29,7 @@
     <visual>
       <origin xyz="-0.064 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_gazebo/meshes/tb3/waffle_pi_base.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bots/meshes/tb3/waffle_pi_base.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue"/>
     </visual>
@@ -63,7 +63,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="package://robot_gazebo/meshes/tb3/left_tire.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bots/meshes/tb3/left_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -97,7 +97,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="package://robot_gazebo/meshes/tb3/right_tire.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bots/meshes/tb3/right_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -206,7 +206,7 @@
     <visual>
       <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_gazebo/meshes/tb3/lds.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://bots/meshes/tb3/lds.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>

@@ -3,12 +3,12 @@
 
 <!-- ****************************************************** Properties**************************************************************** -->
 
-  <xacro:property name="mesh_path"        value="package://robot_gazebo/meshes/lbr_iiwa_14_r820/"/>
+  <xacro:property name="mesh_path"        value="package://bots/meshes/lbr_iiwa_14_r820/"/>
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find robot_gazebo)/xacro/common_kuka_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find robot_gazebo)/gazebo/gz_lbr_iiwa_14_r820.xacro" />    <!-- Gazebo                                     -->
+  <xacro:include filename="$(find bots)/xacro/common_kuka_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find bots)/gazebo/gz_lbr_iiwa_14_r820.xacro" />    <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Macro ******************************************************************** -->
 

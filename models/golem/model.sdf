@@ -18,7 +18,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/body.stl</uri>
+            <uri>model://bots/meshes/golem/body.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -35,7 +35,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/body.stl</uri>
+            <uri>model://bots/meshes/golem/body.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -83,7 +83,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -100,7 +100,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -148,7 +148,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -165,7 +165,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -213,7 +213,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -230,7 +230,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -278,7 +278,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -295,7 +295,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -343,7 +343,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -360,7 +360,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -408,7 +408,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -425,7 +425,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -473,7 +473,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -490,7 +490,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -538,7 +538,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -555,7 +555,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -603,7 +603,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -620,7 +620,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -668,7 +668,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -685,7 +685,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -733,7 +733,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -750,7 +750,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -798,7 +798,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -815,7 +815,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -863,7 +863,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -880,7 +880,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -928,7 +928,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -945,7 +945,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -993,7 +993,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1010,7 +1010,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1058,7 +1058,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1075,7 +1075,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1123,7 +1123,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1140,7 +1140,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1188,7 +1188,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1205,7 +1205,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1253,7 +1253,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1270,7 +1270,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1318,7 +1318,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1335,7 +1335,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1383,7 +1383,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1400,7 +1400,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/coxa.stl</uri>
+            <uri>model://bots/meshes/golem/coxa.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1448,7 +1448,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1465,7 +1465,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/femur.stl</uri>
+            <uri>model://bots/meshes/golem/femur.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1513,7 +1513,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1530,7 +1530,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tibia.stl</uri>
+            <uri>model://bots/meshes/golem/tibia.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -1578,7 +1578,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1595,7 +1595,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://robot_gazebo/meshes/golem/tarsus.stl</uri>
+            <uri>model://bots/meshes/golem/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
