@@ -2,11 +2,23 @@
 
 <robot name="cart" xmlns:xacro="http://ros.org/wiki/xacro">
 
+<!-- ****************************************************** slideBar Link ************************************************************ -->
+
+  <gazebo reference="slideBar">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+<!-- ****************************************************** cart Link **************************************************************** -->
+
+  <gazebo reference="cart">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
 <!-- ****************************************************** Gazebo ROS2 Plugin ******************************************************* -->
 
   <gazebo>
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <parameters>$(find cart)/config/cartpole_controller_effort.yaml</parameters>
+      <parameters>$(find bots)/config/cartpole_controller_effort.yaml</parameters>
     </plugin>
   </gazebo>
 
