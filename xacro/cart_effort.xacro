@@ -10,6 +10,7 @@
     
     <xacro:property name="pkg_path"     value="$(find bots)"                /> 
     <xacro:property name="mesh_path"    value="${pkg_path}/meshes/cart/"    />
+    <xacro:property name="config_path"  value="${pkg_path}/config/"         />
     
     <xacro:property name="name_space"   value="cart" /> 
     <xacro:property name="prefix"       value=""      /> 

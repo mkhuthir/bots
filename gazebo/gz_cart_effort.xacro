@@ -18,7 +18,7 @@
 
   <gazebo>
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <parameters>$(find bots)/config/cart_effort.yaml</parameters>
+      <parameters>${config_path}cart_effort.yaml</parameters>
     </plugin>
   </gazebo>
 

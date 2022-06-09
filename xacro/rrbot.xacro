@@ -9,8 +9,9 @@
 <!-- ****************************************************** Parameters ***************************************************************  --> 
     
     <xacro:property name="pkg_path"     value="$(find bots)"                /> 
-    <xacro:property name="mesh_path"    value="${pkg_path}/meshes/rrbot/"    />
-    
+    <xacro:property name="mesh_path"    value="${pkg_path}/meshes/rrbot/"   />
+    <xacro:property name="config_path"  value="${pkg_path}/config/"         />
+
     <xacro:property name="name_space"   value="rrbot" /> 
     <xacro:property name="prefix"       value=""      /> 
         
