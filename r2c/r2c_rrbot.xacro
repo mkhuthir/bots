@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+<!-- ****************************************************** Gazebo ROS2 Control ****************************************************** -->
+
     <ros2_control name="rrbot_hw" type="system">
 
       <joint name="${prefix}joint1">
@@ -20,5 +22,7 @@
       </joint>
 
     </ros2_control>
+
+<!-- ****************************************************** End ********************************************************************** -->
 
 </robot>
