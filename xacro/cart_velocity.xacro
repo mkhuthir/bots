@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<robot name="cartopole" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="cart" xmlns:xacro="http://ros.org/wiki/xacro">
 
 <!-- ****************************************************** World Link *************************************************************** -->
 
