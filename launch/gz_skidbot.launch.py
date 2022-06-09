@@ -7,7 +7,7 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 import xacro
 
-pkg_name =    'skidbot'
+pkg_name =    'bots'
 robot_name =  'skidbot'
 world_name =  robot_name+'.world'
 

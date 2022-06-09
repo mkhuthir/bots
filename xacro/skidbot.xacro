@@ -9,7 +9,7 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  --> 
  
-  <xacro:property name="mesh_path"      value="package://skidbot/meshes/skidbot/"/>
+  <xacro:property name="mesh_path"      value="package://bots/meshes/skidbot/"/>
 
   <xacro:property name="name_space"     value="skidbot"  /> 
   <xacro:property name="prefix"         value=""         /> 
