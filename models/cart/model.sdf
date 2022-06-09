@@ -1,0 +1,87 @@
+<sdf version='1.7'>
+  <model name='cart'>
+    <joint name='world_to_base' type='fixed'>
+      <pose relative_to='__model__'>0 0 1 0 -0 0</pose>
+      <parent>world</parent>
+      <child>slideBar</child>
+    </joint>
+    <link name='slideBar'>
+      <pose relative_to='world_to_base'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>100</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='slideBar_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>30 0.05 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='slider_to_cart' type='prismatic'>
+      <pose relative_to='slideBar'>0 0 0 0 -0 0</pose>
+      <parent>slideBar</parent>
+      <child>cart</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-15</lower>
+          <upper>15</upper>
+          <effort>1000</effort>
+          <velocity>30</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='cart'>
+      <pose relative_to='slider_to_cart'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='cart_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
