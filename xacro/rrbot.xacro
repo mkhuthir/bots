@@ -16,10 +16,10 @@
         
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-    <xacro:include filename="${pkg_path}/xacro/common_rviz_materials.xacro" />      <!--  RVIZ Colors  -->
-    <xacro:include filename="${pkg_path}/xacro/urdf_rrbot.xacro" />                 <!--  Robot URDF   -->
-    <xacro:include filename="${pkg_path}/gazebo/gz_rrbot.xacro" />                  <!--  Gazebo Sim   -->
-    <xacro:include filename="${pkg_path}/ros2_control/r2c_rrbot.xacro" />           <!--  ROS2_Control -->
+    <xacro:include filename="${pkg_path}/xacro/common_rviz_materials.xacro" />  <!--  RVIZ Colors  -->
+    <xacro:include filename="${pkg_path}/xacro/urdf_rrbot.xacro" />             <!--  Robot URDF   -->
+    <xacro:include filename="${pkg_path}/gazebo/gz_rrbot.xacro" />              <!--  Gazebo Sim   -->
+    <xacro:include filename="${pkg_path}/r2c/r2c_rrbot.xacro" />                <!--  ROS2_Control -->
     
 <!-- ****************************************************** END **********************************************************************  -->
 

@@ -39,7 +39,7 @@ install(
     launch 
     meshes 
     models 
-    ros2_control 
+    r2c 
     rviz 
     scripts 
     urdf 
