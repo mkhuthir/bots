@@ -9,7 +9,7 @@
 
 <!-- ****************************************************** Parameters ***************************************************************  --> 
  
-  <xacro:property name="mesh_path"      value="package://diffbot/meshes/diffbot/"/>
+  <xacro:property name="mesh_path"      value="package://bots/meshes/diffbot/"/>
   
   <xacro:property name="name_space"     value="diffbot"  /> 
   <xacro:property name="prefix"         value=""  /> 
@@ -47,8 +47,8 @@
     
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find diffbot)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
-  <xacro:include filename="$(find diffbot)/gazebo/gz_diffbot.xacro" />             <!-- Gazebo                                     -->
+  <xacro:include filename="$(find bots)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                -->
+  <xacro:include filename="$(find bots)/gazebo/gz_diffbot.xacro" />             <!-- Gazebo                                     -->
 
 <!-- ****************************************************** Footprint ****************************************************************  -->
 
