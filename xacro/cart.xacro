@@ -24,10 +24,6 @@
     </inertial>
   </link>
 
-  <gazebo reference="slideBar">
-    <material>Gazebo/Orange</material>
-  </gazebo>
-
 <!-- ****************************************************** cart Link **************************************************************** -->
 
   <link name="cart">
@@ -45,10 +41,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-
-  <gazebo reference="cart">
-    <material>Gazebo/Red</material>
-  </gazebo>
   
 <!-- ****************************************************** world to slideBar Joint ************************************************** -->
 
