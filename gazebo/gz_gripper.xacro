@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<robot name="gripper"  xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- ****************************************************** Base Link *************************************************************** -->
+
+  <gazebo reference="base">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+<!-- ****************************************************** finger_right Link ******************************************************** -->
+
+  <gazebo reference="finger_right">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+<!-- ****************************************************** finger_left Link ********************************************************* -->
+
+  <gazebo reference="finger_left">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+<!-- ****************************************************** Gazebo ROS2 Plugin ******************************************************* -->
+
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+      <parameters>$(find bots)/config/gripper.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+<!-- ****************************************************** End ********************************************************************** -->
+
+</robot>
