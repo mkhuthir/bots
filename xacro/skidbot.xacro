@@ -41,8 +41,8 @@
 
 <!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <xacro:include filename="$(find skidbot)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                     -->
-  <xacro:include filename="$(find skidbot)/gazebo/gz_skidbot.xacro" />             <!-- Gazebo                                          -->
+  <xacro:include filename="$(find bots)/xacro/common_rviz_materials.xacro" />   <!-- RVIZ Colors                                     -->
+  <xacro:include filename="$(find bots)/gazebo/gz_skidbot.xacro" />             <!-- Gazebo                                          -->
 
 <!-- ****************************************************** Base Footprint ***********************************************************  -->
 
