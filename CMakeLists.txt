@@ -51,7 +51,7 @@ install(
 )
 
 # C++ Executables
-add_executable(gripper src/gripper_effort.cpp)
+add_executable(gripper_effort src/gripper_effort.cpp)
 ament_target_dependencies( gripper_effort
   rclcpp
   std_msgs
@@ -62,20 +62,20 @@ ament_target_dependencies( cpp_node
 rclcpp
 )
 
-add_executable(position src/cart_position.cpp)
+add_executable(cart_position src/cart_position.cpp)
 ament_target_dependencies( cart_position
   rclcpp
   rclcpp_action
   control_msgs
 )
 
-add_executable(velocity src/cart_velocity.cpp)
+add_executable(cart_velocity src/cart_velocity.cpp)
 ament_target_dependencies( cart_velocity
   rclcpp
   std_msgs
 )
 
-add_executable(effort src/cart_effort.cpp)
+add_executable(cart_effort src/cart_effort.cpp)
 ament_target_dependencies( cart_effort
   rclcpp
   std_msgs
