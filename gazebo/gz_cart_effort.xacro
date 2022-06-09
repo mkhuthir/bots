@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<robot name="cart" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- ****************************************************** Gazebo ROS2 Plugin ******************************************************* -->
+
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find cart)/config/cartpole_controller_effort.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+<!-- ****************************************************** End ********************************************************************** -->
+
+</robot>
