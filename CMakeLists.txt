@@ -51,8 +51,8 @@ install(
 )
 
 # C++ Executables
-add_executable(gripper src/gripper.cpp)
-ament_target_dependencies( gripper
+add_executable(gripper src/gripper_effort.cpp)
+ament_target_dependencies( gripper_effort
   rclcpp
   std_msgs
 )
@@ -62,21 +62,21 @@ ament_target_dependencies( cpp_node
 rclcpp
 )
 
-add_executable(position src/position.cpp)
-ament_target_dependencies( position
+add_executable(position src/cart_position.cpp)
+ament_target_dependencies( cart_position
   rclcpp
   rclcpp_action
   control_msgs
 )
 
-add_executable(velocity src/velocity.cpp)
-ament_target_dependencies( velocity
+add_executable(velocity src/cart_velocity.cpp)
+ament_target_dependencies( cart_velocity
   rclcpp
   std_msgs
 )
 
-add_executable(effort src/effort.cpp)
-ament_target_dependencies( effort
+add_executable(effort src/cart_effort.cpp)
+ament_target_dependencies( cart_effort
   rclcpp
   std_msgs
 )
@@ -92,10 +92,10 @@ endif()
 install(TARGETS 
   
   cpp_node
-  gripper
-  position 
-  velocity 
-  effort 
+  gripper_effort
+  cart_position 
+  cart_velocity 
+  cart_effort 
   
   DESTINATION 
     lib/${PROJECT_NAME}
@@ -107,9 +107,9 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
 
   scripts/py_node.py
-  scripts/gripper.py
-  scripts/effort.py
-  scripts/velocity.py
+  scripts/gripper_effort.py
+  scripts/cart_effort.py
+  scripts/cart_velocity.py
 
   DESTINATION 
     lib/${PROJECT_NAME}

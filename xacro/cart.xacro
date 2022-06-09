@@ -1,66 +1,24 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
+<robot name="cart" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<robot name="cart" xmlns:xacro="http://ros.org/wiki/xacro">
+<!-- ****************************************************** Cart Robot ***************************************************************  -->
+<!-- Muthanna Alwahash                                                                                                                  -->
+<!-- March 2022                                                                                                                         -->
+<!-- *********************************************************************************************************************************  -->
 
-<!-- ****************************************************** World Link *************************************************************** -->
+<!-- ****************************************************** Parameters ***************************************************************  --> 
+    
+    <xacro:property name="pkg_path"     value="$(find bots)"                /> 
+    <xacro:property name="mesh_path"    value="${pkg_path}/meshes/cart/"    />
+        
+    <xacro:property name="name_space"   value="cart" /> 
+    <xacro:property name="prefix"       value=""      /> 
+        
+<!-- ****************************************************** Includes *****************************************************************  --> 
 
-  <link name="world"/>
-
-<!-- ****************************************************** slideBar Link ************************************************************ -->
-
-  <link name="slideBar">
-    <visual>
-      <geometry>
-        <box size="30 0.05 0.05"/>
-      </geometry>
-      <origin xyz="0 0 0"/>
-      <material name="green">
-        <color rgba="0 0.8 .8 1"/>
-      </material>
-    </visual>
-    <inertial>
-      <mass value="100"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-    </inertial>
-  </link>
-
-<!-- ****************************************************** cart Link **************************************************************** -->
-
-  <link name="cart">
-    <visual>
-      <geometry>
-        <box size="0.5 0.5 0.2"/>
-      </geometry>
-      <origin xyz="0 0 0"/>
-      <material name="blue">
-        <color rgba="0 0 .8 1"/>
-      </material>
-    </visual>
-    <inertial>
-      <mass value="1"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-    </inertial>
-  </link>
-  
-<!-- ****************************************************** world to slideBar Joint ************************************************** -->
-
-  <joint name="world_to_base" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 1"/>
-    <parent link="world"/>
-    <child link="slideBar"/>
-  </joint>
-
-<!-- ****************************************************** slideBar to cart Joint *************************************************** -->
-
-  <joint name="slider_to_cart" type="prismatic">
-    <axis xyz="1 0 0"/>
-    <origin xyz="0.0 0.0 0.0"/>
-    <parent link="slideBar"/>
-    <child link="cart"/>
-    <limit effort="1000.0" lower="-15" upper="15" velocity="30"/>
-    <dynamics damping="0.0" friction="0.0"/>
-  </joint>
-
-<!-- ****************************************************** End ********************************************************************** -->
+    <xacro:include filename="${pkg_path}/xacro/common_rviz_materials.xacro" />  <!--  RVIZ Colors  -->
+    <xacro:include filename="${pkg_path}/xacro/urdf_cart.xacro" />              <!--  Robot URDF   -->
+        
+<!-- ****************************************************** END **********************************************************************  -->
 
 </robot>
