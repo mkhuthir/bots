@@ -60,6 +60,12 @@
             <size>0.05 0.05 0.05</size>
           </box>
         </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
       </visual>
       <visual name='footprint_fixed_joint_lump__hokuyo_visual_visual_2'>
         <pose>0.11 0 0.0853 0 -0 0</pose>
@@ -70,6 +76,79 @@
           </mesh>
         </geometry>
       </visual>
+      <sensor name='camera' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='head'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+          <ros>
+            <namespace>skidbot</namespace>
+          </ros>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_optical</frameName>
+          <hackBaseline>0.0</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+          <CxPrime>0</CxPrime>
+          <Cx>0.0</Cx>
+          <Cy>0.0</Cy>
+          <focalLength>0.0</focalLength>
+        </plugin>
+        <pose>0.2 0 0 0 -0 0</pose>
+      </sensor>
+      <sensor name='head_hokuyo_sensor' type='ray'>
+        <plugin name='hokuyo' filename='libgazebo_ros_ray_sensor.so'>
+          <ros>
+            <namespace>skidbot</namespace>
+          </ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+        </plugin>
+        <update_rate>30</update_rate>
+        <visualize>0</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14159</min_angle>
+              <max_angle>3.14159</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <pose>0.11 0 0.0853 0 -0 0</pose>
+      </sensor>
     </link>
     <joint name='back_left_wheel_joint' type='revolute'>
       <pose relative_to='footprint'>-0.12 0.135 0 0 -0 0</pose>
@@ -283,5 +362,7 @@
         </geometry>
       </visual>
     </link>
+    <static>0</static>
+    <plugin name='gz_ros2_control' filename='libgazebo_ros2_control.so'/>
   </model>
 </sdf>
