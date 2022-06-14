@@ -26,12 +26,6 @@
 
 <!-- ****************************************************** ROS Control Plugin *******************************************************  -->
 
-  <gazebo>
-    <plugin name="gz_ros2_control" filename="libgazebo_ros2_control.so">
-      <parameters>${config_path}diffbot.yaml</parameters>
-    </plugin>
-  </gazebo>
-
 <!-- ******************************************************  Camera ******************************************************************  -->
 
   <gazebo reference="${prefix}camera">
