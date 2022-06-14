@@ -30,7 +30,7 @@
 
   <gazebo>
     <plugin name="gz_ros2_control" filename="libgazebo_ros2_control.so">
-      <!--<parameters>${config_path}skidbot.yaml</parameters>-->
+      <parameters>${config_path}skidbot.yaml</parameters>
     </plugin>
   </gazebo>
 
