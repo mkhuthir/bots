@@ -18,7 +18,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://bots/meshes/diffbot/base.stl</uri>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/base.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -67,7 +67,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://bots/meshes/diffbot/base.stl</uri>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/base.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -104,7 +104,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://bots/meshes/diffbot/hokuyo.dae</uri>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/hokuyo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -148,7 +148,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://bots/meshes/diffbot/wheel.dae</uri>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -157,7 +157,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://bots/meshes/diffbot/wheel.dae</uri>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -201,7 +201,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://bots/meshes/diffbot/wheel.dae</uri>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -210,7 +210,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://bots/meshes/diffbot/wheel.dae</uri>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>

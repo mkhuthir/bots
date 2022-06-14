@@ -26,12 +26,6 @@
             <size>30 0.05 0.05</size>
           </box>
         </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Orange</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
       </visual>
     </link>
     <joint name='slider_to_cart' type='prismatic'>
@@ -71,16 +65,11 @@
       <visual name='cart_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.5 0.5 0.2</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mkhuthir/ws/install/bots/share/bots/meshes/cart/cart.stl</uri>
+          </mesh>
         </geometry>
-        <material>
-          <script>
-            <name>Gazebo/Red</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-          </script>
-        </material>
       </visual>
     </link>
   </model>

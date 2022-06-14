@@ -4,13 +4,11 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="diffbot">
-  <!-- ****************************************************** diffbot Robot ************************************************************  -->
+  <!-- ****************************************************** Diffbot Robot ***************************************************************  -->
   <!-- Muthanna Alwahash                                                                                                                  -->
   <!-- March 2022                                                                                                                         -->
   <!-- *********************************************************************************************************************************  -->
   <!-- ****************************************************** Parameters ***************************************************************  -->
-  <!-- Space btw top of beam and the each joint     -->
-  <!-- x offset from base center -->
   <!-- ****************************************************** Includes *****************************************************************  -->
   <material name="red">
     <color rgba="1.0 0.0 0.0 1.0"/>
@@ -43,20 +41,9 @@
   <!-- Muthanna Alwahash                                                                                                                  -->
   <!-- March 2022                                                                                                                         -->
   <!-- *********************************************************************************************************************************  -->
-  <!-- ****************************************************** Base Link ****************************************************************  -->
-  <gazebo reference="base">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-  <!-- ****************************************************** Front caster Link ********************************************************  -->
-  <gazebo reference="front_caster">
-    <material>Gazebo/White</material>
-  </gazebo>
-  <!-- ******************************************************  Joint States Publisher **************************************************  -->
-  <!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
-  <!-- ******************************************************  Camera ******************************************************************  -->
-  <!-- ****************************************************** hokuyo  ******************************************************************  -->
-  <!-- ****************************************************** END **********************************************************************  -->
-  <!-- Gazebo                                     -->
+  <!-- ****************************************************** Parameters ***************************************************************  -->
+  <!-- Space btw top of beam and the each joint     -->
+  <!-- x offset from base center -->
   <!-- ****************************************************** Footprint ****************************************************************  -->
   <link name="footprint"/>
   <!-- ****************************************************** Base Joint ***************************************************************  -->
@@ -70,14 +57,14 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://bots/meshes/diffbot/base.stl" scale="1 1 1"/>
+        <mesh filename="/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/base.stl" scale="1 1 1"/>
         <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://bots/meshes/diffbot/base.stl" scale="1 1 1"/>
+        <mesh filename="/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/base.stl" scale="1 1 1"/>
         <!--  <box size="${base_length} ${base_width} ${base_height}"/> -->
       </geometry>
       <material name="blue"/>
@@ -102,14 +89,14 @@
     <collision>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
+        <mesh filename="/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
         <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
       </geometry>
     </collision>
     <visual>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
+        <mesh filename="/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
         <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
       </geometry>
       <material name="black"/>
@@ -134,14 +121,14 @@
     <collision>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
+        <mesh filename="/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
         <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
       </geometry>
     </collision>
     <visual>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
+        <mesh filename="/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/wheel.dae" scale="1 1 1"/>
         <!-- <cylinder length="${wheel_width}" radius="${wheel_radius}"/> -->
       </geometry>
       <material name="black"/>
@@ -231,7 +218,7 @@
     <visual name="hokuyo_visual">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://bots/meshes/diffbot/hokuyo.dae"/>
+        <mesh filename="/home/mkhuthir/ws/install/bots/share/bots/meshes/diffbot/hokuyo.dae"/>
         <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
       </geometry>
       <!-- <material name="red"/> -->
@@ -250,5 +237,40 @@
     <parent link="base"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
+  <!-- ****************************************************** END **********************************************************************  -->
+  <!-- ****************************************************** diffbot Robot ************************************************************  -->
+  <!-- Muthanna Alwahash                                                                                                                  -->
+  <!-- March 2022                                                                                                                         -->
+  <!-- *********************************************************************************************************************************  -->
+  <!-- ****************************************************** Base Link ****************************************************************  -->
+  <gazebo reference="base">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <!-- ****************************************************** Front caster Link ********************************************************  -->
+  <gazebo reference="front_caster">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <!-- ******************************************************  Joint States Publisher **************************************************  -->
+  <!-- ******************************************************  Skid Steer Drive Controller *********************************************  -->
+  <!-- ******************************************************  Camera ******************************************************************  -->
+  <!-- ****************************************************** hokuyo  ******************************************************************  -->
+  <!-- ****************************************************** END **********************************************************************  -->
+  <ros2_control name="diffbot" type="system">
+    <joint name="right_wheel_joint">
+      <command_interface name="position">
+        <param name="min">-1</param>
+        <param name="max"> 1</param>
+      </command_interface>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="left_wheel_joint">
+      <command_interface name="position">
+        <param name="min">-1</param>
+        <param name="max"> 1</param>
+      </command_interface>
+      <state_interface name="position"/>
+    </joint>
+  </ros2_control>
+  <!--  ROS2_Control -->
   <!-- ****************************************************** END **********************************************************************  -->
 </robot>

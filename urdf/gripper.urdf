@@ -4,6 +4,39 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="gripper">
+  <!-- ****************************************************** Gripper Robot ************************************************************  -->
+  <!-- Muthanna Alwahash                                                                                                                  -->
+  <!-- March 2022                                                                                                                         -->
+  <!-- *********************************************************************************************************************************  -->
+  <!-- ****************************************************** Parameters ***************************************************************  -->
+  <!-- ****************************************************** Includes *****************************************************************  -->
+  <material name="red">
+    <color rgba="1.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 1.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 1.0 1.0"/>
+  </material>
+  <material name="black">
+    <color rgba="0.3 0.3 0.3 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.4235294117647059 0.0392156862745098 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.8705882352941177 0.8117647058823529 0.7647058823529411 1.0"/>
+  </material>
+  <material name="yellow">
+    <color rgba="1.0 1.0 0.0 1.0"/>
+  </material>
   <!-- ****************************************************** World Link *************************************************************** -->
   <link name="world"/>
   <!-- ****************************************************** Base Link **************************************************************** -->
@@ -41,9 +74,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="finger_right">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** finger_left Link ********************************************************* -->
   <link name="finger_left">
     <visual>
@@ -60,9 +90,6 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-  <gazebo reference="finger_left">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <!-- ****************************************************** world to base Joint ****************************************************** -->
   <joint name="world_to_base" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -86,6 +113,28 @@
     <child link="finger_left"/>
     <limit effort="1000.0" lower="0" upper="0.38" velocity="10"/>
   </joint>
+  <!-- ****************************************************** End ********************************************************************** -->
+  <!-- ****************************************************** Base Link *************************************************************** -->
+  <gazebo reference="base">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <!-- ****************************************************** finger_right Link ******************************************************** -->
+  <gazebo reference="finger_right">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** finger_left Link ********************************************************* -->
+  <gazebo reference="finger_left">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- ****************************************************** Gazebo ROS2 Plugin ******************************************************* -->
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+      <parameters>/home/mkhuthir/ws/install/bots/share/bots/config/gripper.yaml</parameters>
+    </plugin>
+  </gazebo>
+  <!-- ****************************************************** End ********************************************************************** -->
   <!-- ****************************************************** Gazebo ROS2 Control ****************************************************** -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
@@ -108,13 +157,7 @@
       <state_interface name="effort"/>
     </joint>
   </ros2_control>
-  <!-- ****************************************************** Gazebo ROS2 Plugin ******************************************************* -->
-  <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <robot_param>robot_description</robot_param>
-      <robot_param_node>robot_state_publisher</robot_param_node>
-      <parameters>/home/mkhuthir/ws/install/bots/share/bots/config/gripper_controller.yaml</parameters>
-    </plugin>
-  </gazebo>
   <!-- ****************************************************** End ********************************************************************** -->
+  <!--  ROS2_Control -->
+  <!-- ****************************************************** END **********************************************************************  -->
 </robot>
