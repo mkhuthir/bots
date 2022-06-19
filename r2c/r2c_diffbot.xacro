@@ -5,7 +5,7 @@
 
       <hardware>
         <plugin>fake_components/GenericSystem</plugin>
-        <param name="fake_sensor_commands">${fake_sensor_commands}</param>
+        <param name="fake_sensor_commands">false</param>
         <param name="state_following_offset">0.0</param>
       </hardware>
 
