@@ -3,6 +3,12 @@
 
     <ros2_control name="diffbot" type="system">
 
+      <hardware>
+        <plugin>fake_components/GenericSystem</plugin>
+        <param name="fake_sensor_commands">${fake_sensor_commands}</param>
+        <param name="state_following_offset">0.0</param>
+      </hardware>
+
       <joint name="${prefix}right_wheel_joint">
         <command_interface name="position">
           <param name="min">-1</param>
