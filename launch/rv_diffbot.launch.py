@@ -1,102 +1,68 @@
-#
+# Muthanna Alwahash
+# 2022
+
+import os
 
 from launch import LaunchDescription
-from launch.actions import RegisterEventHandler
-from launch.event_handlers import OnProcessExit
-from launch.substitutions import Command, FindExecutable, PathJoinSubstitution
-
-from launch_ros.actions import Node
+from launch.actions import DeclareLaunchArgument
+from launch.conditions import IfCondition, UnlessCondition
+from launch.substitutions import LaunchConfiguration
+from launch.substitutions import Command
 from launch_ros.substitutions import FindPackageShare
+from launch_ros.actions import Node
 
+pkg_name    = 'bots'
+robot_name  = 'diffbot'
+
+pkg_share   = FindPackageShare(package=pkg_name).find(pkg_name)
+rviz_config = os.path.join(pkg_share,'rviz/',robot_name+'.rviz')
+urdf        = os.path.join(pkg_share,'xacro/',robot_name+'.xacro')
+
+gui =           LaunchConfiguration('gui')
+use_simulator = LaunchConfiguration('use_simulator')
 
 def generate_launch_description():
-    # Get URDF via xacro
-    robot_description_content = Command(
-        [
-            PathJoinSubstitution([FindExecutable(name="xacro")]),
-            " ",
-            PathJoinSubstitution(
-                [FindPackageShare("bots"), "xacro", "diffbot.xacro"]
-            ),
-        ]
-    )
 
-    robot_description = {"robot_description": robot_description_content}
+    return LaunchDescription([
 
-    robot_controllers = PathJoinSubstitution(
-        [
-            FindPackageShare("bots"),
-            "config",
-            "diffbot.yaml",
-        ]
-    )
+        DeclareLaunchArgument(
+            name='use_sim_time',
+            default_value='true',
+            description='Use simulation (Gazebo) clock if true'),
 
-    rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("bots"), "rviz", "diffbot.rviz"]
-    )
+        DeclareLaunchArgument(
+            name='gui',
+            default_value='True',
+            description='Flag to enable joint_state_publisher_gui'),
 
-    control_node = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[robot_description, robot_controllers],
-        output={
-            "stdout": "screen",
-            "stderr": "screen",
-        },
-    )
+        Node(
+            package=    'robot_state_publisher',
+            executable= 'robot_state_publisher',
+            name=       'robot_state_publisher',
+            output=     'screen',
+            parameters= [{'use_sim_time': LaunchConfiguration('use_sim_time'),
+                        'robot_description': Command(['xacro ', urdf])
+                        }],
+            arguments=  [urdf]),
+        
+        Node(
+            package=    'joint_state_publisher',
+            executable= 'joint_state_publisher',
+            name=       'joint_state_publisher',
+            condition=UnlessCondition(gui)),
+        
+        Node(
+            package=    'joint_state_publisher_gui',
+            executable= 'joint_state_publisher_gui',
+            name=       'joint_state_publisher_gui',
+            condition=IfCondition(gui)),
 
-    robot_state_pub_node = Node(
-        package="robot_state_publisher",
-        executable="robot_state_publisher",
-        output="both",
-        parameters=[robot_description],
-        remappings=[
-            ("/diff_drive_controller/cmd_vel_unstamped", "/cmd_vel"),
-        ],
-    )
-    
-    rviz_node = Node(
-        package="rviz2",
-        executable="rviz2",
-        name="rviz2",
-        output="log",
-        arguments=["-d", rviz_config_file],
-    )
+        Node(
+            package=    'rviz2',
+            executable= 'rviz2',
+            name=       'rviz2',
+            output=     'screen',
+            parameters= [{'use_sim_time':  LaunchConfiguration('use_sim_time')}],
+            arguments=  ['-d', rviz_config])
 
-    joint_state_broadcaster_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
-    )
-
-    robot_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["diffbot_base_controller", "-c", "/controller_manager"],
-    )
-
-    # Delay rviz start after `joint_state_broadcaster`
-    delay_rviz_after_joint_state_broadcaster_spawner = RegisterEventHandler(
-        event_handler=OnProcessExit(
-            target_action=joint_state_broadcaster_spawner,
-            on_exit=[rviz_node],
-        )
-    )
-
-    # Delay start of robot_controller after `joint_state_broadcaster`
-    delay_robot_controller_spawner_after_joint_state_broadcaster_spawner = RegisterEventHandler(
-        event_handler=OnProcessExit(
-            target_action=joint_state_broadcaster_spawner,
-            on_exit=[robot_controller_spawner],
-        )
-    )
-
-    nodes = [
-        control_node,
-        robot_state_pub_node,
-        joint_state_broadcaster_spawner,
-        delay_rviz_after_joint_state_broadcaster_spawner,
-        delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
-    ]
-
-    return LaunchDescription(nodes)
+    ])
