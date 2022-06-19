@@ -294,7 +294,5 @@
         </geometry>
       </visual>
     </link>
-    <static>0</static>
-    <plugin name='gz_ros2_control' filename='libgazebo_ros2_control.so'/>
   </model>
 </sdf>
